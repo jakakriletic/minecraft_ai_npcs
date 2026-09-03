@@ -1,0 +1,2074 @@
+{
+  "_opis": "Mestna trznica s stirimi pisanimi stojnicami.",
+  "_category": "civic",
+  "_kind": "building",
+  "_aliases": [
+    "trznica",
+    "market"
+  ],
+  "size": [
+    15,
+    7,
+    13
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 9,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 10,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 11,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 11,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 14,
+      "y": 0,
+      "z": 12,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 1,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 11,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 12,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 1,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 1,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 9,
+      "name": "oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 9,
+      "name": "oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 9,
+      "name": "oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 9,
+      "name": "oak_planks"
+    },
+    {
+      "x": 11,
+      "y": 1,
+      "z": 9,
+      "name": "oak_planks"
+    },
+    {
+      "x": 12,
+      "y": 1,
+      "z": 9,
+      "name": "oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 1,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 2,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 3,
+      "name": "chest"
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "z": 3,
+      "name": "chest"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 2,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 2,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 10,
+      "name": "chest"
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "z": 10,
+      "name": "chest"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 2,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 2,
+      "name": "lantern"
+    },
+    {
+      "x": 11,
+      "y": 3,
+      "z": 2,
+      "name": "lantern"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "z": 8,
+      "name": "oak_log"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 9,
+      "name": "lantern"
+    },
+    {
+      "x": 11,
+      "y": 3,
+      "z": 9,
+      "name": "lantern"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "z": 11,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 1,
+      "name": "blue_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 1,
+      "name": "blue_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 1,
+      "name": "blue_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 1,
+      "name": "blue_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 1,
+      "name": "blue_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 2,
+      "name": "blue_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 2,
+      "name": "blue_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 2,
+      "name": "blue_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 2,
+      "name": "blue_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 2,
+      "name": "blue_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 3,
+      "name": "blue_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 3,
+      "name": "blue_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 3,
+      "name": "blue_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 3,
+      "name": "blue_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 3,
+      "name": "blue_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 4,
+      "name": "blue_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 4,
+      "name": "blue_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 4,
+      "name": "blue_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 4,
+      "name": "blue_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 4,
+      "name": "blue_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 8,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 8,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 8,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 8,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 8,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 8,
+      "name": "green_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 8,
+      "name": "green_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 8,
+      "name": "green_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 8,
+      "name": "green_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 8,
+      "name": "green_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 9,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 9,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 9,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 9,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 9,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 9,
+      "name": "green_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 9,
+      "name": "green_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 9,
+      "name": "green_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 9,
+      "name": "green_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 9,
+      "name": "green_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 10,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 10,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 10,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 10,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 10,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 10,
+      "name": "green_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 10,
+      "name": "green_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 10,
+      "name": "green_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 10,
+      "name": "green_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 10,
+      "name": "green_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 11,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 11,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 11,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 11,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 11,
+      "name": "yellow_wool"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 11,
+      "name": "green_wool"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 11,
+      "name": "green_wool"
+    },
+    {
+      "x": 11,
+      "y": 4,
+      "z": 11,
+      "name": "green_wool"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "z": 11,
+      "name": "green_wool"
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "z": 11,
+      "name": "green_wool"
+    }
+  ]
+}

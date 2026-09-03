@@ -8,6 +8,13 @@ import { TTSConfig as geminiTTSConfig } from '../models/gemini.js';
 let speakingQueue = []; // each item: {text, model, audioData, ready}
 let isSpeaking = false;
 
+function continueQueue() {
+    void processQueue().catch(error => {
+        console.error('[TTS] queue error', error);
+        isSpeaking = false;
+    });
+}
+
 export function speak(text, speak_model) {
     const model = speak_model || 'system';
 
@@ -23,7 +30,7 @@ export function speak(text, speak_model) {
     }
 
     speakingQueue.push(item);
-    if (!isSpeaking) processQueue();
+    if (!isSpeaking) continueQueue();
 }
 
 async function fetchRemoteAudio(txt, model) {
@@ -45,9 +52,9 @@ async function fetchRemoteAudio(txt, model) {
     }
 
     if (prov === 'openai') {
-        return gptTTSConfig.sendAudioRequest(txt, mdl, voice, url);
+        return await gptTTSConfig.sendAudioRequest(txt, mdl, voice, url);
     } else if (prov === 'google') {
-        return geminiTTSConfig.sendAudioRequest(txt, mdl, voice, url);
+        return await geminiTTSConfig.sendAudioRequest(txt, mdl, voice, url);
     }
     else {
         throw new Error(`TTS Provider ${prov} is not supported.`);
@@ -64,7 +71,7 @@ async function processQueue() {
     const { text: txt, model, audioData } = item;
     if (txt.trim() === '') {
         isSpeaking = false;
-        processQueue();
+        continueQueue();
         return;
     }
 
@@ -78,7 +85,7 @@ async function processQueue() {
     } catch (err) {
         console.error('[TTS] preprocess error', err);
         isSpeaking = false;
-        processQueue();
+        continueQueue();
         return;
     }
 
@@ -95,7 +102,7 @@ async function processQueue() {
         exec(cmd, err => {
             if (err) console.error('TTS error', err);
             isSpeaking = false;
-            processQueue();
+            continueQueue();
         });
 
     } 
@@ -106,7 +113,7 @@ async function processQueue() {
         if (!audioData) {
             console.error('[TTS] No audio data ready');
             isSpeaking = false;
-            processQueue();
+            continueQueue();
             return;
         }
 
@@ -120,14 +127,14 @@ async function processQueue() {
                 });
                 player.on('error', async (err) => {
                     console.error('[TTS] ffplay error', err);
-                    try { await fs.unlink(tmpPath); } catch {}
+                    try { await fs.unlink(tmpPath); } catch { /* already removed */ }
                     isSpeaking = false;
-                    processQueue();
+                    continueQueue();
                 });
                 player.on('exit', async () => {
-                    try { await fs.unlink(tmpPath); } catch {}
+                    try { await fs.unlink(tmpPath); } catch { /* already removed */ }
                     isSpeaking = false;
-                    processQueue();
+                    continueQueue();
                 });
 
             } else {
@@ -138,13 +145,13 @@ async function processQueue() {
                 player.stdin.end();
                 player.on('exit', () => {
                     isSpeaking = false;
-                    processQueue();
+                    continueQueue();
                 });
             }
         } catch (e) {
             console.error('[TTS] Audio error', e);
             isSpeaking = false;
-            processQueue();
+            continueQueue();
         }
     }
 }

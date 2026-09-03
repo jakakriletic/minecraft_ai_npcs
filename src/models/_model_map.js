@@ -34,55 +34,59 @@ export function selectAPI(profile) {
     if (typeof profile === 'string' || profile instanceof String) {
         profile = {model: profile};
     }
+    if (!profile || typeof profile !== 'object')
+        throw new Error('Model profile must be an object or model name');
+    let model = typeof profile.model === 'string' ? profile.model : '';
     // backwards compatibility with local->ollama
-    if (profile.api?.includes('local') || profile.model?.includes('local')) {
+    if (profile.api?.includes('local') || model.includes('local')) {
         profile.api = 'ollama';
         if (profile.model) {
             profile.model = profile.model.replace('local', 'ollama');
+            model = profile.model;
         }
     }
     if (!profile.api) {
-        const api = Object.keys(apiMap).find(key => profile.model?.startsWith(key));
+        const api = Object.keys(apiMap).find(key => model.startsWith(key));
         if (api) {
             profile.api = api;
         }
         else {
             // check for some common models that do not require prefixes
-            if (profile.model.includes('gpt') || profile.model.includes('o1')|| profile.model.includes('o3'))
+            if (model.includes('gpt') || model.includes('o1') || model.includes('o3'))
                 profile.api = 'openai';
-            else if (profile.model.includes('claude'))
+            else if (model.includes('claude'))
                 profile.api = 'anthropic';
-            else if (profile.model.includes('gemini'))
+            else if (model.includes('gemini'))
                 profile.api = "google";
-            else if (profile.model.includes('grok'))
+            else if (model.includes('grok'))
                 profile.api = 'xai';
-            else if (profile.model.includes('mistral'))
+            else if (model.includes('mistral'))
                 profile.api = 'mistral';
-            else if (profile.model.includes('deepseek'))
+            else if (model.includes('deepseek'))
                 profile.api = 'deepseek';
-            else if (profile.model.includes('qwen'))
+            else if (model.includes('qwen'))
                 profile.api = 'qwen';
         }
         if (!profile.api) {
-            throw new Error('Unknown model:', profile.model);
+            throw new Error(`Unknown model: ${profile.model ?? '(missing)'}`);
         }
     }
     if (!apiMap[profile.api]) {
-        throw new Error('Unknown api:', profile.api);
+        throw new Error(`Unknown api: ${profile.api}`);
     }
-    let model_name = profile.model.replace(profile.api + '/', ''); // remove prefix
+    let model_name = model.replace(profile.api + '/', ''); // remove prefix
     profile.model = model_name === "" ? null : model_name; // if model is empty, set to null
     return profile;
 }
 
 export function createModel(profile) {
-    if (!!apiMap[profile.model]) {
+    if (apiMap[profile.model]) {
         // if the model value is an api (instead of a specific model name)
         // then set model to null so it uses the default model for that api
         profile.model = null;
     }
     if (!apiMap[profile.api]) {
-        throw new Error('Unknown api:', profile.api);
+        throw new Error(`Unknown api: ${profile.api}`);
     }
     const model = new apiMap[profile.api](profile.model, profile.url, profile.params);
     return model;

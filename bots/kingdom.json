@@ -1,0 +1,588 @@
+{
+  "version": 1,
+  "name": "Kraljestvo",
+  "center": {
+    "x": -334,
+    "y": 69,
+    "z": 650,
+    "dimension": "overworld",
+    "source": "public_storage"
+  },
+  "members": {
+    "Blaz": {
+      "role": "healer",
+      "specialty": null,
+      "online": true,
+      "position": {
+        "x": 140,
+        "y": 63,
+        "z": -50,
+        "dimension": "overworld"
+      },
+      "home": {
+        "x": -334,
+        "y": 69,
+        "z": 650,
+        "radius": 14
+      },
+      "health": 20,
+      "hunger": 15,
+      "inventory": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "coal": 0,
+        "gold": 0,
+        "lapis": 0,
+        "diamonds": 0,
+        "torches": 0,
+        "pickaxes": 0,
+        "bestPickaxeTier": 0,
+        "axes": 0,
+        "swords": 0,
+        "emptySlots": 36
+      },
+      "progression": "bootstrap",
+      "action": "brain:mode:self_preservation",
+      "biome": "stony_shore",
+      "seenAt": "2026-09-02T14:08:34.898Z"
+    },
+    "Lara": {
+      "role": "member",
+      "specialty": null,
+      "online": true,
+      "position": {
+        "x": 1,
+        "y": 71,
+        "z": 235,
+        "dimension": "overworld"
+      },
+      "home": {
+        "x": -334,
+        "y": 69,
+        "z": 650,
+        "radius": 14
+      },
+      "health": 19,
+      "hunger": 13,
+      "inventory": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "coal": 0,
+        "gold": 0,
+        "lapis": 0,
+        "diamonds": 0,
+        "torches": 0,
+        "pickaxes": 0,
+        "bestPickaxeTier": 0,
+        "axes": 0,
+        "swords": 0,
+        "emptySlots": 36
+      },
+      "progression": "starter_utility",
+      "action": "brain:secureFood",
+      "biome": "taiga",
+      "seenAt": "2026-09-02T14:08:58.305Z"
+    },
+    "Maja": {
+      "role": "member",
+      "specialty": null,
+      "online": true,
+      "position": {
+        "x": 139,
+        "y": 60,
+        "z": -50,
+        "dimension": "overworld"
+      },
+      "home": {
+        "x": -334,
+        "y": 69,
+        "z": 650,
+        "radius": 14
+      },
+      "health": 16,
+      "hunger": 13,
+      "inventory": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "coal": 0,
+        "gold": 0,
+        "lapis": 0,
+        "diamonds": 0,
+        "torches": 0,
+        "pickaxes": 0,
+        "bestPickaxeTier": 0,
+        "axes": 0,
+        "swords": 0,
+        "emptySlots": 36
+      },
+      "progression": "starter_utility",
+      "action": "brain:mode:self_preservation",
+      "biome": "stony_shore",
+      "seenAt": "2026-09-02T14:08:45.644Z"
+    },
+    "Nejc": {
+      "role": "magician",
+      "specialty": null,
+      "online": true,
+      "position": {
+        "x": 27,
+        "y": 61,
+        "z": 53,
+        "dimension": "overworld"
+      },
+      "home": {
+        "x": -334,
+        "y": 69,
+        "z": 650,
+        "radius": 14
+      },
+      "health": 18,
+      "hunger": 11,
+      "inventory": {
+        "food": 0,
+        "wood": 1,
+        "stone": 0,
+        "iron": 0,
+        "coal": 0,
+        "gold": 0,
+        "lapis": 0,
+        "diamonds": 0,
+        "torches": 0,
+        "pickaxes": 0,
+        "bestPickaxeTier": 0,
+        "axes": 0,
+        "swords": 0,
+        "emptySlots": 35
+      },
+      "progression": "bootstrap",
+      "action": "brain:maintainTools",
+      "biome": "frozen_ocean",
+      "seenAt": "2026-09-02T14:08:58.143Z"
+    },
+    "Zan": {
+      "role": "member",
+      "specialty": null,
+      "online": true,
+      "position": {
+        "x": 140,
+        "y": 63,
+        "z": -49,
+        "dimension": "overworld"
+      },
+      "home": {
+        "x": -334,
+        "y": 69,
+        "z": 650,
+        "radius": 14
+      },
+      "health": 20,
+      "hunger": 15,
+      "inventory": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "iron": 0,
+        "coal": 0,
+        "gold": 0,
+        "lapis": 0,
+        "diamonds": 0,
+        "torches": 0,
+        "pickaxes": 0,
+        "bestPickaxeTier": 0,
+        "axes": 0,
+        "swords": 0,
+        "emptySlots": 36
+      },
+      "progression": "bootstrap",
+      "action": "mode:elbow_room",
+      "biome": "stony_shore",
+      "seenAt": "2026-09-02T14:08:33.754Z"
+    }
+  },
+  "knownBiomes": [
+    "taiga",
+    "plains",
+    "dark_forest",
+    "beach",
+    "snowy_tundra",
+    "river",
+    "snowy_beach",
+    "snowy_taiga",
+    "snowy_taiga_hills",
+    "ocean",
+    "deep_ocean",
+    "forest",
+    "wooded_hills",
+    "stony_shore",
+    "badlands",
+    "sunflower_plains",
+    "frozen_ocean",
+    "frozen_river"
+  ],
+  "events": [
+    {
+      "type": "danger",
+      "actor": "Maja",
+      "text": "Maja je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:50:32.568Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:50:33.379Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Zan",
+      "text": "Shared plan: Stabilize hunger and morale in the next 5 minutes: push a small food source, keep supplies tidy, and do quick support checks after the recent losses.",
+      "metadata": {},
+      "at": "2026-08-31T21:51:02.600Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:51:25.176Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Blaz",
+      "text": "Blaz je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:52:10.934Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Maja",
+      "text": "Maja je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:52:21.095Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:52:27.547Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Blaz",
+      "text": "Blaz je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:52:29.700Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Maja",
+      "text": "Maja je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:53:03.314Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:53:13.925Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Blaz",
+      "text": "Blaz je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:54:43.737Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:55:08.577Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Zan",
+      "text": "Shared plan: Next 5 minutes: stabilize the group, recover from recent deaths, and push immediate food supply while one member improves settlement utility.",
+      "metadata": {},
+      "at": "2026-08-31T21:56:37.099Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:57:26.005Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Blaz",
+      "text": "Blaz je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T21:59:42.850Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Nejc",
+      "text": "Shared plan: Stabilize after recent deaths, prioritize emergency food recovery, and keep one member improving settlement utility while the others support safety, sharing, and basic supplies.",
+      "metadata": {},
+      "at": "2026-08-31T22:02:14.641Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T22:04:03.090Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Blaz",
+      "text": "Blaz je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T22:06:16.851Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T22:07:39.531Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Nejc",
+      "text": "Shared plan: Emergency stabilization: recover food first, have two members directly secure supplies, one member improve settlement utility, and the remaining members check on each other and kee",
+      "metadata": {},
+      "at": "2026-08-31T22:07:50.811Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Blaz",
+      "text": "Blaz je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T22:07:59.148Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T22:08:27.854Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Maja",
+      "text": "Maja je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-08-31T22:08:40.452Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Lara",
+      "text": "Shared plan: Emergency stabilization: gather food first, keep one member improving base coordination, and use the rest to support each other and recover after recent losses.",
+      "metadata": {},
+      "at": "2026-09-01T20:55:41.475Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T20:58:51.821Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Lara",
+      "text": "Shared plan: Stabilize hunger first by having two members actively seek food, one member improve settlement utility, and the rest support recovery and coordination.",
+      "metadata": {},
+      "at": "2026-09-01T21:01:24.005Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:04:37.315Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Nejc",
+      "text": "Nejc je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:06:17.840Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Lara",
+      "text": "Shared plan: Emergency food-first stabilization with one coordination upgrade and broad recovery support.",
+      "metadata": {},
+      "at": "2026-09-01T21:06:44.530Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Maja",
+      "text": "Maja je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:07:33.024Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:07:49.855Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Maja",
+      "text": "Maja je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:08:02.377Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:08:14.264Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:08:33.072Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Lara",
+      "text": "Lara je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:10:11.498Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Zan",
+      "text": "Shared plan: Urgently stabilize food supply for the next 5 minutes while keeping the settlement tidy and supported: one member starts a small crop build, two gather food directly, one scouts fo",
+      "metadata": {},
+      "at": "2026-09-01T21:11:57.369Z"
+    },
+    {
+      "type": "danger",
+      "actor": "Zan",
+      "text": "Zan je umrl; ostali naj pomagajo obnoviti opremo.",
+      "metadata": {},
+      "at": "2026-09-01T21:12:34.804Z"
+    },
+    {
+      "type": "discovery",
+      "actor": "Nejc",
+      "text": "Nejc je za naselbino odkril biom frozen_ocean.",
+      "metadata": {},
+      "at": "2026-09-02T14:06:45.045Z"
+    },
+    {
+      "type": "discovery",
+      "actor": "Lara",
+      "text": "Lara je za naselbino odkril biom frozen_river.",
+      "metadata": {},
+      "at": "2026-09-02T14:07:47.499Z"
+    },
+    {
+      "type": "planning",
+      "actor": "Zan",
+      "text": "Shared plan: Stabilize food for the next 5 minutes with immediate gathering, a small crop start, and one support/social check while keeping the base tidy.",
+      "metadata": {},
+      "at": "2026-09-02T14:07:50.240Z"
+    }
+  ],
+  "transfers": {
+    "Blaz:Zan:stone_pickaxe": 1788112474364,
+    "Lara:Zan:stone_sword": 1788112878806
+  },
+  "metrics": {
+    "buildingCount": 45,
+    "roadCount": 0
+  },
+  "lastSocialAt": 1788358009993,
+  "updatedAt": "2026-09-02T14:08:58.305Z",
+  "socialExchange": null,
+  "culture": {
+    "version": 1,
+    "norms": {
+      "sharing_expectation": 1,
+      "night_caution": 1,
+      "build_density_preference": 1
+    },
+    "members": {
+      "Blaz": {
+        "norms": {
+          "sharing_expectation": 1,
+          "night_caution": 1,
+          "build_density_preference": 1
+        },
+        "seededFrom": "Blaz",
+        "updatedAt": "2026-09-02T14:08:53.481Z"
+      },
+      "Maja": {
+        "norms": {
+          "sharing_expectation": 1,
+          "night_caution": 1,
+          "build_density_preference": 1
+        },
+        "seededFrom": "Maja",
+        "updatedAt": "2026-09-02T14:08:51.398Z"
+      },
+      "Nejc": {
+        "norms": {
+          "sharing_expectation": 1,
+          "night_caution": 1,
+          "build_density_preference": 1
+        },
+        "seededFrom": "Nejc",
+        "updatedAt": "2026-09-02T14:08:52.459Z"
+      },
+      "Lara": {
+        "norms": {
+          "sharing_expectation": 1,
+          "night_caution": 1,
+          "build_density_preference": 1
+        },
+        "seededFrom": "Lara",
+        "updatedAt": "2026-09-02T14:08:53.110Z"
+      },
+      "Zan": {
+        "norms": {
+          "sharing_expectation": 1,
+          "night_caution": 1,
+          "build_density_preference": 1
+        },
+        "seededFrom": "Zan",
+        "updatedAt": "2026-09-02T14:08:53.481Z"
+      }
+    },
+    "settlement_value": "I value shared supplies, safety, and tidy, well-built spaces more than hoarding.",
+    "updatedAt": "2026-09-02T14:08:53.481Z",
+    "last_interaction": {
+      "at": "2026-09-02T14:08:53.481Z",
+      "from": "Blaz",
+      "to": "Zan",
+      "weight": 0.096
+    },
+    "last_reflection": {
+      "at": "2026-09-02T14:06:56.939Z",
+      "actor": "Blaz"
+    }
+  }
+}

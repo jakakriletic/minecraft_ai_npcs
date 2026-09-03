@@ -1,0 +1,2938 @@
+{
+  "version": 1,
+  "created_at": "2026-06-30T14:41:11.034Z",
+  "current_day": 2,
+  "laws": [
+    {
+      "id": "basic_tax",
+      "enabled": true,
+      "name": "Mestni prispevek",
+      "text": "Delavci ob koncu sihta prispevajo del uporabnih surovin v mestno zalogo.",
+      "rate": 0.2,
+      "storage_region": "mestna_zaloga",
+      "applies_to": [
+        "oak_log",
+        "birch_log",
+        "spruce_log",
+        "jungle_log",
+        "acacia_log",
+        "dark_oak_log",
+        "cobblestone",
+        "stone",
+        "coal",
+        "coal_ore",
+        "iron_ore",
+        "raw_iron",
+        "iron_ingot",
+        "bread",
+        "apple",
+        "carrot",
+        "potato",
+        "wheat"
+      ],
+      "due_after_tick": 9000,
+      "grace_until_tick": 17000
+    }
+  ],
+  "tax_ledger": {
+    "0": {
+      "nejc": {
+        "checked_at": "2026-09-02T12:57:29.797Z",
+        "items": {},
+        "value": 0,
+        "reason": "no taxable inventory"
+      },
+      "zan": {
+        "checked_at": "2026-09-02T12:57:55.556Z",
+        "items": {},
+        "value": 0,
+        "reason": "no taxable inventory"
+      },
+      "maja": {
+        "checked_at": "2026-09-02T12:58:00.708Z",
+        "items": {},
+        "value": 0,
+        "reason": "no taxable inventory"
+      }
+    },
+    "1": {},
+    "2": {},
+    "2017": {
+      "kaja": {
+        "checked_at": "2026-08-14T17:00:34.322Z",
+        "items": {},
+        "value": 0,
+        "reason": "no taxable inventory"
+      },
+      "ema": {
+        "checked_at": "2026-08-14T17:00:53.627Z",
+        "items": {},
+        "value": 0,
+        "reason": "no taxable inventory"
+      }
+    },
+    "2018": {
+      "kaja": {
+        "checked_at": "2026-08-14T17:05:47.719Z",
+        "items": {},
+        "value": 0,
+        "reason": "no taxable inventory"
+      },
+      "ema": {
+        "checked_at": "2026-08-14T17:03:18.532Z",
+        "items": {},
+        "value": 0,
+        "reason": "no taxable inventory"
+      }
+    }
+  },
+  "culture": {
+    "memes": [
+      {
+        "id": "zaloga_je_cast",
+        "text": "V tem mestu se javna zaloga ne prazni na skrivaj.",
+        "theme": "law",
+        "origin": "town",
+        "strength": 1,
+        "carriers": [
+          "blaz",
+          "nejc",
+          "lara",
+          "maja",
+          "ema",
+          "jure",
+          "kaja",
+          "rok",
+          "tilen",
+          "zan"
+        ],
+        "last_spread_at": "2026-09-02T13:51:52.182Z"
+      },
+      {
+        "id": "petkov_trg",
+        "text": "Ko je delo koncano, se novice slisijo na trgu ali v gostilni.",
+        "theme": "community",
+        "origin": "town",
+        "strength": 0.7785349158421351,
+        "carriers": [
+          "jure",
+          "nejc",
+          "kaja",
+          "blaz",
+          "lara",
+          "zan",
+          "rok",
+          "maja",
+          "ema",
+          "tilen"
+        ],
+        "last_spread_at": "2026-09-02T13:49:37.196Z"
+      },
+      {
+        "id": "pocasi_ni_panike",
+        "text": "Pocasi, saj ni panike.",
+        "theme": "local_phrase",
+        "origin": "tone",
+        "strength": 0.7348183406685631,
+        "carriers": [
+          "tone",
+          "blaz",
+          "nejc",
+          "maja",
+          "ema",
+          "jure",
+          "kaja",
+          "zan",
+          "lara",
+          "rok",
+          "tilen"
+        ],
+        "last_spread_at": "2026-09-02T13:28:58.626Z"
+      }
+    ]
+  },
+  "proposals": [],
+  "public_events": [
+    {
+      "ts": "2026-08-14T17:01:15.105Z",
+      "day": 2018,
+      "type": "agenda",
+      "actor": "nejc",
+      "text": "Nejc si je zastavil/a cilj: nabrati uporabne surovine in jih spraviti v skupno mrezo zalog",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:01:15.440Z",
+      "day": 2018,
+      "type": "agenda",
+      "actor": "lara",
+      "text": "Lara si je zastavil/a cilj: nahraniti ljudi, slisati novice in povezovati prebivalce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Zan",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:01:16.940Z",
+      "day": 2018,
+      "type": "agenda",
+      "actor": "kaja",
+      "text": "Kaja si je zastavil/a cilj: poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:01:18.269Z",
+      "day": 2018,
+      "type": "agenda",
+      "actor": "tilen",
+      "text": "Tilen si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "poiskati pogovor z Jure",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:01:18.603Z",
+      "day": 2018,
+      "type": "agenda",
+      "actor": "maja",
+      "text": "Maja si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:01:19.938Z",
+      "day": 2018,
+      "type": "agenda",
+      "actor": "zan",
+      "text": "Zan si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:01:22.257Z",
+      "day": 2018,
+      "type": "agenda",
+      "actor": "rok",
+      "text": "Rok si je zastavil/a cilj: nabrati les, posaditi nazaj in del pridelka prinesti mestu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Kaja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:02:21.823Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "maja",
+      "text": "Maja ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:02:25.688Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "nejc",
+      "text": "Nejc ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:02:30.685Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "lara",
+      "text": "Lara ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:02:30.701Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "nejc",
+      "text": "Nejc ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:02:36.881Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "zan",
+      "text": "Zan ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:02:38.697Z",
+      "day": 2018,
+      "type": "tax_checked_empty",
+      "actor": "kaja",
+      "text": "kaja danes nima prispevka za oddajo.",
+      "metadata": {
+        "day": 2018,
+        "reason": "no taxable inventory"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:03:18.532Z",
+      "day": 2018,
+      "type": "tax_checked_empty",
+      "actor": "ema",
+      "text": "ema danes nima prispevka za oddajo.",
+      "metadata": {
+        "day": 2018,
+        "reason": "no taxable inventory"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:03:29.490Z",
+      "day": 2018,
+      "type": "tax_checked_empty",
+      "actor": "kaja",
+      "text": "kaja danes nima prispevka za oddajo.",
+      "metadata": {
+        "day": 2018,
+        "reason": "no taxable inventory"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:03:30.430Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "lara",
+      "text": "Lara ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:03:42.359Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "lara",
+      "text": "Lara ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:03:49.671Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "nejc",
+      "text": "Nejc ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:04:03.706Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "zan",
+      "text": "Zan ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:04:07.434Z",
+      "day": 2018,
+      "type": "leadership_shift",
+      "actor": "lara",
+      "text": "Lara postaja najbolj vpliven glas v mestu.",
+      "metadata": {
+        "score": 68
+      }
+    },
+    {
+      "ts": "2026-08-14T17:04:07.975Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "maja",
+      "text": "Maja ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:05:41.498Z",
+      "day": 2018,
+      "type": "tax_failed",
+      "actor": "lara",
+      "text": "Lara ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 2018,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:05:47.719Z",
+      "day": 2018,
+      "type": "tax_checked_empty",
+      "actor": "kaja",
+      "text": "kaja danes nima prispevka za oddajo.",
+      "metadata": {
+        "day": 2018,
+        "reason": "no taxable inventory"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:06:18.726Z",
+      "day": 2018,
+      "type": "social_contact",
+      "actor": "kaja",
+      "text": "Kaja je poiskal/a pogovor z Blaz.",
+      "metadata": {
+        "target": "blaz"
+      }
+    },
+    {
+      "ts": "2026-08-14T17:07:39.842Z",
+      "day": 2018,
+      "type": "tax_audit",
+      "actor": "tilen",
+      "text": "Tilen je preveril/a mestne prispevke.",
+      "metadata": {
+        "day": 2018,
+        "missing": [
+          "nejc",
+          "lara",
+          "zan",
+          "maja",
+          "jure",
+          "rok"
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T12:56:52.194Z",
+      "day": 0,
+      "type": "new_day",
+      "actor": "town",
+      "text": "Zacel se je mestni dan 0.",
+      "metadata": {
+        "previous_day": 2018
+      }
+    },
+    {
+      "ts": "2026-09-02T12:56:52.200Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "blaz",
+      "text": "Blaz si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "opazovati ljudi in ostati odprt za pogovor",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:56:56.813Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "nejc",
+      "text": "Nejc si je zastavil/a cilj: nabrati uporabne surovine in jih spraviti v skupno mrezo zalog",
+      "metadata": {
+        "social_goal": "poiskati pogovor z Blaz",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:01.915Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "lara",
+      "text": "Lara si je zastavil/a cilj: nahraniti ljudi, slisati novice in povezovati prebivalce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Nejc",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:02.820Z",
+      "day": 0,
+      "type": "tax_audit",
+      "actor": "blaz",
+      "text": "Blaz je preveril/a mestne prispevke.",
+      "metadata": {
+        "day": 0,
+        "missing": [
+          "nejc",
+          "lara",
+          "zan",
+          "maja",
+          "ema",
+          "jure",
+          "kaja",
+          "rok"
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:06.703Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "zan",
+      "text": "Zan si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:12.137Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "maja",
+      "text": "Maja si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Zan",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:13.603Z",
+      "day": 0,
+      "type": "tax_failed",
+      "actor": "lara",
+      "text": "Lara ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 0,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:17.489Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "ema",
+      "text": "Ema si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "poiskati pogovor z Zan",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:23.074Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "jure",
+      "text": "Jure si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:26.738Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "kaja",
+      "text": "Kaja si je zastavil/a cilj: poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:29.797Z",
+      "day": 0,
+      "type": "tax_checked_empty",
+      "actor": "nejc",
+      "text": "nejc danes nima prispevka za oddajo.",
+      "metadata": {
+        "day": 0,
+        "reason": "no taxable inventory"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:31.605Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "rok",
+      "text": "Rok si je zastavil/a cilj: nabrati les, posaditi nazaj in del pridelka prinesti mestu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Kaja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:37.082Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "tilen",
+      "text": "Tilen si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:47.326Z",
+      "day": 0,
+      "type": "tax_audit",
+      "actor": "tilen",
+      "text": "Tilen je preveril/a mestne prispevke.",
+      "metadata": {
+        "day": 0,
+        "missing": [
+          "lara",
+          "zan",
+          "maja",
+          "ema",
+          "jure",
+          "kaja",
+          "rok"
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T12:57:55.556Z",
+      "day": 0,
+      "type": "tax_checked_empty",
+      "actor": "zan",
+      "text": "zan danes nima prispevka za oddajo.",
+      "metadata": {
+        "day": 0,
+        "reason": "no taxable inventory"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:00.708Z",
+      "day": 0,
+      "type": "tax_checked_empty",
+      "actor": "maja",
+      "text": "maja danes nima prispevka za oddajo.",
+      "metadata": {
+        "day": 0,
+        "reason": "no taxable inventory"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:00.714Z",
+      "day": 0,
+      "type": "leadership_shift",
+      "actor": "blaz",
+      "text": "Blaz postaja najbolj vpliven glas v mestu.",
+      "metadata": {
+        "score": 67
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:26.718Z",
+      "day": 0,
+      "type": "tax_failed",
+      "actor": "lara",
+      "text": "Lara ni nasel/la mestne skrinje za prispevek.",
+      "metadata": {
+        "day": 0,
+        "regionName": "mestna_zaloga"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:45.740Z",
+      "day": 1,
+      "type": "new_day",
+      "actor": "town",
+      "text": "Zacel se je mestni dan 1.",
+      "metadata": {
+        "previous_day": 0
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:45.743Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "zan",
+      "text": "Zan si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Maja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:46.457Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "maja",
+      "text": "Maja si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Nejc",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:46.554Z",
+      "day": 1,
+      "type": "social_contact",
+      "actor": "zan",
+      "text": "Zan je poiskal/a pogovor z Maja.",
+      "metadata": {
+        "target": "maja"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:46.562Z",
+      "day": 1,
+      "type": "social_contact",
+      "actor": "lara",
+      "text": "Lara je poiskal/a pogovor z Blaz.",
+      "metadata": {
+        "target": "blaz"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:46.687Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "tilen",
+      "text": "Tilen si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "poiskati pogovor z Ema",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:56.172Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "ema",
+      "text": "Ema si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Jure",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:56.566Z",
+      "day": 1,
+      "type": "social_contact",
+      "actor": "ema",
+      "text": "Ema je poiskal/a pogovor z Jure.",
+      "metadata": {
+        "target": "jure"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:58:59.515Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "blaz",
+      "text": "Blaz si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:59:00.260Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "jure",
+      "text": "Jure si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:59:09.031Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "kaja",
+      "text": "Kaja si je zastavil/a cilj: poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Jure",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:59:10.572Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "rok",
+      "text": "Rok si je zastavil/a cilj: nabrati les, posaditi nazaj in del pridelka prinesti mestu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:59:12.049Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "nejc",
+      "text": "Nejc si je zastavil/a cilj: nabrati uporabne surovine in jih spraviti v skupno mrezo zalog",
+      "metadata": {
+        "social_goal": "ohraniti stik z Maja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T12:59:15.817Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "lara",
+      "text": "Lara si je zastavil/a cilj: nahraniti ljudi, slisati novice in povezovati prebivalce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Blaz",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:20:53.482Z",
+      "day": 0,
+      "type": "new_day",
+      "actor": "town",
+      "text": "Zacel se je mestni dan 0.",
+      "metadata": {
+        "previous_day": 1
+      }
+    },
+    {
+      "ts": "2026-09-02T13:20:53.485Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "blaz",
+      "text": "Blaz si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "opazovati ljudi in ostati odprt za pogovor",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:20:58.398Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "nejc",
+      "text": "Nejc si je zastavil/a cilj: nabrati uporabne surovine in jih spraviti v skupno mrezo zalog",
+      "metadata": {
+        "social_goal": "ohraniti stik z Blaz",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:03.451Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "lara",
+      "text": "Lara si je zastavil/a cilj: nahraniti ljudi, slisati novice in povezovati prebivalce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Nejc",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:08.609Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "zan",
+      "text": "Zan si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:13.676Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "maja",
+      "text": "Maja si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Zan",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:18.518Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "ema",
+      "text": "Ema si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Maja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:24.192Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "jure",
+      "text": "Jure si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:29.506Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "kaja",
+      "text": "Kaja si je zastavil/a cilj: poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:34.476Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "rok",
+      "text": "Rok si je zastavil/a cilj: nabrati les, posaditi nazaj in del pridelka prinesti mestu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Maja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:39.351Z",
+      "day": 0,
+      "type": "agenda",
+      "actor": "tilen",
+      "text": "Tilen si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "poiskati pogovor z Ema",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:21:42.798Z",
+      "day": 0,
+      "type": "social_contact",
+      "actor": "lara",
+      "text": "Lara je poiskal/a pogovor z Blaz.",
+      "metadata": {
+        "target": "blaz"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:22:11.687Z",
+      "day": 0,
+      "type": "social_contact",
+      "actor": "kaja",
+      "text": "Kaja je poiskal/a pogovor z Jure.",
+      "metadata": {
+        "target": "jure"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:26:03.751Z",
+      "day": 0,
+      "type": "guard_patrol",
+      "actor": "tilen",
+      "text": "Tilen je preveril strazo pri patrulja_noc.",
+      "metadata": {
+        "region": "patrulja_noc",
+        "patrol": [
+          "patrulja_noc",
+          "mestna_zaloga",
+          "obcina",
+          "gostilna",
+          "zapor",
+          "center"
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:24.880Z",
+      "day": 0,
+      "type": "social_contact",
+      "actor": "kaja",
+      "text": "Kaja je poiskal/a pogovor z Jure.",
+      "metadata": {
+        "target": "jure"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:29.242Z",
+      "day": 1,
+      "type": "new_day",
+      "actor": "town",
+      "text": "Zacel se je mestni dan 1.",
+      "metadata": {
+        "previous_day": 0
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:29.246Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "nejc",
+      "text": "Nejc si je zastavil/a cilj: nabrati uporabne surovine in jih spraviti v skupno mrezo zalog",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:32.669Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "lara",
+      "text": "Lara si je zastavil/a cilj: nahraniti ljudi, slisati novice in povezovati prebivalce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Nejc",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:35.847Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "ema",
+      "text": "Ema si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Maja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:36.138Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "rok",
+      "text": "Rok si je zastavil/a cilj: nabrati les, posaditi nazaj in del pridelka prinesti mestu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Zan",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:41.239Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "maja",
+      "text": "Maja si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:43.406Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "blaz",
+      "text": "Blaz si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:49.638Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "jure",
+      "text": "Jure si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:57.590Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "kaja",
+      "text": "Kaja si je zastavil/a cilj: poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Blaz",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:58.473Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "zan",
+      "text": "Zan si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Maja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:28:58.629Z",
+      "day": 1,
+      "type": "agenda",
+      "actor": "tilen",
+      "text": "Tilen si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:43:33.343Z",
+      "day": 1,
+      "type": "tax_audit",
+      "actor": "tilen",
+      "text": "Tilen je preveril/a mestne prispevke.",
+      "metadata": {
+        "day": 1,
+        "missing": [
+          "nejc",
+          "lara",
+          "zan",
+          "maja",
+          "ema",
+          "jure",
+          "kaja",
+          "rok"
+        ]
+      }
+    },
+    {
+      "ts": "2026-09-02T13:48:44.124Z",
+      "day": 1,
+      "type": "social_contact",
+      "actor": "nejc",
+      "text": "Nejc je poiskal/a pogovor z Lara.",
+      "metadata": {
+        "target": "lara"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:19.453Z",
+      "day": 2,
+      "type": "new_day",
+      "actor": "town",
+      "text": "Zacel se je mestni dan 2.",
+      "metadata": {
+        "previous_day": 1
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:19.455Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "zan",
+      "text": "Zan si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Maja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:21.352Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "lara",
+      "text": "Lara si je zastavil/a cilj: nahraniti ljudi, slisati novice in povezovati prebivalce",
+      "metadata": {
+        "social_goal": "ohraniti stik z Ema",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:22.005Z",
+      "day": 2,
+      "type": "social_contact",
+      "actor": "lara",
+      "text": "Lara je poiskal/a pogovor z Kaja.",
+      "metadata": {
+        "target": "kaja"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:22.151Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "jure",
+      "text": "Jure si je zastavil/a cilj: iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Rok",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:26.034Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "nejc",
+      "text": "Nejc si je zastavil/a cilj: nabrati uporabne surovine in jih spraviti v skupno mrezo zalog",
+      "metadata": {
+        "social_goal": "ohraniti stik z Tilen",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:29.466Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "rok",
+      "text": "Rok si je zastavil/a cilj: nabrati les, posaditi nazaj in del pridelka prinesti mestu",
+      "metadata": {
+        "social_goal": "ohraniti stik z Jure",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:33.365Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "ema",
+      "text": "Ema si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Kaja",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:37.198Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "tilen",
+      "text": "Tilen si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "poiskati pogovor z Nejc",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:37.620Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "kaja",
+      "text": "Kaja si je zastavil/a cilj: poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+      "metadata": {
+        "social_goal": "popraviti odnos z Lara",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:49:41.865Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "maja",
+      "text": "Maja si je zastavil/a cilj: urediti javno zalogo, opaziti manjkajoce stvari in povezati potrebe mesta",
+      "metadata": {
+        "social_goal": "ohraniti stik z Blaz",
+        "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:50:10.255Z",
+      "day": 2,
+      "type": "social_contact",
+      "actor": "kaja",
+      "text": "Kaja je poiskal/a pogovor z Lara.",
+      "metadata": {
+        "target": "lara"
+      }
+    },
+    {
+      "ts": "2026-09-02T13:50:22.066Z",
+      "day": 2,
+      "type": "leadership_shift",
+      "actor": "tilen",
+      "text": "Tilen postaja najbolj vpliven glas v mestu.",
+      "metadata": {
+        "score": 66
+      }
+    },
+    {
+      "ts": "2026-09-02T13:50:38.871Z",
+      "day": 2,
+      "type": "agenda",
+      "actor": "blaz",
+      "text": "Blaz si je zastavil/a cilj: varovati ljudi, javno zalogo in mir med sosedi",
+      "metadata": {
+        "social_goal": "popraviti odnos z Lara",
+        "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom"
+      }
+    }
+  ],
+  "reputations": {
+    "zombie": {
+      "public_trust": 0,
+      "respect": 0,
+      "notoriety": 100,
+      "notes": [
+        {
+          "ts": "2026-09-02T13:45:06.858Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:45:07.805Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:45:07.808Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:45:23.505Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:45:25.428Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:46:00.244Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:46:00.254Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:46:00.261Z",
+          "reason": "witness:udaril_nekoga"
+        }
+      ]
+    },
+    "nejc": {
+      "public_trust": 9,
+      "respect": 40,
+      "notoriety": 45,
+      "notes": [
+        {
+          "ts": "2026-09-02T13:43:33.335Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T13:44:25.656Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:25.662Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:25.666Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:27.709Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:27.713Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:27.722Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:29.664Z",
+          "reason": "witness:udaril_nekoga"
+        }
+      ]
+    },
+    "lara": {
+      "public_trust": 0,
+      "respect": 37,
+      "notoriety": 58,
+      "notes": [
+        {
+          "ts": "2026-09-02T13:44:27.213Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:27.217Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:29.656Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:29.660Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:29.669Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:31.655Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:31.660Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:44:31.664Z",
+          "reason": "witness:udaril_nekoga"
+        }
+      ]
+    },
+    "zan": {
+      "public_trust": 42,
+      "respect": 46,
+      "notoriety": 4,
+      "notes": [
+        {
+          "ts": "2026-08-14T17:07:39.841Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:02.814Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:47.319Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T13:43:33.338Z",
+          "reason": "missed_tax"
+        }
+      ]
+    },
+    "maja": {
+      "public_trust": 42,
+      "respect": 46,
+      "notoriety": 4,
+      "notes": [
+        {
+          "ts": "2026-08-14T17:07:39.841Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:02.815Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:47.321Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T13:43:33.339Z",
+          "reason": "missed_tax"
+        }
+      ]
+    },
+    "jure": {
+      "public_trust": 42,
+      "respect": 46,
+      "notoriety": 4,
+      "notes": [
+        {
+          "ts": "2026-08-14T17:07:39.842Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:02.818Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:47.323Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T13:43:33.340Z",
+          "reason": "missed_tax"
+        }
+      ]
+    },
+    "rok": {
+      "public_trust": 12,
+      "respect": 40,
+      "notoriety": 40,
+      "notes": [
+        {
+          "ts": "2026-09-02T12:57:47.325Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:58:15.741Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:15.760Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:15.768Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:27.055Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:27.061Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:27.083Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:43:33.342Z",
+          "reason": "missed_tax"
+        }
+      ]
+    },
+    "ema": {
+      "public_trust": 24,
+      "respect": 43,
+      "notoriety": 27,
+      "notes": [
+        {
+          "ts": "2026-09-02T12:57:02.817Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:47.322Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:58:13.988Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:13.996Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:14.007Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T12:58:15.749Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:43:33.339Z",
+          "reason": "missed_tax"
+        }
+      ]
+    },
+    "kaja": {
+      "public_trust": 39,
+      "respect": 46,
+      "notoriety": 9,
+      "notes": [
+        {
+          "ts": "2026-09-02T12:57:02.819Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T12:57:47.324Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T13:43:33.341Z",
+          "reason": "missed_tax"
+        },
+        {
+          "ts": "2026-09-02T13:44:27.717Z",
+          "reason": "witness:udaril_nekoga"
+        }
+      ]
+    },
+    "spider": {
+      "public_trust": 0,
+      "respect": 35,
+      "notoriety": 90,
+      "notes": [
+        {
+          "ts": "2026-09-02T13:48:31.774Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:48:31.779Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:48:31.782Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:48:35.675Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:48:37.050Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:48:45.156Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:48:46.200Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:50:10.705Z",
+          "reason": "witness:udaril_nekoga"
+        }
+      ]
+    },
+    "blaz": {
+      "public_trust": 45,
+      "respect": 49,
+      "notoriety": 6,
+      "notes": [
+        {
+          "ts": "2026-09-02T13:44:25.670Z",
+          "reason": "witness:udaril_nekoga"
+        }
+      ]
+    },
+    "drowned": {
+      "public_trust": 0,
+      "respect": 16,
+      "notoriety": 100,
+      "notes": [
+        {
+          "ts": "2026-09-02T13:47:26.905Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:47:26.909Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:47:28.805Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:47:28.808Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:47:34.116Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:47:34.120Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:47:35.104Z",
+          "reason": "witness:udaril_nekoga"
+        },
+        {
+          "ts": "2026-09-02T13:47:37.354Z",
+          "reason": "witness:udaril_nekoga"
+        }
+      ]
+    }
+  },
+  "social_structure": {
+    "leaders": [
+      {
+        "id": "tilen",
+        "name": "Tilen",
+        "score": 66
+      },
+      {
+        "id": "zan",
+        "name": "Zan",
+        "score": 63
+      },
+      {
+        "id": "blaz",
+        "name": "Blaz",
+        "score": 62
+      }
+    ],
+    "circles": [],
+    "last_updated_at": "2026-09-02T13:55:51.836Z"
+  },
+  "society": {
+    "last_compliance": {
+      "ts": "2026-09-02T13:55:07.425Z",
+      "day": 2,
+      "total": 10,
+      "ready": 0,
+      "blocked_count": 8,
+      "avg_score": 59,
+      "blocked": [
+        {
+          "id": "blaz",
+          "name": "Blaz",
+          "score": 52,
+          "blocker": "ni v regiji 'obcina' za rutino 'work'"
+        },
+        {
+          "id": "nejc",
+          "name": "Nejc",
+          "score": 52,
+          "blocker": "ni v regiji 'rudnik_sever' za rutino 'work'"
+        },
+        {
+          "id": "lara",
+          "name": "Lara",
+          "score": 64,
+          "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+        },
+        {
+          "id": "zan",
+          "name": "Zan",
+          "score": 64,
+          "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+        },
+        {
+          "id": "maja",
+          "name": "Maja",
+          "score": 64,
+          "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+        },
+        {
+          "id": "ema",
+          "name": "Ema",
+          "score": 64,
+          "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+        },
+        {
+          "id": "jure",
+          "name": "Jure",
+          "score": 58,
+          "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+        },
+        {
+          "id": "kaja",
+          "name": "Kaja",
+          "score": 64,
+          "blocker": "ni v regiji 'kuhinja' za rutino 'work'"
+        }
+      ]
+    },
+    "compliance_history": [
+      {
+        "ts": "2026-08-14T16:58:09.085Z",
+        "day": 2017,
+        "total": 1,
+        "ready": 0,
+        "blocked_count": 1,
+        "avg_score": 70,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 70,
+            "blocker": "ni v regiji 'obcina' za rutino 'work'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T16:58:57.903Z",
+        "day": 2017,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 63,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 70,
+            "blocker": "ni v regiji 'obcina' za rutino 'work'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 70,
+            "blocker": "ni v regiji 'rudnik_sever' za rutino 'work'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T16:59:54.973Z",
+        "day": 2017,
+        "total": 10,
+        "ready": 1,
+        "blocked_count": 8,
+        "avg_score": 66,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 70,
+            "blocker": "ni v regiji 'obcina' za rutino 'work'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "ni v regiji 'kuhinja' za rutino 'work'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 52,
+            "blocker": "ni v regiji 'gozd_sever' za rutino 'work'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:00:55.160Z",
+        "day": 2017,
+        "total": 10,
+        "ready": 5,
+        "blocked_count": 5,
+        "avg_score": 71,
+        "blocked": [
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 58,
+            "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 58,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 58,
+            "blocker": "ni v regiji 'kuhinja' za rutino 'work'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 70,
+            "blocker": "manjka axe za delo 'woodcutter'"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 70,
+            "blocker": "manjka sword za delo 'guard'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:01:55.174Z",
+        "day": 2018,
+        "total": 10,
+        "ready": 6,
+        "blocked_count": 4,
+        "avg_score": 73,
+        "blocked": [
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 58,
+            "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 58,
+            "blocker": "ni v regiji 'kuhinja' za rutino 'work'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 70,
+            "blocker": "manjka axe za delo 'woodcutter'"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 70,
+            "blocker": "manjka sword za delo 'guard'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:02:49.540Z",
+        "day": 2018,
+        "total": 10,
+        "ready": 2,
+        "blocked_count": 8,
+        "avg_score": 65,
+        "blocked": [
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 52,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 52,
+            "blocker": "NPC ni online"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:03:45.734Z",
+        "day": 2018,
+        "total": 10,
+        "ready": 5,
+        "blocked_count": 5,
+        "avg_score": 69,
+        "blocked": [
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 64,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 58,
+            "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 58,
+            "blocker": "ni v regiji 'kuhinja' za rutino 'work'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 70,
+            "blocker": "manjka axe za delo 'woodcutter'"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 52,
+            "blocker": "ni v regiji 'patrulja_noc' za rutino 'work'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:04:46.304Z",
+        "day": 2018,
+        "total": 10,
+        "ready": 1,
+        "blocked_count": 8,
+        "avg_score": 60,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 64,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 64,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 58,
+            "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 58,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 58,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 58,
+            "blocker": "ni v regiji 'kuhinja' za rutino 'work'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 52,
+            "blocker": "ni v regiji 'rok_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:05:46.537Z",
+        "day": 2018,
+        "total": 10,
+        "ready": 1,
+        "blocked_count": 8,
+        "avg_score": 60,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 64,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 64,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 58,
+            "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 58,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 58,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 58,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 52,
+            "blocker": "ni v regiji 'rok_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:06:46.842Z",
+        "day": 2018,
+        "total": 10,
+        "ready": 1,
+        "blocked_count": 8,
+        "avg_score": 60,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 64,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 64,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 58,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 58,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 58,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 58,
+            "blocker": "ni v regiji 'kaja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 52,
+            "blocker": "ni v regiji 'rok_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-08-14T17:07:46.963Z",
+        "day": 2018,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 50,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 46,
+            "blocker": "ni v regiji 'lara_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 46,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 46,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 46,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 46,
+            "blocker": "ni v regiji 'kaja_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T12:56:57.331Z",
+        "day": 0,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 51,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 22,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 58,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 58,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 58,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 58,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 58,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 58,
+            "blocker": "NPC ni online"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T12:57:52.558Z",
+        "day": 0,
+        "total": 10,
+        "ready": 1,
+        "blocked_count": 8,
+        "avg_score": 57,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 34,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 70,
+            "blocker": "mestni prispevek zamujen (3 kosov v inventarju)"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 46,
+            "blocker": "ni v regiji 'lara_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 46,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 40,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "ni v regiji 'kaja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 70,
+            "blocker": "manjka axe za delo 'woodcutter'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T12:58:52.560Z",
+        "day": 1,
+        "total": 10,
+        "ready": 7,
+        "blocked_count": 3,
+        "avg_score": 77,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 70,
+            "blocker": "manjka sword za delo 'policeman'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 64,
+            "blocker": "manjka axe za delo 'woodcutter'"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 52,
+            "blocker": "ni v regiji 'tilen_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T12:59:52.559Z",
+        "day": 1,
+        "total": 10,
+        "ready": 2,
+        "blocked_count": 8,
+        "avg_score": 64,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'obcina' za rutino 'work'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 70,
+            "blocker": "ni v regiji 'rudnik_sever' za rutino 'work'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 46,
+            "blocker": "ni v regiji 'gozd_sever' za rutino 'work'"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 52,
+            "blocker": "ni v regiji 'tilen_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:00:52.569Z",
+        "day": 1,
+        "total": 10,
+        "ready": 2,
+        "blocked_count": 8,
+        "avg_score": 64,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'obcina' za rutino 'work'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 70,
+            "blocker": "ni v regiji 'rudnik_sever' za rutino 'work'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 46,
+            "blocker": "ni v regiji 'gozd_sever' za rutino 'work'"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 52,
+            "blocker": "ni v regiji 'tilen_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:20:58.491Z",
+        "day": 0,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 59,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:21:54.823Z",
+        "day": 0,
+        "total": 10,
+        "ready": 2,
+        "blocked_count": 8,
+        "avg_score": 63,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "rok",
+            "name": "Rok",
+            "score": 52,
+            "blocker": "ni v regiji 'rok_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "tilen",
+            "name": "Tilen",
+            "score": 52,
+            "blocker": "ni v regiji 'patrulja_noc' za rutino 'work'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:22:55.642Z",
+        "day": 0,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 59,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "ni v regiji 'lara_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "ni v regiji 'kaja_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:23:55.671Z",
+        "day": 0,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 59,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "ni v regiji 'lara_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "ni v regiji 'kaja_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:24:56.179Z",
+        "day": 0,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 59,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'blaz_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'nejc_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "ni v regiji 'lara_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'zan_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'maja_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'ema_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "ni v regiji 'jure_dom' za rutino 'sleep'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "ni v regiji 'kaja_dom' za rutino 'sleep'"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:33:11.872Z",
+        "day": 1,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 59,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'obcina' za rutino 'work'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'rudnik_sever' za rutino 'work'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 58,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 64,
+            "blocker": "NPC ni online"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "NPC ni online"
+          }
+        ]
+      },
+      {
+        "ts": "2026-09-02T13:55:07.425Z",
+        "day": 2,
+        "total": 10,
+        "ready": 0,
+        "blocked_count": 8,
+        "avg_score": 59,
+        "blocked": [
+          {
+            "id": "blaz",
+            "name": "Blaz",
+            "score": 52,
+            "blocker": "ni v regiji 'obcina' za rutino 'work'"
+          },
+          {
+            "id": "nejc",
+            "name": "Nejc",
+            "score": 52,
+            "blocker": "ni v regiji 'rudnik_sever' za rutino 'work'"
+          },
+          {
+            "id": "lara",
+            "name": "Lara",
+            "score": 64,
+            "blocker": "ni v regiji 'gostilna' za rutino 'work'"
+          },
+          {
+            "id": "zan",
+            "name": "Zan",
+            "score": 64,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "maja",
+            "name": "Maja",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "ema",
+            "name": "Ema",
+            "score": 64,
+            "blocker": "ni v regiji 'mestna_zaloga' za rutino 'work'"
+          },
+          {
+            "id": "jure",
+            "name": "Jure",
+            "score": 58,
+            "blocker": "ni v regiji 'gradbisce' za rutino 'work'"
+          },
+          {
+            "id": "kaja",
+            "name": "Kaja",
+            "score": 64,
+            "blocker": "ni v regiji 'kuhinja' za rutino 'work'"
+          }
+        ]
+      }
+    ]
+  }
+}

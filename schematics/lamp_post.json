@@ -1,0 +1,130 @@
+{
+  "_opis": "Kamnita ulicna svetilka.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "svetilka",
+    "luc"
+  ],
+  "size": [
+    3,
+    7,
+    3
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "polished_blackstone_brick_wall"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "polished_blackstone_brick_wall"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 1,
+      "name": "polished_blackstone_brick_wall"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 1,
+      "name": "lantern"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 1,
+      "name": "polished_blackstone_brick_wall"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 1,
+      "name": "lantern"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 1,
+      "name": "polished_blackstone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "z": 1,
+      "name": "polished_blackstone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "z": 1,
+      "name": "polished_blackstone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 1,
+      "name": "stone_brick_slab"
+    }
+  ]
+}

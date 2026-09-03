@@ -1,0 +1,262 @@
+{
+  "_opis": "Majhno kamnito znamenje z lucjo ob poti.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "znamenje",
+    "shrine"
+  ],
+  "size": [
+    5,
+    6,
+    5
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "mossy_cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 1,
+      "name": "stone_brick_wall"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 2,
+      "name": "chiseled_stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 3,
+      "name": "stone_brick_wall"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 1,
+      "name": "lantern"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 2,
+      "name": "chiseled_stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 2,
+      "name": "chiseled_stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "z": 2,
+      "name": "stone_brick_slab"
+    }
+  ]
+}

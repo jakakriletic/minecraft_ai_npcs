@@ -1,0 +1,154 @@
+{
+  "_opis": "Sodi ob gostilni ali skladiscu.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "sodi",
+    "barrels"
+  ],
+  "size": [
+    4,
+    4,
+    4
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "barrel"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "barrel"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "barrel"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "barrel"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "barrel"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 2,
+      "name": "barrel"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 2,
+      "name": "lantern"
+    }
+  ]
+}

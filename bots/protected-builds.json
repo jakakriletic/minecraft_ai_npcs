@@ -1,0 +1,815 @@
+{
+  "version": 1,
+  "builds": [
+    {
+      "id": "overworld:-1867,4,918:-1863,8,922",
+      "name": "koca",
+      "owner": "Blaz",
+      "dimension": "overworld",
+      "min": {
+        "x": -1867,
+        "y": 4,
+        "z": 918
+      },
+      "max": {
+        "x": -1863,
+        "y": 8,
+        "z": 922
+      },
+      "createdAt": "2026-06-14T22:28:49.984Z",
+      "updatedAt": "2026-06-14T22:28:49.984Z"
+    },
+    {
+      "id": "overworld:-1835,4,919:-1821,8,931",
+      "name": "village_market",
+      "owner": "Lara",
+      "dimension": "overworld",
+      "min": {
+        "x": -1835,
+        "y": 4,
+        "z": 919
+      },
+      "max": {
+        "x": -1821,
+        "y": 8,
+        "z": 931
+      },
+      "createdAt": "2026-06-14T22:29:45.988Z",
+      "updatedAt": "2026-06-14T22:29:45.988Z"
+    },
+    {
+      "id": "overworld:-1875,4,962:-1865,10,969",
+      "name": "modern_glass_house",
+      "owner": "Maja",
+      "dimension": "overworld",
+      "min": {
+        "x": -1875,
+        "y": 4,
+        "z": 962
+      },
+      "max": {
+        "x": -1865,
+        "y": 10,
+        "z": 969
+      },
+      "createdAt": "2026-06-14T22:29:51.589Z",
+      "updatedAt": "2026-06-14T22:29:51.589Z"
+    },
+    {
+      "id": "overworld:-1909,4,933:-1895,9,941",
+      "name": "british_station",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -1909,
+        "y": 4,
+        "z": 933
+      },
+      "max": {
+        "x": -1895,
+        "y": 9,
+        "z": 941
+      },
+      "createdAt": "2026-06-14T22:29:58.933Z",
+      "updatedAt": "2026-06-14T22:29:58.933Z"
+    },
+    {
+      "id": "overworld:-1910,4,904:-1898,12,913",
+      "name": "modern_villa",
+      "owner": "Blaz",
+      "dimension": "overworld",
+      "min": {
+        "x": -1910,
+        "y": 4,
+        "z": 904
+      },
+      "max": {
+        "x": -1898,
+        "y": 12,
+        "z": 913
+      },
+      "createdAt": "2026-06-14T22:30:00.514Z",
+      "updatedAt": "2026-06-14T22:30:00.514Z"
+    },
+    {
+      "id": "overworld:-70,66,56:-62,78,68",
+      "name": "medieval_chapel",
+      "owner": "Zan",
+      "dimension": "overworld",
+      "min": {
+        "x": -70,
+        "y": 66,
+        "z": 56
+      },
+      "max": {
+        "x": -62,
+        "y": 78,
+        "z": 68
+      },
+      "createdAt": "2026-06-15T07:48:41.491Z",
+      "updatedAt": "2026-06-15T07:48:41.491Z"
+    },
+    {
+      "id": "overworld:-29,67,46:-18,82,54",
+      "name": "medieval_windmill",
+      "owner": "Zan",
+      "dimension": "overworld",
+      "min": {
+        "x": -29,
+        "y": 67,
+        "z": 46
+      },
+      "max": {
+        "x": -18,
+        "y": 82,
+        "z": 54
+      },
+      "createdAt": "2026-06-15T08:34:05.958Z",
+      "updatedAt": "2026-06-15T08:34:05.958Z"
+    },
+    {
+      "id": "overworld:-42,67,52:-34,79,64",
+      "name": "medieval_chapel",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -42,
+        "y": 67,
+        "z": 52
+      },
+      "max": {
+        "x": -34,
+        "y": 79,
+        "z": 64
+      },
+      "createdAt": "2026-06-15T08:36:18.768Z",
+      "updatedAt": "2026-06-15T08:36:18.768Z"
+    },
+    {
+      "id": "overworld:-29,67,38:-25,71,42",
+      "name": "koca",
+      "owner": "Kaja",
+      "dimension": "overworld",
+      "min": {
+        "x": -29,
+        "y": 67,
+        "z": 38
+      },
+      "max": {
+        "x": -25,
+        "y": 71,
+        "z": 42
+      },
+      "createdAt": "2026-06-15T08:58:02.682Z",
+      "updatedAt": "2026-06-15T09:16:05.546Z"
+    },
+    {
+      "id": "overworld:-9,64,37:-3,69,43",
+      "name": "hisa",
+      "owner": "Tilen",
+      "dimension": "overworld",
+      "min": {
+        "x": -9,
+        "y": 64,
+        "z": 37
+      },
+      "max": {
+        "x": -3,
+        "y": 69,
+        "z": 43
+      },
+      "createdAt": "2026-06-15T13:00:21.647Z",
+      "updatedAt": "2026-06-15T13:00:21.647Z"
+    },
+    {
+      "id": "overworld:-20,64,66:-6,76,75",
+      "name": "medieval_barracks",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -20,
+        "y": 64,
+        "z": 66
+      },
+      "max": {
+        "x": -6,
+        "y": 76,
+        "z": 75
+      },
+      "createdAt": "2026-06-15T13:22:20.743Z",
+      "updatedAt": "2026-06-15T13:22:20.743Z"
+    },
+    {
+      "id": "overworld:-26,67,16:-18,77,23",
+      "name": "medieval_apothecary",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -26,
+        "y": 67,
+        "z": 16
+      },
+      "max": {
+        "x": -18,
+        "y": 77,
+        "z": 23
+      },
+      "createdAt": "2026-06-15T13:23:20.144Z",
+      "updatedAt": "2026-06-15T13:23:20.144Z"
+    },
+    {
+      "id": "overworld:-84,63,62:-74,75,72",
+      "name": "modern_office",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -84,
+        "y": 63,
+        "z": 62
+      },
+      "max": {
+        "x": -74,
+        "y": 75,
+        "z": 72
+      },
+      "createdAt": "2026-06-15T13:23:44.981Z",
+      "updatedAt": "2026-06-15T13:23:44.981Z"
+    },
+    {
+      "id": "overworld:-45,67,45:-41,71,49",
+      "name": "koca",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -45,
+        "y": 67,
+        "z": 45
+      },
+      "max": {
+        "x": -41,
+        "y": 71,
+        "z": 49
+      },
+      "createdAt": "2026-06-15T14:08:18.085Z",
+      "updatedAt": "2026-06-15T14:08:18.085Z"
+    },
+    {
+      "id": "overworld:-599,71,212:-581,77,217",
+      "name": "medieval_stone_bridge",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -599,
+        "y": 71,
+        "z": 212
+      },
+      "max": {
+        "x": -581,
+        "y": 77,
+        "z": 217
+      },
+      "createdAt": "2026-06-15T15:34:35.901Z",
+      "updatedAt": "2026-06-15T15:34:35.901Z"
+    },
+    {
+      "id": "overworld:-631,72,192:-623,82,199",
+      "name": "british_cottage",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -631,
+        "y": 72,
+        "z": 192
+      },
+      "max": {
+        "x": -623,
+        "y": 82,
+        "z": 199
+      },
+      "createdAt": "2026-06-15T15:34:51.470Z",
+      "updatedAt": "2026-06-15T15:34:51.470Z"
+    },
+    {
+      "id": "overworld:-633,72,203:-623,78,210",
+      "name": "modern_glass_house",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -633,
+        "y": 72,
+        "z": 203
+      },
+      "max": {
+        "x": -623,
+        "y": 78,
+        "z": 210
+      },
+      "createdAt": "2026-06-15T15:35:36.807Z",
+      "updatedAt": "2026-06-15T15:35:36.807Z"
+    },
+    {
+      "id": "overworld:-614,75,185:-610,79,189",
+      "name": "koca",
+      "owner": "Ema",
+      "dimension": "overworld",
+      "min": {
+        "x": -614,
+        "y": 75,
+        "z": 185
+      },
+      "max": {
+        "x": -610,
+        "y": 79,
+        "z": 189
+      },
+      "createdAt": "2026-06-15T16:05:24.169Z",
+      "updatedAt": "2026-06-15T16:05:24.169Z"
+    },
+    {
+      "id": "overworld:-647,72,225:-633,77,233",
+      "name": "british_station",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -647,
+        "y": 72,
+        "z": 225
+      },
+      "max": {
+        "x": -633,
+        "y": 77,
+        "z": 233
+      },
+      "createdAt": "2026-06-15T19:10:10.337Z",
+      "updatedAt": "2026-06-15T19:10:10.337Z"
+    },
+    {
+      "id": "overworld:-679,68,244:-661,74,249",
+      "name": "medieval_stone_bridge",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -679,
+        "y": 68,
+        "z": 244
+      },
+      "max": {
+        "x": -661,
+        "y": 74,
+        "z": 249
+      },
+      "createdAt": "2026-06-15T19:10:20.784Z",
+      "updatedAt": "2026-06-15T19:10:20.784Z"
+    },
+    {
+      "id": "overworld:-656,72,222:-654,80,224",
+      "name": "stolp",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -656,
+        "y": 72,
+        "z": 222
+      },
+      "max": {
+        "x": -654,
+        "y": 80,
+        "z": 224
+      },
+      "createdAt": "2026-06-15T19:10:32.522Z",
+      "updatedAt": "2026-06-15T19:10:32.522Z"
+    },
+    {
+      "id": "overworld:-667,72,200:-655,86,210",
+      "name": "town_hall",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -667,
+        "y": 72,
+        "z": 200
+      },
+      "max": {
+        "x": -655,
+        "y": 86,
+        "z": 210
+      },
+      "createdAt": "2026-06-15T19:10:41.303Z",
+      "updatedAt": "2026-06-15T19:10:41.303Z"
+    },
+    {
+      "id": "overworld:-612,69,222:-600,77,231",
+      "name": "modern_villa",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -612,
+        "y": 69,
+        "z": 222
+      },
+      "max": {
+        "x": -600,
+        "y": 77,
+        "z": 231
+      },
+      "createdAt": "2026-06-15T19:11:04.897Z",
+      "updatedAt": "2026-06-15T19:11:04.897Z"
+    },
+    {
+      "id": "overworld:-659,72,228:-651,82,235",
+      "name": "medieval_apothecary",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -659,
+        "y": 72,
+        "z": 228
+      },
+      "max": {
+        "x": -651,
+        "y": 82,
+        "z": 235
+      },
+      "createdAt": "2026-06-15T19:22:06.372Z",
+      "updatedAt": "2026-06-15T19:22:06.372Z"
+    },
+    {
+      "id": "overworld:-590,64,141:-582,75,149",
+      "name": "medieval_bakery",
+      "owner": "Rok",
+      "dimension": "overworld",
+      "min": {
+        "x": -590,
+        "y": 64,
+        "z": 141
+      },
+      "max": {
+        "x": -582,
+        "y": 75,
+        "z": 149
+      },
+      "createdAt": "2026-06-15T19:22:06.460Z",
+      "updatedAt": "2026-06-15T19:22:06.460Z"
+    },
+    {
+      "id": "overworld:-621,72,137:-611,78,144",
+      "name": "modern_glass_house",
+      "owner": "Maja",
+      "dimension": "overworld",
+      "min": {
+        "x": -621,
+        "y": 72,
+        "z": 137
+      },
+      "max": {
+        "x": -611,
+        "y": 78,
+        "z": 144
+      },
+      "createdAt": "2026-06-15T19:22:06.615Z",
+      "updatedAt": "2026-06-15T19:22:06.615Z"
+    },
+    {
+      "id": "overworld:-582,64,139:-575,74,148",
+      "name": "modern_townhouse",
+      "owner": "Tilen",
+      "dimension": "overworld",
+      "min": {
+        "x": -582,
+        "y": 64,
+        "z": 139
+      },
+      "max": {
+        "x": -575,
+        "y": 74,
+        "z": 148
+      },
+      "createdAt": "2026-06-15T19:22:06.752Z",
+      "updatedAt": "2026-06-15T19:22:06.752Z"
+    },
+    {
+      "id": "overworld:-628,72,140:-620,82,147",
+      "name": "british_cottage",
+      "owner": "Lara",
+      "dimension": "overworld",
+      "min": {
+        "x": -628,
+        "y": 72,
+        "z": 140
+      },
+      "max": {
+        "x": -620,
+        "y": 82,
+        "z": 147
+      },
+      "createdAt": "2026-06-15T19:22:07.014Z",
+      "updatedAt": "2026-06-15T19:22:07.014Z"
+    },
+    {
+      "id": "overworld:-623,70,218:-615,80,225",
+      "name": "medieval_apothecary",
+      "owner": "Zan",
+      "dimension": "overworld",
+      "min": {
+        "x": -623,
+        "y": 70,
+        "z": 218
+      },
+      "max": {
+        "x": -615,
+        "y": 80,
+        "z": 225
+      },
+      "createdAt": "2026-06-15T19:22:08.440Z",
+      "updatedAt": "2026-06-15T19:22:08.440Z"
+    },
+    {
+      "id": "overworld:-648,72,193:-642,83,199",
+      "name": "medieval_watchtower",
+      "owner": "Jure",
+      "dimension": "overworld",
+      "min": {
+        "x": -648,
+        "y": 72,
+        "z": 193
+      },
+      "max": {
+        "x": -642,
+        "y": 83,
+        "z": 199
+      },
+      "createdAt": "2026-06-15T19:28:14.747Z",
+      "updatedAt": "2026-06-15T19:28:14.747Z"
+    },
+    {
+      "id": "overworld:-649,72,192:-643,77,198",
+      "name": "hisa",
+      "owner": "Zan",
+      "dimension": "overworld",
+      "min": {
+        "x": -649,
+        "y": 72,
+        "z": 192
+      },
+      "max": {
+        "x": -643,
+        "y": 77,
+        "z": 198
+      },
+      "createdAt": "2026-06-15T19:28:15.572Z",
+      "updatedAt": "2026-06-15T19:28:15.572Z"
+    },
+    {
+      "id": "overworld:-645,74,133:-633,85,143",
+      "name": "medieval_stable",
+      "owner": "Lara",
+      "dimension": "overworld",
+      "min": {
+        "x": -645,
+        "y": 74,
+        "z": 133
+      },
+      "max": {
+        "x": -633,
+        "y": 85,
+        "z": 143
+      },
+      "createdAt": "2026-06-15T19:28:16.029Z",
+      "updatedAt": "2026-06-15T19:28:16.029Z"
+    },
+    {
+      "id": "overworld:-644,74,133:-632,86,143",
+      "name": "red_barn",
+      "owner": "Tilen",
+      "dimension": "overworld",
+      "min": {
+        "x": -644,
+        "y": 74,
+        "z": 133
+      },
+      "max": {
+        "x": -632,
+        "y": 86,
+        "z": 143
+      },
+      "createdAt": "2026-06-15T19:28:16.644Z",
+      "updatedAt": "2026-06-15T19:28:16.644Z"
+    },
+    {
+      "id": "overworld:-599,64,235:-585,68,247",
+      "name": "village_market",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -599,
+        "y": 64,
+        "z": 235
+      },
+      "max": {
+        "x": -585,
+        "y": 68,
+        "z": 247
+      },
+      "createdAt": "2026-06-15T19:28:16.821Z",
+      "updatedAt": "2026-06-15T19:28:16.821Z"
+    },
+    {
+      "id": "overworld:-649,74,132:-635,84,138",
+      "name": "medieval_gatehouse",
+      "owner": "Maja",
+      "dimension": "overworld",
+      "min": {
+        "x": -649,
+        "y": 74,
+        "z": 132
+      },
+      "max": {
+        "x": -635,
+        "y": 84,
+        "z": 138
+      },
+      "createdAt": "2026-06-15T19:28:19.415Z",
+      "updatedAt": "2026-06-15T19:28:19.415Z"
+    },
+    {
+      "id": "overworld:-101,64,331:-89,75,340",
+      "name": "warehouse",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -101,
+        "y": 64,
+        "z": 331
+      },
+      "max": {
+        "x": -89,
+        "y": 75,
+        "z": 340
+      },
+      "createdAt": "2026-06-15T20:09:40.165Z",
+      "updatedAt": "2026-06-15T20:09:40.165Z"
+    },
+    {
+      "id": "overworld:-81,64,308:-67,68,320",
+      "name": "village_market",
+      "owner": "Jure",
+      "dimension": "overworld",
+      "min": {
+        "x": -81,
+        "y": 64,
+        "z": 308
+      },
+      "max": {
+        "x": -67,
+        "y": 68,
+        "z": 320
+      },
+      "createdAt": "2026-06-16T17:35:59.898Z",
+      "updatedAt": "2026-06-16T17:35:59.898Z"
+    },
+    {
+      "id": "overworld:-80,64,354:-69,76,362",
+      "name": "british_pub",
+      "owner": "Ema",
+      "dimension": "overworld",
+      "min": {
+        "x": -80,
+        "y": 64,
+        "z": 354
+      },
+      "max": {
+        "x": -69,
+        "y": 76,
+        "z": 362
+      },
+      "createdAt": "2026-06-17T19:10:30.882Z",
+      "updatedAt": "2026-06-17T19:10:30.882Z"
+    },
+    {
+      "id": "overworld:-331,114,-526:-323,126,-514",
+      "name": "medieval_chapel",
+      "owner": "Jure",
+      "dimension": "overworld",
+      "min": {
+        "x": -331,
+        "y": 114,
+        "z": -526
+      },
+      "max": {
+        "x": -323,
+        "y": 126,
+        "z": -514
+      },
+      "createdAt": "2026-06-17T22:28:01.114Z",
+      "updatedAt": "2026-06-17T22:28:01.114Z"
+    },
+    {
+      "id": "overworld:-364,115,-512:-350,130,-501",
+      "name": "medieval_manor",
+      "owner": "Ema",
+      "dimension": "overworld",
+      "min": {
+        "x": -364,
+        "y": 115,
+        "z": -512
+      },
+      "max": {
+        "x": -350,
+        "y": 130,
+        "z": -501
+      },
+      "createdAt": "2026-06-22T18:08:42.695Z",
+      "updatedAt": "2026-06-22T18:08:42.695Z"
+    },
+    {
+      "id": "overworld:-322,115,-509:-318,119,-505",
+      "name": "koca",
+      "owner": "Rok",
+      "dimension": "overworld",
+      "min": {
+        "x": -322,
+        "y": 115,
+        "z": -509
+      },
+      "max": {
+        "x": -318,
+        "y": 119,
+        "z": -505
+      },
+      "createdAt": "2026-06-22T18:41:16.372Z",
+      "updatedAt": "2026-06-22T18:41:16.372Z"
+    },
+    {
+      "id": "overworld:-340,115,-488:-330,126,-480",
+      "name": "library",
+      "owner": "Jure",
+      "dimension": "overworld",
+      "min": {
+        "x": -340,
+        "y": 115,
+        "z": -488
+      },
+      "max": {
+        "x": -330,
+        "y": 126,
+        "z": -480
+      },
+      "createdAt": "2026-06-22T19:11:30.693Z",
+      "updatedAt": "2026-06-22T19:11:30.693Z"
+    },
+    {
+      "id": "overworld:-312,115,-508:-298,130,-497",
+      "name": "medieval_guildhall",
+      "owner": "Jure",
+      "dimension": "overworld",
+      "min": {
+        "x": -312,
+        "y": 115,
+        "z": -508
+      },
+      "max": {
+        "x": -298,
+        "y": 130,
+        "z": -497
+      },
+      "createdAt": "2026-06-22T19:37:56.556Z",
+      "updatedAt": "2026-06-22T19:37:56.556Z"
+    },
+    {
+      "id": "overworld:-363,115,-533:-351,129,-523",
+      "name": "town_hall",
+      "owner": "Ema",
+      "dimension": "overworld",
+      "min": {
+        "x": -363,
+        "y": 115,
+        "z": -533
+      },
+      "max": {
+        "x": -351,
+        "y": 129,
+        "z": -523
+      },
+      "createdAt": "2026-06-22T19:46:19.358Z",
+      "updatedAt": "2026-06-22T19:46:19.358Z"
+    },
+    {
+      "id": "overworld:-359,129,-478:-355,133,-474",
+      "name": "koca",
+      "owner": "Nejc",
+      "dimension": "overworld",
+      "min": {
+        "x": -359,
+        "y": 129,
+        "z": -478
+      },
+      "max": {
+        "x": -355,
+        "y": 133,
+        "z": -474
+      },
+      "createdAt": "2026-06-30T15:29:22.154Z",
+      "updatedAt": "2026-06-30T15:29:22.154Z"
+    }
+  ]
+}

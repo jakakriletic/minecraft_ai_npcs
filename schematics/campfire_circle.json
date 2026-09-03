@@ -1,0 +1,460 @@
+{
+  "_opis": "Krozisce ob tabornem ognju s hlodi za sedenje.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "ogenj",
+    "campfire"
+  ],
+  "size": [
+    7,
+    3,
+    7
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_log"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_log"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_log"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "cobblestone"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 2,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 2,
+      "name": "oak_log"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 3,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 3,
+      "name": "campfire"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 3,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 3,
+      "name": "oak_log"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 4,
+      "name": "cobblestone"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 4,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 4,
+      "name": "oak_log"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_log"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_log"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_log"
+    }
+  ]
+}

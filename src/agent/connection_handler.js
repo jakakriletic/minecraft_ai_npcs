@@ -2,6 +2,11 @@ import { sendOutputToServer } from './mindserver_proxy.js';
 
 // Definitions of error types, keywords, and full human-readable messages.
 const ERROR_DEFINITIONS = {
+    'authentication': {
+        keywords: ['unverified_username', 'failed to verify username', 'invalid session'],
+        msg: 'Authentication Failed: The server requires a verified account, but the bot is using offline auth or an invalid session.',
+        isFatal: true
+    },
     'name_conflict': {
         keywords: ['name_taken', 'duplicate_login', 'already connected', 'already logged in', 'username is already'],
         msg: 'Name Conflict: The name is already in use or you are already logged in.',
@@ -16,6 +21,11 @@ const ERROR_DEFINITIONS = {
         keywords: ['server is full', 'full server'],
         msg: 'Connection Failed: The server is full.',
         isFatal: false
+    },
+    'mod_rejection': {
+        keywords: ['server mod rejections', 'mod is not found on client', 'requires version'],
+        msg: 'Server Mod Rejection: this server requires client mods that the Mineflayer bot does not provide.',
+        isFatal: true
     },
     'version_mismatch': {
         keywords: ['outdated', 'version', 'client'],
@@ -32,9 +42,14 @@ const ERROR_DEFINITIONS = {
         msg: 'Network Error: Connection timed out or was lost.',
         isFatal: false
     },
+    'spam': {
+        keywords: ['spam'],
+        msg: 'Kicked for spamming. The agent will restart without stopping the rest of the kingdom.',
+        isFatal: false
+    },
     'behavior': {
-        keywords: ['flying', 'spam', 'speed'],
-        msg: 'Kicked: Removed from server due to flying, spamming, or invalid movement.',
+        keywords: ['flying', 'speed'],
+        msg: 'Kicked: Removed from server due to flying or invalid movement.',
         isFatal: true
     }
 };
@@ -43,7 +58,7 @@ const ERROR_DEFINITIONS = {
 export const log = (agentName, msg) => {
     // Use console.error for visibility in terminal
     console.error(msg);
-    try { sendOutputToServer(agentName || 'system', msg); } catch (_) {}
+    try { sendOutputToServer(agentName || 'system', msg); } catch (_) { /* server may be offline */ }
 };
 
 // Analyzes the kick reason and returns a full, human-readable sentence.
@@ -65,14 +80,14 @@ export function parseKickReason(reason) {
     try {
         const obj = typeof reason === 'string' ? JSON.parse(reason) : reason;
         fallback = obj.translate || obj.text || (obj.value?.translate) || raw;
-    } catch (_) {}
+    } catch (_) { /* reason was plain text, not JSON */ }
     
     return { type: 'other', msg: `Disconnected: ${fallback}`, isFatal: true };
 }
 
 // Centralized handler for disconnections.
 export function handleDisconnection(agentName, reason) {
-    const { type, msg } = parseKickReason(reason);
+    const { type, msg, isFatal } = parseKickReason(reason);
     
     // Format: [LoginGuard] Error Message
     const finalMsg = `[LoginGuard] ${msg}`;
@@ -80,7 +95,7 @@ export function handleDisconnection(agentName, reason) {
     // Only call log once (it handles console printing)
     log(agentName, finalMsg);
     
-    return { type, msg: finalMsg };
+    return { type, msg: finalMsg, isFatal };
 }
 
 // Validates name format.

@@ -1,0 +1,4217 @@
+{
+  "version": 1,
+  "relationships": {
+    "Blaz=>Nejc": {
+      "from": "Blaz",
+      "to": "Nejc",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0.45000000000000023,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.015,
+      "debt": 0.03,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:15.453Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:30.678Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:22.575Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:10.053Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:49.519Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:24.596Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:04.814Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:52.356Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:12.308Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:51.655Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:02.218Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:04:21.462Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:15.453Z"
+    },
+    "Tilen=>Blaz": {
+      "from": "Tilen",
+      "to": "Blaz",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.05,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:30.547Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:17:41.026Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:15:27.205Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:08.126Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:07.346Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:30.547Z"
+    },
+    "Blaz=>Zan": {
+      "from": "Blaz",
+      "to": "Zan",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0.3300000000000001,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:17.857Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:17.755Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:10.474Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:40.602Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:23.117Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:28.553Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:02.562Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:44.555Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:02.410Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:41.217Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:12.251Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:30.314Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:17.857Z"
+    },
+    "Maja=>Blaz": {
+      "from": "Maja",
+      "to": "Blaz",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 1,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:35.545Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:18.095Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:54.903Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:18.004Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:59.810Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:50.440Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:03.096Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:11.955Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:23.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:22.417Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:11.955Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:50.346Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:35.545Z"
+    },
+    "Ema=>Blaz": {
+      "from": "Ema",
+      "to": "Blaz",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.05,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:20.303Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:17:37.860Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:15:25.482Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:17.229Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:16.970Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:20.303Z"
+    },
+    "Jure=>Blaz": {
+      "from": "Jure",
+      "to": "Blaz",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.060000000000000005,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:20.693Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:18:40.558Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:16:15.515Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:03.037Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:58.805Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:17.574Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:20.693Z"
+    },
+    "Kaja=>Blaz": {
+      "from": "Kaja",
+      "to": "Blaz",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.07,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:14:11.204Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:24.622Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:18:40.054Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:16:13.058Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:04.710Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:59.331Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:18.073Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:14:11.204Z"
+    },
+    "Tilen=>Ema": {
+      "from": "Tilen",
+      "to": "Ema",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:22:19.102Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:39.396Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:22:19.102Z"
+    },
+    "Blaz=>Ema": {
+      "from": "Blaz",
+      "to": "Ema",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:22:14.828Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:43.997Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:22:14.828Z"
+    },
+    "Maja=>Lara": {
+      "from": "Maja",
+      "to": "Lara",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 1,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:40.220Z",
+          "reason": "perceive: skupno delo: food",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:20.207Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:58.056Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:49.903Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:30.345Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:35.957Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:57.220Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:59.955Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:35.955Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:11.505Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:59.955Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:50.856Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:40.220Z"
+    },
+    "Ema=>Lara": {
+      "from": "Ema",
+      "to": "Lara",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:12:37.308Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:11:49.413Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:12:37.308Z"
+    },
+    "Tilen=>Zan": {
+      "from": "Tilen",
+      "to": "Zan",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.04,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:45.786Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:18:37.453Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:16:35.375Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:12:35.497Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:45.786Z"
+    },
+    "Maja=>Zan": {
+      "from": "Maja",
+      "to": "Zan",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 1,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:38.030Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:37.799Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:23.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:16.604Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:08.555Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:47.955Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:24.550Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:24.253Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:23.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:58.849Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:39.940Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:35.904Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:38.030Z"
+    },
+    "Ema=>Zan": {
+      "from": "Ema",
+      "to": "Zan",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.04,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:45.615Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:18:41.940Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:16:33.672Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:12:37.520Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:45.615Z"
+    },
+    "Jure=>Zan": {
+      "from": "Jure",
+      "to": "Zan",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:45.952Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:12:38.883Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:45.952Z"
+    },
+    "Kaja=>Zan": {
+      "from": "Kaja",
+      "to": "Zan",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:39.143Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:12:39.455Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:39.143Z"
+    },
+    "Jure=>Tilen": {
+      "from": "Jure",
+      "to": "Tilen",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.03,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:18:07.681Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:15:43.447Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:30.962Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:18:07.682Z"
+    },
+    "Kaja=>Tilen": {
+      "from": "Kaja",
+      "to": "Tilen",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.03,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:18:05.774Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:15:42.717Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:32.939Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:18:05.774Z"
+    },
+    "Blaz=>Tilen": {
+      "from": "Blaz",
+      "to": "Tilen",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:18:06.013Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:44.429Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:18:06.013Z"
+    },
+    "Tilen=>Kaja": {
+      "from": "Tilen",
+      "to": "Kaja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.03,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:13.733Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-07-01T14:10:58.540Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:48.217Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:13.733Z"
+    },
+    "Maja=>Kaja": {
+      "from": "Maja",
+      "to": "Kaja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:14.123Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:49.264Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:14.123Z"
+    },
+    "Ema=>Kaja": {
+      "from": "Ema",
+      "to": "Kaja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.03,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:13.604Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:17:05.714Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:13:49.282Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:13.604Z"
+    },
+    "Blaz=>Maja": {
+      "from": "Blaz",
+      "to": "Maja",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0.3100000000000001,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:35.545Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:18.095Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:54.903Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:18.004Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:50.440Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:03.096Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:11.955Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:23.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:22.417Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:11.955Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:50.346Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:47.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:35.545Z"
+    },
+    "Tilen=>Maja": {
+      "from": "Tilen",
+      "to": "Maja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:19:41.763Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:20.278Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:19:41.763Z"
+    },
+    "Ema=>Maja": {
+      "from": "Ema",
+      "to": "Maja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.03,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:52.352Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:46.319Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:21.328Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:52.352Z"
+    },
+    "Maja=>Nejc": {
+      "from": "Maja",
+      "to": "Nejc",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 1,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:38.114Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:32.516Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:52.299Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:49.054Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:30.643Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:24.852Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:02.350Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:59.955Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:28.603Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:40.355Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:32.545Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:19.907Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:38.114Z"
+    },
+    "Kaja=>Nejc": {
+      "from": "Kaja",
+      "to": "Nejc",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.04,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:10:52.887Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:11.623Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:16:46.793Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:39.111Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:10:52.887Z"
+    },
+    "Jure=>Nejc": {
+      "from": "Jure",
+      "to": "Nejc",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.04,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:10:49.072Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:11.793Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:16:47.680Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:39.825Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:10:49.072Z"
+    },
+    "Ema=>Nejc": {
+      "from": "Ema",
+      "to": "Nejc",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.03,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:10:48.681Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:14.012Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:53.404Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:10:48.681Z"
+    },
+    "Tilen=>Nejc": {
+      "from": "Tilen",
+      "to": "Nejc",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:19:09.526Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:14:55.466Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:19:09.526Z"
+    },
+    "Kaja=>Lara": {
+      "from": "Kaja",
+      "to": "Lara",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:17:18.505Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:15:10.639Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:17:18.505Z"
+    },
+    "Jure=>Lara": {
+      "from": "Jure",
+      "to": "Lara",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.03,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:12:37.609Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:17:19.613Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:15:11.315Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:12:37.609Z"
+    },
+    "Ema=>Rok": {
+      "from": "Ema",
+      "to": "Rok",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:16:01.562Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:16:01.562Z"
+    },
+    "Tilen=>Rok": {
+      "from": "Tilen",
+      "to": "Rok",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:16:03.313Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:16:03.313Z"
+    },
+    "Blaz=>Rok": {
+      "from": "Blaz",
+      "to": "Rok",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:15.017Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:16:05.001Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:15.017Z"
+    },
+    "Tilen=>Lara": {
+      "from": "Tilen",
+      "to": "Lara",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:12:38.228Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:17:09.231Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:12:38.228Z"
+    },
+    "Blaz=>Lara": {
+      "from": "Blaz",
+      "to": "Lara",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0.36000000000000015,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:11.858Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:46.391Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:42.656Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:42.446Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:36.495Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:39.698Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:38.355Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:37.495Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:32.039Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:10.355Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:51.496Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:26.856Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:11.858Z"
+    },
+    "Ema=>Tilen": {
+      "from": "Ema",
+      "to": "Tilen",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:18:09.895Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:18:09.895Z"
+    },
+    "Jure=>jakakriletic": {
+      "from": "Jure",
+      "to": "jakakriletic",
+      "trust": 0.545,
+      "respect": 0.515,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.03,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:37.152Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:52.122Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:37.376Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:37.152Z"
+    },
+    "Kaja=>Maja": {
+      "from": "Kaja",
+      "to": "Maja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:19:44.149Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:19:44.149Z"
+    },
+    "Blaz=>jakakriletic": {
+      "from": "Blaz",
+      "to": "jakakriletic",
+      "trust": 0.6350000000000001,
+      "respect": 0.545,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.09,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-08-31T10:34:53.216Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-31T10:34:37.901Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-31T09:53:58.244Z",
+          "reason": "player command !getIron",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T15:53:57.491Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:28:39.159Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:28:25.775Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:37.300Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:31.467Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:51.939Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-08-31T10:34:53.216Z"
+    },
+    "Nejc=>jakakriletic": {
+      "from": "Nejc",
+      "to": "jakakriletic",
+      "trust": 0.6500000000000001,
+      "respect": 0.56,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.225,
+      "fear": 0,
+      "dependency": 0.08,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-08-31T09:53:57.996Z",
+          "reason": "player command !getIron",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-30T08:55:28.292Z",
+          "reason": "player command !follow",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-30T08:55:07.734Z",
+          "reason": "player command !follow",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-06T15:23:12.042Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-02T15:52:17.174Z",
+          "reason": "player praise",
+          "deltas": {
+            "trust": 0.03,
+            "respect": 0.02,
+            "friendship": 0.025
+          }
+        },
+        {
+          "at": "2026-07-01T14:28:39.254Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:37.338Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:31.671Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:51.957Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-08-31T09:53:57.996Z"
+    },
+    "Tilen=>jakakriletic": {
+      "from": "Tilen",
+      "to": "jakakriletic",
+      "trust": 0.545,
+      "respect": 0.515,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.03,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:40.678Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:31.686Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:52.086Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:40.678Z"
+    },
+    "Lara=>jakakriletic": {
+      "from": "Lara",
+      "to": "jakakriletic",
+      "trust": 0.6050000000000001,
+      "respect": 0.535,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.07,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-08-31T09:53:58.071Z",
+          "reason": "player command !getIron",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-30T08:55:28.442Z",
+          "reason": "player command !follow",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-30T08:55:07.809Z",
+          "reason": "player command !follow",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-06T16:06:01.451Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:36.912Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:31.593Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:52.102Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-08-31T09:53:58.071Z"
+    },
+    "Maja=>jakakriletic": {
+      "from": "Maja",
+      "to": "jakakriletic",
+      "trust": 0.6050000000000001,
+      "respect": 0.535,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.07,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-08-31T10:34:51.339Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-31T09:53:58.008Z",
+          "reason": "player command !getIron",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-06T15:23:11.853Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:28:39.417Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:28:25.562Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:31.343Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:52.134Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-08-31T10:34:51.339Z"
+    },
+    "Kaja=>jakakriletic": {
+      "from": "Kaja",
+      "to": "jakakriletic",
+      "trust": 0.545,
+      "respect": 0.515,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.03,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:37.105Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:31.357Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:52.151Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:37.105Z"
+    },
+    "Zan=>jakakriletic": {
+      "from": "Zan",
+      "to": "jakakriletic",
+      "trust": 0.7100000000000002,
+      "respect": 0.5700000000000001,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.13999999999999999,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-01T20:55:12.310Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-31T10:34:51.166Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-31T09:53:57.960Z",
+          "reason": "player command !getIron",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-30T22:22:45.637Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-30T08:55:28.318Z",
+          "reason": "player command !follow",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-30T08:55:07.693Z",
+          "reason": "player command !follow",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-08-26T20:33:35.118Z",
+          "reason": "player command !viewChest",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-06T15:23:11.965Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-03T14:31:27.865Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T15:53:57.667Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:28:39.112Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-07-01T14:11:37.160Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-09-01T20:55:12.310Z"
+    },
+    "Rok=>jakakriletic": {
+      "from": "Rok",
+      "to": "jakakriletic",
+      "trust": 0.53,
+      "respect": 0.51,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.02,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:36.995Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:52.213Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:36.995Z"
+    },
+    "Ema=>jakakriletic": {
+      "from": "Ema",
+      "to": "jakakriletic",
+      "trust": 0.53,
+      "respect": 0.51,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0.02,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:37.222Z",
+          "reason": "player command !setHome",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        },
+        {
+          "at": "2026-06-30T16:19:52.354Z",
+          "reason": "player command !storage",
+          "deltas": {
+            "trust": 0.015,
+            "dependency": 0.01,
+            "respect": 0.005
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:37.222Z"
+    },
+    "Tilen=>Jure": {
+      "from": "Tilen",
+      "to": "Jure",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:20:15.112Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:20:15.112Z"
+    },
+    "Blaz=>Jure": {
+      "from": "Blaz",
+      "to": "Jure",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:20:17.193Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:20:17.193Z"
+    },
+    "Kaja=>Jure": {
+      "from": "Kaja",
+      "to": "Jure",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.02,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:56.656Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        },
+        {
+          "at": "2026-06-30T16:20:18.785Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:56.656Z"
+    },
+    "Ema=>Jure": {
+      "from": "Ema",
+      "to": "Jure",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:20:21.313Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:20:21.313Z"
+    },
+    "Maja=>Jure": {
+      "from": "Maja",
+      "to": "Jure",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:21:19.820Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:21:19.820Z"
+    },
+    "Kaja=>Ema": {
+      "from": "Kaja",
+      "to": "Ema",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:22:15.920Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:22:15.920Z"
+    },
+    "Maja=>Ema": {
+      "from": "Maja",
+      "to": "Ema",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:22:15.997Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:22:15.997Z"
+    },
+    "Jure=>Ema": {
+      "from": "Jure",
+      "to": "Ema",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-06-30T16:22:16.637Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-06-30T16:22:16.637Z"
+    },
+    "Jure=>Maja": {
+      "from": "Jure",
+      "to": "Maja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:11:52.755Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:11:52.755Z"
+    },
+    "Jure=>Kaja": {
+      "from": "Jure",
+      "to": "Kaja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:14.017Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:14.017Z"
+    },
+    "Blaz=>Kaja": {
+      "from": "Blaz",
+      "to": "Kaja",
+      "trust": 0.5,
+      "respect": 0.5,
+      "annoyance": 0.01,
+      "rivalry": 0,
+      "friendship": 0.2,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-07-01T14:13:15.747Z",
+          "reason": "perceive: počiva, ko primanjkuje zalog",
+          "deltas": {
+            "annoyance": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-07-01T14:13:15.747Z"
+    },
+    "Lara=>Maja": {
+      "from": "Lara",
+      "to": "Maja",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.015,
+      "debt": 0.03,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:40.220Z",
+          "reason": "perceive: skupno delo: food",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:20.207Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:58.056Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:49.903Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:30.345Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:35.957Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:57.220Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:59.955Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:11.505Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:59.955Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:50.856Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:19.952Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:40.220Z"
+    },
+    "Zan=>Maja": {
+      "from": "Zan",
+      "to": "Maja",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:38.030Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:37.799Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:23.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:16.604Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:08.555Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:47.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:24.550Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:24.253Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:23.956Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:58.849Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:39.940Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:35.904Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:38.030Z"
+    },
+    "Nejc=>Maja": {
+      "from": "Nejc",
+      "to": "Maja",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.015,
+      "debt": 0.03,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:38.114Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:32.516Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:52.299Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:49.054Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:30.643Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:24.852Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:02.350Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:59.955Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:28.603Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:40.355Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:32.545Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:19.907Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:38.114Z"
+    },
+    "Zan=>Blaz": {
+      "from": "Zan",
+      "to": "Blaz",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.03,
+      "debt": 0.06,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:17.857Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:17.755Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:10.474Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:40.602Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:23.117Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:28.553Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:02.562Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:44.555Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:02.410Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:41.217Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:12.251Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:30.314Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:17.857Z"
+    },
+    "Lara=>Blaz": {
+      "from": "Lara",
+      "to": "Blaz",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.045,
+      "debt": 0.09,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:11.858Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:46.391Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:42.656Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:42.446Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:36.495Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:39.699Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:38.355Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:37.495Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:32.039Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:10.355Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:51.496Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:26.856Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:11.858Z"
+    },
+    "Nejc=>Blaz": {
+      "from": "Nejc",
+      "to": "Blaz",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.015,
+      "debt": 0.03,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:15.453Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:30.678Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:22.575Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:10.053Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:49.519Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:24.596Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:04.814Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:52.356Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:12.308Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:51.655Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:02.218Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:04:21.462Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:15.453Z"
+    },
+    "Zan=>Nejc": {
+      "from": "Zan",
+      "to": "Nejc",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.015,
+      "debt": 0.03,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:38.239Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:12.295Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:57.914Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:56.599Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:44.604Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:48.253Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:52.299Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:31.273Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:17.843Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:03:57.217Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:03:25.667Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:03:05.653Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:38.239Z"
+    },
+    "Nejc=>Zan": {
+      "from": "Nejc",
+      "to": "Zan",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.015,
+      "debt": 0.03,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:08:38.239Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:08:12.295Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:57.914Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:56.599Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:44.604Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:48.253Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:52.299Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:31.273Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:17.843Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:03:57.217Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:03:25.667Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:03:05.653Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:08:38.239Z"
+    },
+    "Lara=>Zan": {
+      "from": "Lara",
+      "to": "Zan",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:57.814Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:59.415Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:06.068Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:16.305Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:00.547Z",
+          "reason": "perceive: skupno delo: protect",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:30.857Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:00.246Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:40.248Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:46.451Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:18.529Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:58.373Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:24.753Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:57.814Z"
+    },
+    "Zan=>Lara": {
+      "from": "Zan",
+      "to": "Lara",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.015,
+      "debt": 0.03,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:57.814Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:06:59.415Z",
+          "reason": "short conversation",
+          "deltas": {
+            "friendship": 0.02,
+            "trust": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:06.068Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:16.305Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:00.547Z",
+          "reason": "perceive: skupno delo: protect",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:30.857Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:00.246Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:40.248Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:46.451Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:18.529Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:58.373Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:05:24.753Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:57.814Z"
+    },
+    "Lara=>Nejc": {
+      "from": "Lara",
+      "to": "Nejc",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0.03,
+      "debt": 0.06,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:32.368Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:09.119Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:39.296Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:25.153Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:08.604Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:52.303Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:16.356Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:10.853Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:32.346Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:11.951Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:05.351Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:04:25.795Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:32.368Z"
+    },
+    "Nejc=>Lara": {
+      "from": "Nejc",
+      "to": "Lara",
+      "trust": 1,
+      "respect": 1,
+      "annoyance": 0,
+      "rivalry": 0,
+      "friendship": 1,
+      "fear": 0,
+      "dependency": 0,
+      "debt": 0,
+      "recent_interactions": [
+        {
+          "at": "2026-09-02T14:07:32.368Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-02T14:07:09.119Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:12:39.296Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:11:25.153Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:10:08.604Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:09:52.303Z",
+          "reason": "perceive: delala sva v blizini",
+          "deltas": {
+            "trust": 0.006,
+            "friendship": 0.01
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:16.356Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:08:10.853Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:07:32.346Z",
+          "reason": "perceive: opazil poskodovanega clana",
+          "deltas": {
+            "trust": 0.01,
+            "friendship": 0.014
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:11.951Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:06:05.351Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        },
+        {
+          "at": "2026-09-01T21:04:25.795Z",
+          "reason": "perceive: skupno delo: work",
+          "deltas": {
+            "respect": 0.008,
+            "friendship": 0.008
+          }
+        }
+      ],
+      "updatedAt": "2026-09-02T14:07:32.368Z"
+    }
+  },
+  "updatedAt": "2026-09-02T14:08:40.220Z"
+}

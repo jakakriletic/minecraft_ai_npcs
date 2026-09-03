@@ -1,0 +1,772 @@
+{
+  "_opis": "Kompakten vaski vodnjak s streho in kamnitim robom.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "vodnjak",
+    "well"
+  ],
+  "size": [
+    7,
+    8,
+    7
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "cobblestone"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "cobblestone"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "cobblestone"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 5,
+      "name": "cobblestone"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 2,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 3,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 4,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 4,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 5,
+      "name": "cobblestone_wall"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 3,
+      "name": "lantern"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 3,
+      "name": "chain"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "z": 1,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "z": 5,
+      "name": "oak_log"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 4,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 4,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 4,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "z": 4,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "z": 4,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 5,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 5,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 5,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "z": 5,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "z": 5,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "z": 4,
+      "name": "dark_oak_planks"
+    }
+  ]
+}

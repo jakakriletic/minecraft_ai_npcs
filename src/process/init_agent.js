@@ -1,3 +1,4 @@
+import '../utils/crashlog.js'; // DIAGNOSTIC: mirror console.warn/error + crashes to bots/<name>/console.log
 import { Agent } from '../agent/agent.js';
 import { serverProxy } from '../agent/mindserver_proxy.js';
 import yargs from 'yargs';
@@ -37,7 +38,7 @@ const argv = yargs(args)
     })
     .argv;
 
-(async () => {
+void (async () => {
     try {
         console.log('Connecting to MindServer');
         await serverProxy.connect(argv.name, argv.port);

@@ -6,6 +6,7 @@ import { start } from 'repl';
 const bot = mineflayer.createBot({
     host: 'localhost', // Replace with your server IP or hostname
     port: 55916,       // Replace with your server port
+    version: '1.20.1',
     username: 'andy', // Replace with your bot's username
     // password: 'your_bot_password' // Only if the server has online-mode=true
 });
@@ -44,12 +45,11 @@ bot.on('spawn', async () => {
         const task_collection = {}
         task_collection[task_name] = task;
 
-        fs.writeFileSync(taskFilePath, JSON.stringify(task_collection, null, 2), (err) => {
-            if (err) {
-                console.error('Error writing task to file:', err);
-            } else {
-                console.log('Task dumped to file successfully.');
-            }
-        });
+        try {
+            fs.writeFileSync(taskFilePath, JSON.stringify(task_collection, null, 2));
+            console.log('Task dumped to file successfully.');
+        } catch (err) {
+            console.error('Error writing task to file:', err);
+        }
     }, 5000); // Delay of 5 seconds (5000 milliseconds)
 });

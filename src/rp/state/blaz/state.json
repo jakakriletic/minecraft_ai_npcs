@@ -1,0 +1,584 @@
+{
+  "odnosi_igralci": {
+    "zombie": {
+      "zaupanje": 0,
+      "mnenje": ""
+    },
+    "spider": {
+      "zaupanje": 20,
+      "mnenje": ""
+    }
+  },
+  "odnosi_npcji": {
+    "kaja": {
+      "zaupanje": 52,
+      "mnenje": ""
+    },
+    "nejc": {
+      "zaupanje": 39,
+      "mnenje": ""
+    },
+    "lara": {
+      "zaupanje": 36,
+      "mnenje": ""
+    },
+    "zan": {
+      "zaupanje": 48,
+      "mnenje": ""
+    },
+    "maja": {
+      "zaupanje": 49,
+      "mnenje": ""
+    },
+    "ema": {
+      "zaupanje": 48,
+      "mnenje": ""
+    },
+    "jure": {
+      "zaupanje": 48,
+      "mnenje": ""
+    },
+    "rok": {
+      "zaupanje": 48,
+      "mnenje": ""
+    },
+    "Nejc": {
+      "zaupanje": 30,
+      "mnenje": ""
+    },
+    "Lara": {
+      "zaupanje": 20,
+      "mnenje": ""
+    }
+  },
+  "znanje_o_svetu": {
+    "slisal": [
+      "Mestna navada: V tem mestu se javna zaloga ne prazni na skrivaj.",
+      "Mestna navada: Pocasi, saj ni panike.",
+      "od Kaja slišal: Mestna navada: V tem mestu se javna zaloga ne prazni na skrivaj.",
+      "Mestna navada: Ko je delo koncano, se novice slisijo na trgu ali v gostilni.",
+      "od Lara slišal: Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "od Nejc slišal: Mestna navada: Pocasi, saj ni panike.",
+      "od Lara slišal: zombie je udaril Lara",
+      "od Maja slišal: Mestna navada: Ko je delo koncano, se novice slisijo na trgu ali v gostilni."
+    ]
+  },
+  "potrebe": {
+    "denar": 0,
+    "sitost": 95,
+    "druzabnost": 87,
+    "utrujenost": 8.5
+  },
+  "lastnosti": {
+    "postenost": 72,
+    "pogum": 59,
+    "zamerljivost": 48,
+    "nagnjenost_kriminal": 2,
+    "socialnost": 60,
+    "raziskovalnost": 46
+  },
+  "razvade": {
+    "zasvojenost": 0,
+    "zadnja_uporaba": null
+  },
+  "mood_danes": "odločnomir",
+  "samopodoba": "V tem mestu sem se danes znova izkazal kot praktičen varuh miru—še bolj natančno sem pazil, da javna zaloga ostane urejena in da se red drži tudi, ko se pojavi nevarnost. Ker sem sproti uredil nered in ostal miren pri preverjanju pravil, se mi zdi, d",
+  "spomini_pogovorov": {},
+  "dnevnik": [
+    {
+      "ts": "2026-08-14T17:04:39.240Z",
+      "zapis": "Danes sem med opravljanjem nalog mestnega oskrbništva moral hitro reagirati, ko se je pojavila pošast—zombi me je napadel, a sem se obranil in zavaroval ljudi. Po bitju sem preveril javno zalogo in red, ker mir med sosedi ni nekaj, kar se zgodi samo od sebe. Zdaj se počutim zbranega in bolj prepriča"
+    },
+    {
+      "ts": "2026-09-02T12:57:09.856Z",
+      "zapis": "Danes sem moral še posebej budno paziti: pošast in zombie sta se spustila na ulice, in večkrat sem se znašel med njimi—več udarcev je bilo, na koncu pa sem ljudi spravil v red in jih držal stran od javne zaloge. Kaja je bila zadeta, zato sem jo po delu našel mirno, a sem takoj videl, koliko je še na"
+    },
+    {
+      "ts": "2026-09-02T13:01:47.035Z",
+      "zapis": "Danes sem zopet varoval mir med sosedi in poskrbel, da se javna zaloga ne prazni na skrivaj—hitro sem opazil, kje je nastal nered, in ga spravil nazaj v red. Po opravkih sem se še slišal z Lar‍o in preveril, ali zakoni res služijo mestu, ne le pravilom. Čutim se odločeno miren: utrujen sem, a dobro "
+    },
+    {
+      "ts": "2026-09-02T13:21:01.143Z",
+      "zapis": "Danes sem ponovno pazil, da se javna zaloga ne prazni na skrivaj in da se med sosedi ohrani mir—opazil sem nekaj neurejenega ritma pri skladišču, pa sem to hitro poravnal. Po delu sem ostal miren, pozdravil ljudi in se pogovarjal, brez hitenja, ker se novice tako najbolje prijavijo na trg ali v gost"
+    },
+    {
+      "ts": "2026-09-02T13:31:22.807Z",
+      "zapis": "Danes sem kot mestni oskrbnik ponovno postavil stvari na svoje mesto: pri usklajenem obrambnem nastopu pred zombiji sem stal mirno, varoval ljudi in javno zalogo, ter sproti popravil, kar je bilo zanemarjeno. Vmes je zombie udaril Laro—Lara je kljub temu ostala pri sebi, jaz pa sem ji namenil nekaj "
+    },
+    {
+      "ts": "2026-09-02T13:40:59.521Z",
+      "zapis": "Danes sem kot mestni oskrbnik še enkrat pazil, da se javna zaloga ne prazni na skrivaj in da red ostane na pravem mestu—tudi ko so se sosedi začeli razburjati. Po opravljenih urah sem preveril, ali naši zakoni res služijo mestu, ne le pravilom, in hitro uredil nastalo zmešnjavo. Zdi se mi, da mir de"
+    }
+  ],
+  "zadnja_refleksija": "2026-09-02T13:40:59.521Z",
+  "zapor_do": null,
+  "mind": {
+    "day": 2,
+    "daily_goal": "varovati ljudi, javno zalogo in mir med sosedi",
+    "social_goal": "popraviti odnos z Lara",
+    "civic_goal": "preveriti, ali zakoni sluzijo mestu in ne samo pravilom",
+    "personal_goal": "obdrzati dober ritem in mirno glavo",
+    "current_intention": "varovati ljudi, javno zalogo in mir med sosedi",
+    "last_goal_update": "2026-09-02T13:50:38.872Z",
+    "commitments": [],
+    "known_memes": [
+      "zaloga_je_cast",
+      "pocasi_ni_panike",
+      "petkov_trg"
+    ],
+    "beliefs": {
+      "tax_support": 50,
+      "town_identity": 53,
+      "lawfulness": 67.62972529819503
+    },
+    "last_social_action_at": 0,
+    "last_culture_action_at": 1788356273942,
+    "last_tax_attempt_at": 0,
+    "last_audit_at": 1788353812203,
+    "last_audit_day": 0
+  },
+  "social": {
+    "bonds": {
+      "kaja": {
+        "affinity": 52.4,
+        "trust": 51.6,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 3.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-08-14T17:01:57.191Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:55:27.497Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:27.497Z"
+      },
+      "nejc": {
+        "affinity": 41.2,
+        "trust": 38.8,
+        "respect": 45,
+        "romance": 0,
+        "tension": 9.65,
+        "familiarity": 3.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:00:23.349Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:25.667Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:27.714Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:44:27.714Z"
+      },
+      "lara": {
+        "affinity": 39.8,
+        "trust": 36.2,
+        "respect": 42.5,
+        "romance": 0,
+        "tension": 14.11,
+        "familiarity": 10.2,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T12:58:33.253Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T12:58:53.339Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:29:27.746Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:27.209Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:29.670Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:31.665Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:55:08.748Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:08.748Z"
+      },
+      "zan": {
+        "affinity": 50,
+        "trust": 48,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "maja": {
+        "affinity": 51.2,
+        "trust": 48.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 1.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:55:38.761Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:38.761Z"
+      },
+      "ema": {
+        "affinity": 50,
+        "trust": 48,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "jure": {
+        "affinity": 50,
+        "trust": 48,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "rok": {
+        "affinity": 50,
+        "trust": 48,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "tilen": {
+        "affinity": 50,
+        "trust": 50,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      }
+    },
+    "circles": [],
+    "active_focus": null,
+    "leadership_preference": {
+      "id": "blaz",
+      "name": "Blaz",
+      "updated_at": "2026-09-02T13:55:27.505Z"
+    },
+    "last_bond_event_at": 0
+  },
+  "society": {
+    "last_checked_at": "2026-09-02T13:55:52.543Z",
+    "compliance_score": 52,
+    "ready": false,
+    "expected_activity": "work",
+    "expected_region": "obcina",
+    "current_region_ok": false,
+    "blockers": [
+      "ni v regiji 'obcina' za rutino 'work'",
+      "manjka sword za delo 'policeman'"
+    ],
+    "warnings": [
+      "dom 'blaz_dom' ni nalozen, postelja ni preverjena",
+      "mestna zaloga 'mestna_zaloga' ni nalozena, skrinja ni preverjena"
+    ],
+    "structures": {
+      "home": {
+        "region": "blaz_dom",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "bed": {
+            "label": "bed",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "town_storage": {
+        "region": "mestna_zaloga",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "town_hall": {
+        "region": "obcina",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      }
+    },
+    "last_fix": {
+      "ts": "2026-09-02T13:54:47.458Z",
+      "type": "tool",
+      "reason": "manjka sword",
+      "success": false,
+      "detail": "sword ni v domu ali mestni zalogi"
+    },
+    "fix_history": [
+      {
+        "ts": "2026-09-02T12:58:09.483Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:00:03.286Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:27:48.836Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:29:48.946Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:33:18.488Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:35:16.709Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:37:21.843Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:39:21.983Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:48:54.849Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:50:47.150Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:52:47.352Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      },
+      {
+        "ts": "2026-09-02T13:54:47.458Z",
+        "type": "tool",
+        "reason": "manjka sword",
+        "success": false,
+        "detail": "sword ni v domu ali mestni zalogi"
+      }
+    ],
+    "last_job": {
+      "ts": "2026-09-02T13:55:52.550Z",
+      "kind": "guard_move",
+      "detail": "patrulja proti obcina",
+      "target": "obcina"
+    },
+    "job_history": [
+      {
+        "ts": "2026-09-02T13:54:27.454Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:54:32.455Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:54:37.461Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:54:42.455Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:54:52.458Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:54:57.468Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:02.476Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:07.487Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:12.481Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:17.496Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:22.501Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:32.525Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:37.539Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:42.548Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:47.552Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      },
+      {
+        "ts": "2026-09-02T13:55:52.550Z",
+        "kind": "guard_move",
+        "detail": "patrulja proti obcina",
+        "target": "obcina"
+      }
+    ],
+    "signature": "{\"score\":52,\"blockers\":[\"ni v regiji 'obcina' za rutino 'work'\",\"manjka sword za delo 'policeman'\"],\"warnings\":[\"dom 'blaz_dom' ni nalozen, postelja ni preverjena\",\"mestna zaloga 'mestna_zaloga' ni nalozena, skrinja ni preverjena\"],\"expected_activity\":\"work\",\"expected_region\":\"obcina\"}"
+  }
+}

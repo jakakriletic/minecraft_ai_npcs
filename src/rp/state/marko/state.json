@@ -1,0 +1,51 @@
+{
+  "odnosi_igralci": {
+    "zombie": {
+      "zaupanje": 0,
+      "mnenje": ""
+    }
+  },
+  "odnosi_npcji": {},
+  "znanje_o_svetu": {
+    "slisal": [
+      "od Ana slišal: zombie je udaril Marko"
+    ]
+  },
+  "potrebe": {
+    "denar": 0,
+    "sitost": 58,
+    "druzabnost": 71,
+    "utrujenost": 19.5
+  },
+  "lastnosti": {
+    "postenost": 60,
+    "pogum": 51,
+    "zamerljivost": 55,
+    "nagnjenost_kriminal": 5,
+    "socialnost": 45,
+    "raziskovalnost": 45
+  },
+  "razvade": {
+    "zasvojenost": 0,
+    "zadnja_uporaba": null
+  },
+  "mood_danes": "občutljiv",
+  "samopodoba": "Še vedno sem navaden človek, ampak mogoče malo bolj pogumen kot prej. Vsaj vem, da se obrambam vsakodnevno – čeprav me še zmeraj prestraši pogled na drevo.",
+  "spomini_pogovorov": {},
+  "dnevnik": [
+    {
+      "ts": "2026-06-13T00:50:26.719Z",
+      "zapis": "Zadnje čase se dogaja preveč neumnosti. Te zombije je treba kar uščepati od tod. Vsaj dobro sem sečko sekal danes, to mi je pomagalo pozabiti na vsega."
+    },
+    {
+      "ts": "2026-06-13T21:52:50.017Z",
+      "zapis": "Danes sem se malo tresel. Težko je bilo delati, ko ti vsakokrat, ko prideš ven, nekaj napade. Upam, da bo jutri boljše, saj mi zdaj ne paše nič."
+    },
+    {
+      "ts": "2026-06-13T23:42:14.772Z",
+      "zapis": "Dan sem preživel v gozdu, kot ponavadi. Samo da se je nekaj... nenavadnega zgodilo. Zombija! Nisi bi lahko prepričan, da to pa res ni sanja."
+    }
+  ],
+  "zadnja_refleksija": "2026-06-13T23:42:14.772Z",
+  "zapor_do": null
+}

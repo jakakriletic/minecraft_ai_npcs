@@ -17,11 +17,14 @@
 > [!Caution]
 Do not connect this bot to public servers with coding enabled. This project allows an LLM to write/execute code on your computer. The code is sandboxed, but still vulnerable to injection attacks. Code writing is disabled by default, you can enable it by setting `allow_insecure_coding` to `true` in `settings.js`. Ye be warned.
 
+> [!Important]
+> This copy targets **Minecraft Java 1.20.1** exactly and includes a built-in Forge 47.x/FML3 login handshake. It mirrors the server's advertised mod/channel versions and acknowledges Forge registry/config synchronization, allowing the bots to log into the local Horror Forge server. Mod-specific client rendering and custom gameplay packets remain outside Mineflayer's vanilla world model.
+
 # Getting Started
 ## Requirements
 
-- [Minecraft Java Edition](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc) (up to v1.21.11, recommend v1.21.6)
-- [Node.js Installed](https://nodejs.org/) (Node v18 or v20 LTS recommended. Node v24+ may cause issues with native dependencies)
+- [Minecraft Java Edition](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc) 1.20.1
+- [Node.js Installed](https://nodejs.org/) v22 or newer (the bundled Mineflayer version requires Node 22+)
 - At least one API key from a supported API provider. See [supported APIs](#model-customization). OpenAI is the default.
 
 > [!Important]
@@ -39,9 +42,9 @@ Do not connect this bot to public servers with coding enabled. This project allo
 
 4. In terminal/command prompt, run `npm install` from the installed directory
 
-5. Start a minecraft world and open it to LAN on localhost port `55916`
+5. Start a Minecraft Java 1.20.1 vanilla/Paper or Forge 47.x server on `localhost:25565`, or adjust `host` and `port` in `settings.js`. Set `forge_handshake.enabled` to `false` for a strictly vanilla connection.
 
-6. Run `node main.js` from the installed directory
+6. Run `node main.js` from the installed directory. For the ten-NPC RP profile on Windows, use `start_boti.bat`; it verifies the server version before any NPC joins.
 
 If you encounter issues, check the [FAQ](https://github.com/mindcraft-bots/mindcraft/blob/main/FAQ.md) or find support on [discord](https://discord.gg/mp73p35dzC). We are currently not very responsive to github issues. To run tasks please refer to [Minecollab Instructions](minecollab.md#installation)
 

@@ -1,0 +1,679 @@
+[
+  {
+    "ts": "2026-06-13T00:50:01.909Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -18,
+      "y": 66,
+      "z": -10
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:02.409Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -18,
+      "y": 66,
+      "z": -11
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:03.409Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -18,
+      "y": 66,
+      "z": -12
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:04.411Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -13
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:05.461Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -14
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:06.417Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -15
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:07.418Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -16
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:08.494Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -17
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:09.411Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -18
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:10.410Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -18,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:11.411Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -18,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:16.414Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -8,
+      "y": 66,
+      "z": -25
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:19.865Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -12,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:21.116Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -12,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:21.918Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -12,
+      "y": 66,
+      "z": -18
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:22.911Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -17
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:23.918Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -16
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:24.912Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -16
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:25.917Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -12,
+      "y": 66,
+      "z": -16
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:32.816Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -4,
+      "y": 67,
+      "z": -29
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:33.811Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -6,
+      "y": 66,
+      "z": -28
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:38.161Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -21
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:38.951Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:39.913Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:41.066Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:41.911Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -16,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:42.915Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -18
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:47.615Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -9,
+      "y": 66,
+      "z": -26
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:48.313Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -9,
+      "y": 66,
+      "z": -25
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:50.761Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -21
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:51.411Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:52.415Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:53.560Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:54.564Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -18
+    }
+  },
+  {
+    "ts": "2026-06-13T00:50:55.465Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -17
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:01.362Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -8,
+      "y": 66,
+      "z": -30
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:05.660Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -21
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:06.311Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:07.314Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:08.315Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:09.565Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -18
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:10.664Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -17
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:11.417Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -16
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:17.460Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -9,
+      "y": 66,
+      "z": -29
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:21.963Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -21
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:22.611Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:23.611Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:24.616Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -18
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:25.611Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -17
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:26.614Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -16
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:27.618Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -16
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:31.956Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -10,
+      "y": 66,
+      "z": -24
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:34.610Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -13,
+      "y": 66,
+      "z": -21
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:35.711Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -14,
+      "y": 66,
+      "z": -21
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:36.710Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -15,
+      "y": 66,
+      "z": -21
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:38.111Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -16,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:38.915Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -17,
+      "y": 66,
+      "z": -20
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:39.910Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -18,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:40.913Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -18,
+      "y": 66,
+      "z": -19
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:47.417Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -6,
+      "y": 66,
+      "z": -29
+    }
+  },
+  {
+    "ts": "2026-06-13T00:51:48.013Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Marko",
+    "pos": {
+      "x": -7,
+      "y": 66,
+      "z": -27
+    }
+  },
+  {
+    "ts": "2026-06-13T21:53:37.716Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "branil se je pred zombie"
+  }
+]

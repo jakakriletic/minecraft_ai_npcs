@@ -1,0 +1,108 @@
+{
+  "minecraft": {
+    "host": "localhost",
+    "port": 25565,
+    "version": "1.20.1",
+    "auth": "offline",
+    "forge_handshake": {
+      "enabled": true,
+      "networkVersion": 3,
+      "ignoreInvalidCommandTree": true,
+      "debug": false
+    }
+  },
+  "admin_players": ["jakakriletic"],
+  "blacklisted_players": [],
+  "bot_join_stagger_ms": 5000,
+  "scheduler_tick_interval_ms": 5000,
+  "mind": {
+    "_comment": "Start_boti profile: kingdom names copied into the RP town layer as Altera-like citizens.",
+    "enabled": true,
+    "tick_interval_ms": 30000
+  },
+  "social_bonds": {
+    "_comment": "Formal NPC relationships: friends, allies, rivals, leaders and social circles.",
+    "enabled": true,
+    "tick_interval_ms": 45000
+  },
+  "society": {
+    "_comment": "Visible compliance/blocker checks for town routines and structures.",
+    "enabled": true,
+    "status_interval_ms": 60000,
+    "auto_fix_enabled": true,
+    "fix_cooldown_ms": 120000
+  },
+  "chat_reactions": {
+    "_comment": "NPCs hear nearby chat and answer selectively.",
+    "proximity_blocks": 10,
+    "hear_blocks": 18,
+    "ambient_reply_chance": 0.18,
+    "npc_cooldown_ms": 18000,
+    "global_cooldown_ms": 12000
+  },
+  "npcs": ["blaz", "nejc", "lara", "zan", "maja", "ema", "jure", "kaja", "rok", "tilen"],
+  "liveness": {
+    "_comment": "Deterministic life + squad combat: shared target focus, ally rescue, spacing, safe bow fire and tactical retreat.",
+    "threat_range": 12,
+    "assist_range": 24,
+    "ally_danger_range": 7,
+    "flee_hp_below": 8,
+    "brave_to_fight": 40,
+    "brave_for_creeper": 75,
+    "combat_timeout_ms": 30000,
+    "bow_min_range": 5,
+    "bow_preferred_range": 9,
+    "bow_max_range": 28,
+    "friendly_fire_radius": 1.7,
+    "creeper_retreat_range": 5,
+    "combat_interval_ms": 1000,
+    "fidget_interval_ms": 4000
+  },
+  "crime": {
+    "_comment": "Daily crime roll. zapor_dni is measured in in-game days.",
+    "bazna_verjetnost": 0.02,
+    "cap": 0.2,
+    "zapor_dni": 2,
+    "max_predmetov": 8,
+    "odkritje_zamik_min": 5,
+    "preiskava_okno_min": 30
+  },
+  "economy": {
+    "_comment": "Physical gold economy. Wages are paid from the town chest in region 'obcina'.",
+    "obcinska_skrinja_regija": "obcina",
+    "place": {
+      "woodcutter": 8,
+      "miner": 8,
+      "gatherer": 8,
+      "policeman": 7,
+      "guard": 6,
+      "innkeeper": 3,
+      "builder": 8,
+      "steward": 7,
+      "cook": 4,
+      "idle": 0
+    },
+    "cena_obroka": 3
+  },
+  "event_utezi": {
+    "_comment": "Direct effect of witnessed events on witness trust toward the actor.",
+    "razbil_blok_v_tuji_regiji": -5,
+    "odprl_tujo_skrinjo": -8,
+    "udaril_nekoga": -10,
+    "ubil_zival": -3
+  },
+  "llm": {
+    "provider": "openai",
+    "force_fallback": false,
+    "model_pogovori": "gpt-5.4-mini",
+    "model_ozadje": "gpt-5.4-nano",
+    "model_fallback": "gemma3:12b",
+    "ollama_url": "http://localhost:11434",
+    "openai_url": "https://api.openai.com/v1/responses",
+    "openai_timeout_ms": 60000,
+    "max_output_tokens": 300,
+    "daily_budget_usd": 2.0,
+    "daily_calls_per_npc": 200,
+    "cooldown_ms": 3000
+  }
+}

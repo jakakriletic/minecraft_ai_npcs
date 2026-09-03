@@ -14,7 +14,7 @@ export class BuildGoal {
         if (!this.agent.isIdle())
             return false;
         let res = await this.agent.actions.runAction('BuildGoal', func);
-        return !res.interrupted;
+        return res.success && !res.interrupted;
     }
 
     async executeNext(goal, position=null, orientation=null) {
@@ -27,6 +27,8 @@ export class BuildGoal {
                 if (position) break;
             }
         }
+        if (!position)
+            return {missing: {}, acted: false, position: null, orientation: null};
         if (orientation === null) {
             orientation = Math.floor(Math.random() * 4);
         }
@@ -51,19 +53,18 @@ export class BuildGoal {
                         acted = true;
 
                         if (current_block.name !== 'air') {
-                            res = await this.wrapSkill(async () => {
-                                await skills.breakBlockAt(this.agent.bot, world_pos.x, world_pos.y, world_pos.z);
-                            });
+                            res = await this.wrapSkill(async () =>
+                                await skills.breakBlockAt(this.agent.bot, world_pos.x, world_pos.y, world_pos.z));
                             if (!res) return {missing: missing, acted: acted, position: position, orientation: orientation};
                         }
 
                         if (block_name !== 'air') {
                             let block_typed = getTypeOfGeneric(this.agent.bot, block_name);
-                            if (inventory[block_typed] > 0) {
-                                res = await this.wrapSkill(async () => {
-                                    await skills.placeBlock(this.agent.bot, block_typed, world_pos.x, world_pos.y, world_pos.z);
-                                });
+                            if ((inventory[block_typed] ?? 0) > 0) {
+                                res = await this.wrapSkill(async () =>
+                                    await skills.placeBlock(this.agent.bot, block_typed, world_pos.x, world_pos.y, world_pos.z));
                                 if (!res) return {missing: missing, acted: acted, position: position, orientation: orientation};
+                                inventory[block_typed] = Math.max(0, (inventory[block_typed] ?? 0) - 1);
                             } else {
                                 if (missing[block_typed] === undefined)
                                     missing[block_typed] = 0;

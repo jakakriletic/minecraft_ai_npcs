@@ -1,0 +1,30 @@
+{
+  "pid": 19136,
+  "startedAt": "2026-09-02T13:33:05.042Z",
+  "npcs": [
+    "blaz",
+    "nejc",
+    "lara",
+    "zan",
+    "maja",
+    "ema",
+    "jure",
+    "kaja",
+    "rok",
+    "tilen"
+  ],
+  "settingsFile": "C:\\Users\\jakak\\Desktop\\ai_npc_1.20.1\\mindcraft\\src\\rp\\config\\settings.start_boti.json",
+  "minecraft": {
+    "host": "localhost",
+    "port": 25565,
+    "version": "1.20.1",
+    "auth": "offline",
+    "forge_handshake": {
+      "enabled": true,
+      "networkVersion": 3,
+      "ignoreInvalidCommandTree": true,
+      "debug": false
+    }
+  },
+  "ipc": false
+}

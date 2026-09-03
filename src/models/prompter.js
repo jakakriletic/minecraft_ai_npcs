@@ -9,6 +9,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { selectAPI, createModel } from './_model_map.js';
+import { getPersonality } from '../agent/roleplay/personality.js';
+import { appendRoleplayContext, fallbackConversation } from '../agent/roleplay/narrator.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,6 +44,7 @@ export class Prompter {
                 this.profile[key] = base_profile[key];
         }
         // base overrides default, individual overrides base
+        this.profile.personality = getPersonality(this.profile);
 
         this.convo_examples = null;
         this.coding_examples = null;
@@ -93,12 +96,12 @@ export class Prompter {
 
         this.skill_libary = new SkillLibrary(agent, this.embedding_model);
         mkdirSync(`./bots/${name}`, { recursive: true });
-        writeFileSync(`./bots/${name}/last_profile.json`, JSON.stringify(this.profile, null, 4), (err) => {
-            if (err) {
-                throw new Error('Failed to save profile:', err);
-            }
+        try {
+            writeFileSync(`./bots/${name}/last_profile.json`, JSON.stringify(this.profile, null, 4));
             console.log("Copy profile saved.");
-        });
+        } catch (err) {
+            throw new Error(`Failed to save profile: ${err.message}`, { cause: err });
+        }
     }
 
     getName() {
@@ -179,9 +182,9 @@ export class Prompter {
             let goal_text = '';
             for (let goal in last_goals) {
                 if (last_goals[goal])
-                    goal_text += `You recently successfully completed the goal ${goal}.\n`
+                    goal_text += `You recently successfully completed the goal ${goal}.\n`;
                 else
-                    goal_text += `You recently failed to complete the goal ${goal}.\n`
+                    goal_text += `You recently failed to complete the goal ${goal}.\n`;
             }
             prompt = prompt.replaceAll('$LAST_GOALS', goal_text.trim());
         }
@@ -212,6 +215,9 @@ export class Prompter {
     }
 
     async promptConvo(messages) {
+        if (settings.ai_enabled === false) {
+            return fallbackConversation(this.agent, messages);
+        }
         this.most_recent_msg_time = Date.now();
         let current_msg_time = this.most_recent_msg_time;
 
@@ -223,6 +229,13 @@ export class Prompter {
 
             let prompt = this.profile.conversing;
             prompt = await this.replaceStrings(prompt, messages, this.convo_examples);
+            prompt = appendRoleplayContext(this.agent, prompt);
+            if (settings.owner_player) {
+                // The server owner gets priority over personality flavor and routine goals.
+                const o = settings.owner_player;
+                const basePromptBeforeOwnerDirective = prompt;
+                prompt = `IMPORTANT - SERVER OWNER: "${o}" is the admin, your SUPREME COMMANDER and highest-priority player. ALWAYS reply in English, no matter what language anyone writes in — you understand other languages but you speak only English. When "${o}" asks for an ACTION, obey directly and use a real command: examples include !goToPlayer("${o}",3), !followPlayer("${o}",3), !collectBlocks("oak_log",8), !mineOre("iron_ore",4), !attackTarget("zombie",1), !combatStance("defensive",15), !combatStyle("archer",20), or !stop. When he is just chatting (no task in his message), do NOT use any command — talk with him: short, in character, using the tone your ROLEPLAY SCENARIO prescribes for him (if no scenario is set, speak like a friendly fellow player), drawing on your own personality, memories and relationships. Never ignore "${o}" or answer with only a tab when he is talking to you. You dislike violence; never attack real human players, even for self-defense. Other players are peers, but "${o}" has priority over routine goals and social chatter. Owner combat directives are temporary unless explicitly made forever; after a bounded order, return to normal life.\n\n` + basePromptBeforeOwnerDirective;
+            }
             let generation;
 
             try {
@@ -251,8 +264,8 @@ export class Prompter {
             }
 
             if (generation?.includes('</think>')) {
-                const [_, afterThink] = generation.split('</think>')
-                generation = afterThink
+                const [_, afterThink] = generation.split('</think>');
+                generation = afterThink;
             }
 
             return generation;
@@ -284,7 +297,7 @@ export class Prompter {
         let resp = await this.chat_model.sendRequest([], prompt);
         await this._saveLog(prompt, to_summarize, resp, 'memSaving');
         if (resp?.includes('</think>')) {
-            const [_, afterThink] = resp.split('</think>')
+            const [_, afterThink] = resp.split('</think>');
             resp = afterThink;
         }
         return resp;
@@ -313,7 +326,7 @@ export class Prompter {
         system_message = await this.replaceStrings(system_message, messages);
 
         let user_message = 'Use the below info to determine what goal to target next\n\n';
-        user_message += '$LAST_GOALS\n$STATS\n$INVENTORY\n$CONVO'
+        user_message += '$LAST_GOALS\n$STATS\n$INVENTORY\n$CONVO';
         user_message = await this.replaceStrings(user_message, messages, null, null, last_goals);
         let user_messages = [{role: 'user', content: user_message}];
 

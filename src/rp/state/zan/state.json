@@ -1,0 +1,402 @@
+{
+  "odnosi_igralci": {
+    "drowned": {
+      "zaupanje": 40,
+      "mnenje": ""
+    }
+  },
+  "odnosi_npcji": {
+    "maja": {
+      "zaupanje": 52,
+      "mnenje": ""
+    },
+    "nejc": {
+      "zaupanje": 51,
+      "mnenje": ""
+    },
+    "kaja": {
+      "zaupanje": 51,
+      "mnenje": ""
+    },
+    "Nejc": {
+      "zaupanje": 45,
+      "mnenje": ""
+    },
+    "lara": {
+      "zaupanje": 52,
+      "mnenje": ""
+    },
+    "ema": {
+      "zaupanje": 51,
+      "mnenje": ""
+    }
+  },
+  "znanje_o_svetu": {
+    "slisal": [
+      "Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "Mestna navada: V tem mestu se javna zaloga ne prazni na skrivaj.",
+      "Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "Mestna navada: Ko je delo koncano, se novice slisijo na trgu ali v gostilni.",
+      "Mestna navada: Pocasi, saj ni panike.",
+      "od Nejc slišal: Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "od Kaja slišal: od Tilen slišal: Rok je udaril Ema",
+      "od Lara slišal: Nejc je udaril Lara",
+      "od Maja slišal: drowned je udaril Maja",
+      "od Ema slišal: drowned je udaril Kaja"
+    ]
+  },
+  "potrebe": {
+    "denar": 0,
+    "sitost": 90,
+    "druzabnost": 81,
+    "utrujenost": 9.5
+  },
+  "lastnosti": {
+    "postenost": 56,
+    "pogum": 57,
+    "zamerljivost": 42,
+    "nagnjenost_kriminal": 4,
+    "socialnost": 72,
+    "raziskovalnost": 64
+  },
+  "razvade": {
+    "zasvojenost": 0,
+    "zadnja_uporaba": null
+  },
+  "mood_danes": "navdusen zaskrbljen",
+  "samopodoba": "Navaden prebivalec, ki se v tem mestu še vedno dobro znajde, a se že uči govoriti tako, da ga poslušajo—danes sem občutek, da prispevek ni le gradnja, ampak tudi zadržanje reda, še malo utrdil. Še vedno sem nekdo, ki prispeva z ohranjenim mestnim rit",
+  "spomini_pogovorov": {},
+  "dnevnik": [
+    {
+      "ts": "2026-08-14T17:05:02.436Z",
+      "zapis": "Danes sem kot navdusen graditelj in mestni govorec spet dvignil pest vsem na poti proti trgu—novi načrti so dišali po svežem kamnu. A vendar: danes nobene mestne skrinje za »Mestni prispevek« nisem uspel najti, in Lara je spet zasenčila vse glasove, kot bi nosila žarečo značko mesta. Veselim se dela"
+    },
+    {
+      "ts": "2026-09-02T12:57:17.813Z",
+      "zapis": "Danes sem odmeril korake med gradbiščem in pravilnikom, ter še enkrat premeril, kje naj bi bila naslednja smiselna parcela. Ko sem govoril po trgu, sem poskrbel, da sem Lara ujel v razpoloženju—povezava mesta je bila v zraku, a roke me ubogajo z malo manj veselja, saj sem hkrati zaskrbljen zaradi ri"
+    },
+    {
+      "ts": "2026-09-02T13:01:46.343Z",
+      "zapis": "Danes sem med branjenjem pred skeletonom še enkrat občutil, kako prav pride usklajenost: roke so mi delale, glas pa je ostal miren, kot bi mesto samo narekovalo red. Ko so se lopute in kosti končno umaknile, sem se vrnil k svojemu dnevnemu načrtu—iskati naslednjo smiselno parcelo in graditi po mestn"
+    },
+    {
+      "ts": "2026-09-02T13:21:17.637Z",
+      "zapis": "Danes sem zopet vrtel načrte in v mestni govorni slovesnosti razlagal, kje se da še najti smiselna parcela za nov del—počasi, brez panike, kot veleva navada. Ko sem šel proti trgu, sem se spomnil, da se javna zaloga ne prazni na skrivaj, zato sem še enkrat preveril svoj del reda in se ob tem počutil"
+    },
+    {
+      "ts": "2026-09-02T13:41:23.414Z",
+      "zapis": "Danes sem znova hodil po ulicah z načrtom v glavi—iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu, kot da je to prisega. Na trgu sem z mestnim glasom razložil, kako pravilo Mestni prispevek drži javno zalogo pri življenju, potem pa sem z Majo na hitro potegnil nit pogovora in me je st"
+    }
+  ],
+  "zadnja_refleksija": "2026-09-02T13:41:23.414Z",
+  "zapor_do": null,
+  "mind": {
+    "day": 2,
+    "daily_goal": "iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+    "social_goal": "ohraniti stik z Maja",
+    "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek",
+    "personal_goal": "obdrzati dober ritem in mirno glavo",
+    "current_intention": "iskati naslednjo smiselno parcelo in graditi po mestnem nacrtu",
+    "last_goal_update": "2026-09-02T13:50:23.244Z",
+    "commitments": [],
+    "known_memes": [
+      "zaloga_je_cast",
+      "petkov_trg",
+      "pocasi_ni_panike"
+    ],
+    "beliefs": {
+      "tax_support": 50,
+      "town_identity": 52,
+      "lawfulness": 54.8553058662871
+    },
+    "last_social_action_at": 1788356927568,
+    "last_culture_action_at": 1788356959457,
+    "last_tax_attempt_at": 1786726847843,
+    "last_audit_at": 0,
+    "last_audit_day": -1
+  },
+  "social": {
+    "bonds": {
+      "blaz": {
+        "affinity": 50,
+        "trust": 50,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "nejc": {
+        "affinity": 51.2,
+        "trust": 50.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 1.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T12:58:57.804Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T12:58:57.804Z"
+      },
+      "lara": {
+        "affinity": 52.4,
+        "trust": 51.6,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 3.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:54:49.810Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:55:36.813Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:36.813Z"
+      },
+      "maja": {
+        "affinity": 52.4,
+        "trust": 51.6,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 3.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T12:58:00.710Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:54:58.482Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:54:58.482Z"
+      },
+      "ema": {
+        "affinity": 51.2,
+        "trust": 50.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 1.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:55:02.635Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:02.635Z"
+      },
+      "jure": {
+        "affinity": 50,
+        "trust": 50,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "kaja": {
+        "affinity": 51.2,
+        "trust": 50.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 1.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:54:43.612Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:54:43.612Z"
+      },
+      "rok": {
+        "affinity": 50,
+        "trust": 50,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "tilen": {
+        "affinity": 50,
+        "trust": 50,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      }
+    },
+    "circles": [],
+    "active_focus": null,
+    "leadership_preference": {
+      "id": "zan",
+      "name": "Zan",
+      "updated_at": "2026-09-02T13:55:36.818Z"
+    },
+    "last_bond_event_at": 0
+  },
+  "society": {
+    "last_checked_at": "2026-09-02T13:55:31.810Z",
+    "compliance_score": 64,
+    "ready": false,
+    "expected_activity": "work",
+    "expected_region": "gradbisce",
+    "current_region_ok": false,
+    "blockers": [
+      "ni v regiji 'gradbisce' za rutino 'work'"
+    ],
+    "warnings": [
+      "dom 'zan_dom' ni nalozen, postelja ni preverjena",
+      "mestna zaloga 'mestna_zaloga' ni nalozena, skrinja ni preverjena",
+      "delovni region 'gradbisce' ni nalozen, oprema ni preverjena"
+    ],
+    "structures": {
+      "home": {
+        "region": "zan_dom",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "bed": {
+            "label": "bed",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "town_storage": {
+        "region": "mestna_zaloga",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "town_hall": {
+        "region": "obcina",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "work": {
+        "region": "gradbisce",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          },
+          "crafting table": {
+            "label": "crafting table",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      }
+    },
+    "last_fix": {
+      "ts": "2026-09-02T13:54:41.776Z",
+      "type": "eat",
+      "reason": "Minecraft hunger 18/20",
+      "success": false,
+      "detail": "ni hrane v inventarju"
+    },
+    "fix_history": [
+      {
+        "ts": "2026-08-14T17:00:34.863Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": true,
+        "detail": "poskus oddaje mestnega prispevka"
+      },
+      {
+        "ts": "2026-08-14T17:02:36.882Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": true,
+        "detail": "poskus oddaje mestnega prispevka"
+      },
+      {
+        "ts": "2026-08-14T17:04:03.706Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": true,
+        "detail": "poskus oddaje mestnega prispevka"
+      },
+      {
+        "ts": "2026-09-02T12:57:55.557Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": false,
+        "detail": "mestnega prispevka ni uspelo oddati"
+      },
+      {
+        "ts": "2026-09-02T13:54:41.776Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 18/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      }
+    ],
+    "last_job": null,
+    "job_history": [],
+    "signature": "{\"score\":64,\"blockers\":[\"ni v regiji 'gradbisce' za rutino 'work'\"],\"warnings\":[\"dom 'zan_dom' ni nalozen, postelja ni preverjena\",\"mestna zaloga 'mestna_zaloga' ni nalozena, skrinja ni preverjena\",\"delovni region 'gradbisce' ni nalozen, oprema ni preverjena\"],\"expected_activity\":\"work\",\"expected_region\":\"gradbisce\"}"
+  }
+}

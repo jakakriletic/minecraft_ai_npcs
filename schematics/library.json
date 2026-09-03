@@ -1,0 +1,2739 @@
+{
+  "_opis": "Kamnita knjiznica z visokimi knjiznimi policami.",
+  "_category": "civic",
+  "_kind": "building",
+  "_aliases": [
+    "knjiznica"
+  ],
+  "size": [
+    11,
+    13,
+    9
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 0,
+      "name": "dark_oak_door"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "crafting_table"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 1,
+      "name": "furnace"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 2,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 3,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 4,
+      "name": "bookshelf"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 4,
+      "name": "oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 4,
+      "name": "oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 4,
+      "name": "oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 4,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 5,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 5,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 6,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 6,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 7,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 7,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 0,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "z": 0,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 2,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 2,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 2,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 2,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 3,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 3,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 4,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 4,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 5,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 5,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 6,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 6,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 6,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 6,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 7,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 7,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 8,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "z": 8,
+      "name": "orange_stained_glass"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 2,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 2,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 3,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 3,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 4,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 4,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 5,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 5,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 6,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 6,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 7,
+      "name": "bookshelf"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 7,
+      "name": "bookshelf"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 5,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 5,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 6,
+      "z": 0,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 0,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 8,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 9,
+      "y": 6,
+      "z": 8,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "z": 8,
+      "name": "dark_oak_log"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 7,
+      "z": 0,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 7,
+      "z": 8,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "z": 1,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "z": 7,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 9,
+      "z": 2,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 9,
+      "z": 6,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 10,
+      "z": 3,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 10,
+      "z": 5,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 0,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 5,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 6,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 7,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 8,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 9,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    },
+    {
+      "x": 10,
+      "y": 11,
+      "z": 4,
+      "name": "dark_oak_planks"
+    }
+  ]
+}

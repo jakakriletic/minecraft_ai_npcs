@@ -1,0 +1,90 @@
+{
+  "minecraft": {
+    "host": "localhost",
+    "port": 25565,
+    "version": "1.20.1",
+    "auth": "offline",
+    "forge_handshake": {
+      "enabled": true,
+      "networkVersion": 3,
+      "ignoreInvalidCommandTree": true,
+      "debug": false
+    }
+  },
+  "admin_players": ["jakakriletic"],
+  "blacklisted_players": [],
+  "bot_join_stagger_ms": 5000,
+  "scheduler_tick_interval_ms": 5000,
+  "mind": {
+    "_comment": "Altera-like plast: dnevni cilji, skupna mestna pravila, kultura, davki in avtonomno druzenje.",
+    "enabled": true,
+    "tick_interval_ms": 30000
+  },
+  "social_bonds": {
+    "_comment": "Formalni odnosi med NPC-ji: prijatelji, zavezniki, rivalstva, simpatije, voditeljstvo in druzabni krogi.",
+    "enabled": true,
+    "tick_interval_ms": 45000
+  },
+  "chat_reactions": {
+    "_comment": "NPC-ji slisijo chat in se selektivno odzovejo: direktni nagovor skoraj vedno, ambient chat samo vcasih.",
+    "proximity_blocks": 10,
+    "hear_blocks": 18,
+    "ambient_reply_chance": 0.18,
+    "npc_cooldown_ms": 18000,
+    "global_cooldown_ms": 12000
+  },
+  "npcs": ["marko", "ana", "tone"],
+  "liveness": {
+    "_comment": "Deterministicna zivost + skupinski boj: skupna tarca, pomoc zaveznikom, razmik, varen lok in takticni umik. Brez LLM.",
+    "threat_range": 12,
+    "assist_range": 24,
+    "ally_danger_range": 7,
+    "flee_hp_below": 8,
+    "brave_to_fight": 40,
+    "brave_for_creeper": 75,
+    "combat_timeout_ms": 30000,
+    "bow_min_range": 5,
+    "bow_preferred_range": 9,
+    "bow_max_range": 28,
+    "friendly_fire_radius": 1.7,
+    "creeper_retreat_range": 5,
+    "combat_interval_ms": 1000,
+    "fidget_interval_ms": 4000
+  },
+  "crime": {
+    "_comment": "Dnevna kocka za kriminal. zapor_dni v in-game dnevih (1 dan = 20 min realno).",
+    "bazna_verjetnost": 0.02,
+    "cap": 0.2,
+    "zapor_dni": 2,
+    "max_predmetov": 8,
+    "odkritje_zamik_min": 5,
+    "preiskava_okno_min": 30
+  },
+  "economy": {
+    "_comment": "Fizicno zlato: nugget=1, ingot=9. Place se izplacujejo iz skrinje v regiji 'obcina' ob koncu sihta.",
+    "obcinska_skrinja_regija": "obcina",
+    "place": { "woodcutter": 8, "miner": 8, "gatherer": 8, "policeman": 6, "guard": 6, "innkeeper": 0, "idle": 0 },
+    "cena_obroka": 3
+  },
+  "event_utezi": {
+    "_comment": "Direkten vpliv pričanega dogodka na zaupanje priče do akterja.",
+    "razbil_blok_v_tuji_regiji": -5,
+    "odprl_tujo_skrinjo": -8,
+    "udaril_nekoga": -10,
+    "ubil_zival": -3
+  },
+  "llm": {
+    "provider": "openai",
+    "force_fallback": false,
+    "model_pogovori": "gpt-5.4-mini",
+    "model_ozadje": "gpt-5.4-nano",
+    "model_fallback": "gemma3:12b",
+    "ollama_url": "http://localhost:11434",
+    "openai_url": "https://api.openai.com/v1/responses",
+    "openai_timeout_ms": 60000,
+    "max_output_tokens": 300,
+    "daily_budget_usd": 2.0,
+    "daily_calls_per_npc": 200,
+    "cooldown_ms": 3000
+  }
+}

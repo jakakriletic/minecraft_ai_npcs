@@ -1,0 +1,940 @@
+{
+  "_opis": "Urejen cvetlicni vrt z zivo mejo in potjo.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "vrt",
+    "garden"
+  ],
+  "size": [
+    11,
+    4,
+    9
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 5,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 6,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 7,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "z": 8,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 0,
+      "name": "gravel"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "poppy"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "allium"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 2,
+      "name": "gravel"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 2,
+      "name": "dandelion"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 2,
+      "name": "azure_bluet"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 3,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 3,
+      "name": "gravel"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 3,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 4,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 4,
+      "name": "dandelion"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 4,
+      "name": "azure_bluet"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 4,
+      "name": "gravel"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 4,
+      "name": "blue_orchid"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 4,
+      "name": "poppy"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 4,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 5,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 5,
+      "name": "gravel"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 5,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 6,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 6,
+      "name": "blue_orchid"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 6,
+      "name": "poppy"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 6,
+      "name": "gravel"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 6,
+      "name": "allium"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 6,
+      "name": "dandelion"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 6,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 7,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 7,
+      "name": "gravel"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 7,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 8,
+      "name": "gravel"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "z": 8,
+      "name": "oak_leaves"
+    }
+  ]
+}

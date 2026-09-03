@@ -1,0 +1,675 @@
+{
+  "_opis": "Okrogla kamnita fontana z modrim srediscem.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "fontana"
+  ],
+  "size": [
+    9,
+    6,
+    9
+  ],
+  "blocks": [
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 2,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 4,
+      "name": "chiseled_stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 5,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 5,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 5,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 5,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 5,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 6,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 6,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 6,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 6,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 6,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 6,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 7,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 4,
+      "name": "chiseled_stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "z": 4,
+      "name": "chiseled_stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 3,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 4,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 5,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "z": 4,
+      "name": "sea_lantern"
+    }
+  ]
+}

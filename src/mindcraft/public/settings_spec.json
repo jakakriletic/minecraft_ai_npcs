@@ -7,7 +7,7 @@
     "minecraft_version": {
         "type": "string",
         "description": "The version of Minecraft to use. Set to 'auto' to automatically detect the version.",
-        "default": "auto"
+        "default": "1.20.1"
     },
     "host": {
         "type": "string",
@@ -17,13 +17,18 @@
     "port": {
         "type": "number",
         "description": "The minecraft server port to connect to. -1 for auto-detect.",
-        "default": 55916
+        "default": 25565
     },
     "auth": {
         "type": "string",
         "description": "The authentication method to use",
         "default": "offline",
         "options": ["offline", "microsoft"]
+    },
+    "forge_handshake": {
+        "type": "object",
+        "description": "Forge 1.20.1/FML3 login handshake. Enable for Forge servers that require client mod channels.",
+        "default": { "enabled": true, "networkVersion": 3, "ignoreInvalidCommandTree": true, "debug": false }
     },
     "base_profile": {
         "type": "string",
@@ -110,6 +115,11 @@
     "chat_bot_messages": {
         "type": "boolean",
         "description": "Whether to publicly chat messages to and from other bots",
+        "default": true
+    },
+    "suppress_command_feedback": {
+        "type": "boolean",
+        "description": "Whether the first spawned bot should disable Minecraft command feedback spam from /setblock, /fill, and other server commands.",
         "default": true
     },
     "render_bot_view": {

@@ -1,0 +1,226 @@
+{
+  "_opis": "Urejen vogal iz zive meje in poti.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "ziva meja",
+    "hedge"
+  ],
+  "size": [
+    5,
+    3,
+    5
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "gravel"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "gravel"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "gravel"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "gravel"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "gravel"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "gravel"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "gravel"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "gravel"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "gravel"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "gravel"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "gravel"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "gravel"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 3,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 4,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "name": "lantern"
+    }
+  ]
+}

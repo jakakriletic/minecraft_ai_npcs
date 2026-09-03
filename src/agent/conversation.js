@@ -1,10 +1,14 @@
 import settings from './settings.js';
-import { containsCommand } from './commands/index.js';
 import { sendBotChatToServer } from './mindserver_proxy.js';
 
 let agent;
 let agent_names = [];
 let agents_in_game = [];
+
+function containsCommand(message) {
+    const commandMatch = String(message ?? '').match(/!(\w+)/);
+    return commandMatch ? `!${commandMatch[1]}` : null;
+}
 
 class Conversation {
     constructor(name) {
@@ -78,7 +82,8 @@ class ConversationManager {
             if (this.awaiting_response && agent.isIdle()) {
                 wait_time += delta;
                 if (wait_time > this.wait_time_limit) {
-                    agent.handleMessage('system', `${convo_partner} hasn't responded in ${this.wait_time_limit/1000} seconds, respond with a message to them or your own action.`);
+                    void agent.enqueueMessage('system', `${convo_partner} hasn't responded in ${this.wait_time_limit/1000} seconds, respond with a message to them or your own action.`)
+                        .catch(error => console.error('Conversation timeout response failed:', error));
                     wait_time = 0;
                     this.wait_time_limit*=2;
                 }
@@ -96,7 +101,8 @@ class ConversationManager {
                     }
                     if (!agent.self_prompter.isPaused()) {
                         this.endConversation(convo_partner);
-                        agent.handleMessage('system', `${convo_partner} disconnected, conversation has ended.`);
+                        void agent.enqueueMessage('system', `${convo_partner} disconnected, conversation has ended.`)
+                            .catch(error => console.error('Conversation disconnect response failed:', error));
                     }
                     else {
                         this.endConversation(convo_partner);
@@ -191,7 +197,7 @@ class ConversationManager {
             await agent.self_prompter.pause();
         }
     
-        _scheduleProcessInMessage(sender, received, convo);
+        await _scheduleProcessInMessage(sender, received, convo);
     }
 
     responseScheduledFor(sender) {
@@ -227,11 +233,13 @@ class ConversationManager {
     endConversation(sender) {
         if (this.convos[sender]) {
             this.convos[sender].end();
-            if (this.activeConversation.name === sender) {
+            if (this.activeConversation?.name === sender) {
                 this._stopMonitor();
                 this.activeConversation = null;
                 if (agent.self_prompter.isPaused() && !this.inConversation()) {
-                    _resumeSelfPrompter();
+                    void _resumeSelfPrompter().catch(error => {
+                        console.error('Failed to resume self prompter:', error);
+                    });
                 }
             }
         }
@@ -242,7 +250,9 @@ class ConversationManager {
             this.endConversation(sender);
         }
         if (agent.self_prompter.isPaused()) {
-            _resumeSelfPrompter();
+            void _resumeSelfPrompter().catch(error => {
+                console.error('Failed to resume self prompter:', error);
+            });
         }
     }
 
@@ -275,13 +285,17 @@ async function _scheduleProcessInMessage(sender, received, convo) {
         clearTimeout(convo.inMessageTimer);
     let otherAgentBusy = containsCommand(received.message);
 
-    const scheduleResponse = (delay) => convo.inMessageTimer = setTimeout(() => _processInMessageQueue(sender), delay);
+    const scheduleResponse = (delay) => convo.inMessageTimer = setTimeout(() => {
+        void _processInMessageQueue(sender).catch(error => {
+            console.error(`Failed to process conversation with ${sender}:`, error);
+        });
+    }, delay);
 
     if (!agent.isIdle() && otherAgentBusy) {
         // both are busy
         let canTalkOver = talkOverActions.some(a => agent.actions.currentActionLabel.includes(a));
         if (canTalkOver)
-            scheduleResponse(fastDelay)
+            scheduleResponse(fastDelay);
         // otherwise don't respond
     }
     else if (otherAgentBusy)
@@ -306,9 +320,9 @@ async function _scheduleProcessInMessage(sender, received, convo) {
     }
 }
 
-function _processInMessageQueue(name) {
+async function _processInMessageQueue(name) {
     const convo = convoManager._getConvo(name);
-    _handleFullInMessage(name, _compileInMessages(convo));
+    await _handleFullInMessage(name, _compileInMessages(convo));
 }
 
 function _compileInMessages(convo) {
@@ -322,7 +336,7 @@ function _compileInMessages(convo) {
     return pack;
 }
 
-function _handleFullInMessage(sender, received) {
+async function _handleFullInMessage(sender, received) {
     console.log(`${agent.name} responding to "${received.message}" from ${sender}`);
     
     const convo = convoManager._getConvo(sender);
@@ -337,7 +351,7 @@ function _handleFullInMessage(sender, received) {
     else if (received.start)
         agent.shut_up = false;
     convo.inMessageTimer = null;
-    agent.handleMessage(sender, message);
+    await agent.enqueueMessage(sender, message);
 }
 
 

@@ -8,23 +8,20 @@ export class SkillLibrary {
         this.embedding_model = embedding_model;
         this.skill_docs_embeddings = {};
         this.skill_docs = null;
-        this.always_show_skills = ['skills.placeBlock', 'skills.wait', 'skills.breakBlockAt']
+        this.always_show_skills = ['skills.placeBlock', 'skills.wait', 'skills.breakBlockAt'];
     }
     async initSkillLibrary() {
         const skillDocs = getSkillDocs();
         this.skill_docs = skillDocs;
         if (this.embedding_model) {
             try {
-                const embeddingPromises = skillDocs.map((doc) => {
-                    return (async () => {
-                        let func_name_desc = doc.split('\n').slice(0, 2).join('');
-                        this.skill_docs_embeddings[doc] = await this.embedding_model.embed(func_name_desc);
-                    })();
-                });
-                await Promise.all(embeddingPromises);
-            } catch (error) {
-                console.warn('Error with embedding model, using word-overlap instead.');
-                this.embedding_model = null;
+                await this.ensureSkillEmbeddings();
+            } catch {
+                // The embedding service may just not be up yet (e.g. Ollama still
+                // starting). KEEP the model: getRelevantSkillDocs retries lazily and
+                // falls back to word overlap per call, so embeddings recover on
+                // their own instead of being disabled for the whole session.
+                console.warn('Error with embedding model, using word-overlap until it recovers.');
             }
         }
         this.always_show_skills_docs = {};
@@ -33,38 +30,56 @@ export class SkillLibrary {
         }
     }
 
-    async getAllSkillDocs() {
+    // Embed any skill docs that don't have a cached vector yet (no-op when complete).
+    async ensureSkillEmbeddings() {
+        await Promise.all((this.skill_docs ?? [])
+            .filter(doc => this.skill_docs_embeddings[doc] === undefined)
+            .map(doc => {
+                const func_name_desc = doc.split('\n').slice(0, 2).join('');
+                return this.embedding_model.embed(func_name_desc)
+                    .then(embedding => { this.skill_docs_embeddings[doc] = embedding; });
+            }));
+    }
+
+    getAllSkillDocs() {
+        // Callers `await` this; awaiting a plain value is fine.
         return this.skill_docs;
     }
 
     async getRelevantSkillDocs(message, select_num) {
         if(!message) // use filler message if none is provided
             message = '(no message)';
-        let skill_doc_similarities = [];
+        let skill_doc_similarities = null;
 
         if (select_num === -1) {
-            skill_doc_similarities = Object.keys(this.skill_docs_embeddings)
+            skill_doc_similarities = (this.skill_docs ?? [])
             .map(doc_key => ({
                 doc_key,
                 similarity_score: 0
             }));
         }
-        else if (!this.embedding_model) {
-            skill_doc_similarities = Object.keys(this.skill_docs_embeddings)
+        else if (this.embedding_model) {
+            try {
+                await this.ensureSkillEmbeddings();
+                let latest_message_embedding = await this.embedding_model.embed(message);
+                skill_doc_similarities = Object.keys(this.skill_docs_embeddings)
                 .map(doc_key => ({
                     doc_key,
-                    similarity_score: wordOverlapScore(message, this.skill_docs_embeddings[doc_key])
+                    similarity_score: cosineSimilarity(latest_message_embedding, this.skill_docs_embeddings[doc_key])
                 }))
                 .sort((a, b) => b.similarity_score - a.similarity_score);
+            } catch { /* embedding service down right now — use word overlap below */ }
         }
-        else {
-            let latest_message_embedding = await this.embedding_model.embed(message);
-            skill_doc_similarities = Object.keys(this.skill_docs_embeddings)
-            .map(doc_key => ({
-                doc_key,
-                similarity_score: cosineSimilarity(latest_message_embedding, this.skill_docs_embeddings[doc_key])
-            }))
-            .sort((a, b) => b.similarity_score - a.similarity_score);
+        if (skill_doc_similarities === null) {
+            // Word-overlap fallback over the real doc TEXTS. (The old fallback iterated
+            // the embeddings map, which is empty exactly when embedding init failed —
+            // the LLM then got NO relevant command docs at all.)
+            skill_doc_similarities = (this.skill_docs ?? [])
+                .map(doc_key => ({
+                    doc_key,
+                    similarity_score: wordOverlapScore(message, doc_key)
+                }))
+                .sort((a, b) => b.similarity_score - a.similarity_score);
         }
 
         let length = skill_doc_similarities.length;

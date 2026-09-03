@@ -1,0 +1,190 @@
+{
+  "_opis": "Neurejen kup zabojev za ob delavnicah in trznici.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "zaboji",
+    "crates"
+  ],
+  "size": [
+    5,
+    4,
+    4
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "barrel"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "barrel"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 1,
+      "name": "barrel"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 2,
+      "name": "spruce_planks"
+    }
+  ]
+}

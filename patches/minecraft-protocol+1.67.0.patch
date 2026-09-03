@@ -1,0 +1,19 @@
+diff --git a/node_modules/minecraft-protocol/src/client/chat.js b/node_modules/minecraft-protocol/src/client/chat.js
+index 579aac0..a30208f 100644
+--- a/node_modules/minecraft-protocol/src/client/chat.js
++++ b/node_modules/minecraft-protocol/src/client/chat.js
+@@ -336,6 +336,14 @@ module.exports = function (client, options) {
+     const nodes = packet?.nodes
+     if (!Array.isArray(nodes) || !Array.isArray(nodes[packet.rootIndex]?.children) ||
+       !validateCommandTree(nodes)) {
++      // Forge 1.20.1 can extend/reorder the command-argument registry. A vanilla
++      // protocol decoder may then produce an unusable command tree even though
++      // the rest of the play protocol is valid. Trusted Forge clients can opt to
++      // discard that tree; never walk it, and retain strict rejection by default.
++      if (options.ignoreInvalidCommandTree === true) {
++        client.emit('ignoredInvalidCommandTree', packet)
++        return
++      }
+       rejectCommandTree()
+       return
+     }

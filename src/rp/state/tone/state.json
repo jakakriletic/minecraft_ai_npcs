@@ -1,0 +1,60 @@
+{
+  "odnosi_igralci": {
+    "zombie": {
+      "zaupanje": 0,
+      "mnenje": ""
+    },
+    "jakakriletic": {
+      "zaupanje": 45,
+      "mnenje": "živčen"
+    },
+    "spider": {
+      "zaupanje": 40,
+      "mnenje": ""
+    }
+  },
+  "odnosi_npcji": {},
+  "znanje_o_svetu": {
+    "slisal": []
+  },
+  "potrebe": {
+    "denar": 0,
+    "sitost": 59,
+    "druzabnost": 72,
+    "utrujenost": 21.5
+  },
+  "lastnosti": {
+    "postenost": 75,
+    "pogum": 61,
+    "zamerljivost": 45,
+    "nagnjenost_kriminal": 0,
+    "socialnost": 50,
+    "raziskovalnost": 55
+  },
+  "razvade": {
+    "zasvojenost": 0,
+    "zadnja_uporaba": null
+  },
+  "mood_danes": "sprejetno",
+  "samopodoba": "Že dolgo časa se zavedam odgovornosti, ki jo imam – vsak dan malo bolj razumem, da to pomeni, ne samo za mesto, temveč tudi za te ljudi, s katerimi se srečujem.",
+  "spomini_pogovorov": {
+    "jakakriletic": [
+      {
+        "ts": "2026-06-13T22:19:17.593Z",
+        "povzetek": "Želel si videti, da bi prišel po denar, jaz pa sem te vprašal, kaj je narobe in opozoril na tvojo razdraženo držo."
+      }
+    ]
+  },
+  "dnevnik": [
+    {
+      "ts": "2026-06-13T21:52:42.872Z",
+      "zapis": "Danes je bil dan... specifičen. Preveč zombiejev se je pojavilo, nekaj sem jih obranil, a Marka so kar divjali. Delovno mesto sem oddelal po planu, a me te grozote preganjajo. Upam, da bo jutri bolj mirno."
+    },
+    {
+      "ts": "2026-06-13T23:42:24.112Z",
+      "zapis": "Danes sem se spet srečal s takim, ki je mislil, da ga nihče ne bo opazil in ni bil najbolj iskren glede svojih namer. Sem pa vsaj poskušal razumeti, kaj mu je, kot sem navadil. Vsakdanje delo še vedno teče po ustaljenih tirnicah."
+    }
+  ],
+  "zadnja_refleksija": "2026-06-13T23:42:24.112Z",
+  "zapor_do": null
+}

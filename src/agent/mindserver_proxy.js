@@ -15,6 +15,7 @@ class MindServerProxy {
         this.socket = null;
         this.connected = false;
         this.agents = [];
+        this.pendingMessages = [];
         MindServerProxy.instance = this;
     }
 
@@ -44,7 +45,9 @@ class MindServerProxy {
         });
 
         this.socket.on('chat-message', (agentName, json) => {
-            convoManager.receiveFromBot(agentName, json);
+            void convoManager.receiveFromBot(agentName, json).catch(error => {
+                console.error(`Conversation message from ${agentName} failed:`, error);
+            });
         });
 
         this.socket.on('agents-status', (agents) => {
@@ -62,11 +65,14 @@ class MindServerProxy {
         });
 		
         this.socket.on('send-message', (data) => {
-            try {
-                this.agent.respondFunc(data.from, data.message);
-            } catch (error) {
-                console.error('Error: ', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+            if (typeof this.agent?.respondFunc !== 'function') {
+                // The MindServer connection is ready before Minecraft has spawned.
+                // Keep early player commands instead of crashing the agent process.
+                this.pendingMessages.push(data);
+                if (this.pendingMessages.length > 100) this.pendingMessages.shift();
+                return;
             }
+            this._deliverMessage(data);
         });
 
         this.socket.on('get-full-state', (callback) => {
@@ -99,6 +105,18 @@ class MindServerProxy {
 
     setAgent(agent) {
         this.agent = agent;
+    }
+
+    _deliverMessage(data) {
+        void this.agent.respondFunc(data.from, data.message).catch(error => {
+            console.error('Error: ', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+        });
+    }
+
+    flushPendingMessages() {
+        if (typeof this.agent?.respondFunc !== 'function') return;
+        const messages = this.pendingMessages.splice(0);
+        for (const data of messages) this._deliverMessage(data);
     }
 
     getAgents() {

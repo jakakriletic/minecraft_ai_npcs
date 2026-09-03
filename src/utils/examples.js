@@ -21,26 +21,28 @@ export class Examples {
     async load(examples) {
         this.examples = examples;
         if (!this.model) return; // Early return if no embedding model
-        
+
         if (this.select_num === 0)
             return;
 
         try {
-            // Create array of promises first
-            const embeddingPromises = examples.map(example => {
-                const turn_text = this.turnsToText(example);
-                return this.model.embed(turn_text)
-                    .then(embedding => {
-                        this.embeddings[turn_text] = embedding;
-                    });
-            });
-            
-            // Wait for all embeddings to complete
-            await Promise.all(embeddingPromises);
-        } catch (err) {
-            console.warn('Error with embedding model, using word-overlap instead.');
-            this.model = null;
+            await this.ensureEmbeddings();
+        } catch {
+            // The embedding service may just not be up yet (e.g. Ollama still
+            // starting). KEEP the model: getRelevant retries lazily and falls back
+            // to word overlap per call, so embeddings recover on their own instead
+            // of being disabled for the whole session.
+            console.warn('Error with embedding model, using word-overlap until it recovers.');
         }
+    }
+
+    // Embed any examples that don't have a cached vector yet (no-op when complete).
+    async ensureEmbeddings() {
+        await Promise.all(this.examples
+            .map(example => this.turnsToText(example))
+            .filter(turn_text => this.embeddings[turn_text] === undefined)
+            .map(turn_text => this.model.embed(turn_text)
+                .then(embedding => { this.embeddings[turn_text] = embedding; })));
     }
 
     async getRelevant(turns) {
@@ -48,15 +50,20 @@ export class Examples {
             return [];
 
         let turn_text = this.turnsToText(turns);
+        let sorted = false;
         if (this.model !== null) {
-            let embedding = await this.model.embed(turn_text);
-            this.examples.sort((a, b) => 
-                cosineSimilarity(embedding, this.embeddings[this.turnsToText(b)]) -
-                cosineSimilarity(embedding, this.embeddings[this.turnsToText(a)])
-            );
+            try {
+                await this.ensureEmbeddings();
+                const embedding = await this.model.embed(turn_text);
+                this.examples.sort((a, b) =>
+                    cosineSimilarity(embedding, this.embeddings[this.turnsToText(b)]) -
+                    cosineSimilarity(embedding, this.embeddings[this.turnsToText(a)])
+                );
+                sorted = true;
+            } catch { /* embedding service down right now — use word overlap below */ }
         }
-        else {
-            this.examples.sort((a, b) => 
+        if (!sorted) {
+            this.examples.sort((a, b) =>
                 wordOverlapScore(turn_text, this.turnsToText(b)) -
                 wordOverlapScore(turn_text, this.turnsToText(a))
             );
@@ -70,7 +77,7 @@ export class Examples {
 
         console.log('selected examples:');
         for (let example of selected_examples) {
-            console.log('Example:', example[0].content)
+            console.log('Example:', example[0].content);
         }
 
         let msg = 'Examples of how to respond:\n';

@@ -1,0 +1,370 @@
+[
+  {
+    "ts": "2026-09-02T12:58:07.338Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred skeleton"
+  },
+  {
+    "ts": "2026-09-02T13:24:34.016Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:24:47.693Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Lara",
+    "pos": {
+      "x": 124,
+      "y": 55,
+      "z": 9
+    }
+  },
+  {
+    "ts": "2026-09-02T13:24:49.626Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:41:13.311Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 155,
+      "y": 70,
+      "z": -104
+    }
+  },
+  {
+    "ts": "2026-09-02T13:41:19.155Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred spider"
+  },
+  {
+    "ts": "2026-09-02T13:44:25.669Z",
+    "tip": "udaril_nekoga",
+    "akter": "Blaz",
+    "podrobnost": "udaril Lara",
+    "pos": {
+      "x": 147,
+      "y": 71,
+      "z": -83
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:27.215Z",
+    "tip": "udaril_nekoga",
+    "akter": "Lara",
+    "podrobnost": "udaril Blaz",
+    "pos": {
+      "x": 147,
+      "y": 71,
+      "z": -79
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:27.715Z",
+    "tip": "udaril_nekoga",
+    "akter": "Kaja",
+    "podrobnost": "udaril Lara",
+    "pos": {
+      "x": 146,
+      "y": 70,
+      "z": -77
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:29.654Z",
+    "tip": "udaril_nekoga",
+    "akter": "Lara",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 141,
+      "y": 70,
+      "z": -72
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:29.905Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:44:31.653Z",
+    "tip": "udaril_nekoga",
+    "akter": "Lara",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 138,
+      "y": 70,
+      "z": -75
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:32.118Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Blaz",
+    "pos": {
+      "x": 143,
+      "y": 70,
+      "z": -71
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:33.332Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Blaz",
+    "pos": {
+      "x": 142,
+      "y": 69,
+      "z": -70
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:35.400Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Blaz",
+    "pos": {
+      "x": 140,
+      "y": 69,
+      "z": -70
+    }
+  },
+  {
+    "ts": "2026-09-02T13:44:48.083Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred skeleton"
+  },
+  {
+    "ts": "2026-09-02T13:45:04.936Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 138,
+      "y": 70,
+      "z": -100
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:05.938Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 138,
+      "y": 70,
+      "z": -101
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:06.856Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 138,
+      "y": 70,
+      "z": -102
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:07.806Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 138,
+      "y": 70,
+      "z": -103
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:23.503Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 135,
+      "y": 68,
+      "z": -74
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:25.426Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 136,
+      "y": 66,
+      "z": -73
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:40.905Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred drowned"
+  },
+  {
+    "ts": "2026-09-02T13:46:11.256Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:46:20.094Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 137,
+      "y": 62,
+      "z": -67
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:23.158Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 136,
+      "y": 61,
+      "z": -68
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:24.617Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 136,
+      "y": 62,
+      "z": -68
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:28.711Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 130,
+      "y": 62,
+      "z": -81
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:29.941Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 130,
+      "y": 62,
+      "z": -81
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:41.404Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:47:11.920Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred drowned"
+  },
+  {
+    "ts": "2026-09-02T13:47:19.930Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 94,
+      "y": 59,
+      "z": -52
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:26.907Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 94,
+      "y": 62,
+      "z": -54
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:28.806Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 94,
+      "y": 61,
+      "z": -53
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:34.118Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 93,
+      "y": 61,
+      "z": -55
+    }
+  },
+  {
+    "ts": "2026-09-02T13:48:31.780Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 155,
+      "y": 71,
+      "z": -81
+    }
+  },
+  {
+    "ts": "2026-09-02T13:48:35.673Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 142,
+      "y": 71,
+      "z": -81
+    }
+  },
+  {
+    "ts": "2026-09-02T13:48:37.047Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 140,
+      "y": 71,
+      "z": -81
+    }
+  }
+]

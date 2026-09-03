@@ -1,0 +1,53 @@
+[
+  {
+    "ts": "2026-09-02T12:57:44.998Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T12:58:13.986Z",
+    "tip": "udaril_nekoga",
+    "akter": "Ema",
+    "podrobnost": "udaril Tilen",
+    "pos": {
+      "x": -106,
+      "y": 64,
+      "z": 538
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:15.766Z",
+    "tip": "udaril_nekoga",
+    "akter": "Rok",
+    "podrobnost": "udaril Tilen",
+    "pos": {
+      "x": -107,
+      "y": 64,
+      "z": 538
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:27.079Z",
+    "tip": "udaril_nekoga",
+    "akter": "Rok",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": -100,
+      "y": 64,
+      "z": 540
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:30.632Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:22:33.287Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  }
+]

@@ -9,7 +9,7 @@ let lockeddown = false;
 export function lockdown() {
   if (lockeddown) return;
   lockeddown = true;
-  lockdown({
+  globalThis.lockdown({
     // basic devex and quality of life improvements
     localeTaming: 'unsafe',
     consoleTaming: 'unsafe',
@@ -22,11 +22,11 @@ export function lockdown() {
 }
 
 export const makeCompartment = (endowments = {}) => {
-  return new Compartment({
+  return new globalThis.Compartment({
     // provide untamed Math, Date, etc
     Math,
     Date,
     // standard endowments
     ...endowments
   });
-}
+};

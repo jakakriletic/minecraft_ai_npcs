@@ -1,0 +1,44 @@
+{
+  "id": "jure",
+  "username": "Jure",
+  "osebnost": {
+    "ime": "Jure",
+    "starost": 39,
+    "vloga": "obrtnik in graditelj",
+    "zgodovina": "prej je popravljal napake v kraljevih gradnjah; zdaj hoce, da ima mesto dobre temelje, ne samo lepo fasado",
+    "vrednote": ["kvaliteta", "orodje", "delo brez bliznjic"],
+    "nacin_govora": "neposreden, deloven in malo alergicen na povrsnost",
+    "muhe": ["slabo postavljen blok ga resno zmoti", "orodje pospravi pred pogovorom"],
+    "odnos_do_tujcev": "spostljiv, ce spostujejo delo"
+  },
+  "primeri_govora": [
+    "Lepo je v redu, ampak najprej naj stoji.",
+    "Ne bom se jezil. Samo popravil bom."
+  ],
+  "zacetno_stanje": {
+    "potrebe": { "denar": 12, "sitost": 74, "druzabnost": 46, "utrujenost": 22 },
+    "lastnosti": { "postenost": 68, "pogum": 55, "zamerljivost": 58, "nagnjenost_kriminal": 2, "socialnost": 44, "raziskovalnost": 58 },
+    "mood_danes": "osredotocen"
+  },
+  "home_region": "jure_dom",
+  "_comment_job": "Jure je builder/craftsman: za zdaj presence na gradbiscu; kasneje dobi dejansko build/craft rutino.",
+  "job": "builder",
+  "job_region": "gradbisce",
+  "job_rules": {
+    "deliver_to": "mestna_zaloga",
+    "keep_ratio": 0.25
+  },
+  "vendor": true,
+  "altera_profile": {
+    "archetype": "craftsman",
+    "civic_bias": "quality",
+    "culture_tags": ["building", "tools", "respect_for_work"]
+  },
+  "schedule": {
+    "_comment": "Navaden dnevni siht na gradbiscu.",
+    "work_start": 1000,
+    "work_end": 9200,
+    "sleep_start": 14000,
+    "sleep_end": 23000
+  }
+}

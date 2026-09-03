@@ -1,0 +1,358 @@
+{
+  "_opis": "Lesena korita z razlicnimi cvetlicami.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "korita roz",
+    "planter"
+  ],
+  "size": [
+    7,
+    4,
+    5
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 3,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 1,
+      "name": "dirt"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 1,
+      "name": "dirt"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 1,
+      "name": "dirt"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 3,
+      "name": "dirt"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 3,
+      "name": "dirt"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 3,
+      "name": "dirt"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 1,
+      "name": "poppy"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 1,
+      "name": "dandelion"
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "z": 1,
+      "name": "allium"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 3,
+      "name": "azure_bluet"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 3,
+      "name": "blue_orchid"
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "z": 3,
+      "name": "orange_tulip"
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+[
+  {
+    "ts": "2026-08-14T17:00:16.135Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "branil se je pred zombie"
+  },
+  {
+    "ts": "2026-08-14T17:00:34.324Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 437,
+      "y": 56,
+      "z": 8
+    }
+  },
+  {
+    "ts": "2026-08-14T17:00:35.354Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 437,
+      "y": 57,
+      "z": 9
+    }
+  },
+  {
+    "ts": "2026-08-14T17:00:35.852Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "branil se je pred zombie"
+  },
+  {
+    "ts": "2026-08-14T17:00:36.352Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 437,
+      "y": 57,
+      "z": 10
+    }
+  },
+  {
+    "ts": "2026-08-14T17:00:37.346Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 437,
+      "y": 56,
+      "z": 10
+    }
+  },
+  {
+    "ts": "2026-08-14T17:00:40.499Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 437,
+      "y": 57,
+      "z": 9
+    }
+  },
+  {
+    "ts": "2026-08-14T17:04:45.468Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "branil se je pred zombie"
+  },
+  {
+    "ts": "2026-08-14T17:05:05.827Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "branil se je pred zombie"
+  },
+  {
+    "ts": "2026-08-14T17:05:12.586Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "branil se je pred zombie"
+  },
+  {
+    "ts": "2026-08-14T17:05:17.065Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 431,
+      "y": 58,
+      "z": 8
+    }
+  },
+  {
+    "ts": "2026-08-14T17:05:17.973Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "branil se je pred zombie"
+  },
+  {
+    "ts": "2026-09-02T12:57:48.500Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": -323,
+      "y": 64,
+      "z": 596
+    }
+  },
+  {
+    "ts": "2026-09-02T12:57:56.421Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": -324,
+      "y": 63,
+      "z": 582
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:40.926Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred skeleton"
+  },
+  {
+    "ts": "2026-09-02T13:22:33.285Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:45:28.108Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": 110,
+      "y": 62,
+      "z": -78
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:43.801Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred drowned"
+  },
+  {
+    "ts": "2026-09-02T13:46:00.250Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": 136,
+      "y": 61,
+      "z": -66
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:14.743Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred drowned"
+  },
+  {
+    "ts": "2026-09-02T13:46:16.084Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 137,
+      "y": 62,
+      "z": -67
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:20.090Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 137,
+      "y": 62,
+      "z": -67
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:23.153Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 136,
+      "y": 61,
+      "z": -68
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:24.609Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 136,
+      "y": 62,
+      "z": -68
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:28.702Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 130,
+      "y": 62,
+      "z": -81
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:29.952Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 130,
+      "y": 62,
+      "z": -81
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:46.232Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:47:16.971Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred drowned"
+  },
+  {
+    "ts": "2026-09-02T13:47:19.921Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 94,
+      "y": 59,
+      "z": -52
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:26.903Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 94,
+      "y": 62,
+      "z": -54
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:28.802Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 94,
+      "y": 61,
+      "z": -53
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:34.114Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 93,
+      "y": 61,
+      "z": -55
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:35.102Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 93,
+      "y": 60,
+      "z": -54
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:37.352Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Maja",
+    "pos": {
+      "x": 93,
+      "y": 59,
+      "z": -55
+    }
+  },
+  {
+    "ts": "2026-09-02T13:47:37.494Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred drowned"
+  },
+  {
+    "ts": "2026-09-02T13:47:53.768Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred skeleton"
+  }
+]

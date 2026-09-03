@@ -1,0 +1,95 @@
+[
+  {
+    "ts": "2026-09-02T12:57:41.741Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T12:58:13.994Z",
+    "tip": "udaril_nekoga",
+    "akter": "Ema",
+    "podrobnost": "udaril Tilen",
+    "pos": {
+      "x": -106,
+      "y": 64,
+      "z": 538
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:15.747Z",
+    "tip": "udaril_nekoga",
+    "akter": "Ema",
+    "podrobnost": "udaril Tilen",
+    "pos": {
+      "x": -107,
+      "y": 64,
+      "z": 538
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:27.064Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": -100,
+      "y": 64,
+      "z": 540
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:30.634Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:24:06.943Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:24:49.623Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:24:51.391Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:26:12.591Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:50:54.750Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred enderman"
+  },
+  {
+    "ts": "2026-09-02T13:51:01.951Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred enderman"
+  },
+  {
+    "ts": "2026-09-02T13:51:13.198Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred enderman"
+  },
+  {
+    "ts": "2026-09-02T13:51:26.764Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred enderman"
+  }
+]

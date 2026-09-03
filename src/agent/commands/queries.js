@@ -1,12 +1,25 @@
 import * as world from '../library/world.js';
 import * as mc from '../../utils/mcdata.js';
-import { getCommandDocs } from './index.js';
-import convoManager from '../conversation.js';
 import { checkLevelBlueprint, checkBlueprint } from '../tasks/construction_tasks.js';
 import { load } from 'cheerio';
+import * as progression from '../library/progression.js';
+import * as decisionGraph from '../library/decision_graph.js';
+import * as build from '../library/build.js';
+import { formatGameplayStatus } from '../library/gameplay_status.js';
+import { formatLoadoutStatus } from '../library/loadout.js';
+import { formatRoyalDuty } from '../library/royal_intent.js';
+import { formatHomeLifeStatus } from '../library/home_life.js';
+import { formatPlayerHelperStatus } from '../library/player_helper.js';
+import * as combat from '../library/combat.js';
+import settings from '../settings.js';
 
 const pad = (str) => {
     return '\n' + str + '\n';
+};
+
+async function getOtherBotNames(agent) {
+    const { default: convoManager } = await import('../conversation.js');
+    return convoManager.getInGameAgents().filter(name => name !== agent.name);
 }
 
 // queries are commands that just return strings and don't affect anything in the world
@@ -14,7 +27,7 @@ export const queryList = [
     {
         name: "!stats",
         description: "Get your bot's location, health, hunger, and time of day.", 
-        perform: function (agent) {
+        perform: async function (agent) {
             let bot = agent.bot;
             let res = 'STATS';
             let pos = bot.entity.position;
@@ -49,11 +62,11 @@ export const queryList = [
             let action = agent.actions.currentActionLabel;
             if (agent.isIdle())
                 action = 'Idle';
-            res += `\- Current Action: ${action}`;
+            res += `\n- Current Action: ${action}`;
 
 
             let players = world.getNearbyPlayerNames(bot);
-            let bots = convoManager.getInGameAgents().filter(b => b !== agent.name);
+            let bots = await getOtherBotNames(agent);
             players = players.filter(p => !bots.includes(p));
 
             res += '\n- Nearby Human Players: ' + (players.length > 0 ? players.join(', ') : 'None.');
@@ -106,7 +119,7 @@ export const queryList = [
         perform: function (agent) {
             let bot = agent.bot;
             let res = 'NEARBY_BLOCKS';
-            let blocks = world.getNearestBlocks(bot);
+            let blocks = world.getNearestBlocks(bot, null, 8, 256);
             let block_details = new Set();
             
             for (let block of blocks) {
@@ -147,11 +160,11 @@ export const queryList = [
     {
         name: "!entities",
         description: "Get the nearby players and entities.",
-        perform: function (agent) {
+        perform: async function (agent) {
             let bot = agent.bot;
             let res = 'NEARBY_ENTITIES';
             let players = world.getNearbyPlayerNames(bot);
-            let bots = convoManager.getInGameAgents().filter(b => b !== agent.name);
+            let bots = await getOtherBotNames(agent);
             players = players.filter(p => !bots.includes(p));
 
             for (const player of players) {
@@ -177,7 +190,7 @@ export const queryList = [
                 entityCounts[entity.name]++;
                 
                 if (entity.name === 'villager') {
-                    if (entity.metadata && entity.metadata[16] === 1) {
+                    if (mc.isBabyEntity(entity, bot)) {
                         babyVillagerIds.push(entity.id);
                     } else {
                         const profession = world.getVillagerProfession(entity);
@@ -222,7 +235,7 @@ export const queryList = [
     {
         name: '!savedPlaces',
         description: 'List all saved locations.',
-        perform: async function (agent) {
+        perform: function (agent) {
             return "Saved place names: " + agent.memory_bank.getKeys();
         }
     }, 
@@ -315,7 +328,7 @@ export const queryList = [
             'query': { type: 'string', description: 'The query to search for.' }
         },
         perform: async function (agent, query) {
-            const url = `https://minecraft.wiki/w/${query}`
+            const url = `https://minecraft.wiki/w/${query}`;
             try {
                 const response = await fetch(url);
                 if (response.status === 404) {
@@ -333,15 +346,183 @@ export const queryList = [
                 return divContent.trim();
               } catch (error) {
                 console.error("Error fetching or parsing HTML:", error);
-                return `The following error occurred: ${error}`
+                return `The following error occurred: ${error}`;
               }
+        }
+    },
+    {
+        name: '!progress',
+        description: 'Show completed and currently unlocked progression milestone branches.',
+        perform: function (agent) {
+            const p = progression.getStatus(agent.bot);
+            const open = p.availableMilestones.map(milestone => {
+                const estimate = progression.estimateMilestone(agent, milestone.id, p);
+                const work = p.work?.[milestone.id];
+                return `${milestone.id}{cost=${estimate?.estimatedCost ?? 0},unlock=${estimate?.unlockValue ?? 0}`
+                    + `${work?.blocker ? `,blocker=${work.blocker}` : ''}}`;
+            }).join(', ') || 'none';
+            const done = p.completedMilestones.join(', ') || 'none';
+            return `PROGRESS GRAPH: priporočilo=${p.stage} (${p.label}) | odprto=[${open}] | opravljeno=[${done}] | cilj=${p.target} | železni oklep=${p.ironArmor}/4 | diamantni oklep=${p.diamondArmor}/4`;
+        }
+    },
+    {
+        name: '!decisions',
+        description: 'Show the latest dynamic decision winner, ranked candidates and external command goals.',
+        perform: function (agent) {
+            return decisionGraph.formatDecisionStatus(agent);
+        }
+    },
+    {
+        name: '!gameplay',
+        description: 'Show deterministic gameplay readiness: survival, loadout, village state, work profiles, blockers and next suggested commands.',
+        perform: function (agent) {
+            return pad(formatGameplayStatus(agent));
+        }
+    },
+    {
+        name: '!loadout',
+        description: 'Show task loadout readiness. Optional profile: miner, builder, farmer, ranger, steward, explorer, escort, or all.',
+        params: {
+            'profile': { type: 'string', description: 'Optional task profile name.', optional: true },
+        },
+        perform: function (agent, profile = 'all') {
+            return pad(formatLoadoutStatus(agent.bot, profile));
+        }
+    },
+    {
+        name: '!royalDuty',
+        description: 'Show current and last structured royal duty contract.',
+        perform: function (agent) {
+            return pad(formatRoyalDuty(agent));
+        }
+    },
+    {
+        name: '!homeLife',
+        description: 'Show home-life readiness: bed, personal corner, lighting and morning kit.',
+        perform: function (agent) {
+            return pad(formatHomeLifeStatus(agent));
+        }
+    },
+    {
+        name: '!helperStatus',
+        description: 'Show player-helper readiness for bring/carry/deliver/guard/build support.',
+        perform: function (agent) {
+            return pad(formatPlayerHelperStatus(agent));
+        }
+    },
+    {
+        name: '!kingdom',
+        description: 'Show society roles, current work, buildings, roads and the latest shared event.',
+        perform: async function () {
+            const [society, roads] = await Promise.all([
+                import('../library/society.js'),
+                import('../library/roads.js'),
+            ]);
+            const road = roads.roadSummary();
+            return `${society.formatSocietyStatus()} | poti: koncane=${road.complete}, delne=${road.partial}, blokirane=${road.blocked}`;
+        }
+    },
+    {
+        name: '!persona',
+        description: 'Show this bot personality profile and current roleplay identity.',
+        perform: async function (agent) {
+            const { formatPersonaCard } = await import('../roleplay/personality.js');
+            const { scenarioSummary } = await import('../roleplay/scenario.js');
+            const scenario = scenarioSummary();
+            return formatPersonaCard(agent.personality)
+                + ` | scenario: ${scenario || 'none (roleplay.md empty)'}`;
+        }
+    },
+    {
+        name: '!memory',
+        description: 'Show recent structured RP memories for this bot.',
+        params: {
+            count: {
+                type: 'int',
+                description: 'Number of memories to show',
+                optional: true,
+                domain: [1, 20, '[]'],
+                default: 8,
+            },
+        },
+        perform: async function (agent, count = 8) {
+            const { formatMemoryStatus } = await import('../roleplay/memory.js');
+            return formatMemoryStatus(agent, count);
+        }
+    },
+    {
+        name: '!relations',
+        description: 'Show this bot social relationship graph, optionally toward one target.',
+        params: {
+            target: {
+                type: 'string',
+                description: 'Optional bot or player name',
+                optional: true,
+            },
+        },
+        perform: async function (agent, target = null) {
+            const { formatRelations } = await import('../roleplay/social_graph.js');
+            return formatRelations(agent.name, target);
+        }
+    },
+    {
+        name: '!culture',
+        description: 'Show kingdom culture norms and the current shared settlement value.',
+        perform: async function (agent) {
+            const { formatCultureStatus } = await import('../library/culture.js');
+            return formatCultureStatus(agent);
+        }
+    },
+    {
+        name: '!reflection',
+        description: 'Show this bot long-timescale reflection status and self-image.',
+        perform: async function (agent) {
+            const { formatReflectionStatus } = await import('../roleplay/reflection.js');
+            return formatReflectionStatus(agent);
+        }
+    },
+    {
+        name: '!loyalty',
+        description: 'Show the configured loyal owner, command lock, current action, and combat stance.',
+        perform: function (agent) {
+            const owner = String(settings.owner_player ?? '').trim() || '(not configured)';
+            const ownerOnly = settings.owner_only_commands === true ? 'ON' : 'OFF';
+            const current = agent.actions?.currentActionLabel || 'idle';
+            return `LOYALTY: owner=${owner} | owner-only actions=${ownerOnly} | current=${current} | combat=${combat.getCombatStance(agent)}/${combat.getCombatStyle(agent)} | commands: !follow [distance], !defend [minutes], !attack [target] [count], !storage`;
         }
     },
     {
         name: '!help',
         description: 'Lists all available commands and their descriptions.',
         perform: async function (agent) {
+            const { getCommandDocs } = await import('./index.js');
             return getCommandDocs(agent);
+        }
+    },
+    {
+        name: '!ukazi',
+        description: 'Kratek seznam najbolj uporabnih ukazov (v slovenščini).',
+        perform: function (agent) {
+            return 'Loyal squad (owner): !follow [razdalja], !defend [minute], !defende [minute], !attack [tarca] [stevilo], !storage [stil], !stop | '
+                + 'Baza: !setHome, !clearHome, !storage <medieval|modern|british|classic|mixed>, !clearStorage, !goHome, !setupBase, !setupHomeLife, !sleepHome, !morningPrep, !auditHomeLight, !stash, !build <ime|kategorija|random>, !demolish, !cleanup, !schematics | '
+                + 'Razvoj: !progress, !advance | Delo: !loadout [profil], !prepareForTask <profil>, !bringToPlayer <igralec> <item> <n>, !carryNearbyChest [igralec] [item], !guardPlayer <igralec>, !helpBuild [igralec] [nacrt], !getIron, !mineOre <ruda> <n>, !getFood, !farm, !makeTorches, !maintainTools | '
+                + 'Skrinje: !takeFromNearbyChests | '
+                + 'Gibanje: !goToPlayer <ime>, !followPlayer <ime>, !stay, !stop | '
+                + 'Info: !loyalty, !progress, !decisions, !gameplay, !homeLife, !helperStatus, !royalDuty, !stats, !inventory, !savedPlaces, !kingdom, !persona, !memory, !relations, !culture, !reflection, !help (poln seznam vseh ukazov)';
+        }
+    },
+    {
+        name: '!schematics',
+        description: 'List all schematic names grouped by category.',
+        perform: function () {
+            return build.formatSchematicCatalog();
+        }
+    },
+    {
+        name: '!shematics',
+        description: 'Alias for !schematics.',
+        perform: function () {
+            return build.formatSchematicCatalog();
         }
     },
 ];

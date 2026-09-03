@@ -1,0 +1,214 @@
+{
+  "_opis": "Robustna kamnita klop za trg ali obzidje.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "kamnita klop",
+    "stone bench"
+  ],
+  "size": [
+    7,
+    3,
+    3
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "stone_bricks"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "stone_brick_wall"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "stone_brick_wall"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "stone_slab"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 1,
+      "name": "stone_slab"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 1,
+      "name": "stone_slab"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 1,
+      "name": "stone_slab"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 1,
+      "name": "stone_slab"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 2,
+      "name": "stone_slab"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 2,
+      "name": "stone_slab"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 2,
+      "name": "stone_slab"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 2,
+      "name": "stone_slab"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 2,
+      "name": "stone_slab"
+    }
+  ]
+}

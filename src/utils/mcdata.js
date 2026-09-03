@@ -3,14 +3,35 @@ import settings from '../agent/settings.js';
 import { createBot } from 'mineflayer';
 import prismarine_items from 'prismarine-item';
 import { pathfinder } from 'mineflayer-pathfinder';
+import { installContainerIndex } from '../agent/library/container_index.js';
 import { plugin as pvp } from 'mineflayer-pvp';
 import { plugin as collectblock } from 'mineflayer-collectblock';
 import { plugin as autoEat } from 'mineflayer-auto-eat';
 import plugin from 'mineflayer-armor-manager';
+import hawkeyePkg from 'minecrafthawkeye'; // parabolic bow aiming (bot.hawkEye), one bot per process
+import * as compat from './mc_compat.js';
+import { createForgeClient } from './forge_handshake.js';
+const hawkeye = hawkeyePkg.default ?? hawkeyePkg; // CJS interop: the inject fn is on .default
 const armorManager = plugin;
 let mc_version = settings.minecraft_version;
-let mcdata = null;
-let Item = null;
+let mcdata = mc_version && mc_version !== 'auto' ? minecraftData(mc_version) : null;
+let Item = mc_version && mc_version !== 'auto' ? prismarine_items(mc_version) : null;
+
+function patchFoodRegistry(bot) {
+    const foods = bot.registry?.foodsByName;
+    const items = bot.registry?.itemsByName;
+    if (!foods || !items) return;
+    for (const [itemName, legacyFoodName] of [
+        ['carrot', 'carrots'],
+        ['potato', 'potatoes'],
+        ['melon', 'melon_block'],
+    ]) {
+        if (!foods[itemName] && foods[legacyFoodName] && items[itemName])
+            foods[itemName] = { ...foods[legacyFoodName], id: items[itemName].id, name: itemName };
+    }
+    delete foods.wheat;
+    delete foods.wheat_seeds;
+}
 
 /**
  * @typedef {string} ItemName
@@ -31,7 +52,7 @@ export const MATCHING_WOOD_BLOCKS = [
     'button',
     'pressure_plate',
     'trapdoor'
-]
+];
 export const WOOL_COLORS = [
     'white',
     'orange',
@@ -49,10 +70,15 @@ export const WOOL_COLORS = [
     'green',
     'red',
     'black'
-]
+];
 
 
-export function initBot(username) {
+export async function initBot(username) {
+    mc_version = settings.minecraft_version;
+    if (mc_version && mc_version !== 'auto') {
+        mcdata = minecraftData(mc_version);
+        Item = prismarine_items(mc_version);
+    }
     const options = {
         username: username,
         host: settings.host,
@@ -60,12 +86,17 @@ export function initBot(username) {
         auth: settings.auth,
         version: mc_version,
         checkTimeoutInterval: 60000,  // 60s keep-alive check (default 30s) — reduces disconnects on slow servers
-    }
+        viewDistance: 'short',        // 4 chunks (~64 blocks) — big CPU/RAM cut for 10 bots; still covers the
+                                      // 36-42 block world scans (findTarget/guardian range). Do NOT go to 'tiny'(32).
+    };
     if (!mc_version || mc_version === "auto") {
         delete options.version;
     }
 
-    const bot = createBot(options);
+    const forgeOptions = settings.forge_handshake ?? {};
+    const client = forgeOptions.enabled ? createForgeClient(options, forgeOptions) : null;
+    const bot = createBot(client ? { ...options, client } : options);
+    installContainerIndex(bot);
 
     // Throttle position packets to avoid kicks on Paper/Spigot servers
     // Paper enforces stricter packet rate limits than vanilla, causing ECONNRESET
@@ -78,24 +109,37 @@ export function initBot(username) {
         if (name === 'position' || name === 'position_look' || name === 'look') {
             const now = Date.now();
             if (now - lastPositionUpdate < POSITION_THROTTLE_MS) {
-                // Queue this packet so the last position update is never lost
-                if (!pendingPositionPacket) {
-                    pendingPositionPacket = setTimeout(() => {
+                // Keep replacing the queued payload so the server receives the newest
+                // position/look state, not the first stale packet in the throttle window.
+                if (pendingPositionPacket) {
+                    pendingPositionPacket.name = name;
+                    pendingPositionPacket.data = data;
+                } else {
+                    const pending = { name, data, timer: null };
+                    pending.timer = setTimeout(() => {
+                        if (pendingPositionPacket !== pending) return;
                         pendingPositionPacket = null;
                         lastPositionUpdate = Date.now();
-                        originalWrite(name, data);
+                        originalWrite(pending.name, pending.data);
                     }, POSITION_THROTTLE_MS - (now - lastPositionUpdate));
+                    pendingPositionPacket = pending;
                 }
                 return;
             }
             lastPositionUpdate = now;
             if (pendingPositionPacket) {
-                clearTimeout(pendingPositionPacket);
+                clearTimeout(pendingPositionPacket.timer);
                 pendingPositionPacket = null;
             }
         }
         return originalWrite(name, data);
     };
+    bot.once('end', () => {
+        if (pendingPositionPacket) {
+            clearTimeout(pendingPositionPacket.timer);
+            pendingPositionPacket = null;
+        }
+    });
 
     // Suppress PartialReadError for non-critical packets
     // Paper servers sometimes send packets that node-minecraft-protocol
@@ -119,6 +163,7 @@ export function initBot(username) {
     bot.loadPlugin(collectblock);
     bot.loadPlugin(autoEat);
     bot.loadPlugin(armorManager); // auto equip armor
+    try { bot.loadPlugin(hawkeye); } catch (err) { console.warn('[mcdata] hawkeye plugin failed to load:', err?.message); } // bow aiming; archers fall back to melee if missing
     bot.once('resourcePack', () => {
         bot.acceptResourcePack();
     });
@@ -127,50 +172,115 @@ export function initBot(username) {
         mc_version = bot.version;
         mcdata = minecraftData(mc_version);
         Item = prismarine_items(mc_version);
+        patchFoodRegistry(bot);
     });
 
     return bot;
 }
 
+export function isBabyEntity(entity, source = null) {
+    return compat.isBabyEntity(entity, currentSource(source));
+}
+
 export function isHuntable(mob) {
     if (!mob || !mob.name) return false;
     const animals = ['chicken', 'cow', 'llama', 'mooshroom', 'pig', 'rabbit', 'sheep'];
-    return animals.includes(mob.name.toLowerCase()) && !mob.metadata[16]; // metadata 16 is not baby
+    return animals.includes(mob.name.toLowerCase()) && !isBabyEntity(mob);
 }
 
 export function isHostile(mob) {
     if (!mob || !mob.name) return false;
-    return  (mob.type === 'mob' || mob.type === 'hostile') && mob.name !== 'iron_golem' && mob.name !== 'snow_golem';
+    const name = String(mob.name).toLowerCase();
+    const activeData = mcdata
+        ?? (settings.minecraft_version && settings.minecraft_version !== 'auto'
+            ? minecraftData(settings.minecraft_version)
+            : null);
+    const definition = activeData?.entitiesByName?.[name]
+        ?? (mob.entityType != null ? activeData?.entities?.[mob.entityType] : null);
+    if (definition?.category)
+        return definition.category === 'Hostile mobs';
+    // Explicit category used by a few test/mod adapters. Unknown modded living
+    // entities are handled by npc_defense only after actual aggression; treating
+    // every Mineflayer `mob` as hostile also marks cows and villagers as enemies.
+    return mob.type === 'hostile';
 }
 
 // blocks that don't work with collectBlock, need to be manually collected
 export function mustCollectManually(blockName) {
     // all crops (that aren't normal blocks), torches, buttons, levers, redstone,
-    const full_names = ['wheat', 'carrots', 'potatoes', 'beetroots', 'nether_wart', 'cocoa', 'sugar_cane', 'kelp', 'short_grass', 'fern', 'tall_grass', 'bamboo',
+    const full_names = ['wheat', 'carrots', 'potatoes', 'beetroots', 'nether_wart', 'cocoa', 'sugar_cane', 'kelp', 'short_grass', 'tallgrass', 'fern', 'tall_grass', 'bamboo',
         'poppy', 'dandelion', 'blue_orchid', 'allium', 'azure_bluet', 'oxeye_daisy', 'cornflower', 'lilac', 'wither_rose', 'lily_of_the_valley', 'wither_rose',
-        'lever', 'redstone_wire', 'lantern']
-    const partial_names = ['sapling', 'torch', 'button', 'carpet', 'pressure_plate', 'mushroom', 'tulip', 'bush', 'vines', 'fern']
+        'lever', 'redstone_wire', 'lantern'];
+    const partial_names = ['sapling', 'torch', 'button', 'carpet', 'pressure_plate', 'mushroom', 'tulip', 'bush', 'vines', 'fern'];
     return full_names.includes(blockName.toLowerCase()) || partial_names.some(partial => blockName.toLowerCase().includes(partial));
 }
 
-export function getItemId(itemName) {
-    let item = mcdata.itemsByName[itemName];
+function currentSource(source = null) {
+    return source ?? mc_version ?? settings.minecraft_version;
+}
+
+export function getItemSpec(itemName, source = null) {
+    return compat.legacyItemSpec(itemName, currentSource(source));
+}
+
+export function getBlockSpec(blockName, source = null) {
+    return compat.legacyBlockSpec(blockName, currentSource(source));
+}
+
+export const isPreFlatteningVersion = compat.isPreFlatteningVersion;
+export const usesExpandedWorldHeight = compat.usesExpandedWorldHeight;
+export const usesLegacyNames = compat.usesLegacyNames;
+export const isBedBlock = compat.isBedBlock;
+export const aliasesForLegacyStack = compat.aliasesForLegacyStack;
+export const stackMatchesName = compat.stackMatchesName;
+export const stackMatchesAnyName = compat.stackMatchesAnyName;
+export const blockMatchesName = compat.blockMatchesName;
+export const blockMatchesAnyName = compat.blockMatchesAnyName;
+export const registryBlockIds = compat.registryBlockIds;
+export const setBlockCommand = compat.setBlockCommand;
+export const fillCommand = compat.fillCommand;
+
+export function findInventoryItem(bot, requestedName) {
+    return compat.findInventoryItem(bot, requestedName);
+}
+
+export function getItemId(itemName, source = null) {
+    const registry = source?.registry?.itemsByName ? source.registry : mcdata;
+    if (!registry) return null;
+    const clean = compat.stripNamespaceAndState(itemName);
+    let item = registry.itemsByName?.[clean];
+    if (!item) {
+        const spec = getItemSpec(clean, source);
+        item = registry.itemsByName?.[spec.name];
+    }
     if (item) {
         return item.id;
     }
     return null;
 }
 
+export function getItemMetadata(itemName, source = null) {
+    const spec = getItemSpec(itemName, source);
+    return spec.metadata;
+}
+
 export function getItemName(itemId) {
-    let item = mcdata.items[itemId]
+    if (!mcdata) return null;
+    let item = mcdata.items[itemId];
     if (item) {
         return item.name;
     }
     return null;
 }
 
-export function getBlockId(blockName) {
-    let block = mcdata.blocksByName[blockName];
+export function getBlockId(blockName, source = null) {
+    if (!mcdata) return null;
+    const clean = compat.stripNamespaceAndState(blockName);
+    let block = mcdata.blocksByName[clean];
+    if (!block) {
+        const spec = getBlockSpec(clean, source);
+        block = mcdata.blocksByName[spec.name];
+    }
     if (block) {
         return block.id;
     }
@@ -178,7 +288,8 @@ export function getBlockId(blockName) {
 }
 
 export function getBlockName(blockId) {
-    let block = mcdata.blocks[blockId]
+    if (!mcdata) return null;
+    let block = mcdata.blocks[blockId];
     if (block) {
         return block.name;
     }
@@ -186,6 +297,7 @@ export function getBlockName(blockId) {
 }
 
 export function getEntityId(entityName) {
+    if (!mcdata) return null;
     let entity = mcdata.entitiesByName[entityName];
     if (entity) {
         return entity.id;
@@ -194,10 +306,11 @@ export function getEntityId(entityName) {
 }
 
 export function getAllItems(ignore) {
+    if (!mcdata) return [];
     if (!ignore) {
         ignore = [];
     }
-    let items = []
+    let items = [];
     for (const itemId in mcdata.items) {
         const item = mcdata.items[itemId];
         if (!ignore.includes(item.name)) {
@@ -217,10 +330,11 @@ export function getAllItemIds(ignore) {
 }
 
 export function getAllBlocks(ignore) {
+    if (!mcdata) return [];
     if (!ignore) {
         ignore = [];
     }
-    let blocks = []
+    let blocks = [];
     for (const blockId in mcdata.blocks) {
         const block = mcdata.blocks[blockId];
         if (!ignore.includes(block.name)) {
@@ -240,17 +354,48 @@ export function getAllBlockIds(ignore) {
 }
 
 export function getAllBiomes() {
-    return mcdata.biomes;
+    return mcdata?.biomes ?? [];
+}
+
+function recipeIngredientEntry(ingredient) {
+    if (ingredient == null) return null;
+    if (typeof ingredient === 'number')
+        return ingredient < 0 ? null : { id: ingredient, metadata: null, count: 1 };
+    if (ingredient.id == null || ingredient.id < 0) return null;
+    return {
+        id: ingredient.id,
+        metadata: ingredient.metadata ?? null,
+        count: Math.max(1, Math.abs(ingredient.count ?? 1)),
+    };
+}
+
+function preferredAlias(name, metadata = null) {
+    const aliases = aliasesForLegacyStack(name, metadata, mc_version);
+    return aliases.find(alias => alias !== name) ?? name;
+}
+
+export function recipeRequiresTable(recipe) {
+    if (Array.isArray(recipe?.inShape)) {
+        const rows = recipe.inShape.filter(row => Array.isArray(row) && row.some(Boolean));
+        const columns = rows.reduce((max, row) => Math.max(max, row.length), 0);
+        return rows.length > 2 || columns > 2;
+    }
+    if (Array.isArray(recipe?.ingredients))
+        return recipe.ingredients.filter(ingredient => recipeIngredientEntry(ingredient)).length > 4;
+    return false;
 }
 
 export function getItemCraftingRecipes(itemName) {
     let itemId = getItemId(itemName);
-    if (!mcdata.recipes[itemId]) {
+    if (itemId == null || !mcdata?.recipes?.[itemId]) {
         return null;
     }
+    const targetMetadata = getItemMetadata(itemName);
 
     let recipes = [];
     for (let r of mcdata.recipes[itemId]) {
+        if (targetMetadata != null && r.result?.metadata != null && r.result.metadata !== targetMetadata)
+            continue;
         let recipe = {};
         let ingredients = [];
         if (r.ingredients) {
@@ -259,19 +404,25 @@ export function getItemCraftingRecipes(itemName) {
             ingredients = r.inShape.flat();
         }
         for (let ingredient of ingredients) {
-            let ingredientName = getItemName(ingredient);
+            const entry = recipeIngredientEntry(ingredient);
+            if (!entry) continue;
+            let ingredientName = getItemName(entry.id);
             if (ingredientName === null) continue;
+            ingredientName = preferredAlias(ingredientName, entry.metadata);
             if (!recipe[ingredientName])
                 recipe[ingredientName] = 0;
-            recipe[ingredientName]++;
+            recipe[ingredientName] += entry.count;
         }
         recipes.push([
             recipe,
-            {craftedCount : r.result.count}
+            {
+                craftedCount: r.result.count,
+                requiresTable: recipeRequiresTable(r),
+            }
         ]);
     }
     // sort recipes by if their ingredients include common items
-    const commonItems = ['oak_planks', 'oak_log', 'coal', 'cobblestone'];
+    const commonItems = ['oak_planks', 'planks', 'oak_log', 'log', 'coal', 'cobblestone'];
     recipes.sort((a, b) => {
         let commonCountA = Object.keys(a[0]).filter(key => commonItems.includes(key)).reduce((acc, key) => acc + a[0][key], 0);
         let commonCountB = Object.keys(b[0]).filter(key => commonItems.includes(key)).reduce((acc, key) => acc + b[0][key], 0);
@@ -282,15 +433,18 @@ export function getItemCraftingRecipes(itemName) {
 }
 
 export function isSmeltable(itemName) {
-    const misc_smeltables = ['beef', 'chicken', 'cod', 'mutton', 'porkchop', 'rabbit', 'salmon', 'tropical_fish', 'potato', 'kelp', 'sand', 'cobblestone', 'clay_ball'];
-    return itemName.includes('raw') || itemName.includes('log') || misc_smeltables.includes(itemName);
+    const spec = getItemSpec(itemName);
+    const name = spec.name;
+    const misc_smeltables = ['beef', 'chicken', 'cod', 'fish', 'mutton', 'porkchop', 'rabbit', 'salmon', 'tropical_fish', 'potato', 'kelp', 'sand', 'cobblestone', 'clay_ball'];
+    return itemName.includes('raw') || ['iron_ore', 'gold_ore'].includes(name)
+        || name.includes('log') || misc_smeltables.includes(itemName) || misc_smeltables.includes(name);
 }
 
 export function getSmeltingFuel(bot) {
-    let fuel = bot.inventory.items().find(i => i.name === 'coal' || i.name === 'charcoal' || i.name === 'blaze_rod')
+    let fuel = bot.inventory.items().find(i => i.name === 'coal' || i.name === 'charcoal' || i.name === 'blaze_rod');
     if (fuel)
         return fuel;
-    fuel = bot.inventory.items().find(i => i.name.includes('log') || i.name.includes('planks'))
+    fuel = bot.inventory.items().find(i => i.name.includes('log') || i.name.includes('planks'));
     if (fuel)
         return fuel;
     return bot.inventory.items().find(i => i.name === 'coal_block' || i.name === 'lava_bucket');
@@ -302,7 +456,7 @@ export function getFuelSmeltOutput(fuelName) {
     if (fuelName === 'blaze_rod')
         return 12;
     if (fuelName.includes('log') || fuelName.includes('planks'))
-        return 1.5
+        return 1.5;
     if (fuelName === 'coal_block')
         return 80;
     if (fuelName === 'lava_bucket')
@@ -313,13 +467,13 @@ export function getFuelSmeltOutput(fuelName) {
 export function getItemSmeltingIngredient(itemName) {
     return {    
         baked_potato: 'potato',
-        steak: 'raw_beef',
-        cooked_chicken: 'raw_chicken',
-        cooked_cod: 'raw_cod',
-        cooked_mutton: 'raw_mutton',
-        cooked_porkchop: 'raw_porkchop',
-        cooked_rabbit: 'raw_rabbit',
-        cooked_salmon: 'raw_salmon',
+        cooked_beef: 'beef',
+        cooked_chicken: 'chicken',
+        cooked_cod: 'cod',
+        cooked_mutton: 'mutton',
+        cooked_porkchop: 'porkchop',
+        cooked_rabbit: 'rabbit',
+        cooked_salmon: 'salmon',
         dried_kelp: 'kelp',
         iron_ingot: 'raw_iron',
         gold_ingot: 'raw_gold',
@@ -330,9 +484,11 @@ export function getItemSmeltingIngredient(itemName) {
 
 export function getItemBlockSources(itemName) {
     let itemId = getItemId(itemName);
+    if (itemId == null) return [];
     let sources = [];
     for (let block of getAllBlocks()) {
-        if (block.drops.includes(itemId)) {
+        const drops = (block.drops ?? []).map(drop => typeof drop === 'number' ? drop : drop?.drop);
+        if (drops.includes(itemId)) {
             sources.push(block.name);
         }
     }
@@ -341,20 +497,24 @@ export function getItemBlockSources(itemName) {
 
 export function getItemAnimalSource(itemName) {
     return {    
-        raw_beef: 'cow',
-        raw_chicken: 'chicken',
-        raw_cod: 'cod',
-        raw_mutton: 'sheep',
-        raw_porkchop: 'pig',
-        raw_rabbit: 'rabbit',
-        raw_salmon: 'salmon',
+        beef: 'cow',
+        chicken: 'chicken',
+        cod: 'cod',
+        feather: 'chicken',
+        mutton: 'sheep',
+        porkchop: 'pig',
+        rabbit: 'rabbit',
+        salmon: 'salmon',
         leather: 'cow',
+        string: 'spider',
         wool: 'sheep'
     }[itemName];
 }
 
 export function getBlockTool(blockName) {
-    let block = mcdata.blocksByName[blockName];
+    if (!mcdata) return null;
+    const spec = getBlockSpec(blockName);
+    let block = mcdata.blocksByName[spec.name];
     if (!block || !block.harvestTools) {
         return null;
     }
@@ -362,7 +522,10 @@ export function getBlockTool(blockName) {
 }
 
 export function makeItem(name, amount=1) {
-    return new Item(getItemId(name), amount);
+    if (!Item) return null;
+    const itemId = getItemId(name);
+    if (itemId == null) return null;
+    return new Item(itemId, amount, getItemMetadata(name) ?? 0);
 }
 
 /**
@@ -405,13 +568,16 @@ export function calculateLimitingResource(availableItems, requiredItems, discret
     let limitingResource = null;
     let num = Infinity;
     for (const itemType in requiredItems) {
-        if (availableItems[itemType] < requiredItems[itemType] * num) {
+        if (requiredItems[itemType] <= 0) continue;
+        const available = availableItems[itemType] ?? 0;
+        if (available < requiredItems[itemType] * num) {
             limitingResource = itemType;
-            num = availableItems[itemType] / requiredItems[itemType];
+            num = available / requiredItems[itemType];
         }
     }
+    if (!Number.isFinite(num)) num = 0;
     if(discrete) num = Math.floor(num);
-    return {num, limitingResource}
+    return {num, limitingResource};
 }
 
 let loopingItems = new Set();

@@ -1,6 +1,7 @@
 import pf from 'mineflayer-pathfinder';
 import * as mc from '../../utils/mcdata.js';
 
+const clearPathCache = new WeakMap();
 
 export function getNearestFreeSpace(bot, size=1, distance=8) {
     /**
@@ -25,7 +26,9 @@ export function getNearestFreeSpace(bot, size=1, distance=8) {
             for (let z = 0; z < size; z++) {
                 let top = bot.blockAt(empty_pos[i].offset(x, 0, z));
                 let bottom = bot.blockAt(empty_pos[i].offset(x, -1, z));
-                if (!top || !top.name == 'air' || !bottom || bottom.drops.length == 0 || !bottom.diggable) {
+                const topIsEmpty = top && ['air', 'cave_air', 'void_air'].includes(top.name);
+                const bottomIsSolid = bottom && Array.isArray(bottom.shapes) && bottom.shapes.length > 0;
+                if (!topIsEmpty || !bottomIsSolid || ['water', 'lava'].includes(bottom.name)) {
                     empty = false;
                     break;
                 }
@@ -97,7 +100,7 @@ export function getFirstBlockAboveHead(bot, ignore_types=null, distance=32) {
     }
     // The block above, stops when it finds a solid block .
     let block_above = {name: 'air'};
-    let height = 0
+    let height = 0;
     for (let i = 0; i < distance; i++) {
         let block = bot.blockAt(bot.entity.position.offset(0, i+2, 0));
         if (!block) block = {name: 'air'};
@@ -134,10 +137,9 @@ export function getNearestBlocks(bot, block_types=null, distance=8, count=10000)
     else {
         if (!Array.isArray(block_types))
             block_types = [block_types];
-        for(let block_type of block_types) {
-            block_ids.push(mc.getBlockId(block_type));
-        }
+        block_ids = mc.registryBlockIds(bot, block_types);
     }
+    if (block_ids.length === 0) return [];
     return getNearestBlocksWhere(bot, block_ids, distance, count);  
 }
 
@@ -153,7 +155,7 @@ export function getNearestBlocksWhere(bot, predicate, distance=8, count=10000) {
      * let waterBlocks = world.getNearestBlocksWhere(bot, block => block.name === 'water', 16, 10);
      **/
     let positions = bot.findBlocks({matching: predicate, maxDistance: distance, count: count});
-    let blocks = positions.map(position => bot.blockAt(position));
+    let blocks = positions.map(position => bot.blockAt(position)).filter(Boolean);
     return blocks;
 }
 
@@ -251,7 +253,7 @@ export function getVillagerProfession(entity) {
     }
     
     // If we can't determine profession but it's an adult villager
-    if (entity.metadata && entity.metadata[16] !== 1) { // Not a baby
+    if (!mc.isBabyEntity(entity)) {
         return 'Adult';
     }
     
@@ -272,10 +274,12 @@ export function getInventoryCounts(bot) {
     let inventory = {};
     for (const slot of bot.inventory.slots) {
         if (slot != null && slot.name) {
-            if (inventory[slot.name] == null) {
-                inventory[slot.name] = 0;
+            for (const name of new Set(mc.aliasesForLegacyStack(slot.name, slot.metadata, bot))) {
+                if (inventory[name] == null) {
+                    inventory[name] = 0;
+                }
+                inventory[name] += slot.count;
             }
-            inventory[slot.name] += slot.count;
         }
     }
     return inventory;
@@ -394,17 +398,33 @@ export async function isClearPath(bot, target) {
      * @param {Entity} target - The target to path to.
      * @returns {boolean} - True if there is a clear path, false otherwise.
      */
-    let movements = new pf.Movements(bot)
+    if (!target?.position) return false;
+    const cached = clearPathCache.get(target);
+    if (cached && Date.now() - cached.time < 1000 &&
+        cached.position.distanceTo(target.position) < 0.75) {
+        return cached.result;
+    }
+    let movements = new pf.Movements(bot);
     movements.canDig = false;
-    movements.canPlaceOn = false;
+    movements.allow1by1towers = false;
+    movements.allowParkour = false;
+    movements.scafoldingBlocks = [];
     movements.canOpenDoors = false;
     let goal = new pf.goals.GoalNear(target.position.x, target.position.y, target.position.z, 1);
     let path = await bot.pathfinder.getPathTo(movements, goal, 100);
-    return path.status === 'success';
+    const result = path.status === 'success';
+    clearPathCache.set(target, {
+        time: Date.now(),
+        position: target.position.clone(),
+        result,
+    });
+    return result;
 }
 
 export function shouldPlaceTorch(bot) {
     if (!bot.modes.isOn('torch_placing') || bot.interrupt_code) return false;
+    const has_torch = mc.findInventoryItem(bot, 'torch');
+    if (!has_torch) return false;
     const pos = getPosition(bot);
     // TODO: check light level instead of nearby torches, block.light is broken
     let nearest_torch = getNearestBlock(bot, 'torch', 6);
@@ -412,7 +432,6 @@ export function shouldPlaceTorch(bot) {
         nearest_torch = getNearestBlock(bot, 'wall_torch', 6);
     if (!nearest_torch) {
         const block = bot.blockAt(pos);
-        let has_torch = bot.inventory.findInventoryItem('torch');
         return has_torch && block?.name === 'air';
     }
     return false;

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "planId": "1788358066306:Zan",
+  "coordinator": "Zan",
+  "strategy": "Stabilize food for the next 5 minutes with immediate gathering, a small crop start, and one support/social check while keeping the base tidy.",
+  "assignments": {
+    "Blaz": {
+      "focus": "farm",
+      "resource": "food",
+      "amount": 16,
+      "schematic": "",
+      "project": "Gather nearby food quickly and return it to shared storage.",
+      "say": "Najprej hrana; takoj grem nabirat in prinesti nazaj.",
+      "priority": "high",
+      "source": "society",
+      "ts": 1788358066306,
+      "expiresAt": 1788358366306,
+      "completed": false,
+      "planId": "1788358066306:Zan:Blaz"
+    },
+    "Lara": {
+      "focus": "base",
+      "resource": "wood",
+      "amount": 20,
+      "schematic": "crop_patch_small",
+      "project": "Start a small crop patch near the settlement to improve steady food supply.",
+      "say": "Postavil bom majhen gredicni začetek za bolj stabilno hrano.",
+      "priority": "high",
+      "source": "society",
+      "ts": 1788358066306,
+      "expiresAt": 1788358366306,
+      "completed": false,
+      "planId": "1788358066306:Zan:Lara"
+    },
+    "Maja": {
+      "focus": "farm",
+      "resource": "food",
+      "amount": 16,
+      "schematic": "",
+      "project": "Gather food directly from the nearest safe source and deposit it promptly.",
+      "say": "Pobrala bom čim več hrane in jo takoj spravila v skupne zaloge.",
+      "priority": "normal",
+      "source": "society",
+      "ts": 1788358066306,
+      "expiresAt": 1788358366306,
+      "completed": false,
+      "planId": "1788358066306:Zan:Maja"
+    },
+    "Nejc": {
+      "focus": "explore",
+      "resource": "food",
+      "amount": 12,
+      "schematic": "",
+      "project": "Scout a nearby safe food source and collect any easy food on the route back.",
+      "say": "Preverim najbližji varen vir hrane in vzamem, kar je hitro dosegljivo.",
+      "priority": "normal",
+      "source": "society",
+      "ts": 1788358066306,
+      "expiresAt": 1788358366306,
+      "completed": false,
+      "planId": "1788358066306:Zan:Nejc"
+    },
+    "Zan": {
+      "focus": "social",
+      "resource": "food",
+      "amount": 8,
+      "schematic": "",
+      "project": "Check on a struggling member, help restore morale, and coordinate any spare food or tools back to base.",
+      "say": "Najprej pomagam ekipi, potem pa uskladim vse, kar manjka.",
+      "priority": "normal",
+      "source": "society",
+      "ts": 1788358066306,
+      "expiresAt": 1788358366306,
+      "completed": false,
+      "planId": "1788358066306:Zan:Zan"
+    }
+  },
+  "updatedAt": "2026-09-02T14:07:46.306Z",
+  "expiresAt": "2026-09-02T14:12:46.306Z",
+  "nextAt": "2026-09-02T14:12:46.306Z"
+}

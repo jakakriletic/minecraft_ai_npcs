@@ -2,7 +2,7 @@ import * as Mindcraft from './src/mindcraft/mindcraft.js';
 import settings from './settings.js';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { readFileSync } from 'fs';
+import { mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
 
 function parseArguments() {
     return yargs(hideBin(process.argv))
@@ -22,15 +22,90 @@ function parseArguments() {
         .alias('help', 'h')
         .parse();
 }
+
+const RUNTIME_FILE = './bots/kingdom-runtime.json';
+let shuttingDown = false;
+
+function writeRuntimeFile() {
+    try {
+        mkdirSync('./bots', { recursive: true });
+        writeFileSync(RUNTIME_FILE, JSON.stringify({
+            mainPid: process.pid,
+            startedAt: new Date().toISOString(),
+            mindserverPort: settings.mindserver_port,
+            minecraftHost: settings.host,
+            minecraftPort: settings.port,
+            profiles: settings.profiles,
+        }, null, 2));
+    } catch (err) {
+        console.warn(`Could not write kingdom runtime file: ${err.message}`);
+    }
+}
+
+function removeRuntimeFile() {
+    try {
+        unlinkSync(RUNTIME_FILE);
+    } catch {
+        // Already gone or never created.
+    }
+}
+
+function shutdown(signal) {
+    if (shuttingDown) return;
+    shuttingDown = true;
+    console.log(`Received ${signal}; shutting down kingdom agents...`);
+    try {
+        Mindcraft.shutdown();
+    } catch (err) {
+        console.error('Shutdown failed:', err);
+        process.exit(1);
+    }
+}
+
+function parseJsonEnv(name, fallback = null) {
+    if (process.env[name] === undefined) return fallback;
+    try {
+        return JSON.parse(process.env[name]);
+    } catch (err) {
+        console.error(`Failed to parse environment variable ${name}:`, err);
+        return fallback;
+    }
+}
+
+function parseNumberEnv(name, fallback) {
+    if (process.env[name] === undefined) return fallback;
+    const value = Number(process.env[name]);
+    if (Number.isFinite(value)) return value;
+    console.warn(`Ignoring invalid numeric environment variable ${name}: ${process.env[name]}`);
+    return fallback;
+}
+
+function parseBooleanEnv(name, fallback = false) {
+    if (process.env[name] === undefined) return fallback;
+    const value = String(process.env[name]).trim().toLowerCase();
+    if (['1', 'true', 'yes', 'on'].includes(value)) return true;
+    if (['0', 'false', 'no', 'off'].includes(value)) return false;
+    console.warn(`Ignoring invalid boolean environment variable ${name}: ${process.env[name]}`);
+    return fallback;
+}
+
+process.once('SIGINT', () => shutdown('SIGINT'));
+process.once('SIGTERM', () => shutdown('SIGTERM'));
+process.once('exit', removeRuntimeFile);
+
 const args = parseArguments();
 if (args.profiles) {
     settings.profiles = args.profiles;
 }
 if (args.task_path) {
-    let tasks = JSON.parse(readFileSync(args.task_path, 'utf8'));
+    const tasks = JSON.parse(readFileSync(args.task_path, 'utf8'));
+    if (!tasks || typeof tasks !== 'object' || Array.isArray(tasks))
+        throw new Error(`Task file '${args.task_path}' must contain an object keyed by task id`);
     if (args.task_id) {
-        settings.task = tasks[args.task_id];
-        settings.task.task_id = args.task_id;
+        const task = tasks[args.task_id];
+        if (!task || typeof task !== 'object' || Array.isArray(task))
+            throw new Error(`Task '${args.task_id}' was not found in '${args.task_path}'`);
+        settings.task = { ...task, task_id: args.task_id };
     }
     else {
         throw new Error('task_id is required when task_path is provided');
@@ -38,43 +113,41 @@ if (args.task_path) {
 }
 
 // these environment variables override certain settings
-if (process.env.MINECRAFT_PORT) {
-    settings.port = process.env.MINECRAFT_PORT;
-}
-if (process.env.MINDSERVER_PORT) {
-    settings.mindserver_port = process.env.MINDSERVER_PORT;
-}
-if (process.env.PROFILES && JSON.parse(process.env.PROFILES).length > 0) {
-    settings.profiles = JSON.parse(process.env.PROFILES);
-}
-if (process.env.INSECURE_CODING) {
-    settings.allow_insecure_coding = true;
-}
-if (process.env.BLOCKED_ACTIONS) {
-    settings.blocked_actions = JSON.parse(process.env.BLOCKED_ACTIONS);
-}
-if (process.env.MAX_MESSAGES) {
-    settings.max_messages = process.env.MAX_MESSAGES;
-}
-if (process.env.NUM_EXAMPLES) {
-    settings.num_examples = process.env.NUM_EXAMPLES;
-}
-if (process.env.LOG_ALL) {
-    settings.log_all_prompts = process.env.LOG_ALL;
-}
-if (process.env.SETTINGS_JSON) {
-    try {
-        Object.assign(settings, JSON.parse(process.env.SETTINGS_JSON));
-    } catch (err) {
-        console.error("Failed to parse environment variable for SETTINGS_JSON:", err);
-    }
+settings.port = parseNumberEnv('MINECRAFT_PORT', settings.port);
+settings.mindserver_port = parseNumberEnv('MINDSERVER_PORT', settings.mindserver_port);
+
+const envProfiles = parseJsonEnv('PROFILES');
+if (Array.isArray(envProfiles) && envProfiles.length > 0) {
+    settings.profiles = envProfiles;
 }
 
+settings.allow_insecure_coding = parseBooleanEnv('INSECURE_CODING', settings.allow_insecure_coding);
 
-Mindcraft.init(false, settings.mindserver_port, settings.auto_open_ui);
+const envBlockedActions = parseJsonEnv('BLOCKED_ACTIONS');
+if (Array.isArray(envBlockedActions)) {
+    settings.blocked_actions = envBlockedActions;
+}
 
-for (let profile of settings.profiles) {
+settings.max_messages = parseNumberEnv('MAX_MESSAGES', settings.max_messages);
+settings.num_examples = parseNumberEnv('NUM_EXAMPLES', settings.num_examples);
+settings.log_all_prompts = parseBooleanEnv('LOG_ALL', settings.log_all_prompts);
+
+const envSettings = parseJsonEnv('SETTINGS_JSON');
+if (envSettings && typeof envSettings === 'object' && !Array.isArray(envSettings)) {
+    Object.assign(settings, envSettings);
+}
+
+settings.mindserver_port = await Mindcraft.init(false, settings.mindserver_port, settings.auto_open_ui);
+writeRuntimeFile();
+
+// stagger agent logins so several bots don't hit the server connection limit at once
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+for (const profile of settings.profiles) {
     const profile_json = JSON.parse(readFileSync(profile, 'utf8'));
     settings.profile = profile_json;
-    Mindcraft.createAgent(settings);
+    const result = await Mindcraft.createAgent({ ...settings, profile: profile_json });
+    if (!result.success) {
+        console.error(`Failed to create agent ${profile_json.name}: ${result.error}`);
+    }
+    await sleep(4000);
 }

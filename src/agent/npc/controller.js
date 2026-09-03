@@ -1,4 +1,6 @@
 import { readdirSync, readFileSync } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { NPCData } from './data.js';
 import { ItemGoal } from './item_goal.js';
 import { BuildGoal } from './build_goal.js';
@@ -6,6 +8,9 @@ import { itemSatisfied, rotateXZ } from './utils.js';
 import * as skills from '../library/skills.js';
 import * as world from '../library/world.js';
 import * as mc from '../../utils/mcdata.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const CONSTRUCTION_DIR = path.join(__dirname, 'construction');
 
 
 export class NPCContoller {
@@ -17,6 +22,7 @@ export class NPCContoller {
         this.build_goal = new BuildGoal(agent);
         this.constructions = {};
         this.last_goals = {};
+        this.executing = false;
     }
 
     getBuiltPositions() {
@@ -40,13 +46,13 @@ export class NPCContoller {
 
     init() {
         try {
-            for (let file of readdirSync('src/agent/npc/construction')) {
+            for (let file of readdirSync(CONSTRUCTION_DIR)) {
                 if (file.endsWith('.json')) {
-                    this.constructions[file.slice(0, -5)] = JSON.parse(readFileSync('src/agent/npc/construction/' + file, 'utf8'));
+                    this.constructions[file.slice(0, -5)] = JSON.parse(readFileSync(path.join(CONSTRUCTION_DIR, file), 'utf8'));
                 }
             }
         } catch (e) {
-            console.log('Error reading construction file');
+            console.warn(`[npc ${this.agent.name}] error reading construction files: ${e.message}`);
         }
 
         for (let name in this.constructions) {
@@ -72,9 +78,16 @@ export class NPCContoller {
             if (!this.agent.isIdle()) return;
 
             // Persue goal
-            if (!this.agent.actions.resume_func) {
-                this.executeNext();
-                this.agent.history.save();
+            if (!this.agent.actions.resume_func && !this.executing) {
+                this.executing = true;
+                try {
+                    await this.executeNext();
+                    await this.agent.history.save();
+                } catch (error) {
+                    console.error(`[npc ${this.agent.name}] goal loop failed:`, error);
+                } finally {
+                    this.executing = false;
+                }
             }
         });
     }
@@ -90,7 +103,7 @@ export class NPCContoller {
         if (!this.data.do_set_goal) return;
 
         let past_goals = {...this.last_goals};
-        for (let goal in this.data.goals) {
+        for (const goal of this.data.goals) {
             if (past_goals[goal.name] === undefined) past_goals[goal.name] = true;
         }
         let res = await this.agent.prompter.promptGoalSetting(this.agent.history.getHistory(), past_goals);
@@ -144,14 +157,17 @@ export class NPCContoller {
         }
 
         if (this.agent.isIdle())
-            this.agent.bot.emit('idle');
+            setTimeout(() => {
+                if (this.agent.isIdle())
+                    this.agent.bot.emit('idle');
+            }, 250);
     }
 
     async executeGoal() {
         // If we need more blocks to complete a building, get those first
         let goals = this.temp_goals.concat(this.data.goals);
         if (this.data.curr_goal)
-            goals = goals.concat([this.data.curr_goal])
+            goals = goals.concat([this.data.curr_goal]);
         this.temp_goals = [];
 
         let acted = false;
@@ -170,7 +186,7 @@ export class NPCContoller {
             // Build construction goal
             else {
                 let res = null;
-                if (this.data.built.hasOwnProperty(goal.name)) {
+                if (Object.prototype.hasOwnProperty.call(this.data.built, goal.name)) {
                     res = await this.build_goal.executeNext(
                         this.constructions[goal.name],
                         this.data.built[goal.name].position,
@@ -178,11 +194,20 @@ export class NPCContoller {
                     );
                 } else {
                     res = await this.build_goal.executeNext(this.constructions[goal.name]);
+                    if (!res?.position) {
+                        console.warn(`[npc ${this.agent.name}] no build site available for ${goal.name}`);
+                        this.last_goals[goal.name] = false;
+                        continue;
+                    }
                     this.data.built[goal.name] = {
                         name: goal.name,
                         position: res.position,
                         orientation: res.orientation
                     };
+                }
+                if (!res) {
+                    this.last_goals[goal.name] = false;
+                    continue;
                 }
                 if (Object.keys(res.missing).length === 0) {
                     this.data.home = goal.name;
@@ -191,7 +216,7 @@ export class NPCContoller {
                     this.temp_goals.push({
                         name: block_name,
                         quantity: res.missing[block_name]
-                    })
+                    });
                 }
                 if (res.acted) {
                     acted = true;

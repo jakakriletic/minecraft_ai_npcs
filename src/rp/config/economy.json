@@ -1,0 +1,28 @@
+{
+  "_comment": "Bazni cenik mesta v nuggetih (seed za price_beliefs vsakega NPC-ja). Uredi po želji.",
+  "bazni_cenik": {
+    "oak_log": 1, "birch_log": 1, "spruce_log": 1,
+    "oak_planks": 1,
+    "bread": 2, "cooked_beef": 3, "cooked_porkchop": 3, "apple": 1,
+    "coal": 2, "iron_ingot": 8, "iron_ore": 5, "raw_iron": 5,
+    "diamond": 40, "emerald": 20,
+    "stone": 1, "cobblestone": 1,
+    "iron_axe": 20, "iron_pickaxe": 22, "iron_sword": 18,
+    "leather": 3, "wool": 2, "string": 1
+  },
+  "aliasi": {
+    "les": "oak_log", "hlod": "oak_log", "hlodi": "oak_log",
+    "kruh": "bread", "premog": "coal", "zelezo": "iron_ingot",
+    "diamant": "diamond", "kamen": "cobblestone", "sekira": "iron_axe"
+  },
+  "trgovanje": {
+    "_comment": "Marže in varnostne meje (validacija proti prepričanjem — LLM/igralec ju ne more obit).",
+    "prodajna_marza": 1.2,
+    "nakupna_marza": 0.8,
+    "min_prodajni_delez": 0.8,
+    "max_nakupni_delez": 1.1,
+    "popust_pri_zaupanju": { "prag": 70, "faktor": 0.9 },
+    "timeout_s": 60,
+    "ucenje_alfa": 0.2
+  }
+}

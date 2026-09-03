@@ -5,7 +5,7 @@
 To run a task you will first need to follow the setup instructions on the main README. Then you will need to do the following: 
 
 1. Install Minecraft (or a bootleg version you can use at your own risk)
-2. Launch the supported Minecraft version from the main README
+2. Launch Minecraft Java 1.20.1 (the exact version configured in the main README)
 3. Open the world to LAN at 55916 
 4. To run a simple task that involves collecting 4 oak_logs run 
 `node main.js --task_path tasks/basic/single_agent.json --task_id gather_oak_logs`

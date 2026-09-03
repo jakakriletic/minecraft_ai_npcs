@@ -1,0 +1,152 @@
+[
+  {
+    "ts": "2026-09-02T12:58:14.000Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Tilen",
+    "pos": {
+      "x": -106,
+      "y": 64,
+      "z": 538
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:15.756Z",
+    "tip": "udaril_nekoga",
+    "akter": "Rok",
+    "podrobnost": "udaril Tilen",
+    "pos": {
+      "x": -107,
+      "y": 64,
+      "z": 538
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:27.059Z",
+    "tip": "udaril_nekoga",
+    "akter": "Rok",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": -100,
+      "y": 64,
+      "z": 540
+    }
+  },
+  {
+    "ts": "2026-09-02T12:58:30.633Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:22:33.282Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred zombie"
+  },
+  {
+    "ts": "2026-09-02T13:45:28.104Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": 110,
+      "y": 61,
+      "z": -78
+    }
+  },
+  {
+    "ts": "2026-09-02T13:45:42.563Z",
+    "tip": "branil_se",
+    "akter": "pošast",
+    "podrobnost": "usklajeno se je branil pred drowned"
+  },
+  {
+    "ts": "2026-09-02T13:46:00.242Z",
+    "tip": "udaril_nekoga",
+    "akter": "zombie",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": 136,
+      "y": 61,
+      "z": -67
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:16.089Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 137,
+      "y": 62,
+      "z": -67
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:20.079Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 137,
+      "y": 62,
+      "z": -67
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:23.147Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 136,
+      "y": 61,
+      "z": -68
+    }
+  },
+  {
+    "ts": "2026-09-02T13:46:24.603Z",
+    "tip": "udaril_nekoga",
+    "akter": "drowned",
+    "podrobnost": "udaril Kaja",
+    "pos": {
+      "x": 136,
+      "y": 62,
+      "z": -68
+    }
+  },
+  {
+    "ts": "2026-09-02T13:48:31.772Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Nejc",
+    "pos": {
+      "x": 155,
+      "y": 71,
+      "z": -81
+    }
+  },
+  {
+    "ts": "2026-09-02T13:48:45.154Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": 140,
+      "y": 71,
+      "z": -75
+    }
+  },
+  {
+    "ts": "2026-09-02T13:48:46.197Z",
+    "tip": "udaril_nekoga",
+    "akter": "spider",
+    "podrobnost": "udaril Ema",
+    "pos": {
+      "x": 138,
+      "y": 71,
+      "z": -75
+    }
+  }
+]

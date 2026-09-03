@@ -1,0 +1,310 @@
+{
+  "_opis": "Vrtni lok iz listja nad prodnato potjo.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "vrtni lok",
+    "garden arch"
+  ],
+  "size": [
+    7,
+    5,
+    3
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 1,
+      "name": "lantern"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 0,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 1,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 2,
+      "name": "oak_leaves"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 2,
+      "name": "oak_leaves"
+    }
+  ]
+}

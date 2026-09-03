@@ -1,0 +1,17 @@
+diff --git a/node_modules/mineflayer-armor-manager/dist/index.js b/node_modules/mineflayer-armor-manager/dist/index.js
+index e26299f..1d96135 100644
+--- a/node_modules/mineflayer-armor-manager/dist/index.js
++++ b/node_modules/mineflayer-armor-manager/dist/index.js
+@@ -28,7 +28,11 @@ const initializeBot = (bot) => {
+         const item = collected.getDroppedItem();
+         if (item != null && (0, isArmor_1.isArmor)(item)) {
+             // Little delay to receive inventory
+-            setTimeout(() => (0, equipItem_1.equipItem)(bot, item.type), 100);
++            setTimeout(() => {
++                void (0, equipItem_1.equipItem)(bot, item.type).catch((error) => {
++                    console.warn(`[armor-manager] auto-equip failed: ${error?.message ?? error}`);
++                });
++            }, 100);
+         }
+     });
+ };

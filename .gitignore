@@ -6,6 +6,7 @@ code_records/
 scratch.js
 bots/**/action-code/**
 bots/**/
+bots/*.tmp
 keys.json
 services/viaproxy/jars/**
 services/viaproxy/logs/**
@@ -28,3 +29,14 @@ tasks/construction_tasks/train/**
 server_data*
 **/.DS_Store
 src/mindcraft-py/__pycache__/
+
+# Local runtime logs and process state
+/*.log
+/*.err.log
+/*.out.log
+/err.txt
+/out.txt
+/term_err.txt
+/term_out.txt
+/*.pid
+/.farm_runtime_current

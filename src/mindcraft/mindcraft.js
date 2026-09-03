@@ -8,23 +8,30 @@ let connected = false;
 let agent_processes = {};
 let agent_count = 0;
 let mindserver_port = 8080;
+let shuttingDown = false;
 
 export async function init(host_public=false, port=8080, auto_open_ui=true) {
     if (connected) {
         console.error('Already initiliazed!');
-        return;
+        return mindserver_port;
     }
-    mindserver = createMindServer(host_public, port);
-    mindserver_port = port;
+    const result = await createMindServer(host_public, port);
+    mindserver = result.server;
+    mindserver_port = result.port;
     connected = true;
     if (auto_open_ui) {
         setTimeout(() => {
             // check if browser listener is already open
             if (numStateListeners() === 0) {
-                open('http://localhost:'+port);
+                open('http://localhost:'+mindserver_port);
             }
         }, 3000);
     }
+    return mindserver_port;
+}
+
+export function getMindServerPort() {
+    return mindserver_port;
 }
 
 export async function createAgent(settings) {
@@ -101,11 +108,13 @@ export function destroyAgent(agentName) {
 }
 
 export function shutdown() {
+    if (shuttingDown) return;
+    shuttingDown = true;
     console.log('Shutting down');
     for (let agentName in agent_processes) {
         agent_processes[agentName].stop();
     }
     setTimeout(() => {
         process.exit(0);
-    }, 2000);
+    }, 12000);
 }

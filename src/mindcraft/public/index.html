@@ -1,1110 +1,1178 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="sl">
 <head>
-    <title>Mindcraft</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NPC Control</title>
     <script src="/socket.io/socket.io.js"></script>
     <style>
+        :root {
+            color-scheme: dark;
+            --bg: #121417;
+            --panel: #1b2026;
+            --panel-2: #222932;
+            --line: #323b46;
+            --muted: #9aa6b2;
+            --text: #eef3f7;
+            --green: #44c27a;
+            --blue: #5aa9ff;
+            --amber: #e6b450;
+            --red: #ef6b68;
+            --violet: #a98df2;
+            --input: #101317;
+            --shadow: rgba(0, 0, 0, 0.28);
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background: #1a1a1a;
-            color: #e0e0e0;
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font: 14px/1.45 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
-        #agents {
-            background: #2d2d2d;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+        button, input, textarea, select {
+            font: inherit;
         }
-        h1 {
-            color: #ffffff;
-        }
-        .agent {
-            margin: 10px 0;
-            padding: 10px;
-            background: #363636;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-        .restart-btn, .start-btn, .stop-btn {
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
+
+        button {
+            min-height: 34px;
+            border: 1px solid var(--line);
+            background: var(--panel-2);
+            color: var(--text);
+            border-radius: 6px;
+            padding: 7px 10px;
             cursor: pointer;
-            margin-left: 5px;
         }
-        .restart-btn {
-            background: #4CAF50;
+
+        button:hover { border-color: #4c5967; }
+        button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+        .primary { border-color: rgba(68, 194, 122, 0.55); background: rgba(68, 194, 122, 0.16); color: #dff8e9; }
+        .danger { border-color: rgba(239, 107, 104, 0.55); background: rgba(239, 107, 104, 0.14); color: #ffd9d8; }
+        .blue { border-color: rgba(90, 169, 255, 0.55); background: rgba(90, 169, 255, 0.15); color: #d9ecff; }
+        .amber { border-color: rgba(230, 180, 80, 0.55); background: rgba(230, 180, 80, 0.14); color: #ffedbf; }
+
+        input, textarea, select {
+            width: 100%;
+            min-height: 34px;
+            border: 1px solid var(--line);
+            background: var(--input);
+            color: var(--text);
+            border-radius: 6px;
+            padding: 7px 9px;
+            outline: none;
         }
-        .start-btn {
-            background: #2196F3;
-        }
-        .stop-btn {
-            background: #f44336;
-        }
-        .restart-btn:hover { background: #45a049; }
-        .start-btn:hover { background: #1976D2; }
-        .stop-btn:hover { background: #d32f2f; }
-        .gear-btn {
-            background: #505050;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 2px 6px;
-            cursor: pointer;
-            margin-left: 6px;
-            font-size: 0.9em;
-        }
-        .gear-btn:hover { background: #5a5a5a; }
-        .status-icon {
+
+        textarea {
+            min-height: 180px;
+            resize: vertical;
+            font-family: "Cascadia Mono", Consolas, monospace;
             font-size: 12px;
-            margin-right: 8px;
+            line-height: 1.45;
         }
-        .status-icon.online {
-            color: #4CAF50;
-        }
-        .status-icon.offline {
-            color: #f44336;
-        }
-        #settingsForm {
+
+        input[type="range"] { padding: 0; accent-color: var(--blue); }
+        input[type="checkbox"] { width: auto; min-height: 0; }
+
+        .app {
+            min-height: 100vh;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 8px;
-            margin-top: 10px;
+            grid-template-rows: auto auto 1fr;
         }
-        .setting-wrapper {
+
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line);
+            background: #15191e;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            letter-spacing: 0;
+        }
+
+        h1 { font-size: 22px; font-weight: 760; }
+        h2 { font-size: 17px; font-weight: 720; }
+        h3 { font-size: 14px; font-weight: 680; color: #dce5ec; }
+
+        .subtle { color: var(--muted); }
+        .small { font-size: 12px; }
+
+        .topline {
             display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .badge {
+            display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #3a3a3a;
-            padding: 6px 8px;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-            min-width: 0;
-        }
-        .setting-wrapper label {
-            flex: 0 0 50%;
-            font-size: 0.9em;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            min-height: 24px;
+            padding: 3px 8px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            background: #171b20;
             white-space: nowrap;
         }
-        .setting-wrapper input[type="text"],
-        .setting-wrapper input[type="number"] {
-            flex: 1 1 0;
-            background: #262626;
-            border: 1px solid #555;
-            color: #e0e0e0;
-            border-radius: 4px;
-            padding: 4px 6px;
-            max-width: 100%;
-            min-width: 0;
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--muted);
         }
-        .setting-wrapper input[type="checkbox"] {
-            transform: scale(1.2);
-        }
-        .agent-view-container {
-            width: 100%;
-            height: 100%;
-            aspect-ratio: 4/3;
-            overflow: hidden;
-        }
-        .agent-viewer {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-        .last-message {
-            font-style: italic;
-            color: #aaa;
-            margin-top: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%;
-        }
-        .start-btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-        .agent-view-container {
-            margin-top: 6px;
+
+        .dot.on { background: var(--green); }
+        .dot.off { background: var(--red); }
+        .dot.wait { background: var(--amber); }
+
+        nav {
             display: flex;
-            justify-content: flex-start;
+            gap: 6px;
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--line);
+            overflow-x: auto;
+            background: #14181d;
         }
-        .agent-grid {
+
+        .tab {
+            white-space: nowrap;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--muted);
+        }
+
+        .tab.active {
+            background: var(--panel-2);
+            color: var(--text);
+            border-color: #506070;
+        }
+
+        main {
+            padding: 18px 20px 28px;
+            min-width: 0;
+        }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 8px;
-            width: 100%;
+            gap: 14px;
+        }
+
+        .overview-grid {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .two-col {
+            grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
             align-items: start;
         }
-        .agent-grid .cell {
-            background: #3a3a3a;
-            padding: 6px 8px;
-            border-radius: 4px;
+
+        .three-col {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         }
-        .agent-grid .cell.title {
-            background: transparent;
-            padding: 0;
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 10px 24px var(--shadow);
+            min-width: 0;
         }
-        .agent-inventory {
-            margin-top: 8px;
-            background: #2f2f2f;
-            border-radius: 6px;
-            padding: 8px;
-        }
-        .agent-inventory h3 { margin: 0 0 6px 0; font-size: 1em; }
-        .inventory-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 6px;
-        }
-        /* Inventory item visuals */
-        .inventory-grid.empty {
-            display: grid;
-            grid-template-columns: 1fr;
-            color: #999;
-        }
-        .inv-item {
-            position: relative;
-            display: grid;
-            grid-template-rows: auto auto;
-            justify-items: center;
+
+        .panel-head {
+            display: flex;
             align-items: center;
-            gap: 4px;
-            background: #2f2f2f;
-            border: 1px solid #444;
-            border-radius: 6px;
-            padding: 8px;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
         }
-        .inv-img {
-            width: 32px;
-            height: 32px;
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
+
+        .panel-body {
+            padding: 14px;
         }
-        .inv-count {
-            position: absolute;
-            right: 6px;
-            bottom: 6px;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            font-size: 0.8em;
-            padding: 2px 6px;
-            border-radius: 10px;
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
         }
-        .inv-name {
-            font-size: 0.85em;
-            color: #ccc;
-            text-align: center;
-            max-width: 100%;
+
+        .metric {
+            display: grid;
+            gap: 6px;
+            padding: 14px;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 780;
+        }
+
+        .list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            background: #171c22;
+            min-width: 0;
+        }
+
+        .row.active {
+            border-color: rgba(90, 169, 255, 0.75);
+            background: rgba(90, 169, 255, 0.10);
+        }
+
+        .row-main {
+            min-width: 0;
+            display: grid;
+            gap: 3px;
+        }
+
+        .row-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+            font-weight: 680;
+        }
+
+        .truncate {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        /* Armor icons */
-        .armor-grid {
-            display: flex;
+
+        .pill {
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
+            min-height: 22px;
+            padding: 2px 7px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--muted);
+            background: #151a20;
+            font-size: 12px;
+            white-space: nowrap;
         }
-        .armor-slot {
-            position: relative;
-            width: 36px;
-            height: 36px;
-            border-radius: 6px;
-            background: #2f2f2f;
-            border: 1px solid #444;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .armor-slot.empty { opacity: 0.4; }
-        .armor-placeholder { color: #888; font-size: 0.9em; }
-        .agent-details-grid {
+
+        .pill.green { color: #d9f8e5; border-color: rgba(68, 194, 122, 0.5); }
+        .pill.blue { color: #d9ecff; border-color: rgba(90, 169, 255, 0.5); }
+        .pill.amber { color: #ffedbf; border-color: rgba(230, 180, 80, 0.5); }
+        .pill.red { color: #ffd9d8; border-color: rgba(239, 107, 104, 0.5); }
+
+        .form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 6px;
-            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 10px;
+            align-items: end;
         }
-        .controls-row {
-            margin-top: 8px;
+
+        label {
             display: grid;
-            grid-template-columns: auto minmax(100px, 1fr) repeat(5, auto);
-            gap: 8px;
-            align-items: center;
+            gap: 5px;
+            color: var(--muted);
+            min-width: 0;
         }
-        .msg-input {
-            width: calc(100% - 8px);
-            background: #262626;
-            border: 1px solid #555;
-            color: #e0e0e0;
-            border-radius: 4px;
-            padding: 4px 6px;
-        }
-        .neutral-btn {
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 5px;
-            background: #505050;
-        }
-        .neutral-btn:hover { background: #5a5a5a; }
-        .neutral-btn:disabled {
-            background: #383838;
-            color: #666;
-            cursor: not-allowed;
-        }
-        .msg-input:disabled {
-            background: #1a1a1a;
-            color: #666;
-            cursor: not-allowed;
-        }
-        .page-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #2d2d2d;
-            padding: 16px;
+
+        label span {
             display: flex;
-            gap: 12px;
             justify-content: space-between;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-        }
-        body {
-            padding-bottom: 80px;  /* Make room for footer */
-        }
-        .agent-stats-row {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
             gap: 8px;
-            margin: 6px 0;
-            font-size: 0.9em;
-            color: #cccccc;
+            color: #c9d3dc;
+            font-size: 12px;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+        }
+
+        .table {
             width: 100%;
-            box-sizing: border-box;
+            border-collapse: collapse;
         }
-        .agent-stats-row .stat {
-            background: #3a3a3a;
-            padding: 6px 8px;
-            border-radius: 4px;
+
+        .table th, .table td {
+            padding: 8px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
         }
-        .status-badge {
-            font-size: 0.75em;
-            margin-left: 8px;
-            padding: 2px 6px;
-            border-radius: 4px;
-            background: #3a3a3a;
-            color: #cccccc;
-            text-transform: lowercase;
+
+        .table th {
+            color: var(--muted);
+            font-weight: 620;
+            font-size: 12px;
         }
-        .status-badge.online { color: #4CAF50; }
-        .status-badge.offline { color: #f44336; }
-        .title-row {
-            display: flex;
-            align-items: center;
+
+        .log {
+            display: grid;
+            gap: 8px;
+            max-height: 460px;
+            overflow: auto;
+            padding-right: 4px;
+        }
+
+        .log-line {
+            border-left: 3px solid var(--line);
+            padding: 7px 9px;
+            background: #171c22;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .prompt-box {
+            display: grid;
             gap: 10px;
         }
-        .title-left {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .title-spacer { flex: 1; }
-        /* Modal styles */
-        .modal-backdrop {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .modal {
-            background: #2d2d2d;
+
+        .empty {
+            color: var(--muted);
+            padding: 18px;
+            border: 1px dashed var(--line);
             border-radius: 8px;
-            width: 80vw;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            text-align: center;
         }
-        .modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            border-bottom: 1px solid #3a3a3a;
+
+        .toast {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            max-width: min(420px, calc(100vw - 36px));
+            border: 1px solid var(--line);
+            background: #182028;
+            border-radius: 8px;
+            padding: 11px 13px;
+            color: var(--text);
+            box-shadow: 0 16px 36px var(--shadow);
+            display: none;
+            z-index: 20;
         }
-        .modal-close-btn {
-            background: #f44336;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 4px 8px;
-            cursor: pointer;
+
+        .toast.show { display: block; }
+
+        @media (max-width: 900px) {
+            header { grid-template-columns: 1fr; }
+            .topline { justify-content: flex-start; }
+            .two-col { grid-template-columns: 1fr; }
+            main { padding: 14px; }
         }
-        .modal-body {
-            flex: 1 1 auto;
-            overflow: auto;
-            padding: 12px 16px;
-        }
-        .modal-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            border-top: 1px solid #3a3a3a;
-        }
-        .footer-left { color: #cccccc; font-style: italic; }
     </style>
 </head>
 <body>
-    <div class="title-row">
-        <div class="title-left">
-            <h1 style="margin: 0;">Mindcraft</h1>
-            <span id="msStatus" class="status-badge offline">mindserver offline</span>
-        </div>
-        <div class="title-spacer"></div>
-    </div>
-    <div id="agents"></div>
-
-    <div class="page-footer">
+<div class="app">
+    <header>
         <div>
-            <button id="openCreateAgentBtn" class="start-btn">New Agent</button>
+            <h1>NPC Control</h1>
+            <div class="subtle small" id="subtitle">Nalagam stanje...</div>
         </div>
-        <div style="display:flex; gap:12px;">
-            <button class="stop-btn" onclick="disconnectAllAgents()">Disconnect All Agents</button>
-            <button class="stop-btn" onclick="confirmShutdown()">Full Shutdown</button>
+        <div class="topline">
+            <span class="badge"><span id="socketDot" class="dot off"></span><span id="socketText">MindServer offline</span></span>
+            <span class="badge"><span id="rpDot" class="dot off"></span><span id="rpText">RP ustavljen</span></span>
+            <button class="blue" data-action="refresh">Refresh</button>
+            <button class="primary" data-action="rp-runtime" data-runtime-action="start">Start RP</button>
+            <button class="danger" data-action="rp-runtime" data-runtime-action="stop">Stop RP</button>
+            <button class="danger" data-action="stop-all">Stop Kingdom</button>
         </div>
-    </div>
+    </header>
 
-    <!-- Modal -->
-    <div id="createAgentModal" class="modal-backdrop">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 style="margin:0;">Create Agent</h2>
-                <button id="closeCreateAgentBtn" class="modal-close-btn">Close</button>
-            </div>
-            <div class="modal-body">
-                <div id="createAgentSection">
-                    <div id="profileStatus" style="margin:6px 0;">Profile: Not uploaded</div>
-                    <div id="settingsForm"></div>
-                    <div id="createError" style="color:#f44336;margin-top:10px;"></div>
-                    <input type="file" id="profileFileInput" accept=".json,application/json" style="display:none">
+    <nav id="tabs"></nav>
+    <main id="content"></main>
+</div>
+<div id="toast" class="toast"></div>
+
+<script>
+const socket = io();
+const tabs = [
+    ['overview', 'Overview'],
+    ['npcs', 'NPCs'],
+    ['social', 'Social Structure'],
+    ['storage', 'Storage'],
+    ['access', 'Access'],
+    ['logs', 'Logs'],
+];
+
+let activeTab = 'overview';
+let dashboard = null;
+let agents = [];
+let agentStates = {};
+let botOutputs = [];
+let selectedKey = null;
+let refreshTimer = null;
+
+const content = document.getElementById('content');
+const toast = document.getElementById('toast');
+
+function esc(value) {
+    return String(value ?? '').replace(/[&<>"']/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[ch]);
+}
+
+function pretty(value) {
+    if (value === null || value === undefined || value === '') return '-';
+    if (typeof value === 'object') return JSON.stringify(value);
+    return String(value);
+}
+
+function showToast(message, isError = false) {
+    toast.textContent = message;
+    toast.style.borderColor = isError ? 'rgba(239, 107, 104, 0.75)' : 'rgba(68, 194, 122, 0.65)';
+    toast.classList.add('show');
+    clearTimeout(showToast.timer);
+    showToast.timer = setTimeout(() => toast.classList.remove('show'), 3200);
+}
+
+async function api(path, options = {}) {
+    const response = await fetch(path, {
+        headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+        ...options,
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || data.ok === false) throw new Error(data.error || `HTTP ${response.status}`);
+    return data;
+}
+
+function setSocketStatus(connected) {
+    document.getElementById('socketDot').className = `dot ${connected ? 'on' : 'off'}`;
+    document.getElementById('socketText').textContent = connected ? 'MindServer online' : 'MindServer offline';
+}
+
+function updateHeader() {
+    const rp = dashboard?.rp?.runtime;
+    const running = Boolean(rp?.running);
+    const controllable = Boolean(rp?.controllable);
+    document.getElementById('rpDot').className = `dot ${running ? (controllable ? 'on' : 'wait') : 'off'}`;
+    document.getElementById('rpText').textContent = running
+        ? (controllable ? `RP online PID ${rp.pid}` : `RP online PID ${rp.pid}, brez IPC`)
+        : 'RP ustavljen';
+    const rpCount = dashboard?.rp?.npcs?.length ?? 0;
+    const onlineAgents = agents.filter(a => a.in_game).length;
+    document.getElementById('subtitle').textContent =
+        `${rpCount} RP NPC-jev, ${onlineAgents}/${agents.length} Mindcraft agentov online`;
+}
+
+async function refreshDashboard(silent = false) {
+    try {
+        const data = await api('/api/dashboard');
+        dashboard = data;
+        if (!selectedKey) {
+            const firstRp = dashboard.rp?.npcs?.[0]?.id;
+            const firstAgent = agents[0]?.name;
+            selectedKey = firstRp ? `rp:${firstRp}` : (firstAgent ? `agent:${firstAgent}` : null);
+        }
+        updateHeader();
+        render();
+        if (!silent) showToast('Stanje osvezeno.');
+    } catch (error) {
+        showToast(error.message, true);
+    }
+}
+
+function renderTabs() {
+    document.getElementById('tabs').innerHTML = tabs.map(([key, label]) => `
+        <button class="tab ${activeTab === key ? 'active' : ''}" data-action="tab" data-tab="${key}">${esc(label)}</button>
+    `).join('');
+}
+
+function render() {
+    renderTabs();
+    updateHeader();
+    if (activeTab === 'overview') renderOverview();
+    else if (activeTab === 'npcs') renderNpcs();
+    else if (activeTab === 'social') renderSocial();
+    else if (activeTab === 'storage') renderStorage();
+    else if (activeTab === 'access') renderAccess();
+    else renderLogs();
+}
+
+function rpNpcs() {
+    return dashboard?.rp?.npcs ?? [];
+}
+
+function kingdomMembers() {
+    return Object.entries(dashboard?.kingdom?.society?.members ?? {})
+        .map(([name, member]) => ({ name, ...member }));
+}
+
+function renderOverview() {
+    const rp = dashboard?.rp;
+    const kingdom = dashboard?.kingdom?.society;
+    const rpOnline = rp?.runtime?.running ? 'running' : 'stopped';
+    const leaders = rp?.civic?.social_structure?.leaders ?? [];
+    const members = kingdomMembers();
+    const onlineMembers = members.filter(m => m.online);
+    content.innerHTML = `
+        <div class="grid overview-grid">
+            ${metric('RP runtime', rpOnline, rp?.runtime?.controllable ? 'Dashboard control active' : 'File view / external process')}
+            ${metric('RP NPCs', rpNpcs().length, rpNpcs().map(n => n.config?.osebnost?.ime ?? n.id).join(', ') || '-')}
+            ${metric('Kingdom agents', `${onlineMembers.length}/${members.length}`, kingdom?.name ?? 'Kraljestvo')}
+            ${metric('Town day', rp?.civic?.current_day ?? '-', `Leader: ${leaders[0]?.name ?? leaders[0]?.id ?? '-'}`)}
+        </div>
+        <div class="grid two-col" style="margin-top:14px;">
+            <section class="panel">
+                <div class="panel-head"><h2>RP Town</h2><div class="toolbar">${runtimeButtons()}</div></div>
+                <div class="panel-body">
+                    <div class="list">
+                        ${rpNpcs().map(npc => npcRow(`rp:${npc.id}`, npc.config?.osebnost?.ime ?? npc.id, [
+                            npc.config?.job,
+                            npc.state?.mood_danes,
+                            `sitost ${npc.state?.potrebe?.sitost ?? '-'}`
+                        ], Boolean(rp?.runtime?.running))).join('') || empty('Ni RP NPC-jev.')}
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="footer-left" id="footerStatus">Configure settings, then upload a profile and create the agent.</div>
-                <div class="footer-actions">
-                    <button id="uploadProfileBtn" class="start-btn">Upload Profile</button>
-                    <button id="submitCreateAgentBtn" class="start-btn" disabled>Create Agent</button>
+            </section>
+            <section class="panel">
+                <div class="panel-head"><h2>Kingdom</h2><div class="toolbar"><button class="danger" data-action="stop-all">Stop All</button></div></div>
+                <div class="panel-body">
+                    <div class="list">
+                        ${members.map(member => npcRow(`agent:${member.name}`, member.name, [
+                            member.role,
+                            member.action,
+                            `${member.health ?? '-'} hp`
+                        ], member.online)).join('') || empty('Ni kingdom state-a.')}
+                    </div>
                 </div>
+            </section>
+        </div>
+        <div class="grid three-col" style="margin-top:14px;">
+            ${recentPanel('Public events', rp?.civic?.public_events ?? [], 'text', 'ts')}
+            ${recentPanel('Kingdom events', kingdom?.events ?? [], 'text', 'at')}
+            ${recentPanel('Bot output', botOutputs.slice(-12), 'message', 'at')}
+        </div>
+    `;
+}
+
+function metric(title, value, detail) {
+    return `
+        <section class="panel metric">
+            <div class="subtle small">${esc(title)}</div>
+            <div class="metric-value">${esc(value)}</div>
+            <div class="subtle small truncate">${esc(detail)}</div>
+        </section>
+    `;
+}
+
+function runtimeButtons() {
+    return `
+        <button class="primary" data-action="rp-runtime" data-runtime-action="start">Start</button>
+        <button class="amber" data-action="rp-runtime" data-runtime-action="restart">Restart</button>
+        <button class="danger" data-action="rp-runtime" data-runtime-action="stop">Stop</button>
+    `;
+}
+
+function npcRow(key, title, details, online) {
+    const active = selectedKey === key ? 'active' : '';
+    const dotClass = online ? 'on' : 'off';
+    return `
+        <button class="row ${active}" data-action="select-npc" data-key="${esc(key)}">
+            <span class="row-main">
+                <span class="row-title"><span class="dot ${dotClass}"></span><span class="truncate">${esc(title)}</span></span>
+                <span class="subtle small truncate">${details.filter(Boolean).map(esc).join(' | ')}</span>
+            </span>
+            <span class="pill ${online ? 'green' : 'red'}">${online ? 'online' : 'offline'}</span>
+        </button>
+    `;
+}
+
+function recentPanel(title, rows, textKey, timeKey) {
+    const body = rows.slice(-10).reverse().map(row => `
+        <div class="log-line">
+            <div>${esc(row[textKey] ?? row.povzetek ?? row.zapis ?? row.message ?? '-')}</div>
+            <div class="subtle small">${esc(row.actor ?? row.agentName ?? '')} ${esc(row[timeKey] ?? '')}</div>
+        </div>
+    `).join('');
+    return `
+        <section class="panel">
+            <div class="panel-head"><h2>${esc(title)}</h2></div>
+            <div class="panel-body"><div class="log">${body || empty('Ni zapisov.')}</div></div>
+        </section>
+    `;
+}
+
+function renderNpcs() {
+    const selected = getSelected();
+    content.innerHTML = `
+        <div class="grid two-col">
+            <section class="panel">
+                <div class="panel-head"><h2>NPCs</h2><button data-action="refresh">Refresh</button></div>
+                <div class="panel-body">
+                    <h3>RP Town</h3>
+                    <div class="list" style="margin-top:8px;">
+                        ${rpNpcs().map(npc => npcRow(`rp:${npc.id}`, npc.config?.osebnost?.ime ?? npc.id, [
+                            npc.config?.osebnost?.vloga,
+                            npc.config?.job,
+                            npc.state?.mood_danes
+                        ], Boolean(dashboard?.rp?.runtime?.running))).join('') || empty('Ni RP NPC-jev.')}
+                    </div>
+                    <h3 style="margin-top:16px;">Kingdom</h3>
+                    <div class="list" style="margin-top:8px;">
+                        ${agents.map(agent => {
+                            const live = agentStates[agent.name];
+                            return npcRow(`agent:${agent.name}`, agent.name, [
+                                live?.action?.current,
+                                live?.gameplay ? `${live.gameplay.health} hp` : '',
+                                agent.socket_connected && !agent.in_game ? 'joining' : ''
+                            ], agent.in_game);
+                        }).join('') || empty('Ni agentov.')}
+                    </div>
+                </div>
+            </section>
+            <section class="panel">
+                ${selected ? renderSelectedNpc(selected) : `<div class="panel-body">${empty('Izberi NPC-ja.')}</div>`}
+            </section>
+        </div>
+    `;
+}
+
+function getSelected() {
+    if (!selectedKey) return null;
+    const [kind, id] = selectedKey.split(':');
+    if (kind === 'rp') return { kind, id, npc: rpNpcs().find(n => n.id === id) };
+    return { kind, id, agent: agents.find(a => a.name === id), state: agentStates[id] };
+}
+
+function renderSelectedNpc(selected) {
+    if (selected.kind === 'agent') return renderAgentDetails(selected.id, selected.agent, selected.state);
+    if (!selected.npc) return `<div class="panel-body">${empty('NPC ni najden.')}</div>`;
+    return renderRpNpcDetails(selected.npc);
+}
+
+function renderAgentDetails(name, agent, state) {
+    const online = Boolean(agent?.in_game);
+    const inv = state?.inventory?.counts ?? {};
+    return `
+        <div class="panel-head">
+            <div>
+                <h2>${esc(name)}</h2>
+                <div class="subtle small">${esc(state?.action?.current ?? (online ? 'online' : 'offline'))}</div>
+            </div>
+            <div class="toolbar">
+                <button class="primary" data-action="agent-start" data-name="${esc(name)}">Start</button>
+                <button class="amber" data-action="agent-restart" data-name="${esc(name)}" ${online ? '' : 'disabled'}>Restart</button>
+                <button class="danger" data-action="agent-stop" data-name="${esc(name)}">Kick</button>
             </div>
         </div>
-    </div>
+        <div class="panel-body grid">
+            <div class="grid overview-grid">
+                ${metric('Position', state?.gameplay?.position ? `${state.gameplay.position.x}, ${state.gameplay.position.y}, ${state.gameplay.position.z}` : '-', state?.gameplay?.dimension ?? '-')}
+                ${metric('Health / hunger', `${state?.gameplay?.health ?? '-'} / ${state?.gameplay?.hunger ?? '-'}`, state?.gameplay?.biome ?? '-')}
+                ${metric('Action', state?.action?.current ?? '-', state?.action?.kind ?? '-')}
+            </div>
+            ${promptPanel('agent', name)}
+            <section>
+                <h3>Inventory</h3>
+                ${keyValueTable(inv)}
+            </section>
+        </div>
+    `;
+}
 
-    <!-- Agent Settings Modal -->
-    <div id="agentSettingsModal" class="modal-backdrop">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 id="agentSettingsTitle" style="margin:0;">Agent Settings</h2>
-                <button id="closeAgentSettingsBtn" class="modal-close-btn">Close</button>
+function renderRpNpcDetails(npc) {
+    const cfg = npc.config ?? {};
+    const state = npc.state ?? {};
+    const name = cfg.osebnost?.ime ?? npc.id;
+    return `
+        <div class="panel-head">
+            <div>
+                <h2>${esc(name)}</h2>
+                <div class="subtle small">${esc(cfg.osebnost?.vloga ?? cfg.job ?? npc.id)}</div>
             </div>
-            <div class="modal-body">
-                <div id="agentSettingsSection">
-                    <div id="agentSettingsForm"></div>
-                    <div id="agentSettingsError" style="color:#f44336;margin-top:10px;"></div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="footer-left" id="agentSettingsFooter">Modify settings then apply to restart the agent.</div>
-                <div class="footer-actions">
-                    <button id="discardAgentSettingsBtn" class="stop-btn" style="background:#777;">Discard Changes</button>
-                    <button id="applyAgentSettingsBtn" class="start-btn" disabled>Apply & Restart</button>
-                </div>
+            <div class="toolbar">
+                <button class="primary" data-action="rp-npc-runtime" data-id="${esc(npc.id)}" data-runtime-action="start">Start</button>
+                <button class="danger" data-action="rp-npc-runtime" data-id="${esc(npc.id)}" data-runtime-action="kick">Kick</button>
+                <button class="amber" data-action="rp-npc-runtime" data-id="${esc(npc.id)}" data-runtime-action="restart">Restart</button>
             </div>
         </div>
-    </div>
-
-    <script>
-        const socket = io({ path: window.location.pathname + 'socket.io' })
-        const agentsDiv = document.getElementById('agents');
-        let settingsSpec = {};
-        let profileData = null;
-        const agentSettings = {};
-        const agentLastMessage = {};
-        const inventoryOpen = {};
-        let currentAgents = [];
-
-        // Item texture helpers (use PrismarineJS minecraft-assets CDN with graceful fallbacks)
-        const BASE_ICON_VERSION_CANDIDATES = ['1.21.8'];
-        const PATH_CANDIDATES = ['items', 'blocks'];
-        function buildVersionCandidatesForAgent(agentName) {
-            const preferred = (agentSettings[agentName] && agentSettings[agentName].minecraft_version && agentSettings[agentName].minecraft_version !== 'auto')
-                ? [String(agentSettings[agentName].minecraft_version)]
-                : [];
-            const merged = [...preferred, ...BASE_ICON_VERSION_CANDIDATES];
-            // de-duplicate while preserving order
-            const seen = new Set();
-            const uniq = [];
-            for (const v of merged) { if (!seen.has(v)) { seen.add(v); uniq.push(v); } }
-            return uniq;
-        }
-        function getItemIconUrl(itemName, vers, pathType) {
-            return `https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/master/data/${vers}/${pathType}/${itemName}.png`;
-        }
-        function buildIconUrlCandidates(itemName, agentName) {
-            // Prefer local proxy that resolves items vs blocks using minecraft-assets
-            const proxiedFirst = [`/assets/item/${agentName}/${itemName}.png`];
-            const versList = buildVersionCandidatesForAgent(agentName);
-            const urls = [...proxiedFirst];
-            for (const vers of versList) {
-                for (const p of PATH_CANDIDATES) {
-                    urls.push(getItemIconUrl(itemName, vers, p));
-                }
-            }
-            return urls;
-        }
-        function fallbackItemIcon(imgEl) {
-            const list = (imgEl.dataset.urlList ? imgEl.dataset.urlList.split('||') : []);
-            let i = Number(imgEl.dataset.urlIndex || '0');
-            if (i < list.length - 1) {
-                i++;
-                imgEl.dataset.urlIndex = String(i);
-                imgEl.src = list[i];
-            } else {
-                imgEl.onerror = null;
-                imgEl.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="100%" height="100%" fill="#444"/><text x="50%" y="55%" font-size="12" fill="#bbb" text-anchor="middle">?</text></svg>');
-            }
-        }
-        function prettyItemName(name) {
-            return String(name || '').replace(/_/g, ' ');
-        }
-
-        function iconHTMLForItem(itemName, title, agentName) {
-            const cands = buildIconUrlCandidates(itemName, agentName);
-            const icon = cands[0];
-            return `
-                <div class="armor-slot" title="${title}">
-                    <img class="inv-img" src="${icon}" data-url-index="0" data-url-list="${cands.join('||')}" onerror="fallbackItemIcon(this)" alt="${title}">
+        <div class="panel-body grid">
+            <div class="toolbar">
+                <button data-action="rp-control" data-id="${esc(npc.id)}" data-control="come">Pridi</button>
+                <button data-action="rp-control" data-id="${esc(npc.id)}" data-control="follow">Sledi</button>
+                <button data-action="rp-control" data-id="${esc(npc.id)}" data-control="stay">Ostani</button>
+                <button data-action="rp-control" data-id="${esc(npc.id)}" data-control="work">Delaj</button>
+                <button data-action="rp-control" data-id="${esc(npc.id)}" data-control="sleep">Spat</button>
+                <button data-action="rp-control" data-id="${esc(npc.id)}" data-control="free">Prosto</button>
+            </div>
+            ${promptPanel('rp', npc.id)}
+            <div class="split">
+                <section>
+                    <div class="panel-head" style="padding-left:0;padding-right:0;border-bottom:0;"><h3>Potrebe</h3><button class="primary" data-action="save-rp-state" data-id="${esc(npc.id)}">Save State</button></div>
+                    <div class="form-grid">${rangeInputs('state', npc.id, 'potrebe', state.potrebe)}</div>
+                </section>
+                <section>
+                    <h3>Lastnosti</h3>
+                    <div class="form-grid" style="margin-top:10px;">${rangeInputs('state', npc.id, 'lastnosti', state.lastnosti)}</div>
+                </section>
+            </div>
+            <section>
+                <div class="panel-head" style="padding-left:0;padding-right:0;border-bottom:0;">
+                    <h3>Job & Schedule</h3>
+                    <button class="primary" data-action="save-rp-config" data-id="${esc(npc.id)}">Save Config</button>
                 </div>
-            `;
+                <div class="form-grid">
+                    ${textInput('config', npc.id, 'job', cfg.job)}
+                    ${textInput('config', npc.id, 'job_region', cfg.job_region)}
+                    ${textInput('config', npc.id, 'home_region', cfg.home_region)}
+                    ${checkInput('config', npc.id, 'vendor', cfg.vendor)}
+                    ${numberInput('config', npc.id, 'schedule.work_start', cfg.schedule?.work_start)}
+                    ${numberInput('config', npc.id, 'schedule.work_end', cfg.schedule?.work_end)}
+                    ${numberInput('config', npc.id, 'schedule.sleep_start', cfg.schedule?.sleep_start)}
+                    ${numberInput('config', npc.id, 'schedule.sleep_end', cfg.schedule?.sleep_end)}
+                </div>
+            </section>
+            <section>
+                <h3>Social</h3>
+                ${renderRelations(state)}
+            </section>
+            <div class="split">
+                ${jsonEditor('Config JSON', 'config-json', npc.id, cfg, 'save-rp-config-json')}
+                ${jsonEditor('State JSON', 'state-json', npc.id, state, 'save-rp-state-json')}
+            </div>
+        </div>
+    `;
+}
+
+function promptPanel(kind, id) {
+    const placeholder = kind === 'rp'
+        ? 'Npr: Preglej svoje spomine o Jaki in popravi napačen povzetek v svojem memoryju.'
+        : 'Npr: Ustavi trenutno nalogo in preveri inventory.';
+    return `
+        <section class="prompt-box">
+            <h3>Direct AI Prompt</h3>
+            <textarea id="prompt-${kind}-${esc(id)}" style="min-height:86px;" placeholder="${esc(placeholder)}"></textarea>
+            <div class="toolbar">
+                <button class="blue" data-action="send-prompt" data-kind="${esc(kind)}" data-id="${esc(id)}">Send Prompt</button>
+                ${kind === 'rp' ? `<button data-action="save-memory" data-id="${esc(id)}">Save As Memory</button>` : ''}
+            </div>
+        </section>
+    `;
+}
+
+function rangeInputs(scope, id, group, values = {}) {
+    return Object.entries(values).map(([key, value]) => `
+        <label>
+            <span><b>${esc(key)}</b><output id="out-${scope}-${esc(id)}-${esc(group)}-${esc(key)}">${esc(value)}</output></span>
+            <input type="range" min="0" max="100" step="1" value="${esc(value)}"
+                data-action="range-edit" data-scope="${esc(scope)}" data-id="${esc(id)}" data-path="${esc(group)}.${esc(key)}">
+        </label>
+    `).join('');
+}
+
+function textInput(scope, id, path, value) {
+    return `
+        <label>
+            <span><b>${esc(path)}</b></span>
+            <input data-action="field-edit" data-scope="${esc(scope)}" data-id="${esc(id)}" data-path="${esc(path)}" value="${esc(value ?? '')}">
+        </label>
+    `;
+}
+
+function numberInput(scope, id, path, value) {
+    return `
+        <label>
+            <span><b>${esc(path)}</b></span>
+            <input type="number" data-action="field-edit" data-scope="${esc(scope)}" data-id="${esc(id)}" data-path="${esc(path)}" value="${esc(value ?? 0)}">
+        </label>
+    `;
+}
+
+function checkInput(scope, id, path, checked) {
+    return `
+        <label>
+            <span><b>${esc(path)}</b></span>
+            <input type="checkbox" data-action="field-edit" data-scope="${esc(scope)}" data-id="${esc(id)}" data-path="${esc(path)}" ${checked ? 'checked' : ''}>
+        </label>
+    `;
+}
+
+function jsonEditor(title, elementPrefix, id, data, action) {
+    return `
+        <section>
+            <div class="panel-head" style="padding-left:0;padding-right:0;border-bottom:0;">
+                <h3>${esc(title)}</h3>
+                <button class="primary" data-action="${esc(action)}" data-id="${esc(id)}">Save JSON</button>
+            </div>
+            <textarea id="${esc(elementPrefix)}-${esc(id)}">${esc(JSON.stringify(data, null, 2))}</textarea>
+        </section>
+    `;
+}
+
+function renderRelations(state) {
+    const bonds = state.social?.bonds ?? {};
+    const npcRows = Object.entries(bonds).map(([id, bond]) => `
+        <tr><td>${esc(id)}</td><td>${esc(bond.status ?? '-')}</td><td>${esc(Math.round(bond.trust ?? 0))}</td><td>${esc(Math.round(bond.affinity ?? 0))}</td><td>${esc(Math.round(bond.tension ?? 0))}</td></tr>
+    `).join('');
+    const playerRows = Object.entries(state.odnosi_igralci ?? {}).map(([id, rel]) => `
+        <tr><td>${esc(id)}</td><td>${esc(rel.mnenje ?? '-')}</td><td>${esc(rel.zaupanje ?? '-')}</td><td></td><td></td></tr>
+    `).join('');
+    return `
+        <table class="table">
+            <thead><tr><th>Who</th><th>Status / mnenje</th><th>Trust</th><th>Affinity</th><th>Tension</th></tr></thead>
+            <tbody>${npcRows || playerRows ? npcRows + playerRows : '<tr><td colspan="5" class="subtle">Odnosi se se oblikujejo.</td></tr>'}</tbody>
+        </table>
+    `;
+}
+
+function renderSocial() {
+    const civic = dashboard?.rp?.civic ?? {};
+    const leaders = civic.social_structure?.leaders ?? [];
+    const circles = civic.social_structure?.circles ?? [];
+    const members = kingdomMembers();
+    content.innerHTML = `
+        <div class="grid three-col">
+            <section class="panel">
+                <div class="panel-head"><h2>RP Leaders</h2></div>
+                <div class="panel-body">${leaders.map(l => `
+                    <div class="row"><span><b>${esc(l.name ?? l.id)}</b><div class="subtle small">${esc(l.id)}</div></span><span class="pill blue">${esc(l.score)}</span></div>
+                `).join('') || empty('Vodje se se oblikujejo.')}</div>
+            </section>
+            <section class="panel">
+                <div class="panel-head"><h2>RP Circles</h2></div>
+                <div class="panel-body">${circles.map(c => `
+                    <div class="row"><span><b>${esc(c.name ?? c.key)}</b><div class="subtle small">${esc((c.members ?? []).join(', '))}</div></span><span class="pill amber">${esc(c.anchor ?? '-')}</span></div>
+                `).join('') || empty('Ni krogov.')}</div>
+            </section>
+            <section class="panel">
+                <div class="panel-head"><h2>Kingdom Roles</h2></div>
+                <div class="panel-body">${members.map(m => `
+                    <div class="row"><span><b>${esc(m.name)}</b><div class="subtle small">${esc(m.action ?? '-')}</div></span><span class="pill ${m.online ? 'green' : 'red'}">${esc(m.role ?? '-')}</span></div>
+                `).join('') || empty('Ni kingdom state-a.')}</div>
+            </section>
+        </div>
+        <section class="panel" style="margin-top:14px;">
+            <div class="panel-head"><h2>Bond Matrix</h2></div>
+            <div class="panel-body">${renderBondMatrix()}</div>
+        </section>
+    `;
+}
+
+function renderBondMatrix() {
+    const npcs = rpNpcs();
+    if (!npcs.length) return empty('Ni RP NPC-jev.');
+    const rows = npcs.map(a => `
+        <tr>
+            <th>${esc(a.config?.osebnost?.ime ?? a.id)}</th>
+            ${npcs.map(b => {
+                if (a.id === b.id) return '<td class="subtle">self</td>';
+                const bond = a.state?.social?.bonds?.[b.id] ?? a.state?.odnosi_npcji?.[b.id];
+                return `<td>${esc(bond?.status ?? bond?.mnenje ?? '-')}${bond?.trust || bond?.zaupanje ? `<div class="subtle small">trust ${esc(Math.round(bond.trust ?? bond.zaupanje))}</div>` : ''}</td>`;
+            }).join('')}
+        </tr>
+    `).join('');
+    return `
+        <table class="table">
+            <thead><tr><th>NPC</th>${npcs.map(n => `<th>${esc(n.config?.osebnost?.ime ?? n.id)}</th>`).join('')}</tr></thead>
+            <tbody>${rows}</tbody>
+        </table>
+    `;
+}
+
+function renderStorage() {
+    const rp = rpNpcs();
+    const publicStorage = dashboard?.kingdom?.publicStorage;
+    const kingdomTotals = {};
+    for (const member of kingdomMembers()) {
+        for (const [key, count] of Object.entries(member.inventory ?? {})) {
+            kingdomTotals[key] = (kingdomTotals[key] ?? 0) + Number(count || 0);
         }
-        function emptySlotHTML(label) {
-            return `<div class="armor-slot empty" title="${label}: none"><span class="armor-placeholder">-</span></div>`;
-        }
-
-        const statusEl = document.getElementById('msStatus');
-        function updateStatus(connected) {
-            if (!statusEl) return;
-            if (connected) {
-                statusEl.textContent = 'MindServer online';
-                statusEl.classList.remove('offline');
-                statusEl.classList.add('online');
-            } else {
-                statusEl.textContent = 'MindServer offline';
-                statusEl.classList.remove('online');
-                statusEl.classList.add('offline');
-            }
-        }
-        function subscribeToState() {
-            socket.emit('listen-to-agents');
-        }
-        // Initial status
-        updateStatus(false);
-        socket.on('connect', () => {
-            updateStatus(true);
-            subscribeToState();
-            // Clear all cached settings on reconnect
-            Object.keys(agentSettings).forEach(name => delete agentSettings[name]);
-        });
-        socket.on('disconnect', () => {
-            updateStatus(false);
-        });
-        socket.on('connect_error', () => {
-            updateStatus(false);
-        });
-
-        fetch('/settings_spec.json')
-            .then(r => r.json())
-            .then(spec => {
-                settingsSpec = spec;
-                buildSettingsForm();
-            });
-
-        function buildSettingsForm() {
-            const form = document.getElementById('settingsForm');
-            form.innerHTML = '';
-            // ensure grid for multi-column layout
-            form.style.display = 'grid';
-            form.style.gridTemplateColumns = 'repeat(auto-fit, minmax(320px, 1fr))';
-            form.style.gap = '8px';
-            Object.keys(settingsSpec).forEach(key => {
-                if (key === 'profile') return; // profile handled via upload
-                const cfg = settingsSpec[key];
-                const wrapper = document.createElement('div');
-                wrapper.className = 'setting-wrapper';
-                const label = document.createElement('label');
-                label.textContent = key;
-                label.title = cfg.description || '';
-                let input;
-                switch (cfg.type) {
-                    case 'boolean':
-                        input = document.createElement('input');
-                        input.type = 'checkbox';
-                        input.checked = cfg.default === true;
-                        break;
-                    case 'number':
-                        input = document.createElement('input');
-                        input.type = 'number';
-                        input.value = cfg.default;
-                        break;
-                    default:
-                        input = document.createElement('input');
-                        input.type = 'text';
-                        input.value = typeof cfg.default === 'object' ? JSON.stringify(cfg.default) : cfg.default;
-                }
-                input.title = cfg.description || '';
-                input.id = `setting-${key}`;
-                wrapper.appendChild(label);
-                wrapper.appendChild(input);
-                form.appendChild(wrapper);
-            });
-        }
-
-        document.getElementById('uploadProfileBtn').addEventListener('click', () => {
-            document.getElementById('profileFileInput').click();
-        });
-
-        document.getElementById('profileFileInput').addEventListener('change', e => {
-            const file = e.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = ev => {
-                try {
-                    profileData = JSON.parse(ev.target.result);
-                    document.getElementById('submitCreateAgentBtn').disabled = false;
-                    document.getElementById('profileStatus').textContent = `Profile: ${profileData.name || 'Uploaded'}`;
-                    document.getElementById('createError').textContent = '';
-                } catch (err) {
-                    document.getElementById('createError').textContent = 'Invalid profile JSON: ' + err.message;
-                    profileData = null;
-                    document.getElementById('submitCreateAgentBtn').disabled = true;
-                    document.getElementById('profileStatus').textContent = 'Profile: Not uploaded';
-                }
-            };
-            reader.readAsText(file);
-            e.target.value = '';
-        });
-
-        document.getElementById('submitCreateAgentBtn').addEventListener('click', () => {
-            if (!profileData) return;
-            const settings = { profile: profileData };
-            Object.keys(settingsSpec).forEach(key => {
-                if (key === 'profile') return;
-                const input = document.getElementById(`setting-${key}`);
-                if (!input) return;
-                const type = settingsSpec[key].type;
-                let val;
-                if (type === 'boolean') val = input.checked;
-                else if (type === 'number') val = Number(input.value);
-                else if (type === 'array' || type === 'object') {
-                    try { val = JSON.parse(input.value); }
-                    catch { val = input.value; }
-                } else val = input.value;
-                settings[key] = val;
-            });
-            socket.emit('create-agent', settings, res => {
-                if (!res.success) {
-                    document.getElementById('createError').textContent = res.error || 'Unknown error';
-                } else {
-                    // reset on success
-                    profileData = null;
-                    document.getElementById('submitCreateAgentBtn').disabled = true;
-                    document.getElementById('profileStatus').textContent = 'Profile: Not uploaded';
-                    document.getElementById('createError').textContent = '';
-                    hideCreateAgentModal();
-                }
-            });
-        });
-
-        // Modal open/close logic
-        const modalBackdrop = document.getElementById('createAgentModal');
-        document.getElementById('openCreateAgentBtn').addEventListener('click', () => {
-            buildSettingsForm();
-            modalBackdrop.style.display = 'flex';
-        });
-        function hideCreateAgentModal() {
-            modalBackdrop.style.display = 'none';
-        }
-        document.getElementById('closeCreateAgentBtn').addEventListener('click', hideCreateAgentModal);
-
-        socket.on('bot-output', (agentName, message) => {
-            agentLastMessage[agentName] = message;
-            const messageDiv = document.getElementById(`lastMessage-${agentName}`);
-            if (messageDiv) {
-                messageDiv.textContent = message;
-            }
-        });
-
-        // Subscribe to aggregated state updates (re-sent on each connect)
-        socket.on('state-update', (states) => {
-            window.lastStates = states;
-            Object.keys(states || {}).forEach(name => {
-                const st = states[name];
-                const healthEl = document.getElementById(`health-${name}`);
-                if (st && !st.error) {
-                    const gp = st.gameplay || {};
-                    if (healthEl && typeof gp.health === 'number') {
-                        const hMax = typeof gp.healthMax === 'number' ? gp.healthMax : 20;
-                        healthEl.textContent = `health: ${gp.health}/${hMax}`;
-                    }
-                    const posEl = document.getElementById(`pos-${name}`);
-                    const hunEl = document.getElementById(`hunger-${name}`);
-                    const bioEl = document.getElementById(`biome-${name}`);
-                    const modeEl = document.getElementById(`mode-${name}`);
-                    const itemsEl = document.getElementById(`items-${name}`);
-                    const equippedEl = document.getElementById(`equipped-${name}`);
-                    const invGrid = document.getElementById(`inventory-${name}`);
-                    const actionEl = document.getElementById(`action-${name}`);
-                    if (posEl && gp.position) {
-                        const p = gp.position;
-                        posEl.textContent = `x ${p.x}, y ${p.y}, z ${p.z}`;
-                    }
-                    if (hunEl && typeof gp.hunger === 'number') {
-                        const fMax = typeof gp.hungerMax === 'number' ? gp.hungerMax : 20;
-                        hunEl.textContent = `hunger: ${gp.hunger}/${fMax}`;
-                    }
-                    if (bioEl && gp.biome) bioEl.textContent = `biome: ${gp.biome}`;
-                    if (modeEl && gp.gamemode) modeEl.textContent = `gamemode: ${gp.gamemode}`;
-                    if (itemsEl && st.inventory) {
-                        const used = st.inventory.stacksUsed ?? 0;
-                        const total = st.inventory.totalSlots ?? 0;
-                        itemsEl.textContent = `inventory slots: ${used}/${total}`;
-                    }
-                    if (equippedEl && st.inventory?.equipment) {
-                        const e = st.inventory.equipment;
-                        equippedEl.textContent = `equipped: ${e.mainHand || 'none'}`;
-                    }
-                    const armorEl = document.getElementById(`armor-${name}`);
-                    if (armorEl && st.inventory?.equipment) {
-                        const e = st.inventory.equipment;
-                        const parts = [];
-                        parts.push(e.helmet ? iconHTMLForItem(e.helmet, `head: ${prettyItemName(e.helmet)}`, name) : emptySlotHTML('head'));
-                        parts.push(e.chestplate ? iconHTMLForItem(e.chestplate, `chest: ${prettyItemName(e.chestplate)}`, name) : emptySlotHTML('chest'));
-                        parts.push(e.leggings ? iconHTMLForItem(e.leggings, `legs: ${prettyItemName(e.leggings)}`, name) : emptySlotHTML('legs'));
-                        parts.push(e.boots ? iconHTMLForItem(e.boots, `feet: ${prettyItemName(e.boots)}`, name) : emptySlotHTML('feet'));
-                        // Main hand for quick glance
-                        parts.push(e.mainHand ? iconHTMLForItem(e.mainHand, `main hand: ${prettyItemName(e.mainHand)}`, name) : emptySlotHTML('main hand'));
-                        armorEl.innerHTML = `<div class="armor-grid">${parts.join('')}</div>`;
-                    }
-                    if (actionEl && st.action) {
-                        actionEl.textContent = `${st.action.current || 'Idle'}`;
-                        const _statusColors = { acting: '#4CAF50', chatting: '#42a5f5', thinking: '#9e9e9e', stopped: '#f44336', idle: '#888' };
-                        actionEl.style.color = _statusColors[st.action.kind] || '';
-                    }
-                    if (invGrid && st.inventory?.counts) {
-                        const counts = st.inventory.counts;
-                        const entries = Object.entries(counts);
-                        if (entries.length) {
-                            invGrid.classList.remove('empty');
-                            invGrid.innerHTML = entries
-                                .sort((a, b) => a[0].localeCompare(b[0]))
-                                .map(([k, v]) => {
-                                    const title = prettyItemName(k);
-                                    const safeAttr = k.replace(/'/g, "\\'");
-                                    const iconCandidates = buildIconUrlCandidates(k, name);
-                                    const icon = iconCandidates[0];
-                                    return `
-                                        <div class="inv-item" title="${title}">
-                                            <img class="inv-img" src="${icon}" data-url-index="0" data-url-list="${iconCandidates.join('||')}" onerror="fallbackItemIcon(this)" alt="${title}">
-                                            <div class="inv-count">${v}</div>
-                                            <div class="inv-name">${title}</div>
-                                        </div>
-                                    `;
-                                })
-                                .join('');
-                        } else {
-                            invGrid.classList.add('empty');
-                            invGrid.innerHTML = '<div class="cell">(empty)</div>';
-                        }
-                    }
-                }
-            });
-        });
-
-        function fetchAgentSettings(name) {
-            return new Promise((resolve) => {
-                if (agentSettings[name]) { resolve(agentSettings[name]); return; }
-                socket.emit('get-settings', name, res => {
-                    if (res.settings) {
-                        agentSettings[name] = res.settings;
-                        resolve(res.settings);
-                    } else resolve(null);
-                });
-            });
-        }
-
-        // Agent settings modal logic
-        const agentSettingsModal = document.getElementById('agentSettingsModal');
-        const agentSettingsForm = document.getElementById('agentSettingsForm');
-        const applyBtn = document.getElementById('applyAgentSettingsBtn');
-        const discardBtn = document.getElementById('discardAgentSettingsBtn');
-        const closeAgentSettingsBtn = document.getElementById('closeAgentSettingsBtn');
-        const agentSettingsTitle = document.getElementById('agentSettingsTitle');
-        let currentAgentName = null;
-        let originalAgentSettings = null;
-
-        function buildAgentSettingsForm(settings) {
-            agentSettingsForm.innerHTML = '';
-            agentSettingsForm.style.display = 'grid';
-            agentSettingsForm.style.gridTemplateColumns = 'repeat(auto-fit, minmax(320px, 1fr))';
-            agentSettingsForm.style.gap = '8px';
-            Object.keys(settingsSpec).forEach(key => {
-                if (key === 'profile') return; // profile not edited here
-                const cfg = settingsSpec[key];
-                const wrapper = document.createElement('div');
-                wrapper.className = 'setting-wrapper';
-                const label = document.createElement('label');
-                label.textContent = key;
-                label.title = cfg.description || '';
-                let input;
-                switch (cfg.type) {
-                    case 'boolean':
-                        input = document.createElement('input');
-                        input.type = 'checkbox';
-                        input.checked = Boolean(settings[key]);
-                        break;
-                    case 'number':
-                        input = document.createElement('input');
-                        input.type = 'number';
-                        input.value = settings[key] ?? cfg.default ?? 0;
-                        break;
-                    default:
-                        input = document.createElement('input');
-                        input.type = 'text';
-                        const defVal = settings[key] ?? cfg.default ?? '';
-                        input.value = typeof defVal === 'object' ? JSON.stringify(defVal) : defVal;
-                }
-                input.id = `agent-setting-${key}`;
-                input.addEventListener('input', onAgentSettingsChanged);
-                if (input.type === 'checkbox') input.addEventListener('change', onAgentSettingsChanged);
-                wrapper.appendChild(label);
-                wrapper.appendChild(input);
-                agentSettingsForm.appendChild(wrapper);
-            });
-            onAgentSettingsChanged();
-        }
-
-        function openAgentSettings(name) {
-            currentAgentName = name;
-            agentSettingsTitle.textContent = `${name} Settings`;
-            fetchAgentSettings(name).then(settings => {
-                originalAgentSettings = JSON.parse(JSON.stringify(settings || {}));
-                buildAgentSettingsForm(settings || {});
-                agentSettingsModal.style.display = 'flex';
-            });
-        }
-        window.openAgentSettings = openAgentSettings;
-
-        function getEditedAgentSettings() {
-            const newSettings = { profile: (originalAgentSettings && originalAgentSettings.profile) || {} };
-            Object.keys(settingsSpec).forEach(key => {
-                if (key === 'profile') return;
-                const cfg = settingsSpec[key];
-                const input = document.getElementById(`agent-setting-${key}`);
-                if (!input) return;
-                let val;
-                if (cfg.type === 'boolean') val = input.checked;
-                else if (cfg.type === 'number') val = Number(input.value);
-                else if (cfg.type === 'array' || cfg.type === 'object') {
-                    try { val = JSON.parse(input.value); }
-                    catch { val = input.value; }
-                } else val = input.value;
-                newSettings[key] = val;
-            });
-            return newSettings;
-        }
-
-        function shallowEqual(a, b) {
-            if (!a || !b) return false;
-            const keys = Object.keys(settingsSpec).filter(k => k !== 'profile');
-            for (const k of keys) {
-                const va = a[k];
-                const vb = b[k];
-                if (typeof va === 'object' || typeof vb === 'object') {
-                    if (JSON.stringify(va) !== JSON.stringify(vb)) return false;
-                } else if (va !== vb) return false;
-            }
-            return true;
-        }
-
-        function onAgentSettingsChanged() {
-            if (!originalAgentSettings) { applyBtn.disabled = true; return; }
-            const edited = getEditedAgentSettings();
-            applyBtn.disabled = shallowEqual(edited, originalAgentSettings);
-        }
-
-        function closeAgentSettings() {
-            agentSettingsModal.style.display = 'none';
-            currentAgentName = null;
-            originalAgentSettings = null;
-        }
-
-        function updateAgentViewer(name) {
-            const agentEl = document.getElementById(`agent-${name}`);
-            if (!agentEl) return;
-
-            const settings = agentSettings[name];
-            const viewerContainer = agentEl.querySelector('.agent-view-container');
-            if (!viewerContainer) return;
-
-            const agentState = currentAgents.find(a => a.name === name);
-            const shouldShow = agentState?.in_game && settings?.render_bot_view === true;
-            viewerContainer.parentElement.style.display = shouldShow ? '' : 'none';
-        }
-
-        discardBtn.addEventListener('click', () => {
-            if (!currentAgentName || !originalAgentSettings) return;
-            buildAgentSettingsForm(originalAgentSettings);
-        });
-
-        applyBtn.addEventListener('click', () => {
-            if (!currentAgentName) return;
-            const edited = getEditedAgentSettings();
-            socket.emit('set-agent-settings', currentAgentName, edited);
-            // Update local settings immediately
-            agentSettings[currentAgentName] = { ...edited, fetched: true };
-            updateAgentViewer(currentAgentName);
-            closeAgentSettings();
-        });
-
-        closeAgentSettingsBtn.addEventListener('click', closeAgentSettings);
-
-
-        function renderAgentCard(agent) {
-            const cfg = agentSettings[agent.name] || {};
-            const showViewer = agent.in_game && cfg.render_bot_view === true;
-            const viewerPort = agent.viewerPort;
-            const viewerHTML = showViewer ? `<div class="agent-view-container"><iframe class="agent-viewer" id="viewer-${agent.name}" src="http://localhost:${viewerPort}"></iframe></div>` : '';
-            const lastMessage = agentLastMessage[agent.name] || '';
-            const invOpen = inventoryOpen[agent.name] === true;
-            const invStyle = invOpen ? '' : 'display:none;';
-            return `
-                    <div class="agent" id="agent-${agent.name}">
-                        <div class="agent-grid">
-                            <div class="cell title" style="grid-column: 1 / -1; display:flex; align-items:center; justify-content:space-between;">
-                                <span><span class="status-icon ${agent.in_game ? 'online' : 'offline'}">●</span>${agent.name}${agent.socket_connected && !agent.in_game ? '<span style="margin-left:6px;color:#f0ad4e;">joining...</span>' : ''}
-                                    <button class="gear-btn" title="Settings" onclick="openAgentSettings('${agent.name}')">⚙</button>
-                                    <button class="gear-btn" title="Inventory" onclick="toggleDetails('${agent.name}')">Inventory</button>
-                                </span>
-                            </div>
-                            ${showViewer ? `<div class="cell" style="grid-row: span 3; padding:0;">${viewerHTML}</div>` : ''}
-                            <div class="cell" id="action-${agent.name}">action: -</div>
-                            <div class="cell" id="mode-${agent.name}">gamemode: -</div>
-                            <div class="cell" id="health-${agent.name}">health: -</div>
-                            <div class="cell" id="hunger-${agent.name}">hunger: -</div>
-                            <div class="cell" id="pos-${agent.name}">pos: -</div>
-                            <div class="cell" id="biome-${agent.name}">biome: -</div>
-                            <div class="cell" id="items-${agent.name}">inventory slots: -</div>
-                            <div class="cell" id="equipped-${agent.name}">equipped: -</div>
-                            <div class="agent-inventory" id="inventorySection-${agent.name}" style="${invStyle} grid-column: 1 / -1;">
-                                <h3>Inventory</h3>
-                                <div class="cell" id="armor-${agent.name}" style="margin-bottom: 8px;">armor: -</div>
-                                <div class="inventory-grid" id="inventory-${agent.name}"></div>
-                            </div>
-                            <div id="lastMessage-${agent.name}" class="last-message" style="grid-column: 1 / -1;"><strong>Last Message:</strong> ${lastMessage}</div>
+    }
+    content.innerHTML = `
+        <div class="grid two-col">
+            <section class="panel">
+                <div class="panel-head"><h2>RP Storage</h2></div>
+                <div class="panel-body">
+                    <div class="list">
+                    ${rp.map(npc => `
+                        <div class="row" style="align-items:start;">
+                            <span class="row-main">
+                                <span class="row-title">${esc(npc.config?.osebnost?.ime ?? npc.id)}</span>
+                                <span class="subtle small">${esc(npc.storageSummary?.chestCount ?? 0)} chestov</span>
+                                ${keyValueTable(npc.storageSummary?.totals ?? {})}
+                            </span>
                         </div>
-                        <div class="controls-row">
-                            <button class="start-btn" id="sendBtn-${agent.name}" disabled onclick="sendMessage('${agent.name}', document.getElementById('messageInput-${agent.name}').value)">Send</button>
-                            <input class="msg-input" type="text" id="messageInput-${agent.name}" placeholder="Enter message..." 
-                                oninput="onMsgInputChange('${agent.name}')"
-                                onkeydown="if(event.key === 'Enter') document.getElementById('sendBtn-${agent.name}').click()"
-                                ${!agent.in_game ? 'disabled' : ''}>
-                            <button class="neutral-btn" onclick="sendMessage('${agent.name}', '!stop')" ${!agent.in_game ? 'disabled' : ''}>Stop Action</button>
-                            <button class="neutral-btn" onclick="sendMessage('${agent.name}', '!stay(-1)')" ${!agent.in_game ? 'disabled' : ''}>Stay Still</button>
-                            <button class="neutral-btn" onclick="restartAgent('${agent.name}')" ${!agent.in_game ? 'disabled' : ''}>Restart</button>
-                            <button class="neutral-btn" ${agent.in_game ? `onclick=\"disconnectAgent('${agent.name}')\"` : (agent.socket_connected ? 'disabled' : `onclick=\"startAgent('${agent.name}')\"`)}>${agent.in_game ? 'Disconnect' : (agent.socket_connected ? 'Connecting...' : 'Connect')}</button>
-                            <button class="stop-btn" onclick="destroyAgent('${agent.name}')">Remove</button>
+                    `).join('') || empty('Ni storage indexov.')}
+                    </div>
+                </div>
+            </section>
+            <section class="panel">
+                <div class="panel-head"><h2>Kingdom Storage</h2></div>
+                <div class="panel-body">
+                    ${publicStorage ? `
+                        <div class="grid overview-grid">
+                            ${metric('Public storage', `${publicStorage.x}, ${publicStorage.y}, ${publicStorage.z}`, publicStorage.dimension ?? '-')}
+                            ${metric('Containers', publicStorage.containers?.length ?? 0, `radius ${publicStorage.radius ?? '-'}`)}
                         </div>
-                    </div>`;
-        }
+                    ` : empty('Public storage ni nastavljen.')}
+                    <h3 style="margin-top:14px;">Member Inventory Totals</h3>
+                    ${keyValueTable(kingdomTotals)}
+                </div>
+            </section>
+        </div>
+    `;
+}
 
-        async function renderAgents(agents) {
-            if (!agents.length) {
-                agentsDiv.innerHTML = '<div class="agent">No agents connected</div>';
-                return;
-            }
+function renderAccess() {
+    const settings = dashboard?.rp?.settings ?? {};
+    content.innerHTML = `
+        <div class="grid two-col">
+            <section class="panel">
+                <div class="panel-head"><h2>Whitelist / Blacklist</h2><button class="primary" data-action="save-access">Save</button></div>
+                <div class="panel-body grid">
+                    <label><span><b>admin_players</b></span><textarea id="adminPlayers" style="min-height:110px;">${esc((settings.admin_players ?? []).join('\n'))}</textarea></label>
+                    <label><span><b>blacklisted_players</b></span><textarea id="blacklistedPlayers" style="min-height:110px;">${esc((settings.blacklisted_players ?? []).join('\n'))}</textarea></label>
+                </div>
+            </section>
+            <section class="panel">
+                <div class="panel-head"><h2>RP Settings JSON</h2><button class="primary" data-action="save-settings-json">Save JSON</button></div>
+                <div class="panel-body">
+                    <textarea id="settingsJson" style="min-height:420px;">${esc(JSON.stringify(settings, null, 2))}</textarea>
+                </div>
+            </section>
+        </div>
+    `;
+}
 
-            // If agentsDiv is empty, do a full render
-            if (!agentsDiv.children.length) {
-                agentsDiv.innerHTML = agents.map(agent => renderAgentCard(agent)).join('');
-                // Update all viewers after initial render
-                setTimeout(() => {
-                    agents.forEach(a => {
-                        if (a.in_game) updateAgentViewer(a.name);
-                    });
-                }, 0);
-                return;
-            }
+function renderLogs() {
+    const rpEvents = rpNpcs().flatMap(npc => (npc.eventLog ?? []).map(event => ({
+        ...event,
+        agentName: npc.config?.osebnost?.ime ?? npc.id,
+    })));
+    content.innerHTML = `
+        <div class="grid three-col">
+            ${recentPanel('RP event logs', rpEvents, 'podrobnost', 'ts')}
+            ${recentPanel('Town public events', dashboard?.rp?.civic?.public_events ?? [], 'text', 'ts')}
+            ${recentPanel('Bot output', botOutputs, 'message', 'at')}
+        </div>
+    `;
+}
 
-            // Compare with current agents to find changes
-            const prevAgents = currentAgents.reduce((acc, a) => ({ ...acc, [a.name]: a }), {});
-            const changedAgents = agents.filter(a => {
-                const prev = prevAgents[a.name];
-                return !prev || prev.in_game !== a.in_game || prev.viewerPort !== a.viewerPort || prev.socket_connected !== a.socket_connected;
+function keyValueTable(obj) {
+    const entries = Object.entries(obj ?? {}).sort((a, b) => String(a[0]).localeCompare(String(b[0])));
+    if (!entries.length) return '<div class="subtle small">-</div>';
+    return `
+        <table class="table">
+            <tbody>${entries.map(([key, value]) => `<tr><th>${esc(key)}</th><td>${esc(pretty(value))}</td></tr>`).join('')}</tbody>
+        </table>
+    `;
+}
+
+function empty(text) {
+    return `<div class="empty">${esc(text)}</div>`;
+}
+
+function getRpNpc(id) {
+    return rpNpcs().find(n => n.id === id);
+}
+
+function setPath(obj, path, value) {
+    const parts = path.split('.');
+    let cur = obj;
+    for (const part of parts.slice(0, -1)) {
+        cur[part] ??= {};
+        cur = cur[part];
+    }
+    cur[parts.at(-1)] = value;
+}
+
+async function saveRpState(id) {
+    const npc = getRpNpc(id);
+    await api(`/api/rp/npcs/${encodeURIComponent(id)}/state`, {
+        method: 'PUT',
+        body: JSON.stringify(npc.state),
+    });
+    await refreshDashboard(true);
+    showToast('State shranjen.');
+}
+
+async function saveRpConfig(id) {
+    const npc = getRpNpc(id);
+    await api(`/api/rp/npcs/${encodeURIComponent(id)}/config`, {
+        method: 'PUT',
+        body: JSON.stringify(npc.config),
+    });
+    await refreshDashboard(true);
+    showToast('Config shranjen.');
+}
+
+document.addEventListener('click', async (event) => {
+    const target = event.target.closest('[data-action]');
+    if (!target) return;
+    const action = target.dataset.action;
+    try {
+        if (action === 'tab') {
+            activeTab = target.dataset.tab;
+            render();
+        } else if (action === 'refresh') {
+            await refreshDashboard();
+        } else if (action === 'select-npc') {
+            selectedKey = target.dataset.key;
+            activeTab = 'npcs';
+            render();
+        } else if (action === 'rp-runtime') {
+            await api(`/api/rp/runtime/${target.dataset.runtimeAction}`, { method: 'POST', body: '{}' });
+            await refreshDashboard(true);
+        } else if (action === 'rp-npc-runtime') {
+            await api(`/api/rp/npcs/${target.dataset.id}/runtime/${target.dataset.runtimeAction}`, { method: 'POST', body: '{}' });
+            await refreshDashboard(true);
+        } else if (action === 'rp-control') {
+            await api(`/api/rp/npcs/${target.dataset.id}/control`, {
+                method: 'POST',
+                body: JSON.stringify({ type: target.dataset.control }),
             });
-
-            // Update only changed agents
-            changedAgents.forEach(agent => {
-                const el = document.getElementById(`agent-${agent.name}`);
-                if (el) {
-                    // Update existing card
-                    el.outerHTML = renderAgentCard(agent);
-                    if (agent.in_game) updateAgentViewer(agent.name);
-                } else {
-                    // Add new card
-                    agentsDiv.insertAdjacentHTML('beforeend', renderAgentCard(agent));
-                    if (agent.in_game) updateAgentViewer(agent.name);
-                }
+            showToast('Ukaz poslan.');
+        } else if (action === 'agent-start') {
+            socket.emit('start-agent', target.dataset.name);
+        } else if (action === 'agent-restart') {
+            socket.emit('restart-agent', target.dataset.name);
+        } else if (action === 'agent-stop') {
+            socket.emit('stop-agent', target.dataset.name);
+        } else if (action === 'stop-all') {
+            socket.emit('stop-all-agents');
+            showToast('Kingdom stop poslan.');
+        } else if (action === 'send-prompt') {
+            await sendPrompt(target.dataset.kind, target.dataset.id);
+        } else if (action === 'save-memory') {
+            await saveMemory(target.dataset.id);
+        } else if (action === 'save-rp-state') {
+            await saveRpState(target.dataset.id);
+        } else if (action === 'save-rp-config') {
+            await saveRpConfig(target.dataset.id);
+        } else if (action === 'save-rp-config-json') {
+            const id = target.dataset.id;
+            getRpNpc(id).config = JSON.parse(document.getElementById(`config-json-${id}`).value);
+            await saveRpConfig(id);
+        } else if (action === 'save-rp-state-json') {
+            const id = target.dataset.id;
+            getRpNpc(id).state = JSON.parse(document.getElementById(`state-json-${id}`).value);
+            await saveRpState(id);
+        } else if (action === 'save-access') {
+            await saveAccess();
+        } else if (action === 'save-settings-json') {
+            await api('/api/rp/settings', {
+                method: 'PUT',
+                body: document.getElementById('settingsJson').value,
             });
-
-            // Remove cards for agents that no longer exist
-            Array.from(agentsDiv.children).forEach(el => {
-                const name = el.id.replace('agent-', '');
-                if (!agents.find(a => a.name === name)) {
-                    el.remove();
-                    delete inventoryOpen[name];
-                }
-            });
+            await refreshDashboard(true);
+            showToast('Settings shranjen.');
         }
+    } catch (error) {
+        showToast(error.message, true);
+    }
+});
 
-        socket.on('agents-status', async (agents) => {
-            // Fetch settings for all agents that don't have current settings
-            const needSettings = agents.filter(a => !agentSettings[a.name]);
-            if (needSettings.length > 0) {
-                await Promise.all(needSettings.map(async (a) => {
-                    const settings = await fetchAgentSettings(a.name);
-                    if (settings) {
-                        agentSettings[a.name] = settings;
-                    }
-                }));
-            }
+document.addEventListener('input', (event) => {
+    const target = event.target;
+    if (!target.matches('[data-action="range-edit"], [data-action="field-edit"]')) return;
+    const npc = getRpNpc(target.dataset.id);
+    if (!npc) return;
+    const root = target.dataset.scope === 'config' ? npc.config : npc.state;
+    let value;
+    if (target.type === 'checkbox') value = target.checked;
+    else if (target.type === 'number' || target.type === 'range') value = Number(target.value);
+    else value = target.value;
+    setPath(root, target.dataset.path, value);
+    if (target.type === 'range') {
+        const [group, key] = target.dataset.path.split('.');
+        const out = document.getElementById(`out-state-${target.dataset.id}-${group}-${key}`);
+        if (out) out.value = value;
+    }
+});
 
-            // Compare with current agents to find changes
-            const prevAgents = currentAgents.reduce((acc, a) => ({ ...acc, [a.name]: a }), {});
-            const changedAgents = agents.filter(a => {
-                const prev = prevAgents[a.name];
-                return !prev || prev.in_game !== a.in_game || prev.viewerPort !== a.viewerPort || prev.socket_connected !== a.socket_connected;
-            });
+async function sendPrompt(kind, id) {
+    const textarea = document.getElementById(`prompt-${kind}-${id}`);
+    const message = textarea?.value?.trim();
+    if (!message) return;
+    if (kind === 'agent') {
+        socket.emit('send-message', id, { from: 'ADMIN', message });
+        textarea.value = '';
+        showToast('Prompt poslan agentu.');
+        return;
+    }
+    const result = await api(`/api/rp/npcs/${encodeURIComponent(id)}/prompt`, {
+        method: 'POST',
+        body: JSON.stringify({ from: 'Dashboard', message }),
+    });
+    textarea.value = '';
+    showToast(result.result?.reply ? `Reply: ${result.result.reply.slice(0, 120)}` : 'Prompt poslan RP NPC-ju.');
+}
 
-            // Update current agents list
-            currentAgents = agents;
+async function saveMemory(id) {
+    const textarea = document.getElementById(`prompt-rp-${id}`);
+    const text = textarea?.value?.trim();
+    if (!text) return;
+    await api(`/api/rp/npcs/${encodeURIComponent(id)}/memory`, {
+        method: 'POST',
+        body: JSON.stringify({ who: 'Dashboard', text }),
+    });
+    textarea.value = '';
+    await refreshDashboard(true);
+    showToast('Memory dodan.');
+}
 
-            // If agentsDiv is empty, do a full render
-            if (!agentsDiv.children.length) {
-                agentsDiv.innerHTML = agents.map(agent => renderAgentCard(agent)).join('');
-                // Update all viewers after initial render
-                setTimeout(() => {
-                    agents.forEach(a => {
-                        if (a.in_game) updateAgentViewer(a.name);
-                    });
-                }, 0);
-                return;
-            }
+async function saveAccess() {
+    const adminPlayers = document.getElementById('adminPlayers').value.split('\n').map(s => s.trim()).filter(Boolean);
+    const blacklistedPlayers = document.getElementById('blacklistedPlayers').value.split('\n').map(s => s.trim()).filter(Boolean);
+    await api('/api/rp/access', {
+        method: 'POST',
+        body: JSON.stringify({ admin_players: adminPlayers, blacklisted_players: blacklistedPlayers }),
+    });
+    await refreshDashboard(true);
+    showToast('Access shranjen.');
+}
 
-            // Update only changed agents
-            changedAgents.forEach(agent => {
-                const el = document.getElementById(`agent-${agent.name}`);
-                if (el) {
-                    // Update existing card
-                    el.outerHTML = renderAgentCard(agent);
-                    if (agent.in_game) updateAgentViewer(agent.name);
-                } else {
-                    // Add new card
-                    agentsDiv.insertAdjacentHTML('beforeend', renderAgentCard(agent));
-                    if (agent.in_game) updateAgentViewer(agent.name);
-                }
-            });
+socket.on('connect', () => {
+    setSocketStatus(true);
+    socket.emit('listen-to-agents');
+});
 
-            // Remove cards for agents that no longer exist
-            Array.from(agentsDiv.children).forEach(el => {
-                const name = el.id.replace('agent-', '');
-                if (!agents.find(a => a.name === name)) {
-                    el.remove();
-                    delete inventoryOpen[name];
-                }
-            });
-        });
+socket.on('disconnect', () => setSocketStatus(false));
+socket.on('connect_error', () => setSocketStatus(false));
 
-        function restartAgent(n) { socket.emit('restart-agent', n); }
-        function disconnectAgent(n) { socket.emit('stop-agent', n); }
-        function startAgent(n) { 
-            const btn = document.querySelector(`button[onclick="startAgent('${n}')"]`);
-            if (btn) {
-                btn.textContent = 'Connecting...';
-                btn.disabled = true;
-                // Re-enable after 10s if still disabled (agent failed to connect)
-                setTimeout(() => {
-                    const retryBtn = document.querySelector(`button[onclick=\\"startAgent('${n}')\\"]`);
-                    const agentState = (window.currentAgents || []).find(a => a.name === n);
-                    const stillWaiting = agentState ? (!agentState.in_game && !agentState.socket_connected) : true;
-                    if (retryBtn && stillWaiting) {
-                        retryBtn.disabled = false;
-                        retryBtn.textContent = 'Connect';
-                    }
-                }, 10000);
-            }
-            socket.emit('start-agent', n);
-        }
-        function stopAgent(n) { socket.emit('stop-agent', n); }
-        function destroyAgent(n) { socket.emit('destroy-agent', n); }
-        function disconnectAllAgents() { 
-            socket.emit('stop-all-agents'); 
-        }
-        function confirmShutdown() {
-            if (confirm('Are you sure you want to perform a full shutdown?\nThis will stop all agents and close the server.')) {
-                socket.emit('shutdown');
-            }
-        }
-        function sendMessage(n, m) {
-            if (!m || !m.trim()) return;
-            socket.emit('send-message', n, { from: 'ADMIN', message: m });
-            const input = document.getElementById(`messageInput-${n}`);
-            const btn = document.getElementById(`sendBtn-${n}`);
-            if (input) input.value = '';
-            if (btn) btn.disabled = true;
-        }
-        function onMsgInputChange(name) {
-            const input = document.getElementById(`messageInput-${name}`);
-            const btn = document.getElementById(`sendBtn-${name}`);
-            if (btn && input) {
-                btn.disabled = !(input.value && input.value.trim().length > 0);
-            }
-        }
+socket.on('agents-status', list => {
+    agents = list ?? [];
+    if (!selectedKey && agents[0]) selectedKey = `agent:${agents[0].name}`;
+    updateHeader();
+    if (activeTab === 'overview' || activeTab === 'npcs' || activeTab === 'social') render();
+});
 
-        function toggleDetails(name) {
-            const invSection = document.getElementById(`inventorySection-${name}`);
-            if (!invSection) return;
-            const visible = invSection.style.display !== 'none';
-            const newVisible = !visible;
-            invSection.style.display = newVisible ? '' : 'none';
-            inventoryOpen[name] = newVisible;
-        }
-        window.toggleDetails = toggleDetails;
-    </script>
+socket.on('state-update', states => {
+    agentStates = states ?? {};
+    if (activeTab === 'npcs' || activeTab === 'overview') render();
+});
+
+socket.on('bot-output', (agentName, message) => {
+    botOutputs.push({ agentName, message, at: new Date().toLocaleTimeString() });
+    botOutputs = botOutputs.slice(-80);
+    if (activeTab === 'logs' || activeTab === 'overview') render();
+});
+
+setSocketStatus(false);
+refreshDashboard(true);
+refreshTimer = setInterval(() => refreshDashboard(true), 5000);
+</script>
 </body>
-</html> 
+</html>

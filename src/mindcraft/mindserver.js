@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import * as mindcraft from './mindcraft.js';
 import { readFileSync } from 'fs';
+import { attachRpDashboardApi } from './rp_dashboard.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Mindserver is:
@@ -18,6 +19,40 @@ const agent_connections = {};
 const agent_listeners = [];
 
 const settings_spec = JSON.parse(readFileSync(path.join(__dirname, 'public/settings_spec.json'), 'utf8'));
+
+async function listenWithPortFallback(httpServer, host, requestedPort, maxAttempts = 20) {
+    let lastError = null;
+    const firstPort = Number(requestedPort) || 8080;
+
+    for (let offset = 0; offset < maxAttempts; offset++) {
+        const candidatePort = firstPort + offset;
+        const result = await new Promise(resolve => {
+            const cleanup = () => {
+                httpServer.off('listening', onListening);
+                httpServer.off('error', onError);
+            };
+            const onListening = () => {
+                cleanup();
+                resolve({ ok: true, port: candidatePort });
+            };
+            const onError = (error) => {
+                cleanup();
+                resolve({ ok: false, error });
+            };
+            httpServer.once('listening', onListening);
+            httpServer.once('error', onError);
+            httpServer.listen(candidatePort, host);
+        });
+
+        if (result.ok) return result.port;
+
+        lastError = result.error;
+        if (result.error?.code !== 'EADDRINUSE') throw result.error;
+        console.warn(`MindServer port ${candidatePort} is already in use; trying ${candidatePort + 1}.`);
+    }
+
+    throw lastError ?? new Error(`Could not bind MindServer near port ${firstPort}.`);
+}
 
 class AgentConnection {
     constructor(settings, viewer_port) {
@@ -45,10 +80,11 @@ export function logoutAgent(agentName) {
 }
 
 // Initialize the server
-export function createMindServer(host_public = false, port = 8080) {
+export async function createMindServer(host_public = false, port = 8080) {
     const app = express();
     server = http.createServer(app);
     io = new Server(server);
+    attachRpDashboardApi(app);
 
     // Serve static files
     const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -198,7 +234,7 @@ export function createMindServer(host_public = false, port = 8080) {
         });
 
         socket.on('chat-message', (agentName, json) => {
-            if (!agent_connections[agentName]) {
+            if (!agent_connections[agentName]?.socket?.connected) {
                 console.warn(`Agent ${agentName} tried to send a message but is not logged in`);
                 return;
             }
@@ -210,11 +246,19 @@ export function createMindServer(host_public = false, port = 8080) {
             const agent = agent_connections[agentName];
             if (agent) {
                 agent.setSettings(settings);
-                agent.socket.emit('restart-agent');
+                if (agent.socket?.connected)
+                    agent.socket.emit('restart-agent');
+                else
+                    mindcraft.startAgent(agentName);
             }
         });
 
         socket.on('restart-agent', (agentName) => {
+            if (!agent_connections[agentName]?.socket?.connected) {
+                console.warn(`Agent ${agentName} is not connected; restarting process instead.`);
+                mindcraft.startAgent(agentName);
+                return;
+            }
             console.log(`Restarting agent: ${agentName}`);
             agent_connections[agentName].socket.emit('restart-agent');
         });
@@ -242,21 +286,14 @@ export function createMindServer(host_public = false, port = 8080) {
             }
         });
 
-        socket.on('shutdown', () => {
+        socket.on('shutdown', (callback) => {
             console.log('Shutting down');
-            for (let agentName in agent_connections) {
-                mindcraft.stopAgent(agentName);
-            }
-            // wait 2 seconds
-            setTimeout(() => {
-                console.log('Exiting MindServer');
-                globalThis.process.exit(0);
-            }, 2000);
-            
+            if (typeof callback === 'function') callback({ ok: true, pid: process.pid });
+            mindcraft.shutdown();
         });
 
 		socket.on('send-message', (agentName, data) => {
-			if (!agent_connections[agentName]) {
+			if (!agent_connections[agentName]?.socket?.connected) {
 				console.warn(`Agent ${agentName} not in game, cannot send message via MindServer.`);
                 return;
 			}
@@ -280,11 +317,10 @@ export function createMindServer(host_public = false, port = 8080) {
         console.log('Public hosting not supported yet. Using localhost.');
     }
     const host = 'localhost';
-    server.listen(port, host, () => {
-        console.log(`MindServer running on port ${port} on host ${host}`);
-    });
+    const actualPort = await listenWithPortFallback(server, host, port);
+    console.log(`MindServer running on port ${actualPort} on host ${host}`);
 
-    return server;
+    return { server, port: actualPort };
 }
 
 function agentsStatusUpdate(socket) {
@@ -305,34 +341,43 @@ function agentsStatusUpdate(socket) {
 }
 
 
+const AGENT_STATE_POLL_INTERVAL_MS = 2500;
 let listenerInterval = null;
+function getAgentState(agentName, agent, timeoutMs = 750) {
+    if (!agent?.in_game || !agent.socket?.connected) return Promise.resolve(null);
+    return new Promise(resolve => {
+        const timer = setTimeout(() => {
+            resolve({ agentName, state: { error: 'state request timed out' } });
+        }, timeoutMs);
+        agent.socket.emit('get-full-state', (state) => {
+            clearTimeout(timer);
+            resolve({ agentName, state });
+        });
+    });
+}
+
 function addListener(listener_socket) {
+    if (agent_listeners.includes(listener_socket)) return;
     agent_listeners.push(listener_socket);
     if (agent_listeners.length === 1) {
         listenerInterval = setInterval(async () => {
             const states = {};
-            for (let agentName in agent_connections) {
-                let agent = agent_connections[agentName];
-                if (agent.in_game) {
-                    try {
-                        const state = await new Promise((resolve) => {
-                            agent.socket.emit('get-full-state', (s) => resolve(s));
-                        });
-                        states[agentName] = state;
-                    } catch (e) {
-                        states[agentName] = { error: String(e) };
-                    }
-                }
+            const requests = Object.entries(agent_connections)
+                .map(([agentName, agent]) => getAgentState(agentName, agent));
+            const results = await Promise.all(requests);
+            for (const result of results) {
+                if (result) states[result.agentName] = result.state;
             }
             for (let listener of agent_listeners) {
                 listener.emit('state-update', states);
             }
-        }, 1000);
+        }, AGENT_STATE_POLL_INTERVAL_MS);
     }
 }
 
 function removeListener(listener_socket) {
-    agent_listeners.splice(agent_listeners.indexOf(listener_socket), 1);
+    const index = agent_listeners.indexOf(listener_socket);
+    if (index >= 0) agent_listeners.splice(index, 1);
     if (agent_listeners.length === 0) {
         clearInterval(listenerInterval);
         listenerInterval = null;

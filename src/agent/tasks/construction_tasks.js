@@ -1,4 +1,6 @@
 import {Vec3} from 'vec3';
+import settings from '../../../settings.js';
+import * as mcCompat from '../../utils/mc_compat.js';
 
 export class ConstructionTaskValidator {
     constructor(data, agent) {
@@ -39,7 +41,12 @@ export function resetConstructionWorld(bot, blueprint) {
     const length = blueprint.levels[0].placement.length + 5;
     const height = blueprint.levels.length + 5;
     const width = blueprint.levels[0].placement[0].length + 5;
-    const command = `/fill ${starting_position[0]} ${starting_position[1]} ${starting_position[2]} ${starting_position[0] + width} ${starting_position[1] + height} ${starting_position[2] + length} air`;
+    const command = mcCompat.fillCommand(
+        new Vec3(starting_position[0], starting_position[1], starting_position[2]),
+        new Vec3(starting_position[0] + width, starting_position[1] + height, starting_position[2] + length),
+        'air',
+        bot,
+    );
     bot.chat(command);
     console.log('World reset');
 }
@@ -140,7 +147,7 @@ export class Blueprint {
         return explanation;
     }
     check(bot) {
-        if (!bot || typeof bot !== 'object' || !bot.hasOwnProperty('blockAt')) {
+        if (!bot || typeof bot !== 'object' || typeof bot.blockAt !== 'function') {
             throw new Error('Invalid bot object. Expected a mineflayer bot.');
         }
         const levels = this.data.levels;
@@ -241,7 +248,13 @@ export class Blueprint {
                 for (let x = 0; x < placement[z].length; x++) {
                     const blockType = placement[z][x];
                     if (blockType) {
-                        const setblockCommand = `/setblock ${baseX + x} ${baseY} ${baseZ + z} ${blockType}`;
+                        const setblockCommand = mcCompat.setBlockCommand(
+                            baseX + x,
+                            baseY,
+                            baseZ + z,
+                            blockType,
+                            settings.minecraft_version,
+                        );
                         commands.push(setblockCommand);
                     }
                 }
@@ -291,7 +304,13 @@ export class Blueprint {
                 for (let x = 0; x < placement[z].length; x++) {
                     const blockType = placement[z][x];
                     if (blockType) {
-                        const setblockCommand = `/setblock ${baseX + x} ${baseY} ${baseZ + z} air`;
+                        const setblockCommand = mcCompat.setBlockCommand(
+                            baseX + x,
+                            baseY,
+                            baseZ + z,
+                            'air',
+                            settings.minecraft_version,
+                        );
                         commands.push(setblockCommand);
                     }
                 }

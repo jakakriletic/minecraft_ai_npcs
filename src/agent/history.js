@@ -42,7 +42,7 @@ export class History {
         console.log("Memory updated to: ", this.memory);
     }
 
-    async appendFullHistory(to_store) {
+    appendFullHistory(to_store) {
         if (this.full_history_fp === undefined) {
             const string_timestamp = new Date().toLocaleString().replace(/[/:]/g, '-').replace(/ /g, '').replace(/,/g, '_');
             this.full_history_fp = `./bots/${this.name}/histories/${string_timestamp}.json`;
@@ -79,7 +79,7 @@ export class History {
         }
     }
 
-    async save() {
+    save() {
         try {
             const data = {
                 memory: this.memory,
@@ -87,7 +87,8 @@ export class History {
                 self_prompting_state: this.agent.self_prompter.state,
                 self_prompt: this.agent.self_prompter.isStopped() ? null : this.agent.self_prompter.prompt,
                 taskStart: this.agent.task.taskStartTime,
-                last_sender: this.agent.last_sender
+                last_sender: this.agent.last_sender,
+                npc: this.agent.npc?.data?.toObject?.() ?? null
             };
             writeFileSync(this.memory_fp, JSON.stringify(data, null, 2));
             console.log('Saved memory to:', this.memory_fp);
@@ -106,6 +107,8 @@ export class History {
             const data = JSON.parse(readFileSync(this.memory_fp, 'utf8'));
             this.memory = data.memory || '';
             this.turns = data.turns || [];
+            if (data.npc && this.agent.npc)
+                this.agent.npc.data = NPCData.fromObject(data.npc);
             console.log('Loaded memory:', this.memory);
             return data;
         } catch (error) {

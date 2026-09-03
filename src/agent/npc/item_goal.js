@@ -17,7 +17,17 @@ const blacklist = [
     'crimson',
     'warped',
     'dye'
-]
+];
+
+export function scaleRecipeRequirements(recipe, craftedCount = 1, quantity = 1) {
+    const batches = Math.max(1, Math.ceil(
+        Math.max(1, Number(quantity) || 1) / Math.max(1, Number(craftedCount) || 1),
+    ));
+    return Object.entries(recipe ?? {}).map(([name, amount]) => ({
+        name,
+        quantity: Math.max(1, Number(amount) || 1) * batches,
+    }));
+}
 
 
 class ItemNode {
@@ -29,20 +39,21 @@ class ItemNode {
         this.source = null;
         this.prereq = null;
         this.recipe = [];
+        this.craftedCount = 1;
         this.fails = 0;
+        this.lastFailureAt = 0;
     }
 
-    setRecipe(recipe) {
+    setRecipe(recipe, craftedCount = 1, requiresTable = false) {
         this.type = 'craft';
-        let size = 0;
+        this.craftedCount = Math.max(1, Number(craftedCount) || 1);
         this.recipe = [];
         for (let [key, value] of Object.entries(recipe)) {
             if (this.manager.nodes[key] === undefined)
                 this.manager.nodes[key] = new ItemWrapper(this.manager, this.wrapper, key);
             this.recipe.push({node: this.manager.nodes[key], quantity: value});
-            size += value;
         }
-        if (size > 4) {
+        if (requiresTable) {
             if (this.manager.nodes['crafting_table'] === undefined)
                 this.manager.nodes['crafting_table'] = new ItemWrapper(this.manager, this.wrapper, 'crafting_table');
             this.prereq = this.manager.nodes['crafting_table'];
@@ -87,16 +98,30 @@ class ItemNode {
         return this;
     }
 
-    getChildren() {
-        let children = [...this.recipe];
+    getChildren(quantity = 1) {
+        let children;
+        if (this.type === 'craft') {
+            const batches = Math.max(1, Math.ceil(quantity / this.craftedCount));
+            children = this.recipe.map(child => ({
+                node: child.node,
+                quantity: child.quantity * batches,
+            }));
+        } else if (this.type === 'smelt') {
+            children = [
+                { node: this.recipe[0].node, quantity },
+                { node: this.recipe[1].node, quantity: Math.max(1, Math.ceil(quantity / 8)) },
+            ];
+        } else {
+            children = [...this.recipe];
+        }
         if (this.prereq) {
             children.push({node: this.prereq, quantity: 1});
         }
         return children;
     }
 
-    isReady() {
-        for (let child of this.getChildren()) {
+    isReady(quantity = 1) {
+        for (let child of this.getChildren(quantity)) {
             if (!child.node.isDone(child.quantity)) {
                 return false;
             }
@@ -114,30 +139,47 @@ class ItemNode {
         if (this.isDone(q)) {
             return 0;
         }
-        let depth = 0;
-        for (let child of this.getChildren()) {
-            depth = Math.max(depth, child.node.getDepth(child.quantity));
+        let depth = this.executionCost(q);
+        for (let child of this.getChildren(q)) {
+            depth += child.node.getDepth(child.quantity);
         }
         return depth + 1;
+    }
+
+    executionCost(quantity = 1) {
+        const q = Math.max(1, Number(quantity) || 1);
+        if (this.type === 'craft') return Math.max(1, Math.ceil(q / this.craftedCount)) * 0.1;
+        if (this.type === 'smelt') return q * 0.15 + 1;
+        if (this.type === 'hunt') {
+            const absent = this.manager.context?.nearbyEntities
+                && !this.manager.context.nearbyEntities.has(this.source);
+            return q * 0.8 + 4 + (absent ? 22 : 0);
+        }
+        if (this.type === 'block') {
+            const absent = this.manager.context?.nearbyBlocks
+                && !this.manager.context.nearbyBlocks.has(this.source);
+            return q * 0.35 + 2 + (absent ? 18 : 0);
+        }
+        return q;
     }
 
     getFails(q=1) {
         if (this.isDone(q)) {
             return 0;
         }
-        let fails = 0;
-        for (let child of this.getChildren()) {
+        let fails = this.failurePenalty();
+        for (let child of this.getChildren(q)) {
             fails += child.node.getFails(child.quantity);
         }
-        return fails + this.fails;
+        return fails;
     }
 
     getNext(q=1) {
         if (this.isDone(q))
             return null;
-        if (this.isReady())
+        if (this.isReady(q))
             return {node: this, quantity: q};
-        for (let child of this.getChildren()) {
+        for (let child of this.getChildren(q)) {
             let res = child.node.getNext(child.quantity);
             if (res)
                 return res;
@@ -146,8 +188,8 @@ class ItemNode {
     }
 
     async execute(quantity=1) {
-        if (!this.isReady()) {
-            this.fails += 1;
+        if (!this.isReady(quantity)) {
+            this.recordFailure();
             return;
         }
         let inventory = world.getInventoryCounts(this.manager.agent.bot);
@@ -160,7 +202,7 @@ class ItemNode {
             await skills.smeltItem(this.manager.agent.bot, to_smelt_name, to_smelt_quantity);
         } else if (this.type === 'hunt') {
             for (let i=0; i<quantity; i++) {
-                res = await skills.attackNearest(this.manager.agent.bot, this.source);
+                const res = await skills.attackNearest(this.manager.agent.bot, this.source);
                 if (!res || this.manager.agent.bot.interrupt_code)
                     break;
             }
@@ -169,8 +211,19 @@ class ItemNode {
         }
         let final_quantity = world.getInventoryCounts(this.manager.agent.bot)[this.name] || 0;
         if (final_quantity <= init_quantity) {
-            this.fails += 1;
+            this.recordFailure();
         }
+    }
+
+    recordFailure() {
+        this.fails += 1;
+        this.lastFailureAt = Date.now();
+    }
+
+    failurePenalty(now = Date.now()) {
+        if (!this.lastFailureAt || this.fails <= 0) return 0;
+        const decay = Math.max(0, 1 - (now - this.lastFailureAt) / (10 * 60_000));
+        return Math.min(40, this.fails * 6) * decay;
     }
 }
 
@@ -196,7 +249,7 @@ class ItemWrapper {
     }
 
     add_method(method) {
-        for (let child of method.getChildren()) {
+        for (let child of method.getChildren(1)) {
             if (child.node.methods.length === 0)
                 return;
         }
@@ -204,9 +257,9 @@ class ItemWrapper {
     }
 
     createChildren() {
-        let recipes = mc.getItemCraftingRecipes(this.name).map(([recipe, craftedCount]) => recipe);
+        let recipes = mc.getItemCraftingRecipes(this.name) ?? [];
         if (recipes) {
-            for (let recipe of recipes) {
+            for (let [recipe, metadata] of recipes) {
                 let includes_blacklisted = false;
                 for (let ingredient in recipe) {
                     for (let match of blacklist) {
@@ -218,14 +271,18 @@ class ItemWrapper {
                     if (includes_blacklisted) break;
                 }
                 if (includes_blacklisted) continue;
-                this.add_method(new ItemNode(this.manager, this, this.name).setRecipe(recipe))
+                this.add_method(new ItemNode(this.manager, this, this.name).setRecipe(
+                    recipe,
+                    metadata?.craftedCount ?? 1,
+                    metadata?.requiresTable === true,
+                ));
             }
         }
 
         let block_sources = mc.getItemBlockSources(this.name);
         if (block_sources.length > 0 && this.name !== 'torch' && !this.name.includes('bed')) {  // Do not collect placed torches or beds
             for (let block_source of block_sources) {
-                if (block_source === 'grass_block') continue;  // Dirt nodes will collect grass blocks
+                if (block_source === 'grass_block' || block_source === 'grass') continue;  // Dirt nodes will collect grass blocks
                 let tool = mc.getBlockTool(block_source);
                 this.add_method(new ItemNode(this.manager, this, this.name).setCollectable(block_source, tool));
             }
@@ -254,6 +311,9 @@ class ItemWrapper {
     }
 
     getBestMethod(q=1) {
+        const cacheKey = `${this.name}:${Math.max(1, Number(q) || 1)}`;
+        const cached = this.manager.context?.methodCache?.get(cacheKey);
+        if (cached) return cached;
         let best_cost = -1;
         let best_method = null;
         for (let method of this.methods) {
@@ -263,7 +323,8 @@ class ItemWrapper {
                 best_method = method;
             }
         }
-        return best_method
+        if (best_method) this.manager.context?.methodCache?.set(cacheKey, best_method);
+        return best_method;
     }
 
     isDone(q=1) {
@@ -298,12 +359,53 @@ export class ItemGoal {
         this.goal = null;
         this.nodes = {};
         this.failed = [];
+        this.context = null;
+    }
+
+    refreshContext() {
+        let nearbyBlocks = [];
+        let nearbyEntities = [];
+        try { nearbyBlocks = world.getNearbyBlockTypes(this.agent.bot); } catch { /* incomplete test/world */ }
+        try { nearbyEntities = world.getNearbyEntityTypes(this.agent.bot); } catch { /* incomplete test/world */ }
+        this.context = {
+            nearbyBlocks: new Set(nearbyBlocks),
+            nearbyEntities: new Set(nearbyEntities),
+            methodCache: new Map(),
+            sensedAt: Date.now(),
+        };
+    }
+
+    setActiveGoal(item_name) {
+        // A wrapper created as a dependency has ancestry-specific cycle pruning.
+        // Reusing it later as an unrelated root can therefore hide valid methods.
+        // Rebuild only when the requested root changes; within one goal the AND/OR
+        // graph and its decaying method-failure history stay persistent.
+        if (!this.goal || this.goal.name !== item_name) {
+            this.nodes = {};
+            this.failed = [];
+            this.nodes[item_name] = new ItemWrapper(this, null, item_name);
+        }
+        this.goal = this.nodes[item_name];
+        return this.goal;
+    }
+
+    previewNext(item_name, item_quantity = 1) {
+        this.refreshContext();
+        const goal = this.setActiveGoal(item_name);
+        const next = goal.getNext(item_quantity);
+        if (!next) return null;
+        return {
+            item: next.node.name,
+            type: next.node.type,
+            source: next.node.source,
+            quantity: next.quantity,
+            estimatedCost: goal.getDepth(item_quantity) + goal.getFails(item_quantity),
+        };
     }
 
     async executeNext(item_name, item_quantity=1) {
-        if (this.nodes[item_name] === undefined)
-            this.nodes[item_name] = new ItemWrapper(this, null, item_name);
-        this.goal = this.nodes[item_name];
+        this.refreshContext();
+        this.setActiveGoal(item_name);
 
         // Get next goal to execute
         let next_info = this.goal.getNext(item_quantity);
@@ -315,18 +417,19 @@ export class ItemGoal {
         let quantity = next_info.quantity;
 
         // Prevent unnecessary attempts to obtain blocks that are not nearby
-        if (next.type === 'block' && !world.getNearbyBlockTypes(this.agent.bot).includes(next.source) ||
-                next.type === 'hunt' && !world.getNearbyEntityTypes(this.agent.bot).includes(next.source)) {
-            next.fails += 1;
+        if ((next.type === 'block' && !this.context.nearbyBlocks.has(next.source)) ||
+                (next.type === 'hunt' && !this.context.nearbyEntities.has(next.source))) {
+            next.recordFailure();
 
             // If the bot has failed to obtain the block before, explore
-            if (this.failed.includes(next.name)) {
-                this.failed = this.failed.filter((item) => item !== next.name);
+            const failureKey = `${next.name}:${next.type}:${next.source ?? ''}`;
+            if (this.failed.includes(failureKey)) {
+                this.failed = this.failed.filter((item) => item !== failureKey);
                 await this.agent.actions.runAction('itemGoal:explore', async () => {
                     await skills.moveAway(this.agent.bot, 8);
                 });
             } else {
-                this.failed.push(next.name);
+                this.failed.push(failureKey);
                 await new Promise((resolve) => setTimeout(resolve, 500));
                 this.agent.bot.emit('idle');
             }

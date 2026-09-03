@@ -1,0 +1,688 @@
+{
+  "_opis": "Majhna obcestna greda s pridelki in ograjo.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "greda",
+    "crop patch"
+  ],
+  "size": [
+    9,
+    3,
+    7
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 0,
+      "name": "farmland"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 1,
+      "name": "farmland"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 2,
+      "name": "farmland"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 3,
+      "name": "farmland"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 4,
+      "name": "farmland"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 5,
+      "name": "farmland"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "z": 6,
+      "name": "farmland"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "wheat"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "carrots"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 1,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "wheat"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 1,
+      "name": "carrots"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "carrots"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "potatoes"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 2,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 2,
+      "name": "carrots"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 2,
+      "name": "potatoes"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 3,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 3,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 3,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 4,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 4,
+      "name": "wheat"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 4,
+      "name": "carrots"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 4,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 4,
+      "name": "wheat"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 4,
+      "name": "carrots"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 4,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 5,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 5,
+      "name": "carrots"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 5,
+      "name": "potatoes"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 5,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 5,
+      "name": "carrots"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 5,
+      "name": "potatoes"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 5,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "z": 6,
+      "name": "spruce_fence"
+    }
+  ]
+}

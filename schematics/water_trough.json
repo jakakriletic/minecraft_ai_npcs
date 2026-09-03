@@ -1,0 +1,238 @@
+{
+  "_opis": "Leseno korito z modrim vodnim srediscem.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "korito",
+    "trough"
+  ],
+  "size": [
+    5,
+    3,
+    3
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 0,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 2,
+      "name": "spruce_planks"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "name": "spruce_slab"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 0,
+      "name": "spruce_slab"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 1,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 1,
+      "name": "light_blue_stained_glass"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 2,
+      "name": "spruce_slab"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 2,
+      "name": "spruce_slab"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import { start } from 'repl';
 const bot = mineflayer.createBot({
     host: 'localhost', // Replace with your server IP or hostname
     port: 55916,       // Replace with your server port
+    version: '1.20.1',
     username: 'andy', // Replace with your bot's username
     // password: 'your_bot_password' // Only if the server has online-mode=true
 });

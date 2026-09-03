@@ -72,7 +72,7 @@ export function getTypeOfGeneric(bot, block_name) {
 
 export function blockSatisfied(target_name, block) {
     if (target_name == 'dirt') {
-        return block.name == 'dirt' || block.name == 'grass_block';
+        return mc.blockMatchesName(block, 'dirt') || mc.blockMatchesName(block, 'grass_block');
     } else if (mc.MATCHING_WOOD_BLOCKS.includes(target_name)) {
         return block.name.endsWith(target_name);
     } else if (target_name == 'bed') {

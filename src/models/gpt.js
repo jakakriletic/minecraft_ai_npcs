@@ -21,7 +21,8 @@ export class GPT {
         this.openai = new OpenAIApi(config);
     }
 
-    async sendRequest(turns, systemMessage, stop_seq='***') {
+    async sendRequest(turns, systemMessage, stop_seq='***', requestParams={}) {
+        this.last_usage = null;
         let messages = strictFormat(turns);
         messages = messages.map(message => {
             message.content += stop_seq;
@@ -42,12 +43,18 @@ export class GPT {
                     model: model,
                     messages,
                     stop: stop_seq,
-                    ...(this.params || {})
+                    ...(this.params || {}),
+                    ...requestParams,
                 };
+                if (pack.max_output_tokens != null) {
+                    pack.max_completion_tokens = pack.max_output_tokens;
+                    delete pack.max_output_tokens;
+                }
                 if (model.includes('o1') || model.includes('o3') || model.includes('5')) {
                     delete pack.stop;
                 }
                 let completion = await this.openai.chat.completions.create(pack);
+                this.last_usage = completion.usage ?? null;
                 if (completion.choices[0].finish_reason == 'length')
                     throw new Error('Context length exceeded'); 
                 console.log('Received.');
@@ -64,8 +71,10 @@ export class GPT {
                     model: model,
                     instructions: systemMessage,
                     input: messages,
-                    ...(this.params || {})
+                    ...(this.params || {}),
+                    ...requestParams,
                 });
+                this.last_usage = response.usage ?? null;
                 console.log('Received.');
                 res = response.output_text;
                 let stop_seq_index = res.indexOf(stop_seq);
@@ -75,7 +84,7 @@ export class GPT {
         catch (err) {
             if ((err.message == 'Context length exceeded' || err.code == 'context_length_exceeded') && turns.length > 1) {
                 console.log('Context length exceeded, trying again with shorter context.');
-                return await this.sendRequest(turns.slice(1), systemMessage, stop_seq);
+                return await this.sendRequest(turns.slice(1), systemMessage, stop_seq, requestParams);
             } else if (err.message.includes('image_url')) {
                 console.log(err);
                 res = 'Vision is only supported by certain models.';

@@ -1,4 +1,10 @@
 import { getPosition } from "../library/world.js";
+import * as mcCompat from "../../utils/mc_compat.js";
+
+const vec = (x, y, z) => ({ x, y, z });
+const setBlock = (bot, x, y, z, name) => bot.chat(mcCompat.setBlockCommand(x, y, z, name, bot));
+const fill = (bot, x1, y1, z1, x2, y2, z2, name) =>
+    bot.chat(mcCompat.fillCommand(vec(x1, y1, z1), vec(x2, y2, z2), name, bot));
 
 export class CookingTaskInitiator {
     constructor(data, bot) {
@@ -14,14 +20,14 @@ export class CookingTaskInitiator {
         // Only run the setup if the agent is the first one
 
         // Clear and prepare the base area
-        await bot.chat(`/fill ~ ~-1 ~ ~50 ~-3 ~50 grass_block`);
-        await bot.chat(`/fill ~ ~-1 ~ ~-50 ~-3 ~50 grass_block`);
-        await bot.chat(`/fill ~ ~-1 ~ ~-50 ~-3 ~-50 grass_block`);
-        await bot.chat(`/fill ~ ~-1 ~ ~50 ~-3 ~-50 grass_block`);
-        await bot.chat(`/fill ~ ~ ~ ~50 ~10 ~50 air`);
-        await bot.chat(`/fill ~ ~ ~ ~-50 ~10 ~50 air`);
-        await bot.chat(`/fill ~ ~ ~ ~-50 ~10 ~-50 air`);
-        await bot.chat(`/fill ~ ~ ~ ~50 ~10 ~-50 air`);
+        await fill(bot, '~', '~-1', '~', '~50', '~-3', '~50', 'grass_block');
+        await fill(bot, '~', '~-1', '~', '~-50', '~-3', '~50', 'grass_block');
+        await fill(bot, '~', '~-1', '~', '~-50', '~-3', '~-50', 'grass_block');
+        await fill(bot, '~', '~-1', '~', '~50', '~-3', '~-50', 'grass_block');
+        await fill(bot, '~', '~', '~', '~50', '~10', '~50', 'air');
+        await fill(bot, '~', '~', '~', '~-50', '~10', '~50', 'air');
+        await fill(bot, '~', '~', '~', '~-50', '~10', '~-50', 'air');
+        await fill(bot, '~', '~', '~', '~50', '~10', '~-50', 'air');
         console.log("Base area cleared and prepared.");
 
         const position = getPosition(bot);
@@ -226,9 +232,9 @@ export class CookingTaskInitiator {
                 const x = xStart + i;
                 const z = zStart + j;
                 if (till) {
-                    await this.bot.chat(`/setblock ${x} ${position.y - 1} ${z} farmland`);
+                    await setBlock(this.bot, x, position.y - 1, z, 'farmland');
                 }
-                await this.bot.chat(`/setblock ${x} ${position.y} ${z} ${crop_and_age}`);
+                await setBlock(this.bot, x, position.y, z, crop_and_age);
             }
         }
         await new Promise(resolve => setTimeout(resolve, 300));
@@ -239,10 +245,10 @@ export class CookingTaskInitiator {
         for (const patch of patches) {
             const xCenter = patch.xStart + 1;
             const zCenter = patch.zStart + 1;
-            await this.bot.chat(`/setblock ${xCenter} ${position.y - 1} ${zCenter} water`);
+            await setBlock(this.bot, xCenter, position.y - 1, zCenter, 'water');
             const offsets = [[1, 0], [-1, 0], [0, 1], [0, -1]];
             for (const [dx, dz] of offsets) {
-                await this.bot.chat(`/setblock ${xCenter + dx} ${position.y} ${zCenter + dz} sugar_cane[age=15]`);
+                await setBlock(this.bot, xCenter + dx, position.y, zCenter + dz, 'sugar_cane[age=15]');
             }
         }
     };
@@ -253,9 +259,9 @@ export class CookingTaskInitiator {
             for (let j = 0; j < 5; j++) {
                 const x = xStart + i;
                 const z = zStart + j;
-                await this.bot.chat(`/setblock ${x} ${position.y - 1} ${z} mycelium`);
+                await setBlock(this.bot, x, position.y - 1, z, 'mycelium');
                 const mushroomType = (i + j) % 2 === 0 ? 'red_mushroom' : 'brown_mushroom';
-                await this.bot.chat(`/setblock ${x} ${position.y} ${z} ${mushroomType}`);
+                await setBlock(this.bot, x, position.y, z, mushroomType);
             }
         }
     }
@@ -292,7 +298,7 @@ export class CookingTaskInitiator {
                 for (let z = startZ; z <= startZ + width; z++) {
                     if (y === startY) {
                         if (!(x === startX + depth - 1 && z === startZ + Math.floor(width / 2))) {
-                            await this.bot.chat(`/setblock ${x} ${y} ${z} stone_bricks`);
+                            await setBlock(this.bot, x, y, z, 'stone_bricks');
                         }
                         continue;
                     }
@@ -316,7 +322,7 @@ export class CookingTaskInitiator {
                                         (y === startY + 1 || y === startY + 2);
 
                         if (!isWindow && !isDoor) {
-                            await this.bot.chat(`/setblock ${x} ${y} ${z} stone_bricks`);
+                            await setBlock(this.bot, x, y, z, 'stone_bricks');
                         }
                     }
                 }
@@ -325,8 +331,8 @@ export class CookingTaskInitiator {
 
         // Entrance features
         const doorZ = startZ + Math.floor(width / 2);
-        await this.bot.chat(`/setblock ${startX + depth - 1} ${startY} ${doorZ} stone_brick_stairs[facing=west]`);
-        await this.bot.chat(`/setblock ${startX + depth} ${startY} ${doorZ} air`);
+        await setBlock(this.bot, startX + depth - 1, startY, doorZ, 'stone_brick_stairs[facing=west]');
+        await setBlock(this.bot, startX + depth, startY, doorZ, 'air');
         // await bot.chat(`/setblock ${startX + depth - 1} ${startY} ${doorZ - 1} stone_bricks`);
         // await bot.chat(`/setblock ${startX + depth - 1} ${startY} ${doorZ + 1} stone_bricks`);
         // await bot.chat(`/setblock ${startX + depth} ${startY} ${doorZ} oak_door[half=lower,hinge=left,facing=west,powered=false]`);
@@ -338,21 +344,21 @@ export class CookingTaskInitiator {
                 for (let z = startZ + i; z <= startZ + width - i; z++) {
                     if (x === startX + i || x === startX + depth - i ||
                         z === startZ + i || z === startZ + width - i) {
-                        await this.bot.chat(`/setblock ${x} ${startY + height + i} ${z} cobblestone`);
+                        await setBlock(this.bot, x, startY + height + i, z, 'cobblestone');
                     }
                 }
             }
         }
 
         // Interior items
-        await this.bot.chat(`/setblock ${startX + 4} ${startY + 1} ${startZ + 3} crafting_table`);
-        await this.bot.chat(`/setblock ${startX + 4} ${startY + 1} ${startZ + 5} furnace`);
+        await setBlock(this.bot, startX + 4, startY + 1, startZ + 3, 'crafting_table');
+        await setBlock(this.bot, startX + 4, startY + 1, startZ + 5, 'furnace');
         // Add fuel to the furnace
         await this.bot.chat(`/data merge block ${startX + 4} ${startY + 1} ${startZ + 5} {Items:[{Slot:1b,id:"minecraft:coal",Count:64b}]}`)
-        await this.bot.chat(`/setblock ${startX + 4} ${startY + 1} ${startZ + 7} smoker`);
+        await setBlock(this.bot, startX + 4, startY + 1, startZ + 7, 'smoker');
         // Add fuel to the smoker
         await this.bot.chat(`/data merge block ${startX + 4} ${startY + 1} ${startZ + 7} {Items:[{Slot:1b,id:"minecraft:coal",Count:64b}]}`)
-        await this.bot.chat(`/setblock ${startX + depth - 3} ${startY + 1} ${startZ + 2} bed`);
+        await setBlock(this.bot, startX + depth - 3, startY + 1, startZ + 2, 'bed');
         await new Promise(resolve => setTimeout(resolve, 300));
     }
 }

@@ -9,7 +9,7 @@ import mc from 'minecraft-protocol';
  * @param {boolean} verbose - Whether to print output on connection errors.
  * @returns {Promise<Array>} - A Promise that resolves to an array of server info objects.
  */
-export async function serverInfo(ip, port, timeout = 1000, verbose = false) {
+export function serverInfo(ip, port, timeout = 1000, verbose = false) {
     return new Promise((resolve) => {
 
         let timeoutId = setTimeout(() => {
@@ -31,17 +31,19 @@ export async function serverInfo(ip, port, timeout = 1000, verbose = false) {
             }
 
             // extract version number from modded servers like "Paper 1.21.4"
-            const version = response?.version?.name || '';
+            const version = response?.version?.name ?? '';
             const match = String(version).match(/\d+\.\d+(?:\.\d+)?/);
             const numericVersion = match ? match[0] : null;
-            if (numericVersion !== version) {
+            if (version && numericVersion !== version) {
                 console.log(`Modded server found (${version}), attempting to use ${numericVersion}...`);
             }
 
             const serverInfo = {
                 host: ip,
                 port,
-                name: response.description.text || 'No description provided.',
+                name: typeof response.description === 'string'
+                    ? response.description
+                    : response.description?.text || 'No description provided.',
                 ping: response.latency,
                 version: numericVersion
             };
@@ -140,10 +142,13 @@ export async function getServer(host, port, version) {
     else
         serverVersion = version;
     // Server version unsupported / mismatch
-    const isSupported = mc.supportedVersions.some(v => 
+    serverVersion = serverVersion == null ? '' : String(serverVersion);
+    const isSupported = serverVersion && mc.supportedVersions.some(v =>
         serverVersion === v || (serverVersion.startsWith(v) && serverVersion.charAt(v.length) === '.')
     ); // Checks version or parent version (e.g. if 1.7 is supported then 1.7.2 will be allowed)
-     if (!isSupported)
+    if (!serverVersion)
+        throw new Error(`MC server was found ${serverString}, but its version could not be detected. Set minecraft_version in settings.js or check the server/proxy ping response.`);
+    else if (!isSupported)
         throw new Error(`MC server was found ${serverString}, but version is unsupported. Supported versions are: ${mc.supportedVersions.join(", ")}.`);
     else if (version !== "auto" && server.version !== version)
         throw new Error(`MC server was found ${serverString}, but version is incorrect. Expected ${version}, but found ${server.version}. Check the server version in settings.js.`);

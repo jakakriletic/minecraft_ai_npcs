@@ -1,0 +1,520 @@
+{
+  "_opis": "Majhna pisana trzna stojnica z zabojem in sodom.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "stojnica",
+    "awning"
+  ],
+  "size": [
+    7,
+    5,
+    5
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "dirt_path"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "dirt_path"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "dirt_path"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "dirt_path"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "dirt_path"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "name": "dirt_path"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 0,
+      "name": "dirt_path"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "dirt_path"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "dirt_path"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "dirt_path"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "dirt_path"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "dirt_path"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 1,
+      "name": "dirt_path"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 1,
+      "name": "dirt_path"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "dirt_path"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "dirt_path"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "dirt_path"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "dirt_path"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "dirt_path"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 2,
+      "name": "dirt_path"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 2,
+      "name": "dirt_path"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "name": "dirt_path"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "name": "dirt_path"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "name": "dirt_path"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "name": "dirt_path"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 3,
+      "name": "dirt_path"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 3,
+      "name": "dirt_path"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 3,
+      "name": "dirt_path"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "dirt_path"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 4,
+      "name": "dirt_path"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 4,
+      "name": "dirt_path"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 4,
+      "name": "dirt_path"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 4,
+      "name": "dirt_path"
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "z": 4,
+      "name": "dirt_path"
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "z": 4,
+      "name": "dirt_path"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "oak_fence"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 1,
+      "name": "oak_fence"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "z": 2,
+      "name": "oak_planks"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "name": "oak_fence"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "z": 3,
+      "name": "oak_fence"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "oak_fence"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 1,
+      "name": "oak_fence"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 3,
+      "name": "oak_fence"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 3,
+      "name": "barrel"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "z": 3,
+      "name": "barrel"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "z": 3,
+      "name": "oak_fence"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 1,
+      "name": "oak_fence"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 1,
+      "name": "oak_fence"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 3,
+      "name": "oak_fence"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": 3,
+      "name": "oak_fence"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 0,
+      "name": "red_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 0,
+      "name": "red_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 0,
+      "name": "red_wool"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "z": 0,
+      "name": "red_wool"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 1,
+      "name": "white_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 1,
+      "name": "white_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 1,
+      "name": "white_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 1,
+      "name": "red_wool"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "z": 1,
+      "name": "white_wool"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 2,
+      "name": "white_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 2,
+      "name": "white_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 2,
+      "name": "white_wool"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "z": 2,
+      "name": "red_wool"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 3,
+      "name": "white_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 3,
+      "name": "white_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 3,
+      "name": "white_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 3,
+      "name": "red_wool"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "z": 3,
+      "name": "white_wool"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 4,
+      "name": "white_wool"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 4,
+      "name": "white_wool"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "z": 4,
+      "name": "white_wool"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "z": 4,
+      "name": "red_wool"
+    }
+  ]
+}

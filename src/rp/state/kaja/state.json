@@ -1,0 +1,535 @@
+{
+  "odnosi_igralci": {
+    "zombie": {
+      "zaupanje": 0,
+      "mnenje": ""
+    },
+    "spider": {
+      "zaupanje": 40,
+      "mnenje": ""
+    },
+    "drowned": {
+      "zaupanje": 0,
+      "mnenje": ""
+    }
+  },
+  "odnosi_npcji": {
+    "rok": {
+      "zaupanje": 51,
+      "mnenje": ""
+    },
+    "blaz": {
+      "zaupanje": 52,
+      "mnenje": ""
+    },
+    "jure": {
+      "zaupanje": 52,
+      "mnenje": ""
+    },
+    "Rok": {
+      "zaupanje": 45,
+      "mnenje": ""
+    },
+    "tilen": {
+      "zaupanje": 52,
+      "mnenje": ""
+    },
+    "Nejc": {
+      "zaupanje": 30,
+      "mnenje": ""
+    },
+    "nejc": {
+      "zaupanje": 40,
+      "mnenje": ""
+    },
+    "Lara": {
+      "zaupanje": 20,
+      "mnenje": ""
+    },
+    "lara": {
+      "zaupanje": 37,
+      "mnenje": ""
+    },
+    "zan": {
+      "zaupanje": 51,
+      "mnenje": ""
+    },
+    "maja": {
+      "zaupanje": 51,
+      "mnenje": ""
+    },
+    "ema": {
+      "zaupanje": 51,
+      "mnenje": ""
+    }
+  },
+  "znanje_o_svetu": {
+    "slisal": [
+      "Mestna navada: V tem mestu se javna zaloga ne prazni na skrivaj.",
+      "Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "Mestna navada: Ko je delo koncano, se novice slisijo na trgu ali v gostilni.",
+      "od Blaz slišal: Mestna navada: Pocasi, saj ni panike.",
+      "Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "Mestna navada: Pocasi, saj ni panike.",
+      "od Tilen slišal: Rok je udaril Ema",
+      "od Lara slišal: Popravil/a si rutino: mestni prispevek caka (poskus oddaje mestnega prispevka).",
+      "od Zan slišal: pošast je usklajeno se je branil pred skeleton",
+      "od Maja slišal: drowned je udaril Nejc"
+    ]
+  },
+  "potrebe": {
+    "denar": 0,
+    "sitost": 100,
+    "druzabnost": 100,
+    "utrujenost": 7.5
+  },
+  "lastnosti": {
+    "postenost": 66,
+    "pogum": 48,
+    "zamerljivost": 36,
+    "nagnjenost_kriminal": 3,
+    "socialnost": 74,
+    "raziskovalnost": 42
+  },
+  "razvade": {
+    "zasvojenost": 0,
+    "zadnja_uporaba": null
+  },
+  "mood_danes": "skrbna odločnost",
+  "samopodoba": "Navaden prebivalec, ki se v tem mestu še vedno uči po pravilih, a zdaj znam, da mir držim z dobrimi obroki in jasnimi vsakodnevnimi ukrepi. Ko se nevarnost ponovi, v meni pogumneje raste skrbnica—tista, ki zna poskrbeti, da je gostilna varna in ljudj",
+  "spomini_pogovorov": {},
+  "dnevnik": [
+    {
+      "ts": "2026-08-14T17:07:33.631Z",
+      "zapis": "Danes so se do moje kuhinje spet prerinile grožnje—zombi me je udaril, pa so se še pošasti branile pred njimi. Vmes sem vseeno poskrbela, da so delavci jedli in da je gostilna ostala topel kraj, ne pa panika.\nPo napadu me še vedno malo stiska, a sem trdno odločena: naj bo moj ogenj dovolj močan, da "
+    },
+    {
+      "ts": "2026-09-02T12:57:35.005Z",
+      "zapis": "Danes sem znova poskrbela, da delavci niso lačni in da gostilna ostane socialno središče—vse po vrsti, brez panike. Stik z Emo sem držala, kot sem si zadala, potem pa še preštela zaloge in potegnila jasen plan za naslednje izmene.\nV mestu velja: ko je delo končano, se novice sliši na trgu ali v gost"
+    },
+    {
+      "ts": "2026-09-02T13:01:46.139Z",
+      "zapis": "Danes sem spet zakurila peč in poskrbela, da delavci niso ostali lačni, potem pa gostilna ni zamrla — raje sem jim pustila prostor za pogovor. Z Juretom sva na kratko poklepetala, da ne gre le za obroke, ampak za skupno pravilo in skupnost. Utrujena sem, a zadovoljna: počasi, saj ni panike, moje skr"
+    },
+    {
+      "ts": "2026-09-02T13:22:40.226Z",
+      "zapis": "Danes sem med pripravo obrokov še enkrat preštela zaloge in poskrbela, da delavci niso ostali lačni, gostilna pa je ostala polna pogovorov. Ko je nastopila nevarnost z zombiji, sem se pridružila usklajenemu branjenju—mir v mestu je najprej stvar jasnih korakov in dobrega načrta. Ema je šla skozi kot"
+    },
+    {
+      "ts": "2026-09-02T13:31:22.494Z",
+      "zapis": "Danes sem spet skrbno uskladila obroke, da noben delavec ni ostal lačen, in gostilna je ostala tisto prijetno socialno središče, kjer se govorice iz služijo šele po opravljenem delu. Ko sem prej preverila mestni načrt in opomnila na jasne vsakodnevne ukrepe, sem začutila mir—in tudi trdnejšo odločno"
+    },
+    {
+      "ts": "2026-09-02T13:43:06.398Z",
+      "zapis": "Danes me je spider presenetil in me udaril, a sem zadržala glavo hladno ter se držala svojih ukrepov, medtem ko se je pošast skupaj branila zoper nevarnost. Ko se je prah polegel, sem delavcem takoj pripravila topel, praktičen obrok, da jih ne bi zgrabila lakota—gostilna pa je ostala socialno središ"
+    }
+  ],
+  "zadnja_refleksija": "2026-09-02T13:43:06.398Z",
+  "zapor_do": null,
+  "mind": {
+    "day": 2,
+    "daily_goal": "poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+    "social_goal": "popraviti odnos z Lara",
+    "civic_goal": "prispevati k skupnemu pravilu: Mestni prispevek",
+    "personal_goal": "obdrzati dober ritem in mirno glavo",
+    "current_intention": "poskrbeti, da delavci niso lacni in da gostilna ostane socialno sredisce",
+    "last_goal_update": "2026-09-02T13:52:16.677Z",
+    "commitments": [],
+    "known_memes": [
+      "zaloga_je_cast",
+      "petkov_trg",
+      "pocasi_ni_panike"
+    ],
+    "beliefs": {
+      "tax_support": 50,
+      "town_identity": 52,
+      "lawfulness": 62.33879954040081
+    },
+    "last_social_action_at": 1788357009431,
+    "last_culture_action_at": 1788357104870,
+    "last_tax_attempt_at": 0,
+    "last_audit_at": 0,
+    "last_audit_day": -1
+  },
+  "social": {
+    "bonds": {
+      "rok": {
+        "affinity": 51.2,
+        "trust": 50.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 2,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-08-14T17:00:27.051Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-08-14T17:00:27.051Z"
+      },
+      "blaz": {
+        "affinity": 52.4,
+        "trust": 51.6,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 3.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-08-14T17:01:57.191Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:55:27.499Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:27.499Z"
+      },
+      "nejc": {
+        "affinity": 40,
+        "trust": 40,
+        "respect": 45,
+        "romance": 0,
+        "tension": 9.75,
+        "familiarity": 2,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:44:25.663Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:27.710Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:44:27.710Z"
+      },
+      "lara": {
+        "affinity": 38.6,
+        "trust": 37.4,
+        "respect": 42.5,
+        "romance": 0,
+        "tension": 13.05,
+        "familiarity": 8.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:44:27.214Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:29.661Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:44:31.661Z",
+            "reason": "witness:udaril_nekoga",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:50:22.063Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:52:13.605Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:54:55.506Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:54:55.506Z"
+      },
+      "zan": {
+        "affinity": 51.2,
+        "trust": 50.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 1.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:54:43.611Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:54:43.611Z"
+      },
+      "maja": {
+        "affinity": 51.2,
+        "trust": 50.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 1.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:55:13.619Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:13.619Z"
+      },
+      "ema": {
+        "affinity": 51.2,
+        "trust": 50.8,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 2,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:55:50.552Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:55:50.552Z"
+      },
+      "jure": {
+        "affinity": 50,
+        "trust": 50,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 0,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [],
+        "last_interaction_at": null
+      },
+      "tilen": {
+        "affinity": 52.4,
+        "trust": 51.6,
+        "respect": 50,
+        "romance": 0,
+        "tension": 0,
+        "familiarity": 3.6,
+        "status": "acquaintance",
+        "tags": [],
+        "history": [
+          {
+            "ts": "2026-09-02T13:22:29.919Z",
+            "reason": "gossip_exchange",
+            "status": "acquaintance"
+          },
+          {
+            "ts": "2026-09-02T13:24:09.340Z",
+            "reason": "druzenje",
+            "status": "acquaintance"
+          }
+        ],
+        "last_interaction_at": "2026-09-02T13:24:09.340Z"
+      }
+    },
+    "circles": [],
+    "active_focus": null,
+    "leadership_preference": {
+      "id": "tilen",
+      "name": "Tilen",
+      "updated_at": "2026-09-02T13:55:50.558Z"
+    },
+    "last_bond_event_at": 0
+  },
+  "society": {
+    "last_checked_at": "2026-09-02T13:55:45.551Z",
+    "compliance_score": 64,
+    "ready": false,
+    "expected_activity": "work",
+    "expected_region": "kuhinja",
+    "current_region_ok": false,
+    "blockers": [
+      "ni v regiji 'kuhinja' za rutino 'work'"
+    ],
+    "warnings": [
+      "dom 'kaja_dom' ni nalozen, postelja ni preverjena",
+      "mestna zaloga 'mestna_zaloga' ni nalozena, skrinja ni preverjena",
+      "delovni region 'kuhinja' ni nalozen, oprema ni preverjena"
+    ],
+    "structures": {
+      "home": {
+        "region": "kaja_dom",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "bed": {
+            "label": "bed",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "town_storage": {
+        "region": "mestna_zaloga",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "town_hall": {
+        "region": "obcina",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      },
+      "work": {
+        "region": "kuhinja",
+        "exists": true,
+        "loaded": false,
+        "checks": {
+          "furnace": {
+            "label": "furnace",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          },
+          "crafting table": {
+            "label": "crafting table",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          },
+          "chest": {
+            "label": "chest",
+            "count": null,
+            "min": 1,
+            "loaded": false
+          }
+        }
+      }
+    },
+    "last_fix": {
+      "ts": "2026-09-02T13:41:48.706Z",
+      "type": "eat",
+      "reason": "Minecraft hunger 16/20",
+      "success": false,
+      "detail": "ni hrane v inventarju"
+    },
+    "fix_history": [
+      {
+        "ts": "2026-08-14T17:00:34.323Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": true,
+        "detail": "poskus oddaje mestnega prispevka"
+      },
+      {
+        "ts": "2026-08-14T17:02:38.698Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": true,
+        "detail": "poskus oddaje mestnega prispevka"
+      },
+      {
+        "ts": "2026-08-14T17:03:29.490Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": true,
+        "detail": "poskus oddaje mestnega prispevka"
+      },
+      {
+        "ts": "2026-08-14T17:05:47.719Z",
+        "type": "tax",
+        "reason": "mestni prispevek caka",
+        "success": true,
+        "detail": "poskus oddaje mestnega prispevka"
+      },
+      {
+        "ts": "2026-09-02T13:28:14.892Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 17/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      },
+      {
+        "ts": "2026-09-02T13:30:15.005Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 17/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      },
+      {
+        "ts": "2026-09-02T13:33:56.207Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 17/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      },
+      {
+        "ts": "2026-09-02T13:35:48.477Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 17/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      },
+      {
+        "ts": "2026-09-02T13:37:48.585Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 17/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      },
+      {
+        "ts": "2026-09-02T13:39:48.650Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 17/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      },
+      {
+        "ts": "2026-09-02T13:41:48.706Z",
+        "type": "eat",
+        "reason": "Minecraft hunger 16/20",
+        "success": false,
+        "detail": "ni hrane v inventarju"
+      }
+    ],
+    "last_job": null,
+    "job_history": [],
+    "signature": "{\"score\":64,\"blockers\":[\"ni v regiji 'kuhinja' za rutino 'work'\"],\"warnings\":[\"dom 'kaja_dom' ni nalozen, postelja ni preverjena\",\"mestna zaloga 'mestna_zaloga' ni nalozena, skrinja ni preverjena\",\"delovni region 'kuhinja' ni nalozen, oprema ni preverjena\"],\"expected_activity\":\"work\",\"expected_region\":\"kuhinja\"}"
+  }
+}

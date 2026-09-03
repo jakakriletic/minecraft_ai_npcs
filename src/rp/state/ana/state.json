@@ -1,0 +1,58 @@
+{
+  "odnosi_igralci": {
+    "zombie": {
+      "zaupanje": 0,
+      "mnenje": ""
+    },
+    "jakakriletic": {
+      "zaupanje": 45,
+      "mnenje": "Nekaj ne štima."
+    },
+    "spider": {
+      "zaupanje": 40,
+      "mnenje": ""
+    }
+  },
+  "odnosi_npcji": {},
+  "znanje_o_svetu": {
+    "slisal": [
+      "od Marko slišal: zombie je udaril Marko"
+    ]
+  },
+  "potrebe": {
+    "denar": 0,
+    "sitost": 59,
+    "druzabnost": 73,
+    "utrujenost": 32.5
+  },
+  "lastnosti": {
+    "postenost": 65,
+    "pogum": 44,
+    "zamerljivost": 45,
+    "nagnjenost_kriminal": 5,
+    "socialnost": 65,
+    "raziskovalnost": 40
+  },
+  "razvade": {
+    "zasvojenost": 0,
+    "zadnja_uporaba": null
+  },
+  "mood_danes": "občutljiva",
+  "samopodoba": "Še vedno se mi zdi, da sem navaden prebivalec, a zdaj morda tudi malo bolj previdna in vsakič ko se usedem za delo v gostilni, me obkoli strah.",
+  "spomini_pogovorov": {
+    "jakakriletic": [
+      {
+        "ts": "2026-06-13T00:50:09.941Z",
+        "povzetek": "Želela sem se pogovoriti z gostom, a je spominjal Terminatorja in napadal druge."
+      }
+    ]
+  },
+  "dnevnik": [
+    {
+      "ts": "2026-06-13T21:53:04.576Z",
+      "zapis": "Uf, danes je bilo res naporno. Že zjutraj me je s prevelikim šokom obšla neprijetna izkušnja z živalmi, ki se sprehajajo po mestu in neprestano napadajo ljudi. Na srečo sem vsaj delovno uspela skupaj držati, čeprav si že komaj spominjam na vse, kar sem danes naredila."
+    }
+  ],
+  "zadnja_refleksija": "2026-06-13T21:53:04.576Z",
+  "zapor_do": null
+}

@@ -1,0 +1,33 @@
+{
+  "active": true,
+  "leader": "Lara",
+  "resource": "iron",
+  "deep": false,
+  "targetY": 16,
+  "members": [
+    "Lara",
+    "Zan"
+  ],
+  "partySize": 3,
+  "commanded": false,
+  "requestedBy": "Lara",
+  "requestedAmount": 9,
+  "requests": {
+    "Lara": {
+      "amount": 9,
+      "requestedAt": 1788296977263
+    }
+  },
+  "progress": {},
+  "startedAt": 1788296977263,
+  "lastStartedAt": 1788296977263,
+  "abort": false,
+  "entrance": {
+    "x": -334,
+    "y": 17,
+    "z": 530
+  },
+  "ttlMs": 600000,
+  "reroutedAt": 1788297133726,
+  "reroutedBy": "Lara"
+}

@@ -34,17 +34,17 @@ export class Novita {
 
       let res = null;
       try {
-          console.log('Awaiting novita api response...')
+          console.log('Awaiting novita api response...');
           let completion = await this.openai.chat.completions.create(pack);
           if (completion.choices[0].finish_reason == 'length')
               throw new Error('Context length exceeded'); 
-          console.log('Received.')
+          console.log('Received.');
           res = completion.choices[0].message.content;
       }
       catch (err) {
           if ((err.message == 'Context length exceeded' || err.code == 'context_length_exceeded') && turns.length > 1) {
               console.log('Context length exceeded, trying again with shorter context.');
-              return await sendRequest(turns.slice(1), systemMessage, stop_seq);
+              return await this.sendRequest(turns.slice(1), systemMessage, stop_seq);
           } else {
             console.log(err);
               res = 'My brain disconnected, try again.';

@@ -1,0 +1,178 @@
+{
+  "_opis": "Majhen smrekov lok z lucjo nad potjo.",
+  "_category": "decor",
+  "_kind": "decor",
+  "_aliases": [
+    "lucni lok",
+    "arch lamp"
+  ],
+  "size": [
+    5,
+    6,
+    3
+  ],
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 0,
+      "name": "grass_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 1,
+      "name": "gravel"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "z": 2,
+      "name": "grass_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "z": 1,
+      "name": "sea_lantern"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "z": 1,
+      "name": "spruce_fence"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "z": 1,
+      "name": "spruce_log"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "z": 1,
+      "name": "spruce_log"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "z": 1,
+      "name": "spruce_log"
+    }
+  ]
+}

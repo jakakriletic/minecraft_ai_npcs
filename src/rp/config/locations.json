@@ -1,0 +1,187 @@
+{
+  "_comment": "Regions: center + radius. Edit coordinates to match your world, or use !setlokacija in-game (phase 2).",
+  "marko_dom": {
+    "center": {
+      "x": -18,
+      "y": 66,
+      "z": -17
+    },
+    "radius": 8
+  },
+  "gozd_sever": {
+    "center": {
+      "x": 50,
+      "y": 64,
+      "z": -50
+    },
+    "radius": 15
+  },
+  "obcina": {
+    "center": {
+      "x": -20,
+      "y": 64,
+      "z": 10
+    },
+    "radius": 8
+  },
+  "mestna_zaloga": {
+    "center": {
+      "x": -20,
+      "y": 64,
+      "z": 20
+    },
+    "radius": 5
+  },
+  "ana_dom": {
+    "center": {
+      "x": -10,
+      "y": 64,
+      "z": -10
+    },
+    "radius": 6
+  },
+  "gostilna": {
+    "center": {
+      "x": -15,
+      "y": 64,
+      "z": 0
+    },
+    "radius": 8
+  },
+  "tone_dom": {
+    "center": {
+      "x": 10,
+      "y": 64,
+      "z": 10
+    },
+    "radius": 6
+  },
+  "center": {
+    "center": {
+      "x": 0,
+      "y": 64,
+      "z": 0
+    },
+    "radius": 20
+  },
+  "zapor": {
+    "center": {
+      "x": 15,
+      "y": 64,
+      "z": -15
+    },
+    "radius": 4
+  },
+  "blaz_dom": {
+    "center": {
+      "x": -28,
+      "y": 64,
+      "z": 8
+    },
+    "radius": 6
+  },
+  "nejc_dom": {
+    "center": {
+      "x": 26,
+      "y": 64,
+      "z": -22
+    },
+    "radius": 6
+  },
+  "lara_dom": {
+    "center": {
+      "x": -16,
+      "y": 64,
+      "z": -8
+    },
+    "radius": 6
+  },
+  "zan_dom": {
+    "center": {
+      "x": 6,
+      "y": 64,
+      "z": -24
+    },
+    "radius": 6
+  },
+  "maja_dom": {
+    "center": {
+      "x": -28,
+      "y": 64,
+      "z": 24
+    },
+    "radius": 6
+  },
+  "ema_dom": {
+    "center": {
+      "x": -34,
+      "y": 64,
+      "z": 22
+    },
+    "radius": 6
+  },
+  "jure_dom": {
+    "center": {
+      "x": 22,
+      "y": 64,
+      "z": 22
+    },
+    "radius": 6
+  },
+  "kaja_dom": {
+    "center": {
+      "x": -12,
+      "y": 64,
+      "z": 8
+    },
+    "radius": 6
+  },
+  "rok_dom": {
+    "center": {
+      "x": 34,
+      "y": 64,
+      "z": -8
+    },
+    "radius": 6
+  },
+  "tilen_dom": {
+    "center": {
+      "x": 20,
+      "y": 64,
+      "z": 4
+    },
+    "radius": 6
+  },
+  "rudnik_sever": {
+    "center": {
+      "x": 42,
+      "y": 58,
+      "z": -34
+    },
+    "radius": 16
+  },
+  "gradbisce": {
+    "center": {
+      "x": 28,
+      "y": 64,
+      "z": 28
+    },
+    "radius": 14
+  },
+  "kuhinja": {
+    "center": {
+      "x": -14,
+      "y": 64,
+      "z": 2
+    },
+    "radius": 7
+  },
+  "patrulja_noc": {
+    "center": {
+      "x": 0,
+      "y": 64,
+      "z": 0
+    },
+    "radius": 28
+  }
+}
