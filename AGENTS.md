@@ -2,6 +2,8 @@
 
 > **Preberi najprej.** Ta datoteka je enoten, hitro berljiv kontekst za nadaljnji razvoj **kingdom** NPC-jev. Stanje je bilo preverjeno statično v repozitoriju 2026-09-24. Kjer piše »implementirano«, to pomeni, da koda obstaja; vedenje v daljšem dejanskem igranju še ni potrjeno. Po vsakem pomembnem milestoneu posodobi to datoteko, tako da ostane resnična.
 
+**Skupni aktualni razvojni načrt:** [NPC_DEVELOPMENT_MASTER_PLAN.md](NPC_DEVELOPMENT_MASTER_PLAN.md) združuje pregled AI integracije, stroškov, gameplay vrzeli (diamanti, oprema, enchanting, anvil, farming) in prioritetne milestone G0–G6. Pred nadaljnjim razvojem preberi oba dokumenta.
+
 ## 1. Projekt v dveh minutah
 
 **Vizija:** NPC-ji naj v Minecraft Java 1.20.1 čim bolj igrajo kot sposobni igralci: preživijo, raziskujejo, zbirajo vire, napredujejo, gradijo, sodelujejo, se odzivajo na igralca in si postavljajo lastne dosegljive cilje. AI naj prispeva namen, ustvarjalne zamisli, izbiro strategije in prilagoditev neuspehu. Koda naj izvaja in preverja fizična dejanja v svetu.
