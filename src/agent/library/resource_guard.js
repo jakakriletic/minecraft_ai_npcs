@@ -38,6 +38,7 @@ let registryCache = { checkedAt: 0, mtimeMs: -1, builds: [] };
 let settlementCache = { checkedAt: 0, zones: [] };
 let townPlanCache = { checkedAt: 0, mtimeMs: -1, plan: null, builds: [], zones: [] };
 const markerIdCache = new WeakMap();
+const terrainMarkerIdCache = new WeakMap();
 const leafIdCache = new WeakMap();
 const resourceCandidateCache = new WeakMap();
 const structureBreakCache = new WeakMap();
@@ -361,6 +362,17 @@ function artificialMarkerIds(bot) {
     return ids;
 }
 
+function terrainMarkerIds(bot) {
+    if (terrainMarkerIdCache.has(bot)) return terrainMarkerIdCache.get(bot);
+    // Torches and cobblestone commonly appear in a bot's own mine. They do
+    // not make the adjacent natural stone or dirt a player-built structure.
+    const incidental = new Set(['torch', 'wall_torch', 'soul_torch', 'soul_wall_torch',
+        'cobblestone', 'mossy_cobblestone']);
+    const ids = artificialMarkerIds(bot).filter(id => !incidental.has(bot.registry.blocks[id]?.name));
+    terrainMarkerIdCache.set(bot, ids);
+    return ids;
+}
+
 function hasNearby(bot, position, ids, maxDistance) {
     if (ids.length === 0) return false;
     return bot.findBlocks({
@@ -429,7 +441,7 @@ export function isNaturalResourceCandidate(bot, block, requestedType = block?.na
         value = !isMiningPositionProtected(bot, block.position);
     } else if (TERRAIN_REQUESTS.has(requestedType) || TERRAIN_REQUESTS.has(name)) {
         value = !isMiningPositionProtected(bot, block.position)
-            && !hasNearby(bot, block.position, artificialMarkerIds(bot), ARTIFICIAL_RANGE);
+            && !hasNearby(bot, block.position, terrainMarkerIds(bot), ARTIFICIAL_RANGE);
     } else {
         value = true;
     }

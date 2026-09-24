@@ -1333,11 +1333,12 @@ export async function collectBlock(bot, blockType, num=1, exclude=null) {
         log(bot, `Invalid number of blocks to collect: ${num}.`);
         return false;
     }
-    let blocktypes = [blockType];
-    if (blockType === 'coal' || blockType === 'diamond' || blockType === 'emerald' || blockType === 'iron' || blockType === 'gold' || blockType === 'lapis_lazuli' || blockType === 'redstone')
-        blocktypes.push(blockType+'_ore');
-    if (blockType.endsWith('ore'))
-        blocktypes.push('deepslate_'+blockType);
+    const oreName = blockType === 'lapis_lazuli' ? 'lapis_ore'
+        : ['coal', 'copper', 'diamond', 'emerald', 'iron', 'gold', 'redstone'].includes(blockType)
+            ? `${blockType}_ore` : blockType;
+    let blocktypes = [...new Set([blockType, oreName])];
+    if (oreName.endsWith('_ore') && !oreName.startsWith('deepslate_'))
+        blocktypes.push(`deepslate_${oreName}`);
     if (blockType === 'dirt')
         blocktypes.push('grass_block');
     if (blockType === 'cobblestone')
@@ -1363,13 +1364,20 @@ export async function collectBlock(bot, blockType, num=1, exclude=null) {
 
     const excluded = new Set((exclude ?? []).map(position => `${position.x},${position.y},${position.z}`));
     for (let i=0; i<num; i++) {
-        const candidates = world.getNearestBlocks(bot, blocktypes, 64, Math.min(64, Math.max(16, num * 4)));
-        const blocks = candidates.filter(block => {
+        const eligible = block => {
             if (excluded.has(`${block.position.x},${block.position.y},${block.position.z}`)) return false;
             if (isLiquid && block.metadata !== 0) return false;
             if (!isNaturalResourceCandidate(bot, block, blockType)) return false;
             return movements.safeToBreak(block) || unsafeBlocks.includes(block.name);
-        });
+        };
+        // findBlocks applies its count limit before our safety and exclusion
+        // filters. Widen the search if the first page contains no usable block.
+        let blocks = [];
+        for (const limit of [64, 256, 1024]) {
+            const candidates = world.getNearestBlocks(bot, blocktypes, 64, limit);
+            blocks = candidates.filter(eligible);
+            if (blocks.length || candidates.length < limit) break;
+        }
 
         if (blocks.length === 0) {
             if (collected === 0)

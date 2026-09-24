@@ -212,6 +212,7 @@ export function buildSnapshot(agent) {
             inventory: safeCall(() => compactInventory(bot)),
         },
         plan: agent._plan ?? null,
+        planning: agent._plannerStatus ?? null,
         intention: agent._intention ?? null,
         awareness: agent._awareness ?? null,
         awarenessSummary: safeCall(() => awarenessSummary(agent), ''),

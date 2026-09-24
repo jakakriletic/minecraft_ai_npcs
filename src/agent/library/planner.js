@@ -46,6 +46,16 @@ function cognitionSettings() {
     return runtimeSettings.cognition ?? settings.cognition ?? {};
 }
 
+function recordPlannerStatus(agent, channel, status, details = {}) {
+    agent._plannerStatus ??= {};
+    agent._plannerStatus[channel] = {
+        status,
+        at: new Date().toISOString(),
+        home: agent.bot && base.getBase(agent.bot) ? 'set' : 'no-home',
+        ...details,
+    };
+}
+
 function readBudget(now = Date.now()) {
     const windowMs = Math.max(1, settings.planner_budget_window_hours ?? 10) * 60 * 60_000;
     try {
@@ -71,21 +81,25 @@ function estimatedCallCost(inputTokens, outputTokens = Math.max(64, settings.pla
     return inputTokens * GPT_54_MINI_INPUT_USD + outputTokens * GPT_54_MINI_OUTPUT_USD;
 }
 
-export async function reservePlannerCall(bot, inputTokens, outputTokens) {
+async function reservePlannerCallDetailed(bot, inputTokens, outputTokens) {
     const result = await withNamedLock(bot, 'planner-budget', () => {
         const budget = readBudget();
         const callCost = estimatedCallCost(inputTokens, outputTokens);
         const maxCalls = Math.max(1, settings.planner_max_calls_per_window ?? 500);
         const maxUsd = Math.max(0.05, settings.planner_budget_usd ?? 1);
         if (budget.calls >= maxCalls || budget.reservedUsd + callCost > maxUsd)
-            return false;
+            return { allowed: false, reason: 'budget-cooldown' };
         budget.calls++;
         budget.reservedUsd += callCost;
         budget.updatedAt = Date.now();
         writeBudget(budget);
-        return true;
+        return { allowed: true };
     }, 3000, { interruptible: false });
-    return result.locked && result.value;
+    return result.locked ? result.value : { allowed: false, reason: 'lock-busy' };
+}
+
+export async function reservePlannerCall(bot, inputTokens, outputTokens) {
+    return (await reservePlannerCallDetailed(bot, inputTokens, outputTokens)).allowed;
 }
 
 export async function recordPlannerUsage(bot, usage) {
@@ -193,6 +207,7 @@ function activePlannerMembers(agent) {
             health: member.health ?? 20,
             hunger: member.hunger ?? 20,
             position: member.position ?? null,
+            hasHome: Boolean(member.home),
             combatStyle: member.combatStyle ?? null,
         });
     }
@@ -215,6 +230,7 @@ function activePlannerMembers(agent) {
                 z: Math.floor(position.z),
                 dimension: String(agent.bot.game?.dimension ?? 'world'),
             },
+            hasHome: Boolean(base.getBase(agent.bot)),
             combatStyle: agent.prompter?.profile?.combat_style ?? null,
         });
     }
@@ -222,36 +238,47 @@ function activePlannerMembers(agent) {
     return [...members.values()].sort((a, b) => a.name.localeCompare(b.name));
 }
 
-function getAllowedFocuses() {
+export function allowedPlanFocuses({ hasHome = true, allowBuilding = true,
+    hasSchematics = true, socialGoals = false } = {}) {
+    const base = FOCUSES.filter(focus => {
+        if (!hasHome && ['base', 'build', 'farm'].includes(focus)) return false;
+        if (focus === 'build' && (!allowBuilding || !hasSchematics)) return false;
+        return true;
+    });
+    return socialGoals ? [...base, 'social'] : base;
+}
+
+function getAllowedFocuses(hasHome = true) {
     const schematics = build.listSchematics();
-    const base = settings.allow_building === false || schematics.length === 0
-        ? FOCUSES.filter(focus => focus !== 'build')
-        : FOCUSES;
     // ALTERA/PIANO Phase 4: a `social` focus lets the planner prioritize a social goal that
     // the deterministic generator then executes (deliver surplus / gift). Flag-gated.
-    return cognitionSettings().social_goals_enabled === true ? [...base, 'social'] : base;
+    return allowedPlanFocuses({
+        hasHome,
+        allowBuilding: settings.allow_building !== false,
+        hasSchematics: schematics.length > 0,
+        socialGoals: cognitionSettings().social_goals_enabled === true,
+    });
 }
 
 function defaultResourceForRole(_role, sharedNeed = 'wood') {
     return RESOURCES.includes(sharedNeed) ? sharedNeed : 'wood';
 }
 
-function defaultFocusForRole(_role, sharedNeed = 'wood') {
-    if (sharedNeed === 'food') return 'farm';
-    if (settings.allow_building !== false && build.listSchematics().length > 0
-        && ['wood', 'stone'].includes(sharedNeed))
+function defaultFocusForRole(_role, sharedNeed = 'wood', allowedFocuses = FOCUSES) {
+    if (sharedNeed === 'food' && allowedFocuses.includes('farm')) return 'farm';
+    if (allowedFocuses.includes('build') && ['wood', 'stone'].includes(sharedNeed))
         return 'build';
     return 'stockpile';
 }
 
-function normalizePlan(raw, context, now, source, sharedNeed = 'wood') {
+export function normalizePlan(raw, context, now, source, sharedNeed = 'wood') {
     const role = context.role;
     const personality = context.personality ?? getPersonality(context.name ?? 'Agent');
-    const allowedFocuses = getAllowedFocuses();
+    const allowedFocuses = getAllowedFocuses(context.hasHome !== false);
     const schematics = build.listSchematics();
     let focus = allowedFocuses.includes(raw?.focus)
         ? raw.focus
-        : defaultFocusForRole(role, sharedNeed);
+        : defaultFocusForRole(role, sharedNeed, allowedFocuses);
     let resource = RESOURCES.includes(raw?.resource)
         ? raw.resource
         : defaultResourceForRole(role, sharedNeed);
@@ -282,7 +309,7 @@ function normalizePlan(raw, context, now, source, sharedNeed = 'wood') {
         ts: now,
         expiresAt: now + durationMinutes * 60_000,
         completed: false,
-    }, personality, role);
+    }, personality, role, allowedFocuses);
 }
 
 function hasActivePlan(agent, now = Date.now()) {
@@ -322,7 +349,7 @@ function societyPrompt(agent, members, allowedFocuses, schematics) {
     const memberLines = members.map(member => {
         const inv = member.inventory ?? {};
         const p = member.personality ?? getPersonality(member.name);
-        return `${member.name}: role=${member.role}/${member.roleLabel}, personality=${p.socialStyle}/${p.temperament}, traits courage=${p.courage} altruism=${p.altruism} ambition=${p.ambition} caution=${p.caution}, progress=${member.progression}, action=${member.action}, hp=${member.health}, foodbar=${member.hunger}, inv food=${inv.food ?? 0} wood=${inv.wood ?? 0} stone=${inv.stone ?? 0} iron=${inv.iron ?? 0} coal=${inv.coal ?? 0} gold=${inv.gold ?? 0} lapis=${inv.lapis ?? 0} empty=${inv.emptySlots ?? '?'}, combat=${member.combatStyle ?? 'balanced'}`;
+        return `${member.name}: role=${member.role}/${member.roleLabel}, home=${member.hasHome ? 'set' : 'none'}, personality=${p.socialStyle}/${p.temperament}, traits courage=${p.courage} altruism=${p.altruism} ambition=${p.ambition} caution=${p.caution}, progress=${member.progression}, action=${member.action}, hp=${member.health}, foodbar=${member.hunger}, inv food=${inv.food ?? 0} wood=${inv.wood ?? 0} stone=${inv.stone ?? 0} iron=${inv.iron ?? 0} coal=${inv.coal ?? 0} gold=${inv.gold ?? 0} lapis=${inv.lapis ?? 0} empty=${inv.emptySlots ?? '?'}, combat=${member.combatStyle ?? 'balanced'}`;
     }).join('\n');
     const events = (state.events ?? []).slice(-6).map(event => `- ${event.text}`).join('\n') || '- no recent events';
     const buildNames = schematics.slice(0, 50).join(', ');
@@ -354,6 +381,7 @@ Rules:
 - "priority":"high" makes a member work the plan BEFORE routine role work — use it for at most 2 members, only for the owner directive or an urgent settlement need.
 - every member is a generalist: any member may farm, mine, build, guard, explore, handle storage, or gather resources when it helps the settlement.
 - do not assign impossible fantasy projects or materials the bots cannot gather.
+- members with home=none cannot use base, farm or build focuses; give them stockpile, explore, relax or social work.
 - return every listed member exactly once.
 
 Return ONLY valid JSON:
@@ -434,7 +462,7 @@ export function applySocietyPlan(agent) {
 
     const plan = normalizePlan(
         assignment,
-        { name: agent.name, role: society.getRole(agent) },
+        { name: agent.name, role: society.getRole(agent), hasHome: Boolean(base.getBase(agent.bot)) },
         Number(assignment.ts ?? now),
         'society',
         society.getResourcePriority(agent.bot),
@@ -442,6 +470,9 @@ export function applySocietyPlan(agent) {
     plan.planId = planId;
     plan.expiresAt = expiresAt;
     agent._plan = plan;
+    recordPlannerStatus(agent, 'society', 'plan-executable', {
+        focus: plan.focus, planId, source: 'shared-assignment',
+    });
     const narration = narratePlan(agent, plan);
     void rpEvents.recordPlan(agent, plan, narration)
         .catch(error => console.warn(`[rp ${agent.name}] plan memory failed: ${error.message}`));
@@ -452,29 +483,43 @@ export function applySocietyPlan(agent) {
 }
 
 export async function planSociety(agent) {
-    if (settings.ai_enabled === false || settings.kingdom_mode === false || settings.society_planner_enabled === false) return false;
+    if (settings.ai_enabled === false || settings.kingdom_mode === false || settings.society_planner_enabled === false) {
+        recordPlannerStatus(agent, 'society', 'disabled');
+        return false;
+    }
     const bot = agent.bot;
     const model = agent.prompter?.code_model ?? agent.prompter?.chat_model;
-    if (!bot?.entity || !model) return false;
+    if (!bot?.entity || !model) {
+        recordPlannerStatus(agent, 'society', !model ? 'no-model' : 'not-ready');
+        return false;
+    }
 
     const result = await withNamedLock(bot, 'society-planner', async () => {
         const current = readSocietyPlan(true);
         const now = Date.now();
-        if (parseTime(current.nextAt) > now)
+        if (parseTime(current.nextAt) > now) {
+            recordPlannerStatus(agent, 'society', 'scheduled', { nextAt: current.nextAt });
             return { created: false };
+        }
 
         const members = activePlannerMembers(agent);
-        if (members.length === 0) return { created: false };
+        if (members.length === 0) {
+            recordPlannerStatus(agent, 'society', 'no-members');
+            return { created: false };
+        }
 
         const schematics = build.listSchematics();
-        const allowedFocuses = getAllowedFocuses();
+        const allowedFocuses = getAllowedFocuses(members.some(member => member.hasHome));
         const system = 'You are the strategic planner for a cooperative Minecraft NPC kingdom. Return only valid JSON. You assign bounded goals; deterministic code handles execution, safety, combat, pathfinding, inventory, and player commands.';
         const user = societyPrompt(agent, members, allowedFocuses, schematics);
         const outputTokens = Math.max(400, settings.society_planner_max_output_tokens ?? 1200);
         const estimatedInputTokens = Math.ceil((system.length + user.length) / 3) + 200;
-        if (!await reservePlannerCall(bot, estimatedInputTokens, outputTokens)) {
-            writeSocietyPlannerCooldown(5 * 60_000, 'budget cooldown');
-            console.log('[plan society] shared planner budget is cooling down');
+        const reservation = await reservePlannerCallDetailed(bot, estimatedInputTokens, outputTokens);
+        if (!reservation.allowed) {
+            recordPlannerStatus(agent, 'society', reservation.reason);
+            writeSocietyPlannerCooldown(reservation.reason === 'lock-busy' ? 15_000 : 5 * 60_000,
+                reservation.reason);
+            console.log(`[plan society] ${reservation.reason}`);
             return { created: false };
         }
 
@@ -491,6 +536,7 @@ export async function planSociety(agent) {
                 },
             );
         } catch (error) {
+            recordPlannerStatus(agent, 'society', 'model-error', { reason: error.message });
             writeSocietyPlannerCooldown(2 * 60_000, error.message);
             console.log(`[plan society] LLM error: ${error.message}`);
             return { created: false };
@@ -499,12 +545,16 @@ export async function planSociety(agent) {
 
         const parsed = extractJson(reply);
         if (!parsed) {
+            recordPlannerStatus(agent, 'society', 'planner-invalid', { reason: 'invalid JSON' });
             writeSocietyPlannerCooldown(2 * 60_000, 'invalid JSON');
             console.log('[plan society] invalid JSON, keeping deterministic behavior');
             return { created: false };
         }
 
         const plan = buildSocietyPlan(parsed, agent, members, now);
+        recordPlannerStatus(agent, 'society', 'plan-executable', {
+            planId: plan.planId, source: 'new-shared-plan',
+        });
         writeSocietyPlan(plan);
         console.log(`[plan society] ${plan.strategy}`);
         void society.recordEvent(bot, 'planning', agent.name,
@@ -512,7 +562,10 @@ export async function planSociety(agent) {
         return { created: true, plan };
     }, 250);
 
-    if (!result.locked) return false;
+    if (!result.locked) {
+        recordPlannerStatus(agent, 'society', 'lock-busy');
+        return false;
+    }
     if (result.value?.created) applySocietyPlan(agent);
     return Boolean(result.value?.created);
 }
@@ -520,15 +573,27 @@ export async function planSociety(agent) {
 export async function planLocal(agent, options = {}) {
     const bot = agent.bot;
     const now = Date.now();
-    if (settings.ai_enabled === false || !bot?.entity) return false;
-    if (!options.force && hasActivePlan(agent, now)) return false;
+    if (settings.ai_enabled === false || !bot?.entity) {
+        recordPlannerStatus(agent, 'local', settings.ai_enabled === false ? 'disabled' : 'not-ready');
+        return false;
+    }
+    if (!options.force && hasActivePlan(agent, now)) {
+        recordPlannerStatus(agent, 'local', 'plan-active', { planId: agent._plan.planId });
+        return false;
+    }
 
     const model = options.model ?? agent.prompter?.chat_model;
-    if (!model) return false;
+    if (!model) {
+        recordPlannerStatus(agent, 'local', 'no-model');
+        return false;
+    }
 
     const profileModel = String(agent.prompter?.profile?.model ?? '');
     const allowCloud = options.allowCloud ?? settings.local_planner_allow_cloud === true;
-    if (!allowCloud && !profileModel.startsWith('ollama/')) return false;
+    if (!allowCloud && !profileModel.startsWith('ollama/')) {
+        recordPlannerStatus(agent, 'local', 'cloud-disabled');
+        return false;
+    }
 
     // Cloud micro-plans MUST respect the planner budget cap ($/window + max calls) and cap
     // their output tokens; local ollama plans are free and skip it. The regular brain.js
@@ -538,7 +603,8 @@ export async function planLocal(agent, options = {}) {
     const reserveBudget = options.reserveBudget ?? usingCloud;
 
     const role = society.getRole(agent);
-    const allowedFocuses = getAllowedFocuses();
+    const hasHome = Boolean(base.getBase(bot));
+    const allowedFocuses = getAllowedFocuses(hasHome);
     const schematics = build.listSchematics();
     const sharedPlan = readSocietyPlan();
     const sharedAssignment = sharedPlan.assignments?.[agent.name];
@@ -567,8 +633,13 @@ Pick a short useful goal for the next few minutes.${socialFocusHint} Do not figh
 {"focus":"${allowedFocuses.join('|')}","resource":"${RESOURCES.join('|')}","amount":8,"schematic":"","duration_minutes":6,"project":"short concrete goal","say":"optional short line"}`;
     const outputTokens = Math.max(64, options.outputTokens ?? 220);
     const estimatedInputTokens = Math.ceil((system.length + user.length) / 3) + 100;
-    if (reserveBudget && !await reservePlannerCall(bot, estimatedInputTokens, outputTokens))
-        return false;
+    if (reserveBudget) {
+        const reservation = await reservePlannerCallDetailed(bot, estimatedInputTokens, outputTokens);
+        if (!reservation.allowed) {
+            recordPlannerStatus(agent, 'local', reservation.reason, { allowedFocuses });
+            return false;
+        }
+    }
 
     let reply;
     try {
@@ -582,17 +653,24 @@ Pick a short useful goal for the next few minutes.${socialFocusHint} Do not figh
                 : {},
         );
     } catch (error) {
+        recordPlannerStatus(agent, 'local', 'model-error', { reason: error.message, allowedFocuses });
         console.log(`[plan ${agent.name}] local planner error: ${error.message}`);
         return false;
     }
     if (reserveBudget) await recordPlannerUsage(bot, model.last_usage);
 
     const parsed = extractJson(reply);
-    if (!parsed) return false;
-    const plan = normalizePlan(parsed, { name: agent.name, role }, now, options.source ?? 'local',
+    if (!parsed) {
+        recordPlannerStatus(agent, 'local', 'planner-invalid', { reason: 'invalid JSON', allowedFocuses });
+        return false;
+    }
+    const plan = normalizePlan(parsed, { name: agent.name, role, hasHome }, now, options.source ?? 'local',
         society.getResourcePriority(bot));
     plan.planId = `${plan.source}:${agent.name}:${now}`;
     agent._plan = plan;
+    recordPlannerStatus(agent, 'local', 'plan-executable', {
+        focus: plan.focus, planId: plan.planId, allowedFocuses,
+    });
     const narration = narratePlan(agent, plan);
     void rpEvents.recordPlan(agent, plan, narration)
         .catch(error => console.warn(`[rp ${agent.name}] plan memory failed: ${error.message}`));

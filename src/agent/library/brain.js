@@ -281,8 +281,9 @@ async function brainTick(agent) {
     const progressStatus = progression.getStatus(bot);
     // Hybrid planning: a rare shared cloud strategy assigns the whole society,
     // while cheap local micro-plans fill gaps. Code still executes every action.
-    const home = base.getBase(bot);
-    if (!recoveryPending && home) {
+    // Planning is useful before a player sets a home. The planner limits home-only
+    // focuses per member, while survival and scouting remain available anywhere.
+    if (!recoveryPending) {
         planner.applySocietyPlan(agent);
         if (settings.society_planner_enabled !== false
             && Date.now() >= (agent._brain.nextSocietyPlanCheckAt ?? 0)) {

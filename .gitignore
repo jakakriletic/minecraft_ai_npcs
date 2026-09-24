@@ -1,7 +1,6 @@
 .vscode/
 .idea/
 node_modules/
-package-lock.json
 code_records/
 scratch.js
 bots/**/action-code/**
@@ -40,3 +39,4 @@ src/mindcraft-py/__pycache__/
 /term_out.txt
 /*.pid
 /.farm_runtime_current
+/_xfer/

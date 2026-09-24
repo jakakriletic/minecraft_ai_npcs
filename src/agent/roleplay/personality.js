@@ -255,9 +255,10 @@ export function pickPhrase(personality, seed = '') {
     return phrases[hash % phrases.length];
 }
 
-export function influencePlan(rawPlan, personality, role) {
+export function influencePlan(rawPlan, personality, role, allowedFocuses = null) {
     const plan = { ...rawPlan };
-    if (plan.focus === 'relax' && personality.workEthic && personality.orderliness > 0.75)
+    if (plan.focus === 'relax' && personality.workEthic && personality.orderliness > 0.75
+        && (!allowedFocuses || allowedFocuses.includes('base')))
         plan.focus = 'base';
     if (plan.focus === 'explore' && personality.caution > 0.75 && personality.courage < 0.6)
         plan.amount = Math.min(Number(plan.amount ?? 16), 24);

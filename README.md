@@ -44,7 +44,11 @@ Do not connect this bot to public servers with coding enabled. This project allo
 
 5. Start a Minecraft Java 1.20.1 vanilla/Paper or Forge 47.x server on `localhost:25565`, or adjust `host` and `port` in `settings.js`. Set `forge_handshake.enabled` to `false` for a strictly vanilla connection.
 
-6. Run `node main.js` from the installed directory. For the ten-NPC RP profile on Windows, use `start_boti.bat`; it verifies the server version before any NPC joins.
+6. Run `node main.js` from the installed directory for the autonomous kingdom bots (currently five enabled profiles), or use `summon_kingdom.bat` on Windows. The separate RP town uses `start_boti.bat`; it verifies the server version before its NPCs join.
+
+The kingdom planning and development milestones are summarized in [AGENTS.md](AGENTS.md). Once bots have run, `npm run eval:kingdom` summarizes their decision traces. This reports action outcomes; it does not prove that a long-term goal was completed.
+
+Mining paths, known limitations, and offline/live checks are documented in [MINING_OVERVIEW.md](MINING_OVERVIEW.md).
 
 If you encounter issues, check the [FAQ](https://github.com/mindcraft-bots/mindcraft/blob/main/FAQ.md) or find support on [discord](https://discord.gg/mp73p35dzC). We are currently not very responsive to github issues. To run tasks please refer to [Minecollab Instructions](minecollab.md#installation)
 
