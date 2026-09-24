@@ -433,6 +433,29 @@ function spareTool(bot, suffix) {
     return matching.length > 1 ? matching.at(-1)?.name : null;
 }
 
+// A recipient's need is the shared unit of work. Keying by donor would allow
+// several bots to promise the same food delivery at once.
+export function supplyCommitmentKey(transfer) {
+    return `${transfer.target}:${transfer.reason ?? transfer.item}`;
+}
+
+export function canClaimSupplyCommitment(current, now = Date.now()) {
+    if (!current) return true;
+    if (typeof current === 'number') return now - current >= 5 * 60_000;
+    if (current.status === 'delivered')
+        return now - Number(current.deliveredAt ?? current.claimedAt ?? 0) >= 5 * 60_000;
+    return now >= Number(current.leaseUntil ?? 0);
+}
+
+export function getSupplyCommitments() {
+    const now = Date.now();
+    return Object.values(readState().transfers ?? {})
+        .filter(entry => entry && typeof entry === 'object'
+            && now - Number(entry.claimedAt ?? 0) < 30 * 60_000)
+        .sort((a, b) => Number(b.claimedAt ?? 0) - Number(a.claimedAt ?? 0))
+        .slice(0, 12);
+}
+
 export function findSupplyShare(agent) {
     const bot = agent.bot;
     const mine = summarizeInventory(bot);
@@ -469,35 +492,67 @@ export function findSupplyShare(agent) {
 async function claimTransfer(bot, transfer) {
     const result = await withNamedLock(bot, 'kingdom-state', () => {
         const state = readState(true);
-        const key = `${bot.username}:${transfer.target}:${transfer.item}`;
-        if (Date.now() - (state.transfers[key] ?? 0) < 5 * 60_000)
-            return false;
-        state.transfers[key] = Date.now();
+        const now = Date.now();
+        const key = supplyCommitmentKey(transfer);
+        const current = state.transfers[key];
+        if (!canClaimSupplyCommitment(current, now)) return null;
+        const attempt = Number(current?.attempt ?? 0) + 1;
+        const commitment = {
+            id: `${key}:${attempt}`,
+            target: transfer.target,
+            reason: transfer.reason ?? transfer.item,
+            item: transfer.item,
+            count: transfer.count,
+            donor: bot.username,
+            attempt,
+            status: 'claimed',
+            claimedAt: now,
+            // The brain allows a social action up to three minutes; keep the
+            // lease beyond that so a second donor cannot start mid-delivery.
+            leaseUntil: now + 4 * 60_000,
+            evidence: null,
+        };
+        state.transfers[key] = commitment;
         state.transfers = Object.fromEntries(Object.entries(state.transfers)
-            .filter(([, at]) => Date.now() - at < 30 * 60_000));
+            .filter(([, entry]) => now - Number(typeof entry === 'number' ? entry : entry?.claimedAt ?? 0) < 30 * 60_000));
         writeState(state);
-        return true;
+        return commitment;
     });
-    return result.locked && result.value;
+    return result.locked ? result.value : null;
 }
 
-async function releaseTransfer(bot, transfer) {
+async function finishTransfer(bot, transfer, commitment, delivered) {
     await withNamedLock(bot, 'kingdom-state', () => {
         const state = readState(true);
-        delete state.transfers[`${bot.username}:${transfer.target}:${transfer.item}`];
+        const key = supplyCommitmentKey(transfer);
+        const current = state.transfers[key];
+        // An expired lease may have been reclaimed by another donor. Never
+        // overwrite that donor's evidence or release their commitment.
+        if (current?.id !== commitment.id) return false;
+        state.transfers[key] = {
+            ...current,
+            status: delivered ? 'delivered' : 'failed',
+            leaseUntil: Date.now(),
+            ...(delivered ? {
+                deliveredAt: Date.now(),
+                evidence: { type: 'playerCollect', recipient: transfer.target, item: transfer.item },
+            } : { failedAt: Date.now() }),
+        };
         writeState(state);
         return true;
     });
 }
 
 export async function shareSupplies(agent, transfer = findSupplyShare(agent)) {
-    if (!transfer || !await claimTransfer(agent.bot, transfer)) return false;
-    const success = await skills.giveToPlayer(
-        agent.bot,
-        transfer.item,
-        transfer.target,
-        transfer.count,
-    );
+    if (!transfer) return false;
+    const commitment = await claimTransfer(agent.bot, transfer);
+    if (!commitment) return false;
+    let success = false;
+    try {
+        success = await skills.giveToPlayer(agent.bot, transfer.item, transfer.target, transfer.count);
+    } finally {
+        await finishTransfer(agent.bot, transfer, commitment, success);
+    }
     if (success)
         await recordEvent(agent.bot, 'cooperation', agent.name,
             `${agent.name} gave ${transfer.count}x ${transfer.item} to ${transfer.target}.`);
@@ -505,8 +560,7 @@ export async function shareSupplies(agent, transfer = findSupplyShare(agent)) {
         const { recordSupplyShare } = await import('../roleplay/events.js');
         void recordSupplyShare(agent, transfer.target, transfer.item, transfer.count)
             .catch(error => console.warn(`[rp ${agent.name}] supply memory failed: ${error.message}`));
-    } else
-        await releaseTransfer(agent.bot, transfer);
+    }
     return success;
 }
 

@@ -197,13 +197,21 @@ Statusi spodaj so za **novi razvojni program**. `[ ]` pomeni, da milestone kot c
 
 **Sprejem:** zgradba je uporabna, dostopna in ne poškoduje zaščitenih blokov; projekt se prilagodi terenu/materialom; prekinitev/restart omogoča nadaljevanje; kreativen izbor je razviden iz načrta, brez izmišljenih dosežkov.
 
-### M7 — Družbena avtonomija in skupinski projekti `[ ]`
+### M7 — Živa ekipa, karakterji in civilizacija `[ ]`
 
-**Odvisnost:** M2–M5.
+**To je osrednji produktni cilj**, ne kozmetični dodatek po survivalu. M7 se razvija vzporedno z M2–M6: M2/M3 dasta dokazljiv izid, M4 sestavljanje korakov, M5 igralni cikel, M6 skupni gradbeni projekt. Podroben tehnični načrt, podatkovne pogodbe in scenariji so v [SOCIAL_CIVILIZATION_DEVELOPMENT.md](SOCIAL_CIVILIZATION_DEVELOPMENT.md); ob posegu v te module preberi tudi `ALTERA_PLAN.md`.
 
-**Delo:** socialni model naj vpliva na resnične cilje: prošnja za pomoč, delitev dela, poučevanje lokacije, reševanje člana, dogovor o skupnem projektu, spor in poprava odnosa. Skupinski cilj potrebuje lastnika, rezervacije virov, vloge, vidno napredovanje in pravilo za zamenjavo nedosegljivega člana. Individualne preference naj vplivajo na izbiro med *izvedljivimi* cilji.
+**M7a — Osebnost z življenjsko zgodovino:** obstoječe profile obdrži kot začetno identiteto; AI predlaga osebne preference, strahove, ambicije in slog pogovora iz potrjenih izkušenj. Trajne spremembe morajo imeti dogodek, razlog in mejo. Različni NPC-ji ob enaki situaciji izberejo različne *izvedljive* poti, ne le različnih stavkov.
 
-**Sprejem:** ekipa se izogne podvajanju istega dela; eden drugemu dejansko dostavi potreben predmet ali informacijo; skupinski projekt preživi izpad enega procesa; govor odraža dejanski dogovor in dejanja.
+**M7b — Pogovor kot dejanje:** sporočilo ima namen in preverljivo semantiko (`request`, `offer`, `commit`, `handoff`, `report`, `warn`, `disagree`, `resolve`). Govor odraža resnične zaznave in trenutne obveznosti; ne sme ustvariti lažne obljube ali trditve o opravljenem delu. Prejemnik mora sporočilo zaznati, odgovoriti in lahko spremeni svojo izbiro cilja.
+
+**M7c — Skupni projektni dogovor:** en trajen cilj vsebuje lastnika, sodelujoče, razdeljene podnaloge, odvisnosti, lastništvo virov, dokaze, rok in stanje. Dodelitve imajo lease/heartbeat, da reconnect ali offline bot ne zadrži dela. Ko član obstane, ekipa pomoč ponudi ali delo prerazdeli; player ukaz in safety ostaneta nad projektom.
+
+**M7d — Odnosi, socialno učenje, kultura:** pomoč, prelomljena obljuba, reševanje in uspeh posodobijo obstoječi usmerjeni socialni graf. Norme (`culture.js`) naj nastajajo iz opaženih interakcij; vrednote morajo vplivati na dejanske odločitve. Spomin potrebuje epizode kdo–kaj–kje–izid, ne le besedilnega povzetka.
+
+**M7e — Meritev emergentne ekipe:** večkrat ponovi scenarije s pomanjkanjem hrane, skupno gradnjo, offline članom, konfliktnima ciljema, nevarno lokacijo in večdnevnim delom. Primerjaj z izklopljenim socialnim slojem. Meri dokončane skupne cilje, podvojeno delo, predaje, uspešne prošnje, obnovo po izpadu, skladnost govora in dejanj ter razlike med karakterji. Brez in-game dokazov ostane M7 odprt.
+
+**Sprejem:** ekipa samostojno izbere vsaj dva različna skupna cilja in ju dokonča z dokazom v svetu; en član pridobi vir, drugemu ga preda, tretji ga uporabi; projekt preživi restart in odsotnost člana; osebnosti različno vplivajo na strategijo pri istem začetnem stanju; pogovor pravilno napove ali poroča o dejanjih; ob izklopu modela varnost in osnovna kooperacija ostaneta delujoči.
 
 ### M8 — Dolgoročna evalvacija in tuning `[ ]`
 
@@ -262,3 +270,4 @@ Po vsakem milestoneu dodaj kratek zapis pod spodnji dnevnik: datum, milestone, k
 - **2026-09-24 — blueprint ustvarjen.** Statično pregledani kingdom tok, konfiguracija, načrtovanje, arbitraža, napredovanje, spomin, socialni sloj, gradnja in testni skripti. Prejšnji lokalni `npm test`: 140/140 Node testov + 7/7 civilization smoke. In-game rezultat ni bil preverjen. Naslednji korak: **M0**.
 - **2026-09-24 — M0 PARTIAL.** Odstranjena zahteva po nastavljenem domu za klic AI plannerja; fokus za posameznega člana se zdaj omeji na veščine, ki jih lahko izvede brez doma. Dodani so razlogi stanja plannerja v telemetriji, ponovljiva zaklenjena namestitev popravljenih odvisnosti in `npm run eval:kingdom` za povzetek trace. Regresijski testi pokrivajo no-home fokuse in povzetek trace. Strežnik na `localhost:25565` med delom ni poslušal, zato in-game sprejem M0 ter dejanski baseline večurne epizode ostajata odprta. Naslednji korak: preizkus na strežniku z botom brez doma in primerjava trace pred/po.
 - **2026-09-24 — rudarski regresijski popravki.** Imena rud se razširijo tudi na deepslate različice; `lapis_lazuli` in `copper` poiščeta pravo rudo. Iskanje po potrebi pregleda več kandidatov, bakle in tlakovci v podzemnem rovu pa ne izločijo naravnega kamna. `npm run test:mining`: 10/10; `npm run check`: 155/155 Node testov, 7/7 civilization smoke, 1.20.1 audit uspešen. Test v dejanskem svetu ostaja odprt; naslednji korak je `npm run test:mining:live` ob zagnanem strežniku.
+- **2026-09-24 — M7/S0 PARTIAL.** Civilizacijska smer je razdeljena na osebnost, semantično komunikacijo, skupni projekt, socialno učenje in in-game evalvacijo v `SOCIAL_CIVILIZATION_DEVELOPMENT.md`. Prvi izvedbeni rez: skupna obveznost za dostavo zalog po potrebi prejemnika, z lease, statusom in `playerCollect` dokazom. Skupinski planner in telemetry vidita nedavne obveznosti. Še ni prejemnikove potrditve, pogajanja, večstopenjskega projekta ali in-game dokaza.

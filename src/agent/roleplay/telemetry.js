@@ -43,6 +43,7 @@ import { dirname } from 'path';
 import settings from '../settings.js';
 import * as world from '../library/world.js';
 import * as progression from '../library/progression.js';
+import * as society from '../library/society.js';
 import { socialStructure } from './social_graph.js';
 import { assembleState } from './cognition.js';      // PIANO bottleneck — most of the Agent State
 import { awarenessSummary } from './awareness.js';    // Phase 1 self-model summary
@@ -213,6 +214,7 @@ export function buildSnapshot(agent) {
         },
         plan: agent._plan ?? null,
         planning: agent._plannerStatus ?? null,
+        supplyCommitments: safeCall(() => society.getSupplyCommitments(), []),
         intention: agent._intention ?? null,
         awareness: agent._awareness ?? null,
         awarenessSummary: safeCall(() => awarenessSummary(agent), ''),

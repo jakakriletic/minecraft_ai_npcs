@@ -352,6 +352,9 @@ function societyPrompt(agent, members, allowedFocuses, schematics) {
         return `${member.name}: role=${member.role}/${member.roleLabel}, home=${member.hasHome ? 'set' : 'none'}, personality=${p.socialStyle}/${p.temperament}, traits courage=${p.courage} altruism=${p.altruism} ambition=${p.ambition} caution=${p.caution}, progress=${member.progression}, action=${member.action}, hp=${member.health}, foodbar=${member.hunger}, inv food=${inv.food ?? 0} wood=${inv.wood ?? 0} stone=${inv.stone ?? 0} iron=${inv.iron ?? 0} coal=${inv.coal ?? 0} gold=${inv.gold ?? 0} lapis=${inv.lapis ?? 0} empty=${inv.emptySlots ?? '?'}, combat=${member.combatStyle ?? 'balanced'}`;
     }).join('\n');
     const events = (state.events ?? []).slice(-6).map(event => `- ${event.text}`).join('\n') || '- no recent events';
+    const supplyCommitments = society.getSupplyCommitments().slice(0, 6)
+        .map(entry => `- ${entry.donor} -> ${entry.target}: ${entry.count} ${entry.item} for ${entry.reason}, ${entry.status}`)
+        .join('\n') || '- none';
     const buildNames = schematics.slice(0, 50).join(', ');
     // ALTERA/PIANO Phase 4: the coordinator's read of the others + candidate social goals,
     // so cooperation/specialization can be assigned, not only resource quotas. '' when off.
@@ -368,6 +371,8 @@ Shared totals: ${totals}. Most needed resource: ${society.getResourcePriority(ag
 Buildings: ${state.metrics?.buildingCount ?? 0}, roads: ${state.metrics?.roadCount ?? 0}.
 Recent events:
 ${events}
+Recent supply commitments (claimed is an intention, delivered has a playerCollect receipt):
+${supplyCommitments}
 ${directiveNote}
 Members:
 ${memberLines}
@@ -381,6 +386,7 @@ Rules:
 - "priority":"high" makes a member work the plan BEFORE routine role work — use it for at most 2 members, only for the owner directive or an urgent settlement need.
 - every member is a generalist: any member may farm, mine, build, guard, explore, handle storage, or gather resources when it helps the settlement.
 - do not assign impossible fantasy projects or materials the bots cannot gather.
+- account for active supply commitments so members do not duplicate the same delivery; a failed commitment may be retried or reassigned.
 - members with home=none cannot use base, farm or build focuses; give them stockpile, explore, relax or social work.
 - return every listed member exactly once.
 
